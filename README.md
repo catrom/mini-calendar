@@ -7,6 +7,6 @@ Phần mềm hỗ trợ quản lý thời gian biểu.
 ## Mô tả phần mềm
 
 ### Tính năng
-- Hiển thị lịch theo nhiểu khung thời gian
+- Hiển thị lịch theo nhiều khung thời gian
 
 ## Công nghệ nền tảng
