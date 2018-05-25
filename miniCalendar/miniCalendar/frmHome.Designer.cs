@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuPanel = new System.Windows.Forms.Panel();
@@ -46,9 +46,11 @@
             this.ibtnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.ibtnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.ibtnMenu = new Bunifu.Framework.UI.BunifuImageButton();
+            this.frmAppointment1 = new miniCalendar.frmAppointment();
             this.panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.menuSlide.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnExit)).BeginInit();
@@ -116,6 +118,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.frmAppointment1);
             this.menuTransition.SetDecoration(this.panel4, BunifuAnimatorNS.DecorationType.None);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(214, 26);
@@ -127,22 +130,22 @@
             // 
             this.menuTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.menuTransition.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 1;
-            animation3.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 2F;
-            animation3.TransparencyCoeff = 0F;
-            this.menuTransition.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.menuTransition.DefaultAnimation = animation1;
             this.menuTransition.MaxAnimationTime = 2000;
             // 
             // logo
@@ -217,7 +220,7 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 50D;
             this.bunifuFlatButton1.IsTab = true;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 485);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 479);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -386,6 +389,17 @@
             this.ibtnMenu.Zoom = 15;
             this.ibtnMenu.Click += new System.EventHandler(this.ibtnMenu_Click);
             // 
+            // frmAppointment1
+            // 
+            this.frmAppointment1.BackColor = System.Drawing.Color.Gainsboro;
+            this.frmAppointment1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.menuTransition.SetDecoration(this.frmAppointment1, BunifuAnimatorNS.DecorationType.None);
+            this.frmAppointment1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmAppointment1.Location = new System.Drawing.Point(0, 0);
+            this.frmAppointment1.Name = "frmAppointment1";
+            this.frmAppointment1.Size = new System.Drawing.Size(670, 535);
+            this.frmAppointment1.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,6 +418,7 @@
             this.menuPanel.ResumeLayout(false);
             this.menuSlide.ResumeLayout(false);
             this.menuSlide.PerformLayout();
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnExit)).EndInit();
@@ -428,6 +443,7 @@
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private BunifuAnimatorNS.BunifuTransition menuTransition;
+        private frmAppointment frmAppointment1;
     }
 }
 

@@ -65,7 +65,7 @@ namespace miniCalendar
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
-            
+            frmAppointment1.BringToFront();
         }
 
         private void btnTodoList_Click(object sender, EventArgs e)
