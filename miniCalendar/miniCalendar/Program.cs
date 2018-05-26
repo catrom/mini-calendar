@@ -14,9 +14,12 @@ namespace miniCalendar
         [STAThread]
         static void Main()
         {
+            DataTable dataTable = new DataTable();
+            dataTable.Deserialize();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new frmMain(dataTable));
         }
     }
 }

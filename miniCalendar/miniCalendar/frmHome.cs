@@ -12,9 +12,11 @@ namespace miniCalendar
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        DataTable dataTable = new DataTable();
+        public frmMain(DataTable dataTable)
         {
             InitializeComponent();
+            this.dataTable = dataTable;
         }
         Bunifu.Framework.UI.Drag MoveForm = new Bunifu.Framework.UI.Drag();
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -34,6 +36,7 @@ namespace miniCalendar
 
         private void ibtnExit_Click(object sender, EventArgs e)
         {
+            dataTable.Serialize();
             Environment.Exit(0);
         }
 
@@ -55,12 +58,12 @@ namespace miniCalendar
 
         private void btnNotifications_Click(object sender, EventArgs e)
         {
-            
+            frmNotifications1.BringToFront();
         }
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
-            
+            frmSchedule1.BringToFront();
         }
 
         private void btnAppointment_Click(object sender, EventArgs e)
@@ -70,12 +73,12 @@ namespace miniCalendar
 
         private void btnTodoList_Click(object sender, EventArgs e)
         {
-
+            frmTodoList1.BringToFront();
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-
+            frmSettings1.BringToFront();
         }
     }
 }

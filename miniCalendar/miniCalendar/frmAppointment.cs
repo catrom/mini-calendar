@@ -12,19 +12,21 @@ namespace miniCalendar
 {
     public partial class frmAppointment : UserControl
     {
+        DataTable dataTable = new DataTable();
         public frmAppointment()
         {
             InitializeComponent();
+         
         }
-
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        public frmAppointment(DataTable dataTable)
         {
-            frmNewAppointment a = new frmNewAppointment();
-            this.Controls.Add(a);
-            a.Location = new Point(246, 0);
-            TimeTable.Visible = false;
-            a.Visible = true;
-            a.BringToFront();
+            InitializeComponent();
+            
+            this.dataTable = dataTable;
+        }
+        private void btnNewAppointment_Click(object sender, EventArgs e)
+        {
+            this.frmNewAppointment1.BringToFront();
         }
     }
 }

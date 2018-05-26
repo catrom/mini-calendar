@@ -21,3 +21,7 @@ C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\m
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.Cache
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmAppointment.resources
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNewAppointment.resources
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNotifications.resources
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSchedule.resources
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTodoList.resources
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSettings.resources

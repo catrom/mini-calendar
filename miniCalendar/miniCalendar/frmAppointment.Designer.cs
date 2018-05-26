@@ -57,8 +57,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.btnNewAppointment = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.frmNewAppointment1 = new miniCalendar.frmNewAppointment();
             this.panelTimeTable.SuspendLayout();
             this.TimeTable.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -69,6 +70,7 @@
             // panelTimeTable
             // 
             this.panelTimeTable.Controls.Add(this.TimeTable);
+            this.panelTimeTable.Controls.Add(this.frmNewAppointment1);
             this.panelTimeTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTimeTable.Location = new System.Drawing.Point(246, 0);
             this.panelTimeTable.Name = "panelTimeTable";
@@ -399,55 +401,65 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.bunifuFlatButton1);
-            this.panel2.Controls.Add(this.monthCalendar1);
+            this.panel2.Controls.Add(this.btnNewAppointment);
+            this.panel2.Controls.Add(this.monthCalendar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 267);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(246, 266);
             this.panel2.TabIndex = 3;
             // 
-            // monthCalendar1
+            // monthCalendar
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(9, 9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar.Location = new System.Drawing.Point(9, 9);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 0;
             // 
-            // bunifuFlatButton1
+            // btnNewAppointment
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.Silver;
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 5;
-            this.bunifuFlatButton1.ButtonText = "     New Appointment";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = global::miniCalendar.Properties.Resources.icons8_Positive_32;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 10;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 50D;
-            this.bunifuFlatButton1.IsTab = true;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(9, 211);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.Silver;
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(110)))));
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(227, 49);
-            this.bunifuFlatButton1.TabIndex = 6;
-            this.bunifuFlatButton1.Text = "     New Appointment";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            this.btnNewAppointment.Activecolor = System.Drawing.Color.Gainsboro;
+            this.btnNewAppointment.BackColor = System.Drawing.Color.Silver;
+            this.btnNewAppointment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNewAppointment.BorderRadius = 5;
+            this.btnNewAppointment.ButtonText = "     New Appointment";
+            this.btnNewAppointment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewAppointment.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNewAppointment.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewAppointment.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNewAppointment.Iconimage = global::miniCalendar.Properties.Resources.icons8_Positive_32;
+            this.btnNewAppointment.Iconimage_right = null;
+            this.btnNewAppointment.Iconimage_right_Selected = null;
+            this.btnNewAppointment.Iconimage_Selected = null;
+            this.btnNewAppointment.IconMarginLeft = 10;
+            this.btnNewAppointment.IconMarginRight = 0;
+            this.btnNewAppointment.IconRightVisible = true;
+            this.btnNewAppointment.IconRightZoom = 0D;
+            this.btnNewAppointment.IconVisible = true;
+            this.btnNewAppointment.IconZoom = 50D;
+            this.btnNewAppointment.IsTab = true;
+            this.btnNewAppointment.Location = new System.Drawing.Point(9, 211);
+            this.btnNewAppointment.Name = "btnNewAppointment";
+            this.btnNewAppointment.Normalcolor = System.Drawing.Color.Silver;
+            this.btnNewAppointment.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnNewAppointment.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(110)))));
+            this.btnNewAppointment.selected = false;
+            this.btnNewAppointment.Size = new System.Drawing.Size(227, 49);
+            this.btnNewAppointment.TabIndex = 6;
+            this.btnNewAppointment.Text = "     New Appointment";
+            this.btnNewAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewAppointment.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnNewAppointment.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewAppointment.Click += new System.EventHandler(this.btnNewAppointment_Click);
+            // 
+            // frmNewAppointment1
+            // 
+            this.frmNewAppointment1.BackColor = System.Drawing.Color.White;
+            this.frmNewAppointment1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.frmNewAppointment1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmNewAppointment1.Location = new System.Drawing.Point(0, 0);
+            this.frmNewAppointment1.Name = "frmNewAppointment1";
+            this.frmNewAppointment1.Size = new System.Drawing.Size(422, 533);
+            this.frmNewAppointment1.TabIndex = 1;
             // 
             // frmAppointment
             // 
@@ -474,8 +486,8 @@
         private System.Windows.Forms.Panel panelTimeTable;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private System.Windows.Forms.MonthCalendar monthCalendar;
+        private Bunifu.Framework.UI.BunifuFlatButton btnNewAppointment;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.TableLayoutPanel TimeTable;
         private System.Windows.Forms.Panel panel4;
@@ -502,5 +514,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
+        private frmNewAppointment frmNewAppointment1;
     }
 }

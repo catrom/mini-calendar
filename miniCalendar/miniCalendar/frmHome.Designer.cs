@@ -46,7 +46,11 @@
             this.ibtnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.ibtnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.ibtnMenu = new Bunifu.Framework.UI.BunifuImageButton();
+            this.frmNotifications1 = new miniCalendar.frmNotifications();
             this.frmAppointment1 = new miniCalendar.frmAppointment();
+            this.frmSettings1 = new miniCalendar.frmSettings();
+            this.frmTodoList1 = new miniCalendar.frmTodoList();
+            this.frmSchedule1 = new miniCalendar.frmSchedule();
             this.panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.menuSlide.SuspendLayout();
@@ -118,7 +122,11 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.frmNotifications1);
             this.panel4.Controls.Add(this.frmAppointment1);
+            this.panel4.Controls.Add(this.frmSettings1);
+            this.panel4.Controls.Add(this.frmTodoList1);
+            this.panel4.Controls.Add(this.frmSchedule1);
             this.menuTransition.SetDecoration(this.panel4, BunifuAnimatorNS.DecorationType.None);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(214, 26);
@@ -389,6 +397,16 @@
             this.ibtnMenu.Zoom = 15;
             this.ibtnMenu.Click += new System.EventHandler(this.ibtnMenu_Click);
             // 
+            // frmNotifications1
+            // 
+            this.frmNotifications1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.menuTransition.SetDecoration(this.frmNotifications1, BunifuAnimatorNS.DecorationType.None);
+            this.frmNotifications1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmNotifications1.Location = new System.Drawing.Point(0, 0);
+            this.frmNotifications1.Name = "frmNotifications1";
+            this.frmNotifications1.Size = new System.Drawing.Size(670, 535);
+            this.frmNotifications1.TabIndex = 1;
+            // 
             // frmAppointment1
             // 
             this.frmAppointment1.BackColor = System.Drawing.Color.Gainsboro;
@@ -399,6 +417,36 @@
             this.frmAppointment1.Name = "frmAppointment1";
             this.frmAppointment1.Size = new System.Drawing.Size(670, 535);
             this.frmAppointment1.TabIndex = 0;
+            // 
+            // frmSettings1
+            // 
+            this.frmSettings1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.menuTransition.SetDecoration(this.frmSettings1, BunifuAnimatorNS.DecorationType.None);
+            this.frmSettings1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmSettings1.Location = new System.Drawing.Point(0, 0);
+            this.frmSettings1.Name = "frmSettings1";
+            this.frmSettings1.Size = new System.Drawing.Size(670, 535);
+            this.frmSettings1.TabIndex = 4;
+            // 
+            // frmTodoList1
+            // 
+            this.frmTodoList1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.menuTransition.SetDecoration(this.frmTodoList1, BunifuAnimatorNS.DecorationType.None);
+            this.frmTodoList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmTodoList1.Location = new System.Drawing.Point(0, 0);
+            this.frmTodoList1.Name = "frmTodoList1";
+            this.frmTodoList1.Size = new System.Drawing.Size(670, 535);
+            this.frmTodoList1.TabIndex = 3;
+            // 
+            // frmSchedule1
+            // 
+            this.frmSchedule1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.menuTransition.SetDecoration(this.frmSchedule1, BunifuAnimatorNS.DecorationType.None);
+            this.frmSchedule1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmSchedule1.Location = new System.Drawing.Point(0, 0);
+            this.frmSchedule1.Name = "frmSchedule1";
+            this.frmSchedule1.Size = new System.Drawing.Size(670, 535);
+            this.frmSchedule1.TabIndex = 2;
             // 
             // frmMain
             // 
@@ -444,6 +492,10 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private BunifuAnimatorNS.BunifuTransition menuTransition;
         private frmAppointment frmAppointment1;
+        private frmNotifications frmNotifications1;
+        private frmSettings frmSettings1;
+        private frmTodoList frmTodoList1;
+        private frmSchedule frmSchedule1;
     }
 }
 

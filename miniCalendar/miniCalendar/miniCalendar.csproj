@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointment.cs" />
+    <Compile Include="DataTable.cs" />
     <Compile Include="frmAppointment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -67,6 +69,30 @@
     <Compile Include="frmNewAppointment.Designer.cs">
       <DependentUpon>frmNewAppointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNotifications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmNotifications.Designer.cs">
+      <DependentUpon>frmNotifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmSchedule.Designer.cs">
+      <DependentUpon>frmSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTodoList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmTodoList.Designer.cs">
+      <DependentUpon>frmTodoList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAppointment.resx">
@@ -77,6 +103,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewAppointment.resx">
       <DependentUpon>frmNewAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotifications.resx">
+      <DependentUpon>frmNotifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSchedule.resx">
+      <DependentUpon>frmSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTodoList.resx">
+      <DependentUpon>frmTodoList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
