@@ -64,6 +64,7 @@ namespace miniCalendar
         {
             frmNotifications form = new frmNotifications();
             form.Dock = DockStyle.Fill;
+            WorkingArea.Controls.Clear();
             WorkingArea.Controls.Add(form);
         }
 

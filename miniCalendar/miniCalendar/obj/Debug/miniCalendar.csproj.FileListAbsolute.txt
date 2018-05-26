@@ -25,3 +25,4 @@ C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\m
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.Cache
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csprojResolveAssemblyReference.cache

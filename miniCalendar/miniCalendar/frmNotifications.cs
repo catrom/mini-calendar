@@ -12,9 +12,14 @@ namespace miniCalendar
 {
     public partial class frmNotifications : UserControl
     {
+        DataTable dataTable = new DataTable();
         public frmNotifications()
         {
             InitializeComponent();
+        }
+        public frmNotifications(DataTable dataTable)
+        {
+            this.dataTable = dataTable;
         }
     }
 }

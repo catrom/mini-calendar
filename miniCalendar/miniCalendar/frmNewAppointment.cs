@@ -13,6 +13,7 @@ namespace miniCalendar
     public partial class frmNewAppointment : UserControl
     {
         private DataTable dataTable = new DataTable();
+        private DateTime dateTime = new DateTime();
         private string title = "";
         private DateTime startHour;
         private DateTime endHour;
@@ -31,7 +32,14 @@ namespace miniCalendar
             InitializeComponent();
             dtpStartDay.Value = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
             dtpEndDay.Value = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
+            cbStartHour.SelectedIndex = 0;
+            cbEndHour.SelectedIndex = 47;
+            dtpStartDay.Value = dateTime;
+            dtpEndDay.Value = dateTime;
+            numNotiValue.Value = 30;
+            cbNotiUnit.SelectedIndex = 0;
             this.dataTable = dataTable;
+            this.dateTime = dateTime;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -41,25 +49,27 @@ namespace miniCalendar
             {
                 MessageBox.Show("Change the start time to be before the end of the appointment.");
             }
-
-            // set value
-            title = tbTitle.Text;
-            location = tbLocation.Text;
-            notiValue = Convert.ToInt32(numNotiValue.Value);
-            notiUnit = cbNotiUnit.Text;
-            description = tbDescription.Text;
-
-            if (switchAllday.Value == true)
-            {
-                startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, 0, 0, 0);
-                endHour = new DateTime(dtpEndDay.Value.Year, dtpEndDay.Value.Month, dtpEndDay.Value.Day, 23, 59, 59);
-            }
             else
             {
-                string start = cbStartHour.Text;
+                // set value
+                title = tbTitle.Text;
+                location = tbLocation.Text;
+                notiValue = Convert.ToInt32(numNotiValue.Value);
+                notiUnit = cbNotiUnit.Text;
+                description = tbDescription.Text;
+
+                if (switchAllday.Value == true)
+                {
+                    startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, 0, 0, 0);
+                    endHour = new DateTime(dtpEndDay.Value.Year, dtpEndDay.Value.Month, dtpEndDay.Value.Day, 23, 59, 59);
+                }
+                else
+                {
+                    string start = cbStartHour.Text;
+                }
+                dataTable.Add(new Appointment(title, startHour, endHour, location, notiValue, notiUnit, color, description));
+                this.Dispose(false);
             }
-            dataTable.Add(new Appointment(title, startHour, endHour, location, notiValue, notiUnit, color, description));
-            this.Dispose(false);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -74,12 +84,20 @@ namespace miniCalendar
             {
                 dtpStartDay.Enabled = false;
                 dtpEndDay.Enabled = false;
+                dtpEndDay.Visible = false;
                 cbStartHour.Enabled = false;
                 cbEndHour.Enabled = false;
-            } else
+
+                if (dtpEndDay.Value != dtpStartDay.Value)
+                {
+                    dtpEndDay.Value = dtpStartDay.Value;
+                }
+            }
+            else
             {
                 dtpStartDay.Enabled = true;
                 dtpEndDay.Enabled = true;
+                dtpEndDay.Visible = true;
                 cbStartHour.Enabled = true;
                 cbEndHour.Enabled = true;
             }
