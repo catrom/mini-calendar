@@ -16,7 +16,7 @@ namespace miniCalendar
         private string fileName = "tasks.xml";
 
         public DataTable() { }
-
+        
         public void Add(Appointment o)
         {
             dataTable.Add(o);

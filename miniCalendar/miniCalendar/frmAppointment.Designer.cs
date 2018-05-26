@@ -59,7 +59,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.btnNewAppointment = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.frmNewAppointment1 = new miniCalendar.frmNewAppointment();
             this.panelTimeTable.SuspendLayout();
             this.TimeTable.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -70,7 +69,6 @@
             // panelTimeTable
             // 
             this.panelTimeTable.Controls.Add(this.TimeTable);
-            this.panelTimeTable.Controls.Add(this.frmNewAppointment1);
             this.panelTimeTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTimeTable.Location = new System.Drawing.Point(246, 0);
             this.panelTimeTable.Name = "panelTimeTable";
@@ -451,16 +449,6 @@
             this.btnNewAppointment.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewAppointment.Click += new System.EventHandler(this.btnNewAppointment_Click);
             // 
-            // frmNewAppointment1
-            // 
-            this.frmNewAppointment1.BackColor = System.Drawing.Color.White;
-            this.frmNewAppointment1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.frmNewAppointment1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frmNewAppointment1.Location = new System.Drawing.Point(0, 0);
-            this.frmNewAppointment1.Name = "frmNewAppointment1";
-            this.frmNewAppointment1.Size = new System.Drawing.Size(422, 533);
-            this.frmNewAppointment1.TabIndex = 1;
-            // 
             // frmAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,6 +502,5 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
-        private frmNewAppointment frmNewAppointment1;
     }
 }

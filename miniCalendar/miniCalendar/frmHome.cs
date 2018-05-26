@@ -17,6 +17,10 @@ namespace miniCalendar
         {
             InitializeComponent();
             this.dataTable = dataTable;
+
+            frmNotifications form = new frmNotifications();
+            form.Dock = DockStyle.Fill;
+            WorkingArea.Controls.Add(form);
         }
         Bunifu.Framework.UI.Drag MoveForm = new Bunifu.Framework.UI.Drag();
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -58,27 +62,41 @@ namespace miniCalendar
 
         private void btnNotifications_Click(object sender, EventArgs e)
         {
-            frmNotifications1.BringToFront();
+            frmNotifications form = new frmNotifications();
+            form.Dock = DockStyle.Fill;
+            WorkingArea.Controls.Add(form);
         }
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
-            frmSchedule1.BringToFront();
+            frmSchedule form = new frmSchedule();
+            form.Dock = DockStyle.Fill;
+            WorkingArea.Controls.Clear();
+            WorkingArea.Controls.Add(form);
         }
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
-            frmAppointment1.BringToFront();
+            frmAppointment form = new frmAppointment(dataTable);
+            form.Dock = DockStyle.Fill;
+            WorkingArea.Controls.Clear();
+            WorkingArea.Controls.Add(form);
         }
 
         private void btnTodoList_Click(object sender, EventArgs e)
         {
-            frmTodoList1.BringToFront();
+            frmTodoList form = new frmTodoList();
+            form.Dock = DockStyle.Fill;
+            WorkingArea.Controls.Clear();
+            WorkingArea.Controls.Add(form);
         }
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void btnSettings_Click(object sender, EventArgs e)
         {
-            frmSettings1.BringToFront();
+            frmSettings form = new frmSettings();
+            form.Dock = DockStyle.Fill;
+            WorkingArea.Controls.Clear();
+            WorkingArea.Controls.Add(form);
         }
     }
 }

@@ -16,17 +16,18 @@ namespace miniCalendar
         public frmAppointment()
         {
             InitializeComponent();
-         
         }
         public frmAppointment(DataTable dataTable)
         {
             InitializeComponent();
-            
             this.dataTable = dataTable;
         }
         private void btnNewAppointment_Click(object sender, EventArgs e)
         {
-            this.frmNewAppointment1.BringToFront();
+            frmNewAppointment form = new frmNewAppointment(dataTable, monthCalendar.SelectionRange.Start);
+            form.Dock = DockStyle.Fill;
+            this.panelTimeTable.Controls.Add(form);
+            form.BringToFront();
         }
     }
 }

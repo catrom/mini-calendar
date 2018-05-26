@@ -29,36 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.menuPanel = new System.Windows.Forms.Panel();
-            this.menuSlide = new System.Windows.Forms.Panel();
-            this.lbminiCalendar = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.menuTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.logo = new System.Windows.Forms.PictureBox();
-            this.btnNotifications = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnTodoList = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnSchedule = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnAppointment = new Bunifu.Framework.UI.BunifuFlatButton();
             this.ibtnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.ibtnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.ibtnMenu = new Bunifu.Framework.UI.BunifuImageButton();
-            this.frmNotifications1 = new miniCalendar.frmNotifications();
-            this.frmAppointment1 = new miniCalendar.frmAppointment();
-            this.frmSettings1 = new miniCalendar.frmSettings();
-            this.frmTodoList1 = new miniCalendar.frmTodoList();
-            this.frmSchedule1 = new miniCalendar.frmSchedule();
+            this.menuPanel = new System.Windows.Forms.Panel();
+            this.menuSlide = new System.Windows.Forms.Panel();
+            this.lbminiCalendar = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.btnNotifications = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSettings = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnTodoList = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSchedule = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnAppointment = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.WorkingArea = new System.Windows.Forms.Panel();
+            this.menuTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1.SuspendLayout();
-            this.menuPanel.SuspendLayout();
-            this.menuSlide.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnMenu)).BeginInit();
+            this.menuPanel.SuspendLayout();
+            this.menuSlide.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,13 +72,57 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
+            // ibtnMinimize
+            // 
+            this.ibtnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.menuTransition.SetDecoration(this.ibtnMinimize, BunifuAnimatorNS.DecorationType.None);
+            this.ibtnMinimize.Image = global::miniCalendar.Properties.Resources.icons8_Compress_32;
+            this.ibtnMinimize.ImageActive = null;
+            this.ibtnMinimize.Location = new System.Drawing.Point(825, 0);
+            this.ibtnMinimize.Name = "ibtnMinimize";
+            this.ibtnMinimize.Size = new System.Drawing.Size(25, 25);
+            this.ibtnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ibtnMinimize.TabIndex = 2;
+            this.ibtnMinimize.TabStop = false;
+            this.ibtnMinimize.Zoom = 15;
+            // 
+            // ibtnExit
+            // 
+            this.ibtnExit.BackColor = System.Drawing.Color.Transparent;
+            this.menuTransition.SetDecoration(this.ibtnExit, BunifuAnimatorNS.DecorationType.None);
+            this.ibtnExit.Image = global::miniCalendar.Properties.Resources.icons8_Delete_32;
+            this.ibtnExit.ImageActive = null;
+            this.ibtnExit.Location = new System.Drawing.Point(856, 0);
+            this.ibtnExit.Name = "ibtnExit";
+            this.ibtnExit.Size = new System.Drawing.Size(25, 25);
+            this.ibtnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ibtnExit.TabIndex = 1;
+            this.ibtnExit.TabStop = false;
+            this.ibtnExit.Zoom = 15;
+            this.ibtnExit.Click += new System.EventHandler(this.ibtnExit_Click);
+            // 
+            // ibtnMenu
+            // 
+            this.ibtnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.menuTransition.SetDecoration(this.ibtnMenu, BunifuAnimatorNS.DecorationType.None);
+            this.ibtnMenu.Image = global::miniCalendar.Properties.Resources.icons8_Menu_32;
+            this.ibtnMenu.ImageActive = null;
+            this.ibtnMenu.Location = new System.Drawing.Point(9, 0);
+            this.ibtnMenu.Name = "ibtnMenu";
+            this.ibtnMenu.Size = new System.Drawing.Size(25, 25);
+            this.ibtnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ibtnMenu.TabIndex = 0;
+            this.ibtnMenu.TabStop = false;
+            this.ibtnMenu.Zoom = 15;
+            this.ibtnMenu.Click += new System.EventHandler(this.ibtnMenu_Click);
+            // 
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.Color.White;
             this.menuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.menuPanel.Controls.Add(this.menuSlide);
             this.menuPanel.Controls.Add(this.btnNotifications);
-            this.menuPanel.Controls.Add(this.bunifuFlatButton1);
+            this.menuPanel.Controls.Add(this.btnSettings);
             this.menuPanel.Controls.Add(this.btnTodoList);
             this.menuPanel.Controls.Add(this.btnSchedule);
             this.menuPanel.Controls.Add(this.btnAppointment);
@@ -119,42 +157,6 @@
             this.lbminiCalendar.Size = new System.Drawing.Size(135, 30);
             this.lbminiCalendar.TabIndex = 1;
             this.lbminiCalendar.Text = "miniCalendar";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.frmNotifications1);
-            this.panel4.Controls.Add(this.frmAppointment1);
-            this.panel4.Controls.Add(this.frmSettings1);
-            this.panel4.Controls.Add(this.frmTodoList1);
-            this.panel4.Controls.Add(this.frmSchedule1);
-            this.menuTransition.SetDecoration(this.panel4, BunifuAnimatorNS.DecorationType.None);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(214, 26);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(670, 535);
-            this.panel4.TabIndex = 4;
-            // 
-            // menuTransition
-            // 
-            this.menuTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
-            this.menuTransition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 1;
-            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 2F;
-            animation1.TransparencyCoeff = 0F;
-            this.menuTransition.DefaultAnimation = animation1;
-            this.menuTransition.MaxAnimationTime = 2000;
             // 
             // logo
             // 
@@ -205,42 +207,42 @@
             this.btnNotifications.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotifications.Click += new System.EventHandler(this.btnNotifications_Click);
             // 
-            // bunifuFlatButton1
+            // btnSettings
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 5;
-            this.bunifuFlatButton1.ButtonText = "     Settings";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuTransition.SetDecoration(this.bunifuFlatButton1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = global::miniCalendar.Properties.Resources.icons8_Settings_32;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 10;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 50D;
-            this.bunifuFlatButton1.IsTab = true;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 479);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(110)))));
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(214, 49);
-            this.bunifuFlatButton1.TabIndex = 5;
-            this.bunifuFlatButton1.Text = "     Settings";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            this.btnSettings.Activecolor = System.Drawing.Color.Gainsboro;
+            this.btnSettings.BackColor = System.Drawing.Color.White;
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSettings.BorderRadius = 5;
+            this.btnSettings.ButtonText = "     Settings";
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.menuTransition.SetDecoration(this.btnSettings, BunifuAnimatorNS.DecorationType.None);
+            this.btnSettings.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSettings.Iconimage = global::miniCalendar.Properties.Resources.icons8_Settings_32;
+            this.btnSettings.Iconimage_right = null;
+            this.btnSettings.Iconimage_right_Selected = null;
+            this.btnSettings.Iconimage_Selected = null;
+            this.btnSettings.IconMarginLeft = 10;
+            this.btnSettings.IconMarginRight = 0;
+            this.btnSettings.IconRightVisible = true;
+            this.btnSettings.IconRightZoom = 0D;
+            this.btnSettings.IconVisible = true;
+            this.btnSettings.IconZoom = 50D;
+            this.btnSettings.IsTab = true;
+            this.btnSettings.Location = new System.Drawing.Point(0, 479);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Normalcolor = System.Drawing.Color.White;
+            this.btnSettings.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnSettings.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(110)))));
+            this.btnSettings.selected = false;
+            this.btnSettings.Size = new System.Drawing.Size(214, 49);
+            this.btnSettings.TabIndex = 5;
+            this.btnSettings.Text = "     Settings";
+            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnSettings.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnTodoList
             // 
@@ -353,100 +355,36 @@
             this.btnAppointment.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
-            // ibtnMinimize
+            // WorkingArea
             // 
-            this.ibtnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.menuTransition.SetDecoration(this.ibtnMinimize, BunifuAnimatorNS.DecorationType.None);
-            this.ibtnMinimize.Image = global::miniCalendar.Properties.Resources.icons8_Compress_32;
-            this.ibtnMinimize.ImageActive = null;
-            this.ibtnMinimize.Location = new System.Drawing.Point(825, 0);
-            this.ibtnMinimize.Name = "ibtnMinimize";
-            this.ibtnMinimize.Size = new System.Drawing.Size(25, 25);
-            this.ibtnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnMinimize.TabIndex = 2;
-            this.ibtnMinimize.TabStop = false;
-            this.ibtnMinimize.Zoom = 15;
+            this.menuTransition.SetDecoration(this.WorkingArea, BunifuAnimatorNS.DecorationType.None);
+            this.WorkingArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WorkingArea.Location = new System.Drawing.Point(214, 26);
+            this.WorkingArea.Name = "WorkingArea";
+            this.WorkingArea.Size = new System.Drawing.Size(670, 535);
+            this.WorkingArea.TabIndex = 4;
             // 
-            // ibtnExit
+            // menuTransition
             // 
-            this.ibtnExit.BackColor = System.Drawing.Color.Transparent;
-            this.menuTransition.SetDecoration(this.ibtnExit, BunifuAnimatorNS.DecorationType.None);
-            this.ibtnExit.Image = global::miniCalendar.Properties.Resources.icons8_Delete_32;
-            this.ibtnExit.ImageActive = null;
-            this.ibtnExit.Location = new System.Drawing.Point(856, 0);
-            this.ibtnExit.Name = "ibtnExit";
-            this.ibtnExit.Size = new System.Drawing.Size(25, 25);
-            this.ibtnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnExit.TabIndex = 1;
-            this.ibtnExit.TabStop = false;
-            this.ibtnExit.Zoom = 15;
-            this.ibtnExit.Click += new System.EventHandler(this.ibtnExit_Click);
-            // 
-            // ibtnMenu
-            // 
-            this.ibtnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.menuTransition.SetDecoration(this.ibtnMenu, BunifuAnimatorNS.DecorationType.None);
-            this.ibtnMenu.Image = global::miniCalendar.Properties.Resources.icons8_Menu_32;
-            this.ibtnMenu.ImageActive = null;
-            this.ibtnMenu.Location = new System.Drawing.Point(9, 0);
-            this.ibtnMenu.Name = "ibtnMenu";
-            this.ibtnMenu.Size = new System.Drawing.Size(25, 25);
-            this.ibtnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnMenu.TabIndex = 0;
-            this.ibtnMenu.TabStop = false;
-            this.ibtnMenu.Zoom = 15;
-            this.ibtnMenu.Click += new System.EventHandler(this.ibtnMenu_Click);
-            // 
-            // frmNotifications1
-            // 
-            this.frmNotifications1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.menuTransition.SetDecoration(this.frmNotifications1, BunifuAnimatorNS.DecorationType.None);
-            this.frmNotifications1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frmNotifications1.Location = new System.Drawing.Point(0, 0);
-            this.frmNotifications1.Name = "frmNotifications1";
-            this.frmNotifications1.Size = new System.Drawing.Size(670, 535);
-            this.frmNotifications1.TabIndex = 1;
-            // 
-            // frmAppointment1
-            // 
-            this.frmAppointment1.BackColor = System.Drawing.Color.Gainsboro;
-            this.frmAppointment1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.menuTransition.SetDecoration(this.frmAppointment1, BunifuAnimatorNS.DecorationType.None);
-            this.frmAppointment1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frmAppointment1.Location = new System.Drawing.Point(0, 0);
-            this.frmAppointment1.Name = "frmAppointment1";
-            this.frmAppointment1.Size = new System.Drawing.Size(670, 535);
-            this.frmAppointment1.TabIndex = 0;
-            // 
-            // frmSettings1
-            // 
-            this.frmSettings1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.menuTransition.SetDecoration(this.frmSettings1, BunifuAnimatorNS.DecorationType.None);
-            this.frmSettings1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frmSettings1.Location = new System.Drawing.Point(0, 0);
-            this.frmSettings1.Name = "frmSettings1";
-            this.frmSettings1.Size = new System.Drawing.Size(670, 535);
-            this.frmSettings1.TabIndex = 4;
-            // 
-            // frmTodoList1
-            // 
-            this.frmTodoList1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.menuTransition.SetDecoration(this.frmTodoList1, BunifuAnimatorNS.DecorationType.None);
-            this.frmTodoList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frmTodoList1.Location = new System.Drawing.Point(0, 0);
-            this.frmTodoList1.Name = "frmTodoList1";
-            this.frmTodoList1.Size = new System.Drawing.Size(670, 535);
-            this.frmTodoList1.TabIndex = 3;
-            // 
-            // frmSchedule1
-            // 
-            this.frmSchedule1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.menuTransition.SetDecoration(this.frmSchedule1, BunifuAnimatorNS.DecorationType.None);
-            this.frmSchedule1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frmSchedule1.Location = new System.Drawing.Point(0, 0);
-            this.frmSchedule1.Name = "frmSchedule1";
-            this.frmSchedule1.Size = new System.Drawing.Size(670, 535);
-            this.frmSchedule1.TabIndex = 2;
+            this.menuTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
+            this.menuTransition.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 1;
+            animation2.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 2F;
+            animation2.TransparencyCoeff = 0F;
+            this.menuTransition.DefaultAnimation = animation2;
+            this.menuTransition.MaxAnimationTime = 2000;
             // 
             // frmMain
             // 
@@ -454,7 +392,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.WorkingArea);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.panel1);
             this.menuTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -463,14 +401,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "miniCalendar";
             this.panel1.ResumeLayout(false);
-            this.menuPanel.ResumeLayout(false);
-            this.menuSlide.ResumeLayout(false);
-            this.menuSlide.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnMenu)).EndInit();
+            this.menuPanel.ResumeLayout(false);
+            this.menuSlide.ResumeLayout(false);
+            this.menuSlide.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -488,14 +425,9 @@
         private Bunifu.Framework.UI.BunifuImageButton ibtnMenu;
         private Bunifu.Framework.UI.BunifuImageButton ibtnMinimize;
         private Bunifu.Framework.UI.BunifuImageButton ibtnExit;
-        private System.Windows.Forms.Panel panel4;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private System.Windows.Forms.Panel WorkingArea;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSettings;
         private BunifuAnimatorNS.BunifuTransition menuTransition;
-        private frmAppointment frmAppointment1;
-        private frmNotifications frmNotifications1;
-        private frmSettings frmSettings1;
-        private frmTodoList frmTodoList1;
-        private frmSchedule frmSchedule1;
     }
 }
 

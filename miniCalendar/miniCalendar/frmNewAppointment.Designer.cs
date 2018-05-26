@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewAppointment));
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -39,7 +38,7 @@
             this.cbEndHour = new System.Windows.Forms.ComboBox();
             this.cbStartHour = new System.Windows.Forms.ComboBox();
             this.dtpStartDay = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.bunifuiOSSwitch1 = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.switchAllday = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -62,12 +61,12 @@
             this.btnCancel = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tbTitle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.ibtnColorRed = new Bunifu.Framework.UI.BunifuImageButton();
-            this.ibtnColorOrange = new Bunifu.Framework.UI.BunifuImageButton();
-            this.ibtnColorYellow = new Bunifu.Framework.UI.BunifuImageButton();
-            this.ibtnColorGreen = new Bunifu.Framework.UI.BunifuImageButton();
-            this.ibtnColorBlue = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panelTitle = new System.Windows.Forms.Panel();
+            this.checkRed = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.checkOrange = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.checkYellow = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.checkGreen = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.checkBlue = new Bunifu.Framework.UI.BunifuCheckbox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -80,27 +79,12 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnColorRed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnColorOrange)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnColorYellow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnColorGreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnColorBlue)).BeginInit();
+            this.panelTitle.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "New Appointment";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label10);
@@ -110,12 +94,12 @@
             this.panel1.Controls.Add(this.cbEndHour);
             this.panel1.Controls.Add(this.cbStartHour);
             this.panel1.Controls.Add(this.dtpStartDay);
-            this.panel1.Controls.Add(this.bunifuiOSSwitch1);
+            this.panel1.Controls.Add(this.switchAllday);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(-1, 122);
+            this.panel1.Location = new System.Drawing.Point(0, 122);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(422, 90);
+            this.panel1.Size = new System.Drawing.Size(418, 90);
             this.panel1.TabIndex = 2;
             // 
             // label9
@@ -156,6 +140,7 @@
             this.dtpEndDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dtpEndDay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.dtpEndDay.BorderRadius = 0;
+            this.dtpEndDay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtpEndDay.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEndDay.ForeColor = System.Drawing.Color.Black;
             this.dtpEndDay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -308,6 +293,7 @@
             this.dtpStartDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dtpStartDay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.dtpStartDay.BorderRadius = 0;
+            this.dtpStartDay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtpStartDay.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDay.ForeColor = System.Drawing.Color.Black;
             this.dtpStartDay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -316,21 +302,22 @@
             this.dtpStartDay.Name = "dtpStartDay";
             this.dtpStartDay.Size = new System.Drawing.Size(248, 21);
             this.dtpStartDay.TabIndex = 4;
-            this.dtpStartDay.Value = new System.DateTime(2018, 5, 25, 23, 18, 45, 265);
+            this.dtpStartDay.Value = new System.DateTime(2018, 5, 26, 0, 0, 0, 0);
             // 
-            // bunifuiOSSwitch1
+            // switchAllday
             // 
-            this.bunifuiOSSwitch1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuiOSSwitch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuiOSSwitch1.BackgroundImage")));
-            this.bunifuiOSSwitch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuiOSSwitch1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuiOSSwitch1.Location = new System.Drawing.Point(318, 5);
-            this.bunifuiOSSwitch1.Name = "bunifuiOSSwitch1";
-            this.bunifuiOSSwitch1.OffColor = System.Drawing.Color.Gray;
-            this.bunifuiOSSwitch1.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
-            this.bunifuiOSSwitch1.Size = new System.Drawing.Size(35, 20);
-            this.bunifuiOSSwitch1.TabIndex = 3;
-            this.bunifuiOSSwitch1.Value = true;
+            this.switchAllday.BackColor = System.Drawing.Color.Transparent;
+            this.switchAllday.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchAllday.BackgroundImage")));
+            this.switchAllday.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchAllday.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchAllday.Location = new System.Drawing.Point(318, 5);
+            this.switchAllday.Name = "switchAllday";
+            this.switchAllday.OffColor = System.Drawing.Color.Gray;
+            this.switchAllday.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.switchAllday.Size = new System.Drawing.Size(35, 20);
+            this.switchAllday.TabIndex = 3;
+            this.switchAllday.Value = true;
+            this.switchAllday.OnValueChange += new System.EventHandler(this.switchAllday_OnValueChange);
             // 
             // pictureBox1
             // 
@@ -354,13 +341,14 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tbLocation);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(-1, 211);
+            this.panel2.Location = new System.Drawing.Point(0, 211);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(422, 70);
+            this.panel2.Size = new System.Drawing.Size(418, 70);
             this.panel2.TabIndex = 3;
             // 
             // tbLocation
@@ -379,7 +367,6 @@
             this.tbLocation.Name = "tbLocation";
             this.tbLocation.Size = new System.Drawing.Size(385, 28);
             this.tbLocation.TabIndex = 4;
-            this.tbLocation.Text = "Add a location";
             this.tbLocation.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // pictureBox2
@@ -404,14 +391,14 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.tbDescription);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(-1, 358);
+            this.panel3.Location = new System.Drawing.Point(0, 358);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(422, 109);
+            this.panel3.Size = new System.Drawing.Size(418, 109);
             this.panel3.TabIndex = 4;
             // 
             // tbDescription
@@ -444,19 +431,20 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.cbNotiUnit);
             this.panel4.Controls.Add(this.numNotiValue);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(-1, 280);
+            this.panel4.Location = new System.Drawing.Point(0, 280);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(213, 79);
+            this.panel4.Size = new System.Drawing.Size(209, 79);
             this.panel4.TabIndex = 5;
             // 
             // cbNotiUnit
             // 
+            this.cbNotiUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNotiUnit.FormattingEnabled = true;
             this.cbNotiUnit.Items.AddRange(new object[] {
             "minutes",
@@ -496,18 +484,18 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.ibtnColorBlue);
-            this.panel5.Controls.Add(this.ibtnColorGreen);
-            this.panel5.Controls.Add(this.ibtnColorYellow);
-            this.panel5.Controls.Add(this.ibtnColorOrange);
-            this.panel5.Controls.Add(this.ibtnColorRed);
+            this.panel5.Controls.Add(this.checkBlue);
+            this.panel5.Controls.Add(this.checkGreen);
+            this.panel5.Controls.Add(this.checkYellow);
+            this.panel5.Controls.Add(this.checkOrange);
+            this.panel5.Controls.Add(this.checkRed);
             this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(211, 280);
+            this.panel5.Location = new System.Drawing.Point(209, 280);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(210, 79);
+            this.panel5.Size = new System.Drawing.Size(209, 79);
             this.panel5.TabIndex = 5;
             // 
             // pictureBox5
@@ -533,12 +521,12 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.btnCancel);
             this.panel6.Controls.Add(this.btnSave);
-            this.panel6.Location = new System.Drawing.Point(-2, 466);
+            this.panel6.Location = new System.Drawing.Point(0, 466);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(422, 66);
+            this.panel6.Size = new System.Drawing.Size(418, 66);
             this.panel6.TabIndex = 7;
             // 
             // btnCancel
@@ -596,16 +584,16 @@
             // tbTitle
             // 
             this.tbTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbTitle.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.tbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbTitle.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTitle.ForeColor = System.Drawing.Color.Black;
             this.tbTitle.HintForeColor = System.Drawing.Color.Empty;
             this.tbTitle.HintText = "";
             this.tbTitle.isPassword = false;
-            this.tbTitle.LineFocusedColor = System.Drawing.Color.Gray;
-            this.tbTitle.LineIdleColor = System.Drawing.Color.Gray;
-            this.tbTitle.LineMouseHoverColor = System.Drawing.Color.Gray;
-            this.tbTitle.LineThickness = 2;
-            this.tbTitle.Location = new System.Drawing.Point(18, 60);
+            this.tbTitle.LineFocusedColor = System.Drawing.Color.WhiteSmoke;
+            this.tbTitle.LineIdleColor = System.Drawing.Color.Black;
+            this.tbTitle.LineMouseHoverColor = System.Drawing.Color.WhiteSmoke;
+            this.tbTitle.LineThickness = 1;
+            this.tbTitle.Location = new System.Drawing.Point(18, 56);
             this.tbTitle.Margin = new System.Windows.Forms.Padding(4);
             this.tbTitle.Name = "tbTitle";
             this.tbTitle.Size = new System.Drawing.Size(385, 33);
@@ -613,89 +601,88 @@
             this.tbTitle.Text = "Enter Title";
             this.tbTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // panel7
+            // panelTitle
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.tbTitle);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(418, 121);
-            this.panel7.TabIndex = 8;
+            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.panelTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTitle.Controls.Add(this.tbTitle);
+            this.panelTitle.Location = new System.Drawing.Point(0, 0);
+            this.panelTitle.Name = "panelTitle";
+            this.panelTitle.Size = new System.Drawing.Size(418, 121);
+            this.panelTitle.TabIndex = 8;
             // 
-            // ibtnColorRed
+            // checkRed
             // 
-            this.ibtnColorRed.BackColor = System.Drawing.Color.White;
-            this.ibtnColorRed.Image = global::miniCalendar.Properties.Resources.red;
-            this.ibtnColorRed.ImageActive = null;
-            this.ibtnColorRed.Location = new System.Drawing.Point(36, 39);
-            this.ibtnColorRed.Name = "ibtnColorRed";
-            this.ibtnColorRed.Size = new System.Drawing.Size(20, 20);
-            this.ibtnColorRed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnColorRed.TabIndex = 2;
-            this.ibtnColorRed.TabStop = false;
-            this.ibtnColorRed.Zoom = 10;
+            this.checkRed.BackColor = System.Drawing.Color.Red;
+            this.checkRed.ChechedOffColor = System.Drawing.Color.Red;
+            this.checkRed.Checked = false;
+            this.checkRed.CheckedOnColor = System.Drawing.Color.Red;
+            this.checkRed.ForeColor = System.Drawing.Color.White;
+            this.checkRed.Location = new System.Drawing.Point(44, 39);
+            this.checkRed.Name = "checkRed";
+            this.checkRed.Size = new System.Drawing.Size(20, 20);
+            this.checkRed.TabIndex = 1;
+            this.checkRed.OnChange += new System.EventHandler(this.checkRed_OnChange);
             // 
-            // ibtnColorOrange
+            // checkOrange
             // 
-            this.ibtnColorOrange.BackColor = System.Drawing.Color.White;
-            this.ibtnColorOrange.Image = global::miniCalendar.Properties.Resources.red1;
-            this.ibtnColorOrange.ImageActive = null;
-            this.ibtnColorOrange.Location = new System.Drawing.Point(64, 39);
-            this.ibtnColorOrange.Name = "ibtnColorOrange";
-            this.ibtnColorOrange.Size = new System.Drawing.Size(20, 20);
-            this.ibtnColorOrange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnColorOrange.TabIndex = 2;
-            this.ibtnColorOrange.TabStop = false;
-            this.ibtnColorOrange.Zoom = 10;
+            this.checkOrange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.checkOrange.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.checkOrange.Checked = false;
+            this.checkOrange.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.checkOrange.ForeColor = System.Drawing.Color.White;
+            this.checkOrange.Location = new System.Drawing.Point(69, 39);
+            this.checkOrange.Name = "checkOrange";
+            this.checkOrange.Size = new System.Drawing.Size(20, 20);
+            this.checkOrange.TabIndex = 2;
+            this.checkOrange.OnChange += new System.EventHandler(this.checkOrange_OnChange);
             // 
-            // ibtnColorYellow
+            // checkYellow
             // 
-            this.ibtnColorYellow.BackColor = System.Drawing.Color.White;
-            this.ibtnColorYellow.Image = global::miniCalendar.Properties.Resources.red2;
-            this.ibtnColorYellow.ImageActive = null;
-            this.ibtnColorYellow.Location = new System.Drawing.Point(92, 39);
-            this.ibtnColorYellow.Name = "ibtnColorYellow";
-            this.ibtnColorYellow.Size = new System.Drawing.Size(20, 20);
-            this.ibtnColorYellow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnColorYellow.TabIndex = 2;
-            this.ibtnColorYellow.TabStop = false;
-            this.ibtnColorYellow.Zoom = 10;
+            this.checkYellow.BackColor = System.Drawing.Color.Yellow;
+            this.checkYellow.ChechedOffColor = System.Drawing.Color.Yellow;
+            this.checkYellow.Checked = false;
+            this.checkYellow.CheckedOnColor = System.Drawing.Color.Yellow;
+            this.checkYellow.ForeColor = System.Drawing.Color.White;
+            this.checkYellow.Location = new System.Drawing.Point(94, 39);
+            this.checkYellow.Name = "checkYellow";
+            this.checkYellow.Size = new System.Drawing.Size(20, 20);
+            this.checkYellow.TabIndex = 3;
+            this.checkYellow.OnChange += new System.EventHandler(this.checkYellow_OnChange);
             // 
-            // ibtnColorGreen
+            // checkGreen
             // 
-            this.ibtnColorGreen.BackColor = System.Drawing.Color.White;
-            this.ibtnColorGreen.Image = global::miniCalendar.Properties.Resources.red3;
-            this.ibtnColorGreen.ImageActive = null;
-            this.ibtnColorGreen.Location = new System.Drawing.Point(120, 39);
-            this.ibtnColorGreen.Name = "ibtnColorGreen";
-            this.ibtnColorGreen.Size = new System.Drawing.Size(20, 20);
-            this.ibtnColorGreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnColorGreen.TabIndex = 2;
-            this.ibtnColorGreen.TabStop = false;
-            this.ibtnColorGreen.Zoom = 10;
+            this.checkGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.checkGreen.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.checkGreen.Checked = false;
+            this.checkGreen.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.checkGreen.ForeColor = System.Drawing.Color.White;
+            this.checkGreen.Location = new System.Drawing.Point(119, 39);
+            this.checkGreen.Name = "checkGreen";
+            this.checkGreen.Size = new System.Drawing.Size(20, 20);
+            this.checkGreen.TabIndex = 4;
+            this.checkGreen.OnChange += new System.EventHandler(this.checkGreen_OnChange);
             // 
-            // ibtnColorBlue
+            // checkBlue
             // 
-            this.ibtnColorBlue.BackColor = System.Drawing.Color.White;
-            this.ibtnColorBlue.Image = global::miniCalendar.Properties.Resources.blue;
-            this.ibtnColorBlue.ImageActive = null;
-            this.ibtnColorBlue.Location = new System.Drawing.Point(148, 39);
-            this.ibtnColorBlue.Name = "ibtnColorBlue";
-            this.ibtnColorBlue.Size = new System.Drawing.Size(20, 20);
-            this.ibtnColorBlue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnColorBlue.TabIndex = 2;
-            this.ibtnColorBlue.TabStop = false;
-            this.ibtnColorBlue.Zoom = 10;
+            this.checkBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.checkBlue.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.checkBlue.Checked = true;
+            this.checkBlue.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.checkBlue.ForeColor = System.Drawing.Color.White;
+            this.checkBlue.Location = new System.Drawing.Point(144, 39);
+            this.checkBlue.Name = "checkBlue";
+            this.checkBlue.Size = new System.Drawing.Size(20, 20);
+            this.checkBlue.TabIndex = 5;
+            this.checkBlue.OnChange += new System.EventHandler(this.checkBlue_OnChange);
             // 
             // frmNewAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -721,22 +708,15 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnColorRed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnColorOrange)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnColorYellow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnColorGreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnColorBlue)).EndInit();
+            this.panelTitle.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuiOSSwitch bunifuiOSSwitch1;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchAllday;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -766,11 +746,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbEndHour;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tbTitle;
-        private System.Windows.Forms.Panel panel7;
-        private Bunifu.Framework.UI.BunifuImageButton ibtnColorBlue;
-        private Bunifu.Framework.UI.BunifuImageButton ibtnColorGreen;
-        private Bunifu.Framework.UI.BunifuImageButton ibtnColorYellow;
-        private Bunifu.Framework.UI.BunifuImageButton ibtnColorOrange;
-        private Bunifu.Framework.UI.BunifuImageButton ibtnColorRed;
+        private System.Windows.Forms.Panel panelTitle;
+        private Bunifu.Framework.UI.BunifuCheckbox checkBlue;
+        private Bunifu.Framework.UI.BunifuCheckbox checkGreen;
+        private Bunifu.Framework.UI.BunifuCheckbox checkYellow;
+        private Bunifu.Framework.UI.BunifuCheckbox checkOrange;
+        private Bunifu.Framework.UI.BunifuCheckbox checkRed;
     }
 }
