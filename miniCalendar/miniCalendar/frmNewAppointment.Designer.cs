@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewAppointment));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpEndDay = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDay = new System.Windows.Forms.DateTimePicker();
             this.cbEndHour = new System.Windows.Forms.ComboBox();
             this.cbStartHour = new System.Windows.Forms.ComboBox();
             this.switchAllday = new Bunifu.Framework.UI.BunifuiOSSwitch();
@@ -61,8 +63,6 @@
             this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tbTitle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.dtpStartDay = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDay = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -93,6 +93,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(418, 90);
             this.panel1.TabIndex = 2;
+            // 
+            // dtpEndDay
+            // 
+            this.dtpEndDay.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
+            this.dtpEndDay.CustomFormat = "";
+            this.dtpEndDay.Enabled = false;
+            this.dtpEndDay.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.dtpEndDay.Location = new System.Drawing.Point(47, 58);
+            this.dtpEndDay.Name = "dtpEndDay";
+            this.dtpEndDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpEndDay.Size = new System.Drawing.Size(190, 22);
+            this.dtpEndDay.TabIndex = 1;
+            this.dtpEndDay.Visible = false;
+            // 
+            // dtpStartDay
+            // 
+            this.dtpStartDay.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
+            this.dtpStartDay.CustomFormat = "";
+            this.dtpStartDay.Enabled = false;
+            this.dtpStartDay.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.dtpStartDay.Location = new System.Drawing.Point(47, 31);
+            this.dtpStartDay.Name = "dtpStartDay";
+            this.dtpStartDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpStartDay.Size = new System.Drawing.Size(190, 22);
+            this.dtpStartDay.TabIndex = 1;
             // 
             // cbEndHour
             // 
@@ -158,6 +183,7 @@
             this.cbEndHour.Name = "cbEndHour";
             this.cbEndHour.Size = new System.Drawing.Size(75, 21);
             this.cbEndHour.TabIndex = 5;
+            this.cbEndHour.Visible = false;
             // 
             // cbStartHour
             // 
@@ -165,7 +191,6 @@
             this.cbStartHour.DropDownHeight = 60;
             this.cbStartHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStartHour.DropDownWidth = 100;
-            this.cbStartHour.Enabled = false;
             this.cbStartHour.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbStartHour.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStartHour.FormattingEnabled = true;
@@ -521,7 +546,7 @@
             this.btnCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCancel.ActiveForecolor = System.Drawing.Color.White;
             this.btnCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.ButtonText = "CANCEL";
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -547,7 +572,7 @@
             this.btnSave.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
             this.btnSave.ActiveForecolor = System.Drawing.Color.White;
             this.btnSave.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackColor = System.Drawing.SystemColors.Control;
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.ButtonText = "SAVE";
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -595,31 +620,6 @@
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(418, 121);
             this.panelTitle.TabIndex = 8;
-            // 
-            // dtpStartDay
-            // 
-            this.dtpStartDay.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
-            this.dtpStartDay.CustomFormat = "";
-            this.dtpStartDay.Enabled = false;
-            this.dtpStartDay.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.dtpStartDay.Location = new System.Drawing.Point(47, 31);
-            this.dtpStartDay.Name = "dtpStartDay";
-            this.dtpStartDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpStartDay.Size = new System.Drawing.Size(190, 22);
-            this.dtpStartDay.TabIndex = 1;
-            // 
-            // dtpEndDay
-            // 
-            this.dtpEndDay.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
-            this.dtpEndDay.CustomFormat = "";
-            this.dtpEndDay.Enabled = false;
-            this.dtpEndDay.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.dtpEndDay.Location = new System.Drawing.Point(47, 58);
-            this.dtpEndDay.Name = "dtpEndDay";
-            this.dtpEndDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpEndDay.Size = new System.Drawing.Size(190, 22);
-            this.dtpEndDay.TabIndex = 1;
-            this.dtpEndDay.Visible = false;
             // 
             // frmNewAppointment
             // 

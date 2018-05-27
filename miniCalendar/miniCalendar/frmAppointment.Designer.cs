@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNewAppointment = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.panelTimeTable = new System.Windows.Forms.Panel();
-            this.TimeTable = new System.Windows.Forms.TableLayoutPanel();
+            this.showArea = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,65 +59,141 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.btnNewAppointment = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panelTimeTable.SuspendLayout();
-            this.TimeTable.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelTimeTable.SuspendLayout();
+            this.showArea.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.bunifuCustomLabel1);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(246, 533);
+            this.panel3.TabIndex = 4;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(4, 4);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(96, 17);
+            this.bunifuCustomLabel1.TabIndex = 4;
+            this.bunifuCustomLabel1.Text = "APPOINTMENT";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.btnNewAppointment);
+            this.panel2.Controls.Add(this.monthCalendar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 267);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(246, 266);
+            this.panel2.TabIndex = 3;
+            // 
+            // btnNewAppointment
+            // 
+            this.btnNewAppointment.Activecolor = System.Drawing.Color.Gainsboro;
+            this.btnNewAppointment.BackColor = System.Drawing.Color.Silver;
+            this.btnNewAppointment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNewAppointment.BorderRadius = 5;
+            this.btnNewAppointment.ButtonText = "     New Appointment";
+            this.btnNewAppointment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewAppointment.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNewAppointment.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewAppointment.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNewAppointment.Iconimage = global::miniCalendar.Properties.Resources.icons8_Positive_32;
+            this.btnNewAppointment.Iconimage_right = null;
+            this.btnNewAppointment.Iconimage_right_Selected = null;
+            this.btnNewAppointment.Iconimage_Selected = null;
+            this.btnNewAppointment.IconMarginLeft = 10;
+            this.btnNewAppointment.IconMarginRight = 0;
+            this.btnNewAppointment.IconRightVisible = true;
+            this.btnNewAppointment.IconRightZoom = 0D;
+            this.btnNewAppointment.IconVisible = true;
+            this.btnNewAppointment.IconZoom = 50D;
+            this.btnNewAppointment.IsTab = true;
+            this.btnNewAppointment.Location = new System.Drawing.Point(9, 211);
+            this.btnNewAppointment.Name = "btnNewAppointment";
+            this.btnNewAppointment.Normalcolor = System.Drawing.Color.Silver;
+            this.btnNewAppointment.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnNewAppointment.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(110)))));
+            this.btnNewAppointment.selected = false;
+            this.btnNewAppointment.Size = new System.Drawing.Size(227, 49);
+            this.btnNewAppointment.TabIndex = 6;
+            this.btnNewAppointment.Text = "     New Appointment";
+            this.btnNewAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewAppointment.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.btnNewAppointment.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewAppointment.Click += new System.EventHandler(this.btnNewAppointment_Click);
+            // 
+            // monthCalendar
+            // 
+            this.monthCalendar.Location = new System.Drawing.Point(9, 9);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 0;
+            this.monthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateChanged);
             // 
             // panelTimeTable
             // 
-            this.panelTimeTable.Controls.Add(this.TimeTable);
+            this.panelTimeTable.BackColor = System.Drawing.Color.Transparent;
+            this.panelTimeTable.Controls.Add(this.showArea);
             this.panelTimeTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTimeTable.Location = new System.Drawing.Point(246, 0);
             this.panelTimeTable.Name = "panelTimeTable";
             this.panelTimeTable.Size = new System.Drawing.Size(422, 533);
             this.panelTimeTable.TabIndex = 5;
             // 
-            // TimeTable
+            // showArea
             // 
-            this.TimeTable.BackColor = System.Drawing.Color.White;
-            this.TimeTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.TimeTable.ColumnCount = 2;
-            this.TimeTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.TimeTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.TimeTable.Controls.Add(this.panel4, 0, 0);
-            this.TimeTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TimeTable.Location = new System.Drawing.Point(0, 0);
-            this.TimeTable.Name = "TimeTable";
-            this.TimeTable.RowCount = 24;
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
-            this.TimeTable.Size = new System.Drawing.Size(422, 533);
-            this.TimeTable.TabIndex = 0;
+            this.showArea.BackColor = System.Drawing.Color.White;
+            this.showArea.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.showArea.ColumnCount = 2;
+            this.showArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.showArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.showArea.Controls.Add(this.panel4, 0, 0);
+            this.showArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.showArea.Location = new System.Drawing.Point(0, 0);
+            this.showArea.Name = "showArea";
+            this.showArea.RowCount = 24;
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.179443F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166111F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.showArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.showArea.Size = new System.Drawing.Size(422, 533);
+            this.showArea.TabIndex = 3;
             // 
             // panel4
             // 
@@ -139,10 +220,11 @@
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(4, 4);
             this.panel4.Name = "panel4";
-            this.TimeTable.SetRowSpan(this.panel4, 24);
-            this.panel4.Size = new System.Drawing.Size(34, 508);
+            this.showArea.SetRowSpan(this.panel4, 24);
+            this.panel4.Size = new System.Drawing.Size(34, 525);
             this.panel4.TabIndex = 0;
             // 
             // label23
@@ -375,80 +457,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "1 AM";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.bunifuCustomLabel1);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(246, 533);
-            this.panel3.TabIndex = 4;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(4, 4);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(96, 17);
-            this.bunifuCustomLabel1.TabIndex = 4;
-            this.bunifuCustomLabel1.Text = "APPOINTMENT";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.btnNewAppointment);
-            this.panel2.Controls.Add(this.monthCalendar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 267);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(246, 266);
-            this.panel2.TabIndex = 3;
-            // 
-            // monthCalendar
-            // 
-            this.monthCalendar.Location = new System.Drawing.Point(9, 9);
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.TabIndex = 0;
-            // 
-            // btnNewAppointment
-            // 
-            this.btnNewAppointment.Activecolor = System.Drawing.Color.Gainsboro;
-            this.btnNewAppointment.BackColor = System.Drawing.Color.Silver;
-            this.btnNewAppointment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNewAppointment.BorderRadius = 5;
-            this.btnNewAppointment.ButtonText = "     New Appointment";
-            this.btnNewAppointment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNewAppointment.DisabledColor = System.Drawing.Color.Gray;
-            this.btnNewAppointment.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewAppointment.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnNewAppointment.Iconimage = global::miniCalendar.Properties.Resources.icons8_Positive_32;
-            this.btnNewAppointment.Iconimage_right = null;
-            this.btnNewAppointment.Iconimage_right_Selected = null;
-            this.btnNewAppointment.Iconimage_Selected = null;
-            this.btnNewAppointment.IconMarginLeft = 10;
-            this.btnNewAppointment.IconMarginRight = 0;
-            this.btnNewAppointment.IconRightVisible = true;
-            this.btnNewAppointment.IconRightZoom = 0D;
-            this.btnNewAppointment.IconVisible = true;
-            this.btnNewAppointment.IconZoom = 50D;
-            this.btnNewAppointment.IsTab = true;
-            this.btnNewAppointment.Location = new System.Drawing.Point(9, 211);
-            this.btnNewAppointment.Name = "btnNewAppointment";
-            this.btnNewAppointment.Normalcolor = System.Drawing.Color.Silver;
-            this.btnNewAppointment.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnNewAppointment.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(110)))));
-            this.btnNewAppointment.selected = false;
-            this.btnNewAppointment.Size = new System.Drawing.Size(227, 49);
-            this.btnNewAppointment.TabIndex = 6;
-            this.btnNewAppointment.Text = "     New Appointment";
-            this.btnNewAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNewAppointment.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.btnNewAppointment.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewAppointment.Click += new System.EventHandler(this.btnNewAppointment_Click);
-            // 
             // frmAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,48 +467,48 @@
             this.Controls.Add(this.panel3);
             this.Name = "frmAppointment";
             this.Size = new System.Drawing.Size(668, 533);
-            this.panelTimeTable.ResumeLayout(false);
-            this.TimeTable.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panelTimeTable.ResumeLayout(false);
+            this.showArea.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panelTimeTable;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MonthCalendar monthCalendar;
         private Bunifu.Framework.UI.BunifuFlatButton btnNewAppointment;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private System.Windows.Forms.TableLayoutPanel TimeTable;
+        private System.Windows.Forms.Panel panelTimeTable;
+        private System.Windows.Forms.TableLayoutPanel showArea;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

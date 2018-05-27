@@ -60,14 +60,21 @@ namespace miniCalendar
 
                 if (switchAllday.Value == true)
                 {
-                    startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, 0, 0, 0);
+                    int X = cbStartHour.SelectedIndex;
+                    startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, X / 2, 30 * (X % 2), 0);
                     endHour = new DateTime(dtpEndDay.Value.Year, dtpEndDay.Value.Month, dtpEndDay.Value.Day, 23, 59, 59);
                 }
                 else
                 {
-                    string start = cbStartHour.Text;
+                    int X = cbStartHour.SelectedIndex;
+                    int Y = cbEndHour.SelectedIndex;
+                    startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, X / 2, 30 * (X % 2), 0);
+                    endHour = new DateTime(dtpEndDay.Value.Year, dtpEndDay.Value.Month, dtpEndDay.Value.Day, Y / 2, 30 * (Y % 2), 0);
                 }
+
+            
                 dataTable.Add(new Appointment(title, startHour, endHour, location, notiValue, notiUnit, color, description));
+                
                 this.Dispose(false);
             }
         }
@@ -85,8 +92,8 @@ namespace miniCalendar
                 dtpStartDay.Enabled = false;
                 dtpEndDay.Enabled = false;
                 dtpEndDay.Visible = false;
-                cbStartHour.Enabled = false;
                 cbEndHour.Enabled = false;
+                cbEndHour.Visible = false;
 
                 if (dtpEndDay.Value != dtpStartDay.Value)
                 {
@@ -98,8 +105,8 @@ namespace miniCalendar
                 dtpStartDay.Enabled = true;
                 dtpEndDay.Enabled = true;
                 dtpEndDay.Visible = true;
-                cbStartHour.Enabled = true;
                 cbEndHour.Enabled = true;
+                cbEndHour.Visible = true;
             }
         }
 
