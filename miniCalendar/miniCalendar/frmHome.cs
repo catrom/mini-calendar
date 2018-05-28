@@ -78,7 +78,7 @@ namespace miniCalendar
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
-            frmAppointment form = new frmAppointment(dataTable);
+            frmAppointment form = new frmAppointment(dataTable.dataTable);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
             WorkingArea.Controls.Add(form);

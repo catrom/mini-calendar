@@ -12,25 +12,30 @@ namespace miniCalendar
 {
     public partial class frmNewAppointment : UserControl
     {
-        private DataTable dataTable = new DataTable();
-        private DateTime dateTime = new DateTime();
-        private string title = "";
-        private DateTime startHour;
-        private DateTime endHour;
-        private string location = "";
-        private int notiValue;
-        private string notiUnit;
-        private string color = "Blue";
-        private string description = "";
+        public Dictionary<int, Appointment> dataTable = new Dictionary<int, Appointment>();
+        public bool isModified;
+        public DateTime dateTime = new DateTime();
+        public int ID;
+        public string title = "";
+        public DateTime startHour;
+        public DateTime endHour;
+        public string location = "";
+        public int notiValue;
+        public string notiUnit;
+        public string color = "Blue";
+        public string description = "";
 
         public frmNewAppointment()
         {
             InitializeComponent();
         }
-        public frmNewAppointment(DataTable dataTable, DateTime dateTime, bool isModified)
+        public frmNewAppointment(int ID, Dictionary<int, Appointment> dataTable, DateTime dateTime, bool isModified)
         {
             InitializeComponent();
-
+            this.isModified = isModified;
+            this.ID = ID;
+            this.dataTable = dataTable;
+            this.dateTime = dateTime;
 
             if (isModified == false)
             {
@@ -42,26 +47,44 @@ namespace miniCalendar
                 dtpEndDay.Value = dateTime;
                 numNotiValue.Value = 30;
                 cbNotiUnit.SelectedIndex = 0;
-                this.dataTable = dataTable;
-                this.dateTime = dateTime;
+                
 
-                foreach (Control i in this.Controls)
-                {
-                    i.Enabled = true;
-                }
+                //foreach (Control i in this.Controls)
+                //{
+                //    i.Enabled = true;
+                //}
 
-                btnModify.Visible = false;
-                btnDelete.Visible = false;
+                //btnModify.Visible = false;
+                //btnDelete.Visible = false;
             }
             else
             {
+                tbTitle.Text = dataTable[ID].Title;
+                dtpStartDay.Value = dataTable[ID].startHour;
+                dtpEndDay.Value = dataTable[ID].endHour;
+                cbStartHour.SelectedIndex = dataTable[ID].startHour.Hour * 2 + dataTable[ID].startHour.Minute / 30;
+                cbEndHour.SelectedIndex = dataTable[ID].endHour.Hour * 2 + dataTable[ID].endHour.Minute / 30;
+                tbLocation.Text = dataTable[ID].Location;
+                numNotiValue.Value = dataTable[ID].notiValue;
+                cbNotiUnit.SelectedIndex = cbNotiUnit.FindStringExact(dataTable[ID].Title);
+                tbDescription.Text = dataTable[ID].Description;
+
+                //foreach (Control i in this.Controls)
+                //{
+                //    i.Enabled = false;
+                //}
+
+                //btnModify.Enabled = true;
+                ////btnSave.Visible = false;
+                //btnDelete.Visible = false;
+                //btnCancel.Visible = false;
 
             }
             
         }
 
 
-        private void btnSave_Click(object sender, EventArgs e)
+        public void btnSave_Click(object sender, EventArgs e)
         {
             if (dtpStartDay.Value > dtpEndDay.Value ||
                 (dtpStartDay.Value == dtpEndDay.Value && cbStartHour.SelectedIndex > cbEndHour.SelectedIndex))
@@ -91,20 +114,32 @@ namespace miniCalendar
                     endHour = new DateTime(dtpEndDay.Value.Year, dtpEndDay.Value.Month, dtpEndDay.Value.Day, Y / 2, 30 * (Y % 2), 0);
                 }
 
-            
-                dataTable.Add(new Appointment(title, startHour, endHour, location, notiValue, notiUnit, color, description));
                 
-                this.Dispose(false);
+
+                Appointment fin = new Appointment(title, startHour, endHour, location, notiValue, notiUnit, color, description);
+
+
+                if (isModified == true)
+                {
+                    dataTable[ID] = fin;
+                }
+                else
+                {
+                    dataTable.Add(ID, fin);
+                }
+                
+                
+                this.Dispose();
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        public void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose(false);
 
         }
         
-        private void switchAllday_OnValueChange(object sender, EventArgs e)
+        public void switchAllday_OnValueChange(object sender, EventArgs e)
         {
             if (switchAllday.Value == true)
             {
@@ -129,7 +164,7 @@ namespace miniCalendar
             }
         }
 
-        private void checkRed_OnChange(object sender, EventArgs e)
+        public void checkRed_OnChange(object sender, EventArgs e)
         {
             setUncheckColor();
             checkRed.Checked = true;
@@ -137,7 +172,7 @@ namespace miniCalendar
             panelTitle.BackColor = Color.FromArgb(192, 0, 0);
             switchAllday.OnColor = Color.FromArgb(192, 0, 0);
         }
-        private void setUncheckColor()
+        public void setUncheckColor()
         {
             if (color == "Red") checkRed.Checked = false;
             else if (color == "Orange") checkOrange.Checked = false;
@@ -146,7 +181,7 @@ namespace miniCalendar
             else checkBlue.Checked = false;
         }
 
-        private void checkOrange_OnChange(object sender, EventArgs e)
+        public void checkOrange_OnChange(object sender, EventArgs e)
         {
             setUncheckColor();
             checkOrange.Checked = true;
@@ -155,7 +190,7 @@ namespace miniCalendar
             switchAllday.OnColor = Color.FromArgb(255, 128, 0);
         }
 
-        private void checkYellow_OnChange(object sender, EventArgs e)
+        public void checkYellow_OnChange(object sender, EventArgs e)
         {
             setUncheckColor();
             checkYellow.Checked = true;
@@ -164,7 +199,7 @@ namespace miniCalendar
             switchAllday.OnColor = Color.FromArgb(192, 192, 0);
         }
 
-        private void checkGreen_OnChange(object sender, EventArgs e)
+        public void checkGreen_OnChange(object sender, EventArgs e)
         {
             setUncheckColor();
             checkGreen.Checked = true;
@@ -173,7 +208,7 @@ namespace miniCalendar
             switchAllday.OnColor = Color.FromArgb(0, 192, 0);
         }
 
-        private void checkBlue_OnChange(object sender, EventArgs e)
+        public void checkBlue_OnChange(object sender, EventArgs e)
         {
             setUncheckColor();
             checkBlue.Checked = true;
@@ -182,15 +217,10 @@ namespace miniCalendar
             switchAllday.OnColor = Color.FromArgb(0, 192, 192);
         }
 
-        private void btnModify_Click(object sender, EventArgs e)
+        public void btnDelete_Click(object sender, EventArgs e)
         {
-            foreach(Control i in this.Controls)
-            {
-                i.Enabled = true;
-            }
-
-            btnDelete.Visible = true;
-            btnModify.Visible = false;
+            dataTable.Remove(ID);
+            this.Dispose();
         }
     }
 }
