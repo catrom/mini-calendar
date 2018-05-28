@@ -15,10 +15,10 @@ namespace miniCalendar
         DataTable dataTable = new DataTable();
         Dictionary<DateTime, List<Appointment>> groupDateTasks = new Dictionary<DateTime, List<Appointment>>();
         List<List<Appointment>> taskOfDay = new List<List<Appointment>>();
-        List<RichTextBox> taskContainer = new List<RichTextBox>();
+        List<Button> taskContainer = new List<Button>();
         
 
-        // thuộc tính để giúp vẽ task trên panel timeTable;
+        // thuộc tính
         int totalWidth = 380;
 
 
@@ -26,6 +26,7 @@ namespace miniCalendar
         {
             InitializeComponent();
         }
+
         public frmAppointment(DataTable dataTable)
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace miniCalendar
         }
         private void btnNewAppointment_Click(object sender, EventArgs e)
         {
-            frmNewAppointment form = new frmNewAppointment(dataTable, monthCalendar.SelectionRange.Start);
+            frmNewAppointment form = new frmNewAppointment(dataTable, monthCalendar.SelectionRange.Start, false);
             form.Dock = DockStyle.Fill;
             this.panelTimeTable.Controls.Add(form);
             form.BringToFront();
@@ -58,6 +59,8 @@ namespace miniCalendar
         // 
         // PROCESSING TO DRAW TASKS ON TIMETABLE
         //
+
+        // Nhóm các appoinment vào dictionary với key là ngày bắt đầu
         public void groupTaskAccordingToDay()
         {
             foreach (Appointment i in dataTable.dataTable)
@@ -71,6 +74,7 @@ namespace miniCalendar
             }
         }
 
+        // Sắp xếp tăng dần theo thời gian bắt đầu của tất cả appointment trong mỗi ngày
         public void sortingTaskAccordingToTime()
         {
             foreach (KeyValuePair<DateTime, List<Appointment>> i in groupDateTasks)
@@ -91,6 +95,8 @@ namespace miniCalendar
 
         }
 
+        // Hàm có chức năng sắp các task trong một ngày theo từng CỘT 
+        // giúp tránh việc đụng độ khi thể hiện vẽ task ra màn hình
         public void taskOfDay_Building(List<Appointment> list)
         {
             foreach (Appointment i in list)
@@ -132,52 +138,9 @@ namespace miniCalendar
             }
         }
 
-        public void drawingTask(Appointment a, int col, int numsCol)
-        {
-            // width
-            float width = (float)totalWidth / numsCol;
-
-            // height
-            int totalMinutes = (int)(a.endHour - a.startHour).TotalMinutes;
-            float height = ((float)totalMinutes / 60) * (float)22.15; // 23 là độ rộng của một giờ trong timeTable
-
-            // location
-            float X = width * (col - 1) + 41;
-            float Y = (a.startHour.Hour * 2 + a.startHour.Minute / 30) * (float)11.075; // 11.5 pixel là độ dài mỗi khoảng nửa giờ trong timeTable
-
-            // color
-            Color color = new Color();
-            switch(a.Color)
-            {
-                case "Red": color = Color.Red;
-                    break;
-                case "Orange": color = Color.FromArgb(255, 128, 0);
-                    break;
-                case "Yellow": color = Color.Yellow;
-                    break;
-                case "Green": color = Color.FromArgb(51, 205, 117);
-                    break;
-                case "Blue": color = Color.FromArgb(0, 162, 232);
-                    break;
-            }
-
-            // draw
-            RichTextBox task = new RichTextBox();
-            task.Location = new Point((int)X, (int)Y);
-            task.Width = (int)width;
-            task.Height = (int)height;
-            task.Text = a.Title;
-            task.BackColor = color;
-            task.BorderStyle = BorderStyle.FixedSingle;
-            task.SelectionFont = new Font("Segoe UI Semibold", (float)9.75, FontStyle.Bold); 
-
-            taskContainer.Add(task); // thêm vào list task để hồi xoá hết cho dễ <3
-            panelTimeTable.Controls.Add(task); // thêm vào panel
-            task.Visible = true;
-            task.BringToFront();
-        }
-
-        // 
+        // Hàm này được gọi khi có sự kiện Datechanged, thêm appointment...
+        // clear tất cả các container cũ
+        // tạo lại mới container
         public void updateDrawingTimeTable() 
         {
             // clear old data
@@ -193,12 +156,13 @@ namespace miniCalendar
      
         }
 
+        // Hàm hiển thị tất cả các task của cùng một ngày ra màn hình
         public void DrawTimeTable()
         {
             // clear old task
             for (int i = panelTimeTable.Controls.Count - 1; i >= 0; i--)
             {
-                if (panelTimeTable.Controls[i] is RichTextBox)
+                if (panelTimeTable.Controls[i] is Button)
                 {
                     panelTimeTable.Controls.RemoveAt(i);
                 }
@@ -229,7 +193,7 @@ namespace miniCalendar
             }
 
            
-            MessageBox.Show(Convert.ToString(numsColumn) + "\n" + Convert.ToString(numsTasks));
+           // MessageBox.Show(Convert.ToString(numsColumn) + "\n" + Convert.ToString(numsTasks));
 
             int idCol = 1;
             foreach(List<Appointment> col in taskOfDay)
@@ -241,6 +205,57 @@ namespace miniCalendar
 
                ++idCol;
             }
+        }
+
+        // hàm vẽ task ra màn hình, sử dụng thuộc tích richtextbox
+        public void drawingTask(Appointment a, int col, int numsCol)
+        {
+            // width
+            float width = (float)totalWidth / numsCol;
+
+            // height
+            int totalMinutes = (int)(a.endHour - a.startHour).TotalMinutes;
+            float height = ((float)totalMinutes / 60) * (float)22.15; // 23 là độ rộng của một giờ trong timeTable
+
+            // location
+            float X = width * (col - 1) + 41;
+            float Y = (a.startHour.Hour * 2 + a.startHour.Minute / 30) * (float)11.075; // 11.5 pixel là độ dài mỗi khoảng nửa giờ trong timeTable
+
+            // color
+            Color color = new Color();
+            switch (a.Color)
+            {
+                case "Red":
+                    color = Color.FromArgb(192, 0, 0);
+                    break;
+                case "Orange":
+                    color = Color.FromArgb(255, 128, 0);
+                    break;
+                case "Yellow":
+                    color = Color.FromArgb(192, 192, 0);
+                    break;
+                case "Green":
+                    color = Color.FromArgb(0, 192, 0);
+                    break;
+                case "Blue":
+                    color = Color.FromArgb(0, 192, 192);
+                    break;
+            }
+
+            // draw
+            Button task = new Button();
+            task.Location = new Point((int)X, (int)Y);
+            task.Width = (int)width;
+            task.Height = (int)height;
+            task.Text = a.Title;
+            task.BackColor = color;
+            task.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            task.ForeColor = System.Drawing.Color.White;
+
+            taskContainer.Add(task); // thêm vào list task để hồi xoá hết cho dễ <3
+            panelTimeTable.Controls.Add(task); // thêm vào panel
+            task.Visible = true;
+            task.BringToFront();
         }
     }
 }

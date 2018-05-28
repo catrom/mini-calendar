@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <Tasks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Appointment Title="abc" startHour="2018-05-26T00:00:00" endHour="2018-05-26T23:59:59" Location="" notiValue="0" notiUnit="" Color="Red" Description="mpq" />
-  <Appointment Title="chịch" startHour="2018-05-22T00:00:00" endHour="2018-05-23T23:59:59" Location="trường" notiValue="0" notiUnit="" Color="Blue" Description="phê" />
   <Appointment Title="Enter Title" startHour="0001-01-01T00:00:00" endHour="0001-01-01T00:00:00" Location="" notiValue="0" notiUnit="" Color="Blue" Description="" />
   <Appointment Title="Enter Title" startHour="0001-01-01T00:00:00" endHour="0001-01-01T00:00:00" Location="" notiValue="0" notiUnit="" Color="Blue" Description="" />
   <Appointment Title="Enter Title" startHour="2018-05-26T00:00:00" endHour="2018-05-26T23:59:59" Location="" notiValue="0" notiUnit="" Color="Blue" Description="" />
@@ -11,7 +10,5 @@
   <Appointment Title="2" startHour="2018-05-27T10:30:00" endHour="2018-05-27T12:00:00" Location="" notiValue="30" notiUnit="minutes" Color="Green" Description="" />
   <Appointment Title="3" startHour="2018-05-27T06:00:00" endHour="2018-05-27T14:30:00" Location="" notiValue="30" notiUnit="minutes" Color="Orange" Description="" />
   <Appointment Title="null" startHour="2018-05-27T08:00:00" endHour="2018-05-27T23:59:59" Location="" notiValue="30" notiUnit="minutes" Color="Orange" Description="" />
-  <Appointment Title="ooo" startHour="2018-05-27T01:00:00" endHour="2018-05-27T06:00:00" Location="" notiValue="30" notiUnit="minutes" Color="Blue" Description="" />
-  <Appointment Title="new" startHour="2018-05-27T03:00:00" endHour="2018-05-27T09:00:00" Location="" notiValue="30" notiUnit="minutes" Color="Green" Description="" />
-  <Appointment Title="lol" startHour="2018-05-26T07:00:00" endHour="2018-05-26T22:30:00" Location="" notiValue="30" notiUnit="minutes" Color="Yellow" Description="" />
+  <Appointment Title="Enter Title" startHour="2018-05-26T00:00:00" endHour="2018-05-26T23:59:59" Location="location" notiValue="30" notiUnit="minutes" Color="Blue" Description="desription" />
 </Tasks>

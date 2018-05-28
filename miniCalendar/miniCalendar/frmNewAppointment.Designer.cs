@@ -34,21 +34,16 @@
             this.dtpStartDay = new System.Windows.Forms.DateTimePicker();
             this.cbEndHour = new System.Windows.Forms.ComboBox();
             this.cbStartHour = new System.Windows.Forms.ComboBox();
-            this.switchAllday = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tbLocation = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbDescription = new System.Windows.Forms.RichTextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cbNotiUnit = new System.Windows.Forms.ComboBox();
             this.numNotiValue = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.checkBlue = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -56,26 +51,33 @@
             this.checkYellow = new Bunifu.Framework.UI.BunifuCheckbox();
             this.checkOrange = new Bunifu.Framework.UI.BunifuCheckbox();
             this.checkRed = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnCancel = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tbTitle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.btnCancel = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnModify = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.switchAllday = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDelete = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numNotiValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel6.SuspendLayout();
             this.panelTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -249,31 +251,6 @@
             this.cbStartHour.Size = new System.Drawing.Size(75, 21);
             this.cbStartHour.TabIndex = 5;
             // 
-            // switchAllday
-            // 
-            this.switchAllday.BackColor = System.Drawing.Color.Transparent;
-            this.switchAllday.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchAllday.BackgroundImage")));
-            this.switchAllday.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switchAllday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchAllday.Location = new System.Drawing.Point(338, 5);
-            this.switchAllday.Name = "switchAllday";
-            this.switchAllday.OffColor = System.Drawing.Color.Gray;
-            this.switchAllday.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.switchAllday.Size = new System.Drawing.Size(35, 20);
-            this.switchAllday.TabIndex = 3;
-            this.switchAllday.Value = true;
-            this.switchAllday.OnValueChange += new System.EventHandler(this.switchAllday_OnValueChange);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::miniCalendar.Properties.Resources.icons8_Clock_32;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -301,7 +278,7 @@
             this.tbLocation.BackColor = System.Drawing.Color.White;
             this.tbLocation.BorderColorFocused = System.Drawing.Color.Blue;
             this.tbLocation.BorderColorIdle = System.Drawing.Color.Gray;
-            this.tbLocation.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.tbLocation.BorderColorMouseHover = System.Drawing.Color.Gray;
             this.tbLocation.BorderThickness = 2;
             this.tbLocation.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbLocation.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -312,17 +289,8 @@
             this.tbLocation.Name = "tbLocation";
             this.tbLocation.Size = new System.Drawing.Size(385, 28);
             this.tbLocation.TabIndex = 4;
+            this.tbLocation.Text = "location";
             this.tbLocation.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::miniCalendar.Properties.Resources.icons8_Marker_32;
-            this.pictureBox2.Location = new System.Drawing.Point(18, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -348,21 +316,13 @@
             // 
             // tbDescription
             // 
+            this.tbDescription.Enabled = false;
+            this.tbDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescription.Location = new System.Drawing.Point(18, 31);
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(385, 68);
             this.tbDescription.TabIndex = 4;
-            this.tbDescription.Text = "";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::miniCalendar.Properties.Resources.icons8_Note_32;
-            this.pictureBox3.Location = new System.Drawing.Point(18, 5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.tbDescription.Text = "desription";
             // 
             // label3
             // 
@@ -407,16 +367,6 @@
             this.numNotiValue.Size = new System.Drawing.Size(41, 20);
             this.numNotiValue.TabIndex = 4;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::miniCalendar.Properties.Resources.icons8_Alarm_Clock_32;
-            this.pictureBox4.Location = new System.Drawing.Point(18, 5);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -445,10 +395,10 @@
             // 
             // checkBlue
             // 
-            this.checkBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.checkBlue.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.checkBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.checkBlue.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.checkBlue.Checked = true;
-            this.checkBlue.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.checkBlue.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.checkBlue.ForeColor = System.Drawing.Color.White;
             this.checkBlue.Location = new System.Drawing.Point(144, 39);
             this.checkBlue.Name = "checkBlue";
@@ -458,10 +408,10 @@
             // 
             // checkGreen
             // 
-            this.checkGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.checkGreen.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.checkGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.checkGreen.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.checkGreen.Checked = false;
-            this.checkGreen.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.checkGreen.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.checkGreen.ForeColor = System.Drawing.Color.White;
             this.checkGreen.Location = new System.Drawing.Point(119, 39);
             this.checkGreen.Name = "checkGreen";
@@ -471,10 +421,10 @@
             // 
             // checkYellow
             // 
-            this.checkYellow.BackColor = System.Drawing.Color.Yellow;
-            this.checkYellow.ChechedOffColor = System.Drawing.Color.Yellow;
+            this.checkYellow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.checkYellow.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.checkYellow.Checked = false;
-            this.checkYellow.CheckedOnColor = System.Drawing.Color.Yellow;
+            this.checkYellow.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.checkYellow.ForeColor = System.Drawing.Color.White;
             this.checkYellow.Location = new System.Drawing.Point(94, 39);
             this.checkYellow.Name = "checkYellow";
@@ -497,26 +447,16 @@
             // 
             // checkRed
             // 
-            this.checkRed.BackColor = System.Drawing.Color.Red;
-            this.checkRed.ChechedOffColor = System.Drawing.Color.Red;
+            this.checkRed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.checkRed.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.checkRed.Checked = false;
-            this.checkRed.CheckedOnColor = System.Drawing.Color.Red;
+            this.checkRed.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.checkRed.ForeColor = System.Drawing.Color.White;
             this.checkRed.Location = new System.Drawing.Point(44, 39);
             this.checkRed.Name = "checkRed";
             this.checkRed.Size = new System.Drawing.Size(20, 20);
             this.checkRed.TabIndex = 1;
             this.checkRed.OnChange += new System.EventHandler(this.checkRed_OnChange);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::miniCalendar.Properties.Resources.icons8_Color_Wheel_32;
-            this.pictureBox5.Location = new System.Drawing.Point(18, 5);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
             // 
             // label6
             // 
@@ -532,20 +472,52 @@
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.btnDelete);
             this.panel6.Controls.Add(this.btnCancel);
+            this.panel6.Controls.Add(this.btnModify);
             this.panel6.Controls.Add(this.btnSave);
             this.panel6.Location = new System.Drawing.Point(0, 466);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(418, 66);
             this.panel6.TabIndex = 7;
             // 
+            // tbTitle
+            // 
+            this.tbTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTitle.ForeColor = System.Drawing.Color.White;
+            this.tbTitle.HintForeColor = System.Drawing.Color.Empty;
+            this.tbTitle.HintText = "";
+            this.tbTitle.isPassword = false;
+            this.tbTitle.LineFocusedColor = System.Drawing.Color.Blue;
+            this.tbTitle.LineIdleColor = System.Drawing.Color.White;
+            this.tbTitle.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.tbTitle.LineThickness = 2;
+            this.tbTitle.Location = new System.Drawing.Point(18, 56);
+            this.tbTitle.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(385, 33);
+            this.tbTitle.TabIndex = 0;
+            this.tbTitle.Text = "Enter Title";
+            this.tbTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // panelTitle
+            // 
+            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTitle.Controls.Add(this.tbTitle);
+            this.panelTitle.Location = new System.Drawing.Point(0, 0);
+            this.panelTitle.Name = "panelTitle";
+            this.panelTitle.Size = new System.Drawing.Size(418, 121);
+            this.panelTitle.TabIndex = 8;
+            // 
             // btnCancel
             // 
             this.btnCancel.ActiveBorderThickness = 1;
             this.btnCancel.ActiveCornerRadius = 20;
-            this.btnCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCancel.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.ButtonText = "CANCEL";
@@ -555,8 +527,8 @@
             this.btnCancel.IdleBorderThickness = 1;
             this.btnCancel.IdleCornerRadius = 20;
             this.btnCancel.IdleFillColor = System.Drawing.Color.Transparent;
-            this.btnCancel.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCancel.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancel.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCancel.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCancel.Location = new System.Drawing.Point(318, 9);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
@@ -564,6 +536,32 @@
             this.btnCancel.TabIndex = 6;
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnModify
+            // 
+            this.btnModify.ActiveBorderThickness = 1;
+            this.btnModify.ActiveCornerRadius = 20;
+            this.btnModify.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnModify.ActiveForecolor = System.Drawing.Color.White;
+            this.btnModify.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnModify.BackColor = System.Drawing.SystemColors.Control;
+            this.btnModify.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModify.BackgroundImage")));
+            this.btnModify.ButtonText = "MODIFY";
+            this.btnModify.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModify.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModify.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnModify.IdleBorderThickness = 1;
+            this.btnModify.IdleCornerRadius = 20;
+            this.btnModify.IdleFillColor = System.Drawing.SystemColors.Control;
+            this.btnModify.IdleForecolor = System.Drawing.Color.LimeGreen;
+            this.btnModify.IdleLineColor = System.Drawing.Color.LimeGreen;
+            this.btnModify.Location = new System.Drawing.Point(168, 9);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(85, 47);
+            this.btnModify.TabIndex = 6;
+            this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnSave
             // 
@@ -591,35 +589,96 @@
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // tbTitle
+            // pictureBox5
             // 
-            this.tbTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbTitle.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTitle.ForeColor = System.Drawing.Color.Black;
-            this.tbTitle.HintForeColor = System.Drawing.Color.Empty;
-            this.tbTitle.HintText = "";
-            this.tbTitle.isPassword = false;
-            this.tbTitle.LineFocusedColor = System.Drawing.Color.WhiteSmoke;
-            this.tbTitle.LineIdleColor = System.Drawing.Color.Black;
-            this.tbTitle.LineMouseHoverColor = System.Drawing.Color.WhiteSmoke;
-            this.tbTitle.LineThickness = 1;
-            this.tbTitle.Location = new System.Drawing.Point(18, 56);
-            this.tbTitle.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(385, 33);
-            this.tbTitle.TabIndex = 0;
-            this.tbTitle.Text = "Enter Title";
-            this.tbTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.pictureBox5.Image = global::miniCalendar.Properties.Resources.icons8_Color_Wheel_32;
+            this.pictureBox5.Location = new System.Drawing.Point(18, 5);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
             // 
-            // panelTitle
+            // pictureBox4
             // 
-            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.panelTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTitle.Controls.Add(this.tbTitle);
-            this.panelTitle.Location = new System.Drawing.Point(0, 0);
-            this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(418, 121);
-            this.panelTitle.TabIndex = 8;
+            this.pictureBox4.Image = global::miniCalendar.Properties.Resources.icons8_Alarm_Clock_32;
+            this.pictureBox4.Location = new System.Drawing.Point(18, 5);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::miniCalendar.Properties.Resources.icons8_Note_32;
+            this.pictureBox3.Location = new System.Drawing.Point(18, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::miniCalendar.Properties.Resources.icons8_Marker_32;
+            this.pictureBox2.Location = new System.Drawing.Point(18, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // switchAllday
+            // 
+            this.switchAllday.BackColor = System.Drawing.Color.Transparent;
+            this.switchAllday.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchAllday.BackgroundImage")));
+            this.switchAllday.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchAllday.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchAllday.Location = new System.Drawing.Point(338, 5);
+            this.switchAllday.Name = "switchAllday";
+            this.switchAllday.OffColor = System.Drawing.Color.Gray;
+            this.switchAllday.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.switchAllday.Size = new System.Drawing.Size(35, 20);
+            this.switchAllday.TabIndex = 3;
+            this.switchAllday.Value = true;
+            this.switchAllday.OnValueChange += new System.EventHandler(this.switchAllday_OnValueChange);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::miniCalendar.Properties.Resources.icons8_Clock_32;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.ActiveBorderThickness = 1;
+            this.btnDelete.ActiveCornerRadius = 20;
+            this.btnDelete.ActiveFillColor = System.Drawing.Color.Red;
+            this.btnDelete.ActiveForecolor = System.Drawing.Color.White;
+            this.btnDelete.ActiveLineColor = System.Drawing.Color.Red;
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
+            this.btnDelete.ButtonText = "DELETE";
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDelete.IdleBorderThickness = 1;
+            this.btnDelete.IdleCornerRadius = 20;
+            this.btnDelete.IdleFillColor = System.Drawing.Color.Transparent;
+            this.btnDelete.IdleForecolor = System.Drawing.Color.Red;
+            this.btnDelete.IdleLineColor = System.Drawing.Color.Red;
+            this.btnDelete.Location = new System.Drawing.Point(168, 9);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(85, 47);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelete.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmNewAppointment
             // 
@@ -638,22 +697,22 @@
             this.Size = new System.Drawing.Size(418, 529);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numNotiValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -693,5 +752,7 @@
         private Bunifu.Framework.UI.BunifuCheckbox checkRed;
         private System.Windows.Forms.DateTimePicker dtpStartDay;
         private System.Windows.Forms.DateTimePicker dtpEndDay;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnModify;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnDelete;
     }
 }

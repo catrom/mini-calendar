@@ -27,20 +27,39 @@ namespace miniCalendar
         {
             InitializeComponent();
         }
-        public frmNewAppointment(DataTable dataTable, DateTime dateTime)
+        public frmNewAppointment(DataTable dataTable, DateTime dateTime, bool isModified)
         {
             InitializeComponent();
-            dtpStartDay.Value = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
-            dtpEndDay.Value = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
-            cbStartHour.SelectedIndex = 0;
-            cbEndHour.SelectedIndex = 47;
-            dtpStartDay.Value = dateTime;
-            dtpEndDay.Value = dateTime;
-            numNotiValue.Value = 30;
-            cbNotiUnit.SelectedIndex = 0;
-            this.dataTable = dataTable;
-            this.dateTime = dateTime;
+
+
+            if (isModified == false)
+            {
+                dtpStartDay.Value = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
+                dtpEndDay.Value = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
+                cbStartHour.SelectedIndex = 0;
+                cbEndHour.SelectedIndex = 47;
+                dtpStartDay.Value = dateTime;
+                dtpEndDay.Value = dateTime;
+                numNotiValue.Value = 30;
+                cbNotiUnit.SelectedIndex = 0;
+                this.dataTable = dataTable;
+                this.dateTime = dateTime;
+
+                foreach (Control i in this.Controls)
+                {
+                    i.Enabled = true;
+                }
+
+                btnModify.Visible = false;
+                btnDelete.Visible = false;
+            }
+            else
+            {
+
+            }
+            
         }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -115,8 +134,8 @@ namespace miniCalendar
             setUncheckColor();
             checkRed.Checked = true;
             color = "Red";
-            panelTitle.BackColor = Color.Red;
-            switchAllday.OnColor = Color.Red;
+            panelTitle.BackColor = Color.FromArgb(192, 0, 0);
+            switchAllday.OnColor = Color.FromArgb(192, 0, 0);
         }
         private void setUncheckColor()
         {
@@ -141,8 +160,8 @@ namespace miniCalendar
             setUncheckColor();
             checkYellow.Checked = true;
             color = "Yellow";
-            panelTitle.BackColor = Color.Yellow;
-            switchAllday.OnColor = Color.Yellow;
+            panelTitle.BackColor = Color.FromArgb(192, 192, 0);
+            switchAllday.OnColor = Color.FromArgb(192, 192, 0);
         }
 
         private void checkGreen_OnChange(object sender, EventArgs e)
@@ -150,8 +169,8 @@ namespace miniCalendar
             setUncheckColor();
             checkGreen.Checked = true;
             color = "Green";
-            panelTitle.BackColor = Color.FromArgb(51, 205, 117);
-            switchAllday.OnColor = Color.FromArgb(51, 205, 117);
+            panelTitle.BackColor = Color.FromArgb(0, 192, 0);
+            switchAllday.OnColor = Color.FromArgb(0, 192, 0);
         }
 
         private void checkBlue_OnChange(object sender, EventArgs e)
@@ -159,8 +178,19 @@ namespace miniCalendar
             setUncheckColor();
             checkBlue.Checked = true;
             color = "Blue";
-            panelTitle.BackColor = Color.FromArgb(0, 162, 232);
-            switchAllday.OnColor = Color.FromArgb(0, 162, 232);
+            panelTitle.BackColor = Color.FromArgb(0, 192, 192);
+            switchAllday.OnColor = Color.FromArgb(0, 192, 192);
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            foreach(Control i in this.Controls)
+            {
+                i.Enabled = true;
+            }
+
+            btnDelete.Visible = true;
+            btnModify.Visible = false;
         }
     }
 }
