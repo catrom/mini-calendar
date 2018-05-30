@@ -1,0 +1,8 @@
+1. Màn hình chính
+2. Màn hình hi?n th? l?ch
+3. Màn hình qu?n lý s? ki?n
+4. Màn hình hi?n th? s? ki?n
+5. Màn hình hi?n th? th?i khóa bi?u
+6. Màn hình qu?n lý th?i khóa bi?u
+7. Màn hình hi?n th? vi?c c?n làm
+8. Màn hình qu?n lý vi?c c?n làm
