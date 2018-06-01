@@ -93,6 +93,12 @@
     <Compile Include="frmTodoList.Designer.cs">
       <DependentUpon>frmTodoList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmViewAppointment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmViewAppointment.Designer.cs">
+      <DependentUpon>frmViewAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAppointment.resx">
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTodoList.resx">
       <DependentUpon>frmTodoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewAppointment.resx">
+      <DependentUpon>frmViewAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

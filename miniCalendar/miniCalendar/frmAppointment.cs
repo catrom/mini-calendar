@@ -35,7 +35,6 @@ namespace miniCalendar
             dateGroupping();
             taskSorting();
 
-
             DrawTimeTable();
         }
 
@@ -55,19 +54,29 @@ namespace miniCalendar
         {
             
             frmNewAppointment form = new frmNewAppointment(getID(), dataTable, monthCalendar.SelectionRange.Start, false);
-            form.Dock = DockStyle.Fill;
-            this.panelTimeTable.Controls.Add(form);
-            form.BringToFront();
+            form.Disposed += new EventHandler(dispose_event);
+            panelNewApp.Controls.Add(form);
+
+            panelTimeTable.Visible = false;
+            btnNewAppointment.Enabled = false;
+        }
+
+        private void dispose_event(object sender, EventArgs e)
+        {
             
+            
+            updateDrawingTimeTable();
+            DrawTimeTable();
+
+            panelTimeTable.Visible = true;
+            btnNewAppointment.Enabled = true;
+
         }
 
         private void monthCalendar_DateChanged(object sender, DateRangeEventArgs e)
         {
-        
-           
             updateDrawingTimeTable();
             DrawTimeTable();
-            
         }
 
         // 
@@ -161,17 +170,22 @@ namespace miniCalendar
             taskOfDay.Clear();
             dateGroup.Clear();
 
-
+           
             // update new data
             dateGroupping();
             taskSorting();
 
-     
+            monthCalendar.BoldedDates = dateGroup.Keys.ToArray();
         }
 
         // Hàm hiển thị tất cả các task của cùng một ngày ra màn hình
         public void DrawTimeTable()
         {
+            // bolded date in monthcalendar
+            
+            
+
+
             // clear old task
             for (int i = panelTimeTable.Controls.Count - 1; i >= 0; i--)
             {
@@ -200,9 +214,9 @@ namespace miniCalendar
           
             int numsColumn = taskOfDay.Count;
             
-            if (numsColumn == 1)
+            if (numsColumn < 3)
             {
-                numsColumn = 2;
+                numsColumn = 3;
             }
 
            
@@ -262,7 +276,16 @@ namespace miniCalendar
             task.Location = new Point((int)X, (int)Y);
             task.Width = (int)width;
             task.Height = (int)height;
-            task.Text = dataTable[ID].Title;
+
+            if (dataTable[ID].Title == "")
+            {
+                task.Text = "(No Title)";
+            }
+            else
+            {
+                task.Text = dataTable[ID].Title;
+            }
+            
             task.BackColor = color;
             task.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             task.ForeColor = System.Drawing.Color.White;
@@ -279,10 +302,19 @@ namespace miniCalendar
         public void btnTask_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            frmNewAppointment form = new frmNewAppointment(btn.TabIndex, dataTable, monthCalendar.SelectionRange.Start, true);
-            form.Dock = DockStyle.Fill;
-            this.panelTimeTable.Controls.Add(form);
-            form.BringToFront();
+            frmViewAppointment form = new frmViewAppointment(btn.TabIndex, dataTable);
+            form.Disposed += new EventHandler(dispose_event);
+            panelNewApp.Controls.Add(form);
+
+            panelTimeTable.Visible = false;
         }
+
+        private void panelTimeTable_SizeChanged(object sender, EventArgs e)
+        {
+            updateDrawingTimeTable();
+            DrawTimeTable();
+        }
+
+        
     }
 }

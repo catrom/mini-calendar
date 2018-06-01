@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNewAppointment = new Bunifu.Framework.UI.BunifuFlatButton();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
@@ -59,6 +58,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelNewApp = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelTimeTable.SuspendLayout();
@@ -69,23 +69,12 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.bunifuCustomLabel1);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(246, 533);
             this.panel3.TabIndex = 4;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(4, 4);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(96, 17);
-            this.bunifuCustomLabel1.TabIndex = 4;
-            this.bunifuCustomLabel1.Text = "APPOINTMENT";
             // 
             // panel2
             // 
@@ -150,6 +139,7 @@
             this.panelTimeTable.Name = "panelTimeTable";
             this.panelTimeTable.Size = new System.Drawing.Size(422, 533);
             this.panelTimeTable.TabIndex = 5;
+            this.panelTimeTable.SizeChanged += new System.EventHandler(this.panelTimeTable_SizeChanged);
             // 
             // showArea
             // 
@@ -457,6 +447,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "1 AM";
             // 
+            // panelNewApp
+            // 
+            this.panelNewApp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelNewApp.Location = new System.Drawing.Point(246, 0);
+            this.panelNewApp.Name = "panelNewApp";
+            this.panelNewApp.Size = new System.Drawing.Size(422, 533);
+            this.panelNewApp.TabIndex = 6;
+            // 
             // frmAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,11 +462,11 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.panelTimeTable);
+            this.Controls.Add(this.panelNewApp);
             this.Controls.Add(this.panel3);
             this.Name = "frmAppointment";
             this.Size = new System.Drawing.Size(668, 533);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panelTimeTable.ResumeLayout(false);
             this.showArea.ResumeLayout(false);
@@ -483,7 +481,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MonthCalendar monthCalendar;
         private Bunifu.Framework.UI.BunifuFlatButton btnNewAppointment;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Panel panelTimeTable;
         private System.Windows.Forms.TableLayoutPanel showArea;
         private System.Windows.Forms.Panel panel4;
@@ -510,5 +507,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelNewApp;
     }
 }

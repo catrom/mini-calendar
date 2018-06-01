@@ -13,9 +13,9 @@ namespace miniCalendar
     public partial class frmNewAppointment : UserControl
     {
         public Dictionary<int, Appointment> dataTable = new Dictionary<int, Appointment>();
-        public bool isModified;
         public DateTime dateTime = new DateTime();
         public int ID;
+        public bool isModified;
         public string title = "";
         public DateTime startHour;
         public DateTime endHour;
@@ -29,11 +29,12 @@ namespace miniCalendar
         {
             InitializeComponent();
         }
+
         public frmNewAppointment(int ID, Dictionary<int, Appointment> dataTable, DateTime dateTime, bool isModified)
         {
             InitializeComponent();
-            this.isModified = isModified;
             this.ID = ID;
+            this.isModified = isModified;
             this.dataTable = dataTable;
             this.dateTime = dateTime;
 
@@ -47,40 +48,95 @@ namespace miniCalendar
                 dtpEndDay.Value = dateTime;
                 numNotiValue.Value = 30;
                 cbNotiUnit.SelectedIndex = 0;
-                
+                setUncheckColor();
+                changeColorBlue();
 
-                //foreach (Control i in this.Controls)
-                //{
-                //    i.Enabled = true;
-                //}
-
-                //btnModify.Visible = false;
-                //btnDelete.Visible = false;
+                switchAllday.Value = true;
+                dtpStartDay.Enabled = false;
+                dtpEndDay.Visible = false;
+                cbStartHour.Visible = false;
+                cbEndHour.Visible = false;
             }
             else
             {
-                tbTitle.Text = dataTable[ID].Title;
+                if (dataTable[ID].Title == "")
+                {
+                    tbTitle.Text = "(No Title)";
+                }
+                else
+                {
+                    tbTitle.Text = dataTable[ID].Title;
+                }
+                
                 dtpStartDay.Value = dataTable[ID].startHour;
                 dtpEndDay.Value = dataTable[ID].endHour;
                 cbStartHour.SelectedIndex = dataTable[ID].startHour.Hour * 2 + dataTable[ID].startHour.Minute / 30;
                 cbEndHour.SelectedIndex = dataTable[ID].endHour.Hour * 2 + dataTable[ID].endHour.Minute / 30;
-                tbLocation.Text = dataTable[ID].Location;
+
+                if (dataTable[ID].Location == "")
+                {
+                    tbLocation.Text = "Add a location";
+                    tbLocation.ForeColor = Color.DarkGray;
+                }
+                else
+                {
+                    tbLocation.Text = dataTable[ID].Location;
+                    tbLocation.ForeColor = Color.Black;
+                }
+                
                 numNotiValue.Value = dataTable[ID].notiValue;
-                cbNotiUnit.SelectedIndex = cbNotiUnit.FindStringExact(dataTable[ID].Title);
-                tbDescription.Text = dataTable[ID].Description;
+                cbNotiUnit.SelectedIndex = cbNotiUnit.FindStringExact(dataTable[ID].notiUnit);
+                color = dataTable[ID].Color;
 
-                //foreach (Control i in this.Controls)
-                //{
-                //    i.Enabled = false;
-                //}
+                if (dataTable[ID].Description == "")
+                {
+                    tbDescription.Text = "Add descriptions";
+                    tbDescription.ForeColor = Color.DarkGray;
+                }
+                else
+                {
+                    tbDescription.Text = dataTable[ID].Description;
+                    tbDescription.ForeColor = Color.Black;
+                }
 
-                //btnModify.Enabled = true;
-                ////btnSave.Visible = false;
-                //btnDelete.Visible = false;
-                //btnCancel.Visible = false;
 
+                if (dataTable[ID].startHour.Date == dataTable[ID].endHour.Date &&
+                    dataTable[ID].endHour.Minute == 59)
+                {
+                    switchAllday.Value = true;
+                    cbStartHour.Visible = false;
+                    dtpEndDay.Visible = false;
+                    cbEndHour.Visible = false;
+                }
+                else
+                {
+                    switchAllday.Value = false;
+                    cbStartHour.Visible = true;
+                    dtpEndDay.Visible = true;
+                    cbEndHour.Visible = true;
+                }
+
+                setUncheckColor();
+                switch (dataTable[ID].Color)
+                {
+                    case "Red":
+                        changeColorRed();
+                        break;
+                    case "Orange":
+                        changeColorOrange();
+                        break;
+                    case "Yellow":
+                        changeColorYellow();
+                        break;
+                    case "Green":
+                        changeColorGreen();
+                        break;
+                    case "Blue":
+                        changeColorBlue();
+                        break;
+                }
             }
-            
+
         }
 
 
@@ -94,16 +150,40 @@ namespace miniCalendar
             else
             {
                 // set value
-                title = tbTitle.Text;
-                location = tbLocation.Text;
+                if (tbTitle.Text == "Enter Title" || tbTitle.Text == "(No Title)")
+                {
+                    title = "";
+                }
+                else
+                {
+                    title = tbTitle.Text;
+                }
+
+                if (tbLocation.Text == "Add a location")
+                {
+                    location = "";
+                }
+                else
+                {
+                    location = tbLocation.Text;
+                }
+
+                if (tbDescription.Text == "Add descriptions")
+                {
+                    description = "";
+                } 
+                else
+                {
+                    description = tbDescription.Text;
+                }
+
                 notiValue = Convert.ToInt32(numNotiValue.Value);
                 notiUnit = cbNotiUnit.Text;
-                description = tbDescription.Text;
+                
 
                 if (switchAllday.Value == true)
                 {
-                    int X = cbStartHour.SelectedIndex;
-                    startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, X / 2, 30 * (X % 2), 0);
+                    startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, 0, 0, 0);
                     endHour = new DateTime(dtpEndDay.Value.Year, dtpEndDay.Value.Month, dtpEndDay.Value.Day, 23, 59, 59);
                 }
                 else
@@ -127,16 +207,16 @@ namespace miniCalendar
                 {
                     dataTable.Add(ID, fin);
                 }
-                
-                
-                this.Dispose();
+
+
+                Dispose();
+
             }
         }
 
         public void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Dispose(false);
-
+            Dispose();
         }
         
         public void switchAllday_OnValueChange(object sender, EventArgs e)
@@ -144,9 +224,8 @@ namespace miniCalendar
             if (switchAllday.Value == true)
             {
                 dtpStartDay.Enabled = false;
-                dtpEndDay.Enabled = false;
                 dtpEndDay.Visible = false;
-                cbEndHour.Enabled = false;
+                cbStartHour.Visible = false;
                 cbEndHour.Visible = false;
 
                 if (dtpEndDay.Value != dtpStartDay.Value)
@@ -157,14 +236,13 @@ namespace miniCalendar
             else
             {
                 dtpStartDay.Enabled = true;
-                dtpEndDay.Enabled = true;
+                cbStartHour.Visible = true;
                 dtpEndDay.Visible = true;
-                cbEndHour.Enabled = true;
                 cbEndHour.Visible = true;
             }
         }
 
-        public void checkRed_OnChange(object sender, EventArgs e)
+        public void changeColorRed()
         {
             setUncheckColor();
             checkRed.Checked = true;
@@ -172,6 +250,43 @@ namespace miniCalendar
             panelTitle.BackColor = Color.FromArgb(192, 0, 0);
             switchAllday.OnColor = Color.FromArgb(192, 0, 0);
         }
+
+        public void changeColorOrange()
+        {
+            setUncheckColor();
+            checkOrange.Checked = true;
+            color = "Orange";
+            panelTitle.BackColor = Color.FromArgb(255, 128, 0);
+            switchAllday.OnColor = Color.FromArgb(255, 128, 0);
+        }
+
+        public void changeColorYellow()
+        {
+            setUncheckColor();
+            checkYellow.Checked = true;
+            color = "Yellow";
+            panelTitle.BackColor = Color.FromArgb(192, 192, 0);
+            switchAllday.OnColor = Color.FromArgb(192, 192, 0);
+        }
+
+        public void changeColorGreen()
+        {
+            setUncheckColor();
+            checkGreen.Checked = true;
+            color = "Green";
+            panelTitle.BackColor = Color.FromArgb(0, 192, 0);
+            switchAllday.OnColor = Color.FromArgb(0, 192, 0);
+        }
+
+        public void changeColorBlue()
+        {
+            setUncheckColor();
+            checkBlue.Checked = true;
+            color = "Blue";
+            panelTitle.BackColor = Color.FromArgb(0, 192, 192);
+            switchAllday.OnColor = Color.FromArgb(0, 192, 192);
+        }
+
         public void setUncheckColor()
         {
             if (color == "Red") checkRed.Checked = false;
@@ -181,46 +296,115 @@ namespace miniCalendar
             else checkBlue.Checked = false;
         }
 
+        public void checkRed_OnChange(object sender, EventArgs e)
+        {
+            changeColorRed();
+        }
+        
+
         public void checkOrange_OnChange(object sender, EventArgs e)
         {
-            setUncheckColor();
-            checkOrange.Checked = true;
-            color = "Orange";
-            panelTitle.BackColor = Color.FromArgb(255, 128, 0);
-            switchAllday.OnColor = Color.FromArgb(255, 128, 0);
+            changeColorOrange();
         }
 
         public void checkYellow_OnChange(object sender, EventArgs e)
         {
-            setUncheckColor();
-            checkYellow.Checked = true;
-            color = "Yellow";
-            panelTitle.BackColor = Color.FromArgb(192, 192, 0);
-            switchAllday.OnColor = Color.FromArgb(192, 192, 0);
+            changeColorYellow();
         }
 
         public void checkGreen_OnChange(object sender, EventArgs e)
         {
-            setUncheckColor();
-            checkGreen.Checked = true;
-            color = "Green";
-            panelTitle.BackColor = Color.FromArgb(0, 192, 0);
-            switchAllday.OnColor = Color.FromArgb(0, 192, 0);
+            changeColorGreen();
         }
 
         public void checkBlue_OnChange(object sender, EventArgs e)
         {
-            setUncheckColor();
-            checkBlue.Checked = true;
-            color = "Blue";
-            panelTitle.BackColor = Color.FromArgb(0, 192, 192);
-            switchAllday.OnColor = Color.FromArgb(0, 192, 192);
+            changeColorBlue();
         }
 
         public void btnDelete_Click(object sender, EventArgs e)
         {
             dataTable.Remove(ID);
             this.Dispose();
+        }
+
+        //
+        // For UX
+        //
+        //
+
+        private void tbTitle_Enter(object sender, EventArgs e)
+        {
+            if (tbTitle.Text == "Enter Title")
+            {
+                tbTitle.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void tbTitle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (tbTitle.Text == "Enter Title")
+            {
+                tbTitle.Text = "";
+            }
+
+            tbTitle.ForeColor = Color.White;
+        }
+
+        private void tbTitle_Leave(object sender, EventArgs e)
+        {
+            string title = tbTitle.Text.Replace(" ", string.Empty);
+            if (title == "" || tbTitle.Text == "Enter Title")
+            {
+                tbTitle.Text = "Enter Title";
+                tbTitle.ForeColor = Color.White;
+            }
+        }
+
+        private void tbLocation_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbLocation_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (tbLocation.Text == "Add a location")
+            {
+                tbLocation.Text = "";
+            }
+            tbLocation.ForeColor = Color.Black;
+        }
+
+        private void tbLocation_Leave(object sender, EventArgs e)
+        {
+            if (tbLocation.Text == "" || tbLocation.Text == "Add a location")
+            {
+                tbLocation.Text = "Add a location";
+                tbLocation.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void tbDescription_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (tbDescription.Text == "Add descriptions")
+            {
+                tbDescription.Text = "";
+            }
+            tbDescription.ForeColor = Color.Black;
+        }
+
+        private void tbDescription_Leave(object sender, EventArgs e)
+        {
+            if (tbDescription.Text == "" || tbDescription.Text == "Add descriptions")
+            {
+                tbDescription.Text = "Add descriptions";
+                tbDescription.ForeColor = Color.DarkGray;
+            }
         }
     }
 }
