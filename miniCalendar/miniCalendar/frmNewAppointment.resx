@@ -136,16 +136,16 @@
   <data name="btnSave.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFUAAAAvCAYAAACSTIb9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIjSURBVGhD7Zq9S8NQFEf925xcnFycXJxcXFycXNRBcBAR
-        wcGPQRwEdVEQRZ0ERUEEBRHBQRwUh6TJ/uS8+tImTUtTe6f+hgNtelvoyX03L7l3KIoiJ/qLpBogqQZI
-        qgGSaoCkGtBR6vdP5I7vYje3n7jpncSNr6ZueHEw4b/jYHYvcUc3Nff5Ve4M2kq9eoz9DyEUsdfPsXv9
-        iEtjBwH+Ow7OHmI3f1BPMOSWxbZI5QzwpZndxL1/5j8TDfC0cJiWespJJXByo57ezcdFe1jRU5tpbhXn
-        pJKhElodygL1NrzPpGKcVA7vRTXWThO3dVHPVi+VqzyFVzW0d3BI6Xx6/5PKkmfpFwNFNbYvaz5jvVT2
-        XmwVikGiGg9vsc9WL3ViPfVpWwwS1aAEjCyldamjy2nHOwTRPdx9eam8KH4oekNSDZBUAyTVAEk1QFIN
-        kFQDJNUASTVAUg2QVAMk1QBJNUBSDcik8gyQZ4HFAFGdTCr9qUEelOgnmVS6qHRTiwGiGnRP6KJ4qbRW
-        aVgVg0Q1QgPVS2XpY1h19X+EBqqXChvnNU9zkOiek/uaH+bjdSaVLGV05fal9QuiMwyhsNJD8zSTChTa
-        MGXRfFy0B6EkI/NU4VhOKpCpiA1zQaI91E8ytFkotEgFSgG7Ac4AVzTNWDVgiYfpci5MZfMSpVIDnAG2
-        CGMr5SPbgwiDJ2G6vMwZdJQqekNSDZBUAyTVAEntO5H7BY8ajPSRummhAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIWSURBVGhD7ZqxS8NQEIf925xcnFycXJxcXFycXMRBcBAR
+        oYPiIA6CuDiIIk6C4lAEBRGhg3RQHJIm+5Pv1Zc2aRqa2pv6Gz5o02uhX+5dXnI3E0WRE5NFUg2QVAMk
+        1QBJNUBSDaiU+v0Tucun2G2cJW71OHGLe6mb3ZpO+O84WD9N3MVDx7W/yp3BUKl3z7H/IYQi9v41du+f
+        cWnsNMB/x8F1M3ab590EQ25Z7IBUzgBfWjtJXKud/0z0qPKUk0rgcqOb3v3HxXBY0SuHaW4V56RiXkLr
+        Q1mg3ob3mVSMk8rhvajH/lXijm672eqlcpWn8KqGjg8OKZ0vrT+pLHmWfjFQ1INMJWO9VPZebBWKQaIe
+        zY/YZ6uXunSQ+rQtBol6UALmttOu1PmdtPIOQYwOd19eKi+KH4rxkFQDJNUASTVAUg2QVAMk1QBJNUBS
+        DZBUAyTVAEk1QFINkFQDMqk8A+RZYDFA1CeTSn9qmgclJkkmlS4q3dRigKgH3RO6KF5qaFgVg0Q9QgPV
+        S2XpY1h19X+EBqqXCo2bjqc/SIxOmI7kdSaVLGV05fFt8AuiGoZQWOmheZpJBQptmLLoPy6Gg1CSkXmq
+        cCwnFchUxIa5IDEc6icZ2i8UBqQCpYDdAGeAK5pmrHqwxEP95MJUNi9RKjXAGWCLsLBbPrI9jTB4EqbL
+        y5xBpVQxHpJqgKQaIKkGSOrEidwvSuGM6wshD7wAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="switchAllday.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

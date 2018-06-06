@@ -25,8 +25,5 @@ C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\m
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmViewAppointment.resources
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\bin\Debug\MPK_Calendar.dll
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\bin\Debug\MPK_Calendar.xml
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\bin\Debug\MonthCalendar.dll
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmAppointment.resources
 C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csprojResolveAssemblyReference.cache

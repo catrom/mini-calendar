@@ -4,4 +4,6 @@
   <Appointment Title="cba" startHour="2018-06-01T08:30:00" endHour="2018-06-01T19:30:00" Location="xyz" notiValue="30" notiUnit="minutes" Color="Red" Description="fsdasdasd" />
   <Appointment Title="this title" startHour="2018-06-01T19:30:00" endHour="2018-06-01T23:30:00" Location="ppp" notiValue="30" notiUnit="hours" Color="Blue" Description="a&#xA;b&#xA;c" />
   <Appointment Title="old title" startHour="2018-05-28T00:00:00" endHour="2018-05-28T23:59:59" Location="school" notiValue="30" notiUnit="minutes" Color="Blue" Description="abc &#xA;xyz" />
+  <Appointment Title="many days" startHour="2018-06-06T00:00:00" endHour="2018-06-07T18:30:00" Location="somewhere" notiValue="30" notiUnit="minutes" Color="Blue" Description="something" />
+  <Appointment Title="new appointment" startHour="2018-06-07T14:00:00" endHour="2018-06-09T11:00:00" Location="home" notiValue="30" notiUnit="minutes" Color="Yellow" Description="" />
 </Tasks>

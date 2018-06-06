@@ -121,16 +121,16 @@
   <data name="btnModify.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFUAAAAvCAYAAACSTIb9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVGhD7ZqxTgJBEIYp6SjtKO0o6SjtKO30Kezs4Cns
-        sKOjtLMxEo2i0YiFYqFiNBKNhjdY8y3ZkzsO5JCp+IsvueMGEr6bnVuYyQ2HQyeWi6QaIKkGSKoBkmqA
-        pBowU+rge+AaTw23ebPpKpcVVzwtutxRbiXhu+Ogel11e497rv/VT3UGU6W2Xlr+gxCK2IPXA9f96KbG
-        rgJ8dxw0+0231d3ybpCbFjshlTvAmzauNlzvsxe7Jn7B0/btdqqnmFQCS+elqXdATMKKLl+UY6s4JpUM
-        ldDsUBaot+E8kopxUjmci2zs3O24Wq/mj71UnvIUXtXQxcEhpbMz6IyksuRZ+slAkY36Q91nrJfK3out
-        QjJIZKP93vbZ6qWun637tE0GiWxQAvLH+ZHUQrsw8xeCmB//CywcJC+KxZBUAyTVAEk1QFINkFQDJNUA
-        STVAUg2QVAMk1QBJNUBSDZBUAyKp/AfIf4HJAJGdSCr9qVUelFgmkVS6qHRTkwEiG3RP6KJ4qbRWaVgl
-        g0Q2QgPVS2XpY1h19X+EBqqXCrv3u57xIDE/+8/7fpiP40gqWcroyuHbYSxY/A1DKKz00DyNpAKFNkxZ
-        jL8upoNQkpF5qvBaTCqQqYgNc0FiOtRPMnRcKExIBUoBuwHuAE80zVj9whIP0+U8mNLmJVKlBrgDbBHW
-        TtZGm1rhB0/CdHmaM5gpVSyGpBogqQZIqgGSunSG7gchx7yeaMZ6IwAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVGhD7ZqxTgJBEIYp6SjpKOko7SzpKOl4Czo63oKO
+        0s6SjsZINIpGI43SaDAaiUbDG6z5luzBHQdyyFT8xZfccQMJ383OLczkZrOZE/tFUg2QVAMk1QBJNUBS
+        Ddgodfozdd2Xrqs/1N3x7bErXZZc7ix3kPDdcVC7r7nOc8dNviepzmCt1NPXU/9BCEVs763nRp+j1NhD
+        gO+Og5PJiWuMGt4NctNiV6RyB3hT9a7qxl/j2DWxYJOnmFQCK9eVtXdArMKKPro5iq3imFTMS2h2KAvU
+        23AeScU4qRzORTaaj03XHrf9sZfKU57Cqxq6OzikdA6nw7lUljxLPxkoskGmkrFeKnsvtgrJIJGNwcfA
+        Z6uXWr4q+7RNBolsUALy5/m51MKgsPEXgtge/wssHCQvit2QVAMk1QBJNUBSDZBUAyTVAEk1QFINkFQD
+        JNUASTVAUg2QVAMiqfwHyH+ByQCRnUgq/alDHpTYJ5FUuqh0U5MBIht0T+iieKmhYZUMEtkIDVQvlaWP
+        YdXV/xEaqF4qtJ5anuUgsT1hOpLjSCpZyuhK/70fCxZ/wxAKKz00TyOpQKENUxbLr4v1IJRkZJ4qvBaT
+        CmQqYsNckFgP9ZMMXRYKK1KBUsBugDvAE00zVgtY4qF+8mBKm5dIlRrgDrBFKF4U55ta4QdPwnR5mjPY
+        KFXshqQaIKkGSKoBkrp3Zu4X3X+8lTfGI6IAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnDelete.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

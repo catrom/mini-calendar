@@ -58,8 +58,8 @@ namespace miniCalendar
             {
                 lbStartHour.ForeColor = Color.Black;
                 lbEndHour.ForeColor = Color.Black;
-                lbStartHour.Text = dataTable[ID].startHour.ToString("ddddddddd, dd MMM yyyy     hh:mm tt");
-                lbEndHour.Text = dataTable[ID].endHour.ToString("ddddddddd, dd MMM yyyy     hh:mm tt");
+                lbStartHour.Text = dataTable[ID].startHour.ToString("ddddddddd, dd MMM yyyy       hh:mm tt");
+                lbEndHour.Text = dataTable[ID].endHour.ToString("ddddddddd, dd MMM yyyy       hh:mm tt");
             }
 
 
