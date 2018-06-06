@@ -2,4 +2,5 @@
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <symbolItem key="2018-06-01T00:00:00" value="6" />
   <symbolItem key="2018-05-28T00:00:00" value="1" />
+  <symbolItem key="2018-06-06T00:00:00" value="0" />
 </items>

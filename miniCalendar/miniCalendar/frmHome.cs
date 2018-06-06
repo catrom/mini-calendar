@@ -21,7 +21,7 @@ namespace miniCalendar
             this.dataTable = dataTable;
             this.myMonthCalendar = monthItem;
 
-            frmNotifications form = new frmNotifications();
+            frmNotifications form = new frmNotifications(dataTable);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Add(form);
         }
@@ -66,7 +66,7 @@ namespace miniCalendar
 
         private void btnNotifications_Click(object sender, EventArgs e)
         {
-            frmNotifications form = new frmNotifications();
+            frmNotifications form = new frmNotifications(dataTable);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
             WorkingArea.Controls.Add(form);

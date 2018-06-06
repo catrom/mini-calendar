@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToastNotifications;
 
 namespace miniCalendar
 {
@@ -22,7 +23,8 @@ namespace miniCalendar
         public frmNotifications(DataTable dataTable)
         {
             this.dataTable = dataTable;
-            CheckNotifications();
+            InitializeComponent();
+            Task.Run(action: () => CheckNotifications());
         }
 
         private void bunifuSwitch1_Click(object sender, EventArgs e)
@@ -32,56 +34,61 @@ namespace miniCalendar
 
         private void CheckNotifications()
         {
-            Task.Run(async () =>
+            while (true)
             {
-                while (true)
+                for (int i = 0; i < dataTable.dataTable.Count(); i++)
                 {
-                    for (int i = 0; i < dataTable.dataTable.Count(); i++)
+                    switch (dataTable.dataTable[i].notiUnit)
                     {
-                        TimeSpan notiTime = dataTable.dataTable[i].startHour.Subtract(DateTime.Now);
-                        switch (dataTable.dataTable[i].notiUnit)
-                        {
-                            case "minutes":
+                        case "minutes":
+                            {
+                                DateTime notiTime = dataTable.dataTable[i].startHour.AddMinutes(-(dataTable.dataTable[i].notiValue));
+                                if (notiTime <= DateTime.Now)
                                 {
-                                    if (notiTime.TotalMinutes >= dataTable.dataTable[i].notiValue)
-                                    {
-                                        notifications.Add(new Notifications(dataTable.dataTable[i].startHour,
-                                                                           dataTable.dataTable[i].endHour,
-                                                                           dataTable.dataTable[i].Description));
-                                        if (notifications.Count() > 6)
-                                            notifications.RemoveAt(6);
-                                    }
-                                    break;
+                                    notifications.Add(new Notifications(dataTable.dataTable[i].startHour,
+                                                                        dataTable.dataTable[i].endHour,
+                                                                        dataTable.dataTable[i].Description));
+                                    NotificationPopup toastNotification = new NotificationPopup(notifications[i].startHour.ToString(), notifications[i].description, 10, FormAnimator.AnimationMethod.Roll, FormAnimator.AnimationDirection.Up);
+                                    toastNotification.Show();
+                                    if (notifications.Count() > 6)
+                                        notifications.RemoveAt(6);
                                 }
-                            case "hours":
+                                break;
+                            }
+                        case "hours":
+                            {
+                                DateTime notiTime = dataTable.dataTable[i].startHour.AddHours(-(dataTable.dataTable[i].notiValue));
+                                if (notiTime <= DateTime.Now)
                                 {
-                                    if (notiTime.TotalHours >= dataTable.dataTable[i].notiValue)
-                                    {
-                                        notifications.Add(new Notifications(dataTable.dataTable[i].startHour,
-                                                                           dataTable.dataTable[i].endHour,
-                                                                           dataTable.dataTable[i].Description));
-                                        if (notifications.Count() > 6)
-                                            notifications.RemoveAt(6);
-                                    }
-                                    break;
+                                    notifications.Add(new Notifications(dataTable.dataTable[i].startHour,
+                                                                        dataTable.dataTable[i].endHour,
+                                                                        dataTable.dataTable[i].Description));
+                                    NotificationPopup toastNotification = new NotificationPopup(notifications[i].startHour.ToString(), notifications[i].description, 10, FormAnimator.AnimationMethod.Roll, FormAnimator.AnimationDirection.Up);
+                                    toastNotification.Show();
+                                    if (notifications.Count() > 6)
+                                        notifications.RemoveAt(6);
                                 }
-                            case "days":
+                                break;
+                            }
+                        case "days":
+                            {
+                                DateTime notiTime = dataTable.dataTable[i].startHour.AddDays(-(dataTable.dataTable[i].notiValue));
+                                if (notiTime <= DateTime.Now)
                                 {
-                                    if (notiTime.TotalDays >= dataTable.dataTable[i].notiValue)
-                                    {
-                                        notifications.Add(new Notifications(dataTable.dataTable[i].startHour,
-                                                                           dataTable.dataTable[i].endHour,
-                                                                           dataTable.dataTable[i].Description));
-                                        if (notifications.Count() > 6)
-                                            notifications.RemoveAt(6);
-                                    }
-                                    break;
+                                    notifications.Add(new Notifications(dataTable.dataTable[i].startHour,
+                                                                        dataTable.dataTable[i].endHour,
+                                                                        dataTable.dataTable[i].Description));
+                                    NotificationPopup toastNotification = new NotificationPopup(notifications[i].startHour.ToString(), notifications[i].description, 10, FormAnimator.AnimationMethod.Roll, FormAnimator.AnimationDirection.Up);
+                                    toastNotification.Show();
+                                    if (notifications.Count() > 6)
+                                        notifications.RemoveAt(6);
                                 }
-                        }
+                                break;
+                            }
                     }
-                    await Task.Delay(60000);
+                    DrawNotifications();
                 }
-            });
+            }
         }
         private void DrawNotifications()
         {
@@ -97,6 +104,13 @@ namespace miniCalendar
                 label1.Text = notifications[5].description;
             if (notifications.Count == 6)
                 label1.Text = notifications[6].description;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NotificationPopup toastNotification = new NotificationPopup(dataTable.dataTable[1].startHour.ToString(), dataTable.dataTable[1].notiUnit, 10, FormAnimator.AnimationMethod.Roll, FormAnimator.AnimationDirection.Up);
+            toastNotification.Show();
+            Task.Run(() => CheckNotifications());
         }
     }
 }
