@@ -29,9 +29,35 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelMonthCalendar = new System.Windows.Forms.Panel();
+            this.lbpickDay = new System.Windows.Forms.Label();
+            this.lbToday = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.lbMonth = new System.Windows.Forms.Label();
+            this.ibtnNext = new Bunifu.Framework.UI.BunifuImageButton();
+            this.ibtnPrev = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelColor = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panelSymbol = new System.Windows.Forms.Panel();
+            this.symbol7 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.symbol3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.symbol6 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.symbol5 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.symbol2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.symbol4 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.symbol1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.symbol0 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label32 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNewAppointment = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.panelTimeTable = new System.Windows.Forms.Panel();
             this.showArea = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -60,7 +86,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelNewApp = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
+            this.panelMonthCalendar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ibtnNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ibtnPrev)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panelColor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panelSymbol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTimeTable.SuspendLayout();
             this.showArea.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -69,6 +110,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.panelMonthCalendar);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -76,16 +118,353 @@
             this.panel3.Size = new System.Drawing.Size(246, 533);
             this.panel3.TabIndex = 4;
             // 
+            // panelMonthCalendar
+            // 
+            this.panelMonthCalendar.Controls.Add(this.lbpickDay);
+            this.panelMonthCalendar.Controls.Add(this.lbToday);
+            this.panelMonthCalendar.Controls.Add(this.label24);
+            this.panelMonthCalendar.Controls.Add(this.label25);
+            this.panelMonthCalendar.Controls.Add(this.label26);
+            this.panelMonthCalendar.Controls.Add(this.label27);
+            this.panelMonthCalendar.Controls.Add(this.label28);
+            this.panelMonthCalendar.Controls.Add(this.label29);
+            this.panelMonthCalendar.Controls.Add(this.label30);
+            this.panelMonthCalendar.Controls.Add(this.lbMonth);
+            this.panelMonthCalendar.Controls.Add(this.ibtnNext);
+            this.panelMonthCalendar.Controls.Add(this.ibtnPrev);
+            this.panelMonthCalendar.Location = new System.Drawing.Point(0, 0);
+            this.panelMonthCalendar.Name = "panelMonthCalendar";
+            this.panelMonthCalendar.Size = new System.Drawing.Size(246, 270);
+            this.panelMonthCalendar.TabIndex = 4;
+            // 
+            // lbpickDay
+            // 
+            this.lbpickDay.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.lbpickDay.Location = new System.Drawing.Point(1, 249);
+            this.lbpickDay.Name = "lbpickDay";
+            this.lbpickDay.Size = new System.Drawing.Size(71, 23);
+            this.lbpickDay.TabIndex = 12;
+            this.lbpickDay.Text = "lbpickDay";
+            this.lbpickDay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbpickDay.Click += new System.EventHandler(this.lbToday_Click);
+            // 
+            // lbToday
+            // 
+            this.lbToday.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.lbToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(133)))), ((int)(((byte)(242)))));
+            this.lbToday.Location = new System.Drawing.Point(78, 249);
+            this.lbToday.Name = "lbToday";
+            this.lbToday.Size = new System.Drawing.Size(167, 23);
+            this.lbToday.TabIndex = 12;
+            this.lbToday.Text = "lbToday";
+            this.lbToday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbToday.Click += new System.EventHandler(this.lbToday_Click);
+            // 
+            // label24
+            // 
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 8.75F);
+            this.label24.Location = new System.Drawing.Point(208, 27);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(35, 15);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "Sat";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label25
+            // 
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 8.75F);
+            this.label25.Location = new System.Drawing.Point(173, 27);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(35, 15);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Fri";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 8.75F);
+            this.label26.Location = new System.Drawing.Point(140, 27);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(35, 15);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "Thu";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 8.75F);
+            this.label27.Location = new System.Drawing.Point(105, 27);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(35, 15);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Wed";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 8.75F);
+            this.label28.Location = new System.Drawing.Point(71, 27);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(35, 15);
+            this.label28.TabIndex = 9;
+            this.label28.Text = "Tue";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 8.75F);
+            this.label29.Location = new System.Drawing.Point(38, 27);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(35, 15);
+            this.label29.TabIndex = 10;
+            this.label29.Text = "Mon";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 8.75F);
+            this.label30.Location = new System.Drawing.Point(4, 27);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(35, 15);
+            this.label30.TabIndex = 11;
+            this.label30.Text = "Sun";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMonth
+            // 
+            this.lbMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lbMonth.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lbMonth.Location = new System.Drawing.Point(45, 2);
+            this.lbMonth.Name = "lbMonth";
+            this.lbMonth.Size = new System.Drawing.Size(156, 23);
+            this.lbMonth.TabIndex = 4;
+            this.lbMonth.Text = "lbMonth";
+            this.lbMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ibtnNext
+            // 
+            this.ibtnNext.BackColor = System.Drawing.Color.Transparent;
+            this.ibtnNext.Image = global::miniCalendar.Properties.Resources.icons8_Forward;
+            this.ibtnNext.ImageActive = null;
+            this.ibtnNext.Location = new System.Drawing.Point(221, 0);
+            this.ibtnNext.Name = "ibtnNext";
+            this.ibtnNext.Size = new System.Drawing.Size(25, 25);
+            this.ibtnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ibtnNext.TabIndex = 2;
+            this.ibtnNext.TabStop = false;
+            this.ibtnNext.Zoom = 10;
+            this.ibtnNext.Click += new System.EventHandler(this.ibtnNext_Click);
+            // 
+            // ibtnPrev
+            // 
+            this.ibtnPrev.BackColor = System.Drawing.Color.Transparent;
+            this.ibtnPrev.Image = global::miniCalendar.Properties.Resources.icons8_Back;
+            this.ibtnPrev.ImageActive = null;
+            this.ibtnPrev.Location = new System.Drawing.Point(-2, 0);
+            this.ibtnPrev.Name = "ibtnPrev";
+            this.ibtnPrev.Size = new System.Drawing.Size(25, 25);
+            this.ibtnPrev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ibtnPrev.TabIndex = 3;
+            this.ibtnPrev.TabStop = false;
+            this.ibtnPrev.Zoom = 10;
+            this.ibtnPrev.Click += new System.EventHandler(this.ibtnPrev_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panelColor);
+            this.panel2.Controls.Add(this.panelSymbol);
             this.panel2.Controls.Add(this.btnNewAppointment);
-            this.panel2.Controls.Add(this.monthCalendar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 267);
+            this.panel2.Location = new System.Drawing.Point(0, 270);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(246, 266);
+            this.panel2.Size = new System.Drawing.Size(246, 263);
             this.panel2.TabIndex = 3;
+            // 
+            // panelColor
+            // 
+            this.panelColor.Controls.Add(this.label31);
+            this.panelColor.Controls.Add(this.pictureBox5);
+            this.panelColor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelColor.Location = new System.Drawing.Point(0, 30);
+            this.panelColor.Name = "panelColor";
+            this.panelColor.Size = new System.Drawing.Size(244, 30);
+            this.panelColor.TabIndex = 11;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(32, 9);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(46, 17);
+            this.label31.TabIndex = 7;
+            this.label31.Text = "Colors";
+            this.label31.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::miniCalendar.Properties.Resources.icons8_Color_Wheel_32;
+            this.pictureBox5.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 8;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // panelSymbol
+            // 
+            this.panelSymbol.Controls.Add(this.symbol7);
+            this.panelSymbol.Controls.Add(this.symbol3);
+            this.panelSymbol.Controls.Add(this.symbol6);
+            this.panelSymbol.Controls.Add(this.symbol5);
+            this.panelSymbol.Controls.Add(this.symbol2);
+            this.panelSymbol.Controls.Add(this.symbol4);
+            this.panelSymbol.Controls.Add(this.symbol1);
+            this.panelSymbol.Controls.Add(this.symbol0);
+            this.panelSymbol.Controls.Add(this.label32);
+            this.panelSymbol.Controls.Add(this.pictureBox1);
+            this.panelSymbol.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSymbol.Location = new System.Drawing.Point(0, 0);
+            this.panelSymbol.Name = "panelSymbol";
+            this.panelSymbol.Size = new System.Drawing.Size(244, 30);
+            this.panelSymbol.TabIndex = 10;
+            // 
+            // symbol7
+            // 
+            this.symbol7.BackColor = System.Drawing.Color.Transparent;
+            this.symbol7.Image = global::miniCalendar.Properties.Resources.icons8_Heart_Outline_48;
+            this.symbol7.ImageActive = null;
+            this.symbol7.Location = new System.Drawing.Point(202, 34);
+            this.symbol7.Name = "symbol7";
+            this.symbol7.Size = new System.Drawing.Size(20, 20);
+            this.symbol7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.symbol7.TabIndex = 9;
+            this.symbol7.TabStop = false;
+            this.symbol7.Zoom = 10;
+            this.symbol7.Click += new System.EventHandler(this.symbol_Click);
+            // 
+            // symbol3
+            // 
+            this.symbol3.BackColor = System.Drawing.Color.Transparent;
+            this.symbol3.Image = global::miniCalendar.Properties.Resources.icons8_North_Direction_48;
+            this.symbol3.ImageActive = null;
+            this.symbol3.Location = new System.Drawing.Point(102, 34);
+            this.symbol3.Name = "symbol3";
+            this.symbol3.Size = new System.Drawing.Size(20, 20);
+            this.symbol3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.symbol3.TabIndex = 9;
+            this.symbol3.TabStop = false;
+            this.symbol3.Zoom = 10;
+            this.symbol3.Click += new System.EventHandler(this.symbol_Click);
+            // 
+            // symbol6
+            // 
+            this.symbol6.BackColor = System.Drawing.Color.Transparent;
+            this.symbol6.Image = global::miniCalendar.Properties.Resources.icons8_Star_48;
+            this.symbol6.ImageActive = null;
+            this.symbol6.Location = new System.Drawing.Point(177, 34);
+            this.symbol6.Name = "symbol6";
+            this.symbol6.Size = new System.Drawing.Size(20, 20);
+            this.symbol6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.symbol6.TabIndex = 9;
+            this.symbol6.TabStop = false;
+            this.symbol6.Zoom = 10;
+            this.symbol6.Click += new System.EventHandler(this.symbol_Click);
+            // 
+            // symbol5
+            // 
+            this.symbol5.BackColor = System.Drawing.Color.Transparent;
+            this.symbol5.Image = global::miniCalendar.Properties.Resources.icons8_Sports_Mode_48;
+            this.symbol5.ImageActive = null;
+            this.symbol5.Location = new System.Drawing.Point(152, 34);
+            this.symbol5.Name = "symbol5";
+            this.symbol5.Size = new System.Drawing.Size(20, 20);
+            this.symbol5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.symbol5.TabIndex = 9;
+            this.symbol5.TabStop = false;
+            this.symbol5.Zoom = 10;
+            this.symbol5.Click += new System.EventHandler(this.symbol_Click);
+            // 
+            // symbol2
+            // 
+            this.symbol2.BackColor = System.Drawing.Color.Transparent;
+            this.symbol2.Image = global::miniCalendar.Properties.Resources.icons8_Expired_48;
+            this.symbol2.ImageActive = null;
+            this.symbol2.Location = new System.Drawing.Point(77, 34);
+            this.symbol2.Name = "symbol2";
+            this.symbol2.Size = new System.Drawing.Size(20, 20);
+            this.symbol2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.symbol2.TabIndex = 9;
+            this.symbol2.TabStop = false;
+            this.symbol2.Zoom = 10;
+            this.symbol2.Click += new System.EventHandler(this.symbol_Click);
+            // 
+            // symbol4
+            // 
+            this.symbol4.BackColor = System.Drawing.Color.Transparent;
+            this.symbol4.Image = global::miniCalendar.Properties.Resources.icons8_Poison_48;
+            this.symbol4.ImageActive = null;
+            this.symbol4.Location = new System.Drawing.Point(127, 34);
+            this.symbol4.Name = "symbol4";
+            this.symbol4.Size = new System.Drawing.Size(20, 20);
+            this.symbol4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.symbol4.TabIndex = 9;
+            this.symbol4.TabStop = false;
+            this.symbol4.Zoom = 10;
+            this.symbol4.Click += new System.EventHandler(this.symbol_Click);
+            // 
+            // symbol1
+            // 
+            this.symbol1.BackColor = System.Drawing.Color.Transparent;
+            this.symbol1.Image = global::miniCalendar.Properties.Resources.icons8_Destination_48;
+            this.symbol1.ImageActive = null;
+            this.symbol1.Location = new System.Drawing.Point(52, 34);
+            this.symbol1.Name = "symbol1";
+            this.symbol1.Size = new System.Drawing.Size(20, 20);
+            this.symbol1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.symbol1.TabIndex = 9;
+            this.symbol1.TabStop = false;
+            this.symbol1.Zoom = 10;
+            this.symbol1.Click += new System.EventHandler(this.symbol_Click);
+            // 
+            // symbol0
+            // 
+            this.symbol0.BackColor = System.Drawing.Color.Transparent;
+            this.symbol0.Image = global::miniCalendar.Properties.Resources.icons8_Delete_48;
+            this.symbol0.ImageActive = null;
+            this.symbol0.Location = new System.Drawing.Point(27, 34);
+            this.symbol0.Name = "symbol0";
+            this.symbol0.Size = new System.Drawing.Size(20, 20);
+            this.symbol0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.symbol0.TabIndex = 9;
+            this.symbol0.TabStop = false;
+            this.symbol0.Zoom = 10;
+            this.symbol0.Click += new System.EventHandler(this.symbol_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(32, 9);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(57, 17);
+            this.label32.TabIndex = 7;
+            this.label32.Text = "Symbols";
+            this.label32.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::miniCalendar.Properties.Resources.icons8_Peace_Symbol_48;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnNewAppointment
             // 
@@ -109,7 +488,7 @@
             this.btnNewAppointment.IconVisible = true;
             this.btnNewAppointment.IconZoom = 50D;
             this.btnNewAppointment.IsTab = true;
-            this.btnNewAppointment.Location = new System.Drawing.Point(9, 211);
+            this.btnNewAppointment.Location = new System.Drawing.Point(9, 209);
             this.btnNewAppointment.Name = "btnNewAppointment";
             this.btnNewAppointment.Normalcolor = System.Drawing.Color.Silver;
             this.btnNewAppointment.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -122,13 +501,6 @@
             this.btnNewAppointment.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
             this.btnNewAppointment.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewAppointment.Click += new System.EventHandler(this.btnNewAppointment_Click);
-            // 
-            // monthCalendar
-            // 
-            this.monthCalendar.Location = new System.Drawing.Point(9, 9);
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.TabIndex = 0;
-            this.monthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateChanged);
             // 
             // panelTimeTable
             // 
@@ -466,8 +838,26 @@
             this.Controls.Add(this.panel3);
             this.Name = "frmAppointment";
             this.Size = new System.Drawing.Size(668, 533);
+            this.Move += new System.EventHandler(this.frmAppointment_Move);
             this.panel3.ResumeLayout(false);
+            this.panelMonthCalendar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ibtnNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ibtnPrev)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panelColor.ResumeLayout(false);
+            this.panelColor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panelSymbol.ResumeLayout(false);
+            this.panelSymbol.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.symbol0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTimeTable.ResumeLayout(false);
             this.showArea.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -479,7 +869,6 @@
         #endregion
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.MonthCalendar monthCalendar;
         private Bunifu.Framework.UI.BunifuFlatButton btnNewAppointment;
         private System.Windows.Forms.Panel panelTimeTable;
         private System.Windows.Forms.TableLayoutPanel showArea;
@@ -508,5 +897,32 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelNewApp;
+        private System.Windows.Forms.Panel panelMonthCalendar;
+        private System.Windows.Forms.Label lbMonth;
+        private Bunifu.Framework.UI.BunifuImageButton ibtnNext;
+        private Bunifu.Framework.UI.BunifuImageButton ibtnPrev;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lbToday;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Panel panelSymbol;
+        private System.Windows.Forms.Panel panelColor;
+        private Bunifu.Framework.UI.BunifuImageButton symbol0;
+        private Bunifu.Framework.UI.BunifuImageButton symbol7;
+        private Bunifu.Framework.UI.BunifuImageButton symbol3;
+        private Bunifu.Framework.UI.BunifuImageButton symbol6;
+        private Bunifu.Framework.UI.BunifuImageButton symbol5;
+        private Bunifu.Framework.UI.BunifuImageButton symbol2;
+        private Bunifu.Framework.UI.BunifuImageButton symbol4;
+        private Bunifu.Framework.UI.BunifuImageButton symbol1;
+        private System.Windows.Forms.Label lbpickDay;
     }
 }

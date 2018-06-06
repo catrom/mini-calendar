@@ -13,10 +13,13 @@ namespace miniCalendar
     public partial class frmMain : Form
     {
         DataTable dataTable = new DataTable();
-        public frmMain(DataTable dataTable)
+        monthItem myMonthCalendar = new monthItem();
+
+        public frmMain(DataTable dataTable, monthItem monthItem)
         {
             InitializeComponent();
             this.dataTable = dataTable;
+            this.myMonthCalendar = monthItem;
 
             frmNotifications form = new frmNotifications();
             form.Dock = DockStyle.Fill;
@@ -41,6 +44,7 @@ namespace miniCalendar
         private void ibtnExit_Click(object sender, EventArgs e)
         {
             dataTable.Serialize();
+            myMonthCalendar.Serialize();
             Environment.Exit(0);
         }
 
@@ -78,7 +82,7 @@ namespace miniCalendar
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
-            frmAppointment form = new frmAppointment(dataTable.dataTable);
+            frmAppointment form = new frmAppointment(dataTable.dataTable, myMonthCalendar);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
             WorkingArea.Controls.Add(form);
@@ -94,10 +98,20 @@ namespace miniCalendar
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            clearWorkingArea();
+
             frmSettings form = new frmSettings();
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
             WorkingArea.Controls.Add(form);
+        }
+
+        private void clearWorkingArea()
+        {
+            for (int i = WorkingArea.Controls.Count - 1; i >= 0; i--)
+            {
+                WorkingArea.Controls.RemoveAt(i);
+            }
         }
     }
 }

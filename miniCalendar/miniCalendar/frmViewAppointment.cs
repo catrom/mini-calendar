@@ -51,10 +51,13 @@ namespace miniCalendar
                 {
                     lbEndHour.Text = dataTable[ID].startHour.ToString("hh:mm tt") + " - " +
                                 dataTable[ID].endHour.ToString("hh:mm tt");
+                    lbEndHour.ForeColor = Color.Black;
                 }
             }
             else
             {
+                lbStartHour.ForeColor = Color.Black;
+                lbEndHour.ForeColor = Color.Black;
                 lbStartHour.Text = dataTable[ID].startHour.ToString("ddddddddd, dd MMM yyyy     hh:mm tt");
                 lbEndHour.Text = dataTable[ID].endHour.ToString("ddddddddd, dd MMM yyyy     hh:mm tt");
             }
@@ -66,6 +69,7 @@ namespace miniCalendar
             }
             else
             {
+                panelLocation.Visible = true;
                 lbLocation.Text = dataTable[ID].Location;
             }
 
@@ -77,6 +81,7 @@ namespace miniCalendar
             }
             else
             {
+                panelDescription.Visible = true;
                 lbDescription.Text = dataTable[ID].Description;
             }
 

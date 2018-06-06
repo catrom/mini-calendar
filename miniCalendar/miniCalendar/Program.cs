@@ -16,9 +16,13 @@ namespace miniCalendar
         {
             DataTable dataTable = new DataTable();
             dataTable.Deserialize();
+
+            monthItem myMonthCalendar = new monthItem();
+            myMonthCalendar.Deserialize();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain(dataTable));
+            Application.Run(new frmMain(dataTable, myMonthCalendar));
         }
         
     }

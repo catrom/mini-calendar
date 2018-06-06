@@ -95,9 +95,10 @@
             this.panelDescription.BackColor = System.Drawing.SystemColors.Control;
             this.panelDescription.Controls.Add(this.lbDescription);
             this.panelDescription.Controls.Add(this.pictureBox3);
+            this.panelDescription.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDescription.Location = new System.Drawing.Point(0, 150);
             this.panelDescription.Name = "panelDescription";
-            this.panelDescription.Size = new System.Drawing.Size(420, 133);
+            this.panelDescription.Size = new System.Drawing.Size(424, 133);
             this.panelDescription.TabIndex = 7;
             // 
             // lbDescription
