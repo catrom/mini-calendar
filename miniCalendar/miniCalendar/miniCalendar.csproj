@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Appointment.cs" />
+    <Compile Include="Notifications.cs" />
     <Compile Include="DataTable.cs" />
     <Compile Include="frmAppointment.cs">
       <SubType>UserControl</SubType>
