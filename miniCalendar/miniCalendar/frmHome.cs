@@ -14,12 +14,14 @@ namespace miniCalendar
     {
         DataTable dataTable = new DataTable();
         monthItem myMonthCalendar = new monthItem();
+        TodoList todoList = new TodoList();
 
-        public frmMain(DataTable dataTable, monthItem monthItem)
+        public frmMain(DataTable dataTable, monthItem monthItem, TodoList todoList)
         {
             InitializeComponent();
             this.dataTable = dataTable;
             this.myMonthCalendar = monthItem;
+            this.todoList = todoList;
 
             frmNotifications form = new frmNotifications();
             form.Dock = DockStyle.Fill;
@@ -45,6 +47,7 @@ namespace miniCalendar
         {
             dataTable.Serialize();
             myMonthCalendar.Serialize();
+            todoList.Serialize();
             Environment.Exit(0);
         }
 
