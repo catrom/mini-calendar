@@ -35,6 +35,7 @@
             this.tbTitle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.clListDay = new System.Windows.Forms.CheckedListBox();
             this.dtpEndDay = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDay = new System.Windows.Forms.DateTimePicker();
             this.cbEndHour = new System.Windows.Forms.ComboBox();
@@ -180,6 +181,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.clListDay);
             this.panel1.Controls.Add(this.dtpEndDay);
             this.panel1.Controls.Add(this.dtpStartDay);
             this.panel1.Controls.Add(this.cbEndHour);
@@ -192,6 +194,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(422, 93);
             this.panel1.TabIndex = 9;
+            // 
+            // clListDay
+            // 
+            this.clListDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clListDay.CheckOnClick = true;
+            this.clListDay.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.clListDay.ForeColor = System.Drawing.Color.Black;
+            this.clListDay.FormattingEnabled = true;
+            this.clListDay.HorizontalExtent = 30;
+            this.clListDay.HorizontalScrollbar = true;
+            this.clListDay.Location = new System.Drawing.Point(47, 31);
+            this.clListDay.Name = "clListDay";
+            this.clListDay.Size = new System.Drawing.Size(199, 53);
+            this.clListDay.TabIndex = 7;
             // 
             // dtpEndDay
             // 
@@ -711,5 +727,6 @@
         private Bunifu.Framework.UI.BunifuCheckbox checkRed;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckedListBox clListDay;
     }
 }

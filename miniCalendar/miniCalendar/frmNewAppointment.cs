@@ -13,8 +13,8 @@ namespace miniCalendar
     public partial class frmNewAppointment : UserControl
     {
         public Dictionary<int, Appointment> dataTable = new Dictionary<int, Appointment>();
-        public DateTime dateTime = new DateTime();
-        public int ID;
+        public List<DateTime> dateTime = new List<DateTime>();
+        public List<int> ID = new List<int>();
         public bool isModified;
         public string title = "";
         public DateTime startHour;
@@ -25,12 +25,13 @@ namespace miniCalendar
         public string color = "Blue";
         public string description = "";
 
+        
         public frmNewAppointment()
         {
             InitializeComponent();
         }
-
-        public frmNewAppointment(int ID, Dictionary<int, Appointment> dataTable, DateTime dateTime, bool isModified)
+        
+        public frmNewAppointment(List<int> ID, Dictionary<int, Appointment> dataTable, List<DateTime> dateTime, bool isModified)
         {
             InitializeComponent();
             this.ID = ID;
@@ -38,14 +39,130 @@ namespace miniCalendar
             this.dataTable = dataTable;
             this.dateTime = dateTime;
 
-            if (isModified == false)
+            if (ID.Count == 1)
             {
-                dtpStartDay.Value = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
-                dtpEndDay.Value = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day);
+                clListDay.Visible = false;
+                var obj = dateTime[0];
+                var id = ID[0];
+
+                if (isModified == false)
+                {
+                    dtpStartDay.Value = new DateTime(obj.Year, obj.Month, obj.Day);
+                    dtpEndDay.Value = new DateTime(obj.Year, obj.Month, obj.Day);
+                    cbStartHour.SelectedIndex = 0;
+                    cbEndHour.SelectedIndex = 47;
+                    dtpStartDay.Value = obj;
+                    dtpEndDay.Value = obj;
+                    numNotiValue.Value = 30;
+                    cbNotiUnit.SelectedIndex = 0;
+                    setUncheckColor();
+                    changeColorBlue();
+
+                    switchAllday.Value = true;
+                    dtpStartDay.Enabled = false;
+                    dtpEndDay.Visible = false;
+                    cbStartHour.Visible = false;
+                    cbEndHour.Visible = false;
+                }
+                else
+                {
+                    if (dataTable[id].Title == "")
+                    {
+                        tbTitle.Text = "(No Title)";
+                    }
+                    else
+                    {
+                        tbTitle.Text = dataTable[id].Title;
+                    }
+
+                    dtpStartDay.Value = dataTable[id].startHour;
+                    dtpEndDay.Value = dataTable[id].endHour;
+                    cbStartHour.SelectedIndex = dataTable[id].startHour.Hour * 2 + dataTable[id].startHour.Minute / 30;
+                    cbEndHour.SelectedIndex = dataTable[id].endHour.Hour * 2 + dataTable[id].endHour.Minute / 30;
+
+                    if (dataTable[id].Location == "")
+                    {
+                        tbLocation.Text = "Add a location";
+                        tbLocation.ForeColor = Color.DarkGray;
+                    }
+                    else
+                    {
+                        tbLocation.Text = dataTable[id].Location;
+                        tbLocation.ForeColor = Color.Black;
+                    }
+
+                    numNotiValue.Value = dataTable[id].notiValue;
+                    cbNotiUnit.SelectedIndex = cbNotiUnit.FindStringExact(dataTable[id].notiUnit);
+                    color = dataTable[id].Color;
+
+                    if (dataTable[id].Description == "")
+                    {
+                        tbDescription.Text = "Add descriptions";
+                        tbDescription.ForeColor = Color.DarkGray;
+                    }
+                    else
+                    {
+                        tbDescription.Text = dataTable[id].Description;
+                        tbDescription.ForeColor = Color.Black;
+                    }
+
+
+                    if (dataTable[id].startHour.Date == dataTable[id].endHour.Date &&
+                        dataTable[id].endHour.Minute == 59)
+                    {
+                        switchAllday.Value = true;
+                        cbStartHour.Visible = false;
+                        dtpEndDay.Visible = false;
+                        cbEndHour.Visible = false;
+                    }
+                    else
+                    {
+                        switchAllday.Value = false;
+                        cbStartHour.Visible = true;
+                        dtpEndDay.Visible = true;
+                        cbEndHour.Visible = true;
+                    }
+
+                    setUncheckColor();
+                    switch (dataTable[id].Color)
+                    {
+                        case "Red":
+                            changeColorRed();
+                            break;
+                        case "Orange":
+                            changeColorOrange();
+                            break;
+                        case "Yellow":
+                            changeColorYellow();
+                            break;
+                        case "Green":
+                            changeColorGreen();
+                            break;
+                        case "Blue":
+                            changeColorBlue();
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                dateTime.Sort();
+
+                clListDay.Visible = true;
+                dtpStartDay.Visible = false;
+                dtpEndDay.Visible = false;
+
+                for (int i = 0; i < ID.Count; i++)
+                {
+                    clListDay.Items.Insert(i, new DateTime(dateTime[i].Year, dateTime[i].Month, dateTime[i].Day).ToString("ddddddddd dd MMM yyyy"));
+                    clListDay.SetItemChecked(i, true);
+                }
+
+
                 cbStartHour.SelectedIndex = 0;
                 cbEndHour.SelectedIndex = 47;
-                dtpStartDay.Value = dateTime;
-                dtpEndDay.Value = dateTime;
+                dtpStartDay.Value = dateTime[0];
+                dtpEndDay.Value = dateTime[0];
                 numNotiValue.Value = 30;
                 cbNotiUnit.SelectedIndex = 0;
                 setUncheckColor();
@@ -57,86 +174,6 @@ namespace miniCalendar
                 cbStartHour.Visible = false;
                 cbEndHour.Visible = false;
             }
-            else
-            {
-                if (dataTable[ID].Title == "")
-                {
-                    tbTitle.Text = "(No Title)";
-                }
-                else
-                {
-                    tbTitle.Text = dataTable[ID].Title;
-                }
-                
-                dtpStartDay.Value = dataTable[ID].startHour;
-                dtpEndDay.Value = dataTable[ID].endHour;
-                cbStartHour.SelectedIndex = dataTable[ID].startHour.Hour * 2 + dataTable[ID].startHour.Minute / 30;
-                cbEndHour.SelectedIndex = dataTable[ID].endHour.Hour * 2 + dataTable[ID].endHour.Minute / 30;
-
-                if (dataTable[ID].Location == "")
-                {
-                    tbLocation.Text = "Add a location";
-                    tbLocation.ForeColor = Color.DarkGray;
-                }
-                else
-                {
-                    tbLocation.Text = dataTable[ID].Location;
-                    tbLocation.ForeColor = Color.Black;
-                }
-                
-                numNotiValue.Value = dataTable[ID].notiValue;
-                cbNotiUnit.SelectedIndex = cbNotiUnit.FindStringExact(dataTable[ID].notiUnit);
-                color = dataTable[ID].Color;
-
-                if (dataTable[ID].Description == "")
-                {
-                    tbDescription.Text = "Add descriptions";
-                    tbDescription.ForeColor = Color.DarkGray;
-                }
-                else
-                {
-                    tbDescription.Text = dataTable[ID].Description;
-                    tbDescription.ForeColor = Color.Black;
-                }
-
-
-                if (dataTable[ID].startHour.Date == dataTable[ID].endHour.Date &&
-                    dataTable[ID].endHour.Minute == 59)
-                {
-                    switchAllday.Value = true;
-                    cbStartHour.Visible = false;
-                    dtpEndDay.Visible = false;
-                    cbEndHour.Visible = false;
-                }
-                else
-                {
-                    switchAllday.Value = false;
-                    cbStartHour.Visible = true;
-                    dtpEndDay.Visible = true;
-                    cbEndHour.Visible = true;
-                }
-
-                setUncheckColor();
-                switch (dataTable[ID].Color)
-                {
-                    case "Red":
-                        changeColorRed();
-                        break;
-                    case "Orange":
-                        changeColorOrange();
-                        break;
-                    case "Yellow":
-                        changeColorYellow();
-                        break;
-                    case "Green":
-                        changeColorGreen();
-                        break;
-                    case "Blue":
-                        changeColorBlue();
-                        break;
-                }
-            }
-
         }
 
 
@@ -171,7 +208,7 @@ namespace miniCalendar
                 if (tbDescription.Text == "Add descriptions")
                 {
                     description = "";
-                } 
+                }
                 else
                 {
                     description = tbDescription.Text;
@@ -179,38 +216,42 @@ namespace miniCalendar
 
                 notiValue = Convert.ToInt32(numNotiValue.Value);
                 notiUnit = cbNotiUnit.Text;
-                
 
-                if (switchAllday.Value == true)
+
+                for (int i = 0; i < ID.Count; i++)
                 {
-                    startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, 0, 0, 0);
-                    endHour = new DateTime(dtpEndDay.Value.Year, dtpEndDay.Value.Month, dtpEndDay.Value.Day, 23, 59, 0);
+                    if (clListDay.GetItemCheckState(i) == CheckState.Unchecked)
+                    {
+                        continue;
+                    }
+
+                    if (switchAllday.Value == true)
+                    {
+                        startHour = new DateTime(dateTime[i].Year, dateTime[i].Month, dateTime[i].Day, 0, 0, 0);
+                        endHour = new DateTime(dateTime[i].Year, dateTime[i].Month, dateTime[i].Day, 23, 59, 0);
+                    }
+                    else
+                    {
+                        int X = cbStartHour.SelectedIndex;
+                        int Y = cbEndHour.SelectedIndex;
+                        startHour = new DateTime(dateTime[i].Year, dateTime[i].Month, dateTime[i].Day, X / 2, 30 * (X % 2), 0);
+                        endHour = new DateTime(dateTime[i].Year, dateTime[i].Month, dateTime[i].Day, Y / 2, 30 * (Y % 2), 0);
+                    }
+
+                    Appointment fin = new Appointment(title, startHour, endHour, location, notiValue, notiUnit, color, description);
+
+                    if (isModified == true)
+                    {
+                        dataTable[ID[i]] = fin;
+                    }
+                    else
+                    {
+                        dataTable.Add(ID[i], fin);
+                    }
                 }
-                else
-                {
-                    int X = cbStartHour.SelectedIndex;
-                    int Y = cbEndHour.SelectedIndex;
-                    startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, X / 2, 30 * (X % 2), 0);
-                    endHour = new DateTime(dtpEndDay.Value.Year, dtpEndDay.Value.Month, dtpEndDay.Value.Day, Y / 2, 30 * (Y % 2), 0);
-                }
 
-                
-
-                Appointment fin = new Appointment(title, startHour, endHour, location, notiValue, notiUnit, color, description);
-
-
-                if (isModified == true)
-                {
-                    dataTable[ID] = fin;
-                }
-                else
-                {
-                    dataTable.Add(ID, fin);
-                }
-
-
+               
                 Dispose();
-
             }
         }
 
@@ -237,8 +278,12 @@ namespace miniCalendar
             {
                 dtpStartDay.Enabled = true;
                 cbStartHour.Visible = true;
-                dtpEndDay.Visible = true;
                 cbEndHour.Visible = true;
+
+                if (ID.Count == 1)
+                {
+                    dtpEndDay.Visible = true;
+                }
             }
         }
 
@@ -322,11 +367,6 @@ namespace miniCalendar
             changeColorBlue();
         }
 
-        public void btnDelete_Click(object sender, EventArgs e)
-        {
-            dataTable.Remove(ID);
-            this.Dispose();
-        }
 
         //
         // For UX

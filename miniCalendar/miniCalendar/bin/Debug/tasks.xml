@@ -6,4 +6,10 @@
   <Appointment Title="old title" startHour="2018-05-28T00:00:00" endHour="2018-05-28T23:59:59" Location="school" notiValue="30" notiUnit="minutes" Color="Blue" Description="abc &#xA;xyz" />
   <Appointment Title="many days" startHour="2018-06-06T00:00:00" endHour="2018-06-07T18:30:00" Location="somewhere" notiValue="30" notiUnit="minutes" Color="Blue" Description="something" />
   <Appointment Title="new appointment" startHour="2018-06-07T14:00:00" endHour="2018-06-09T11:00:00" Location="home" notiValue="30" notiUnit="minutes" Color="Yellow" Description="" />
+  <Appointment Title="seminar final" startHour="2018-06-18T09:00:00" endHour="2018-06-18T10:30:00" Location="" notiValue="10" notiUnit="hours" Color="Green" Description="- Hệ điều hành&#xA;- Lập trình trực quan&#xA;- TH lập trình trực quan" />
+  <Appointment Title="" startHour="2018-06-12T00:00:00" endHour="2018-06-12T23:59:00" Location="" notiValue="30" notiUnit="minutes" Color="Blue" Description="" />
+  <Appointment Title="" startHour="2018-06-13T03:00:00" endHour="2018-06-13T19:30:00" Location="" notiValue="30" notiUnit="minutes" Color="Orange" Description="" />
+  <Appointment Title="" startHour="2018-06-14T03:00:00" endHour="2018-06-14T19:30:00" Location="" notiValue="30" notiUnit="minutes" Color="Orange" Description="" />
+  <Appointment Title="random position" startHour="2018-05-27T00:00:00" endHour="2018-05-27T23:59:00" Location="anywhere" notiValue="30" notiUnit="minutes" Color="Green" Description="" />
+  <Appointment Title="seminar final" startHour="2018-06-29T09:00:00" endHour="2018-06-29T10:30:00" Location="" notiValue="10" notiUnit="hours" Color="Green" Description="- Hệ điều hành&#xA;- Lập trình trực quan&#xA;- TH lập trình trực quan" />
 </Tasks>
