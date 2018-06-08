@@ -76,10 +76,23 @@
     <Compile Include="frmNotifications.Designer.cs">
       <DependentUpon>frmNotifications.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSchedule.cs">
+    <Compile Include="Schedule\DataTable.cs" />
+    <Compile Include="Schedule\frmNewTimeBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmSchedule.Designer.cs">
+    <Compile Include="Schedule\frmNewTimeBlock.Designer.cs">
+      <DependentUpon>frmNewTimeBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule\frmNewTimeTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Schedule\frmNewTimeTable.Designer.cs">
+      <DependentUpon>frmNewTimeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule\frmSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Schedule\frmSchedule.Designer.cs">
       <DependentUpon>frmSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSettings.cs">
@@ -103,6 +116,21 @@
     <Compile Include="monthItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedule\frmViewTimeBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Schedule\frmViewTimeBlock.Designer.cs">
+      <DependentUpon>frmViewTimeBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule\TestingGround.cs" />
+    <Compile Include="Schedule\TimeBlock.cs" />
+    <Compile Include="Schedule\TimeTable.cs" />
+    <Compile Include="Schedule\frmViewTimeTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Schedule\frmViewTimeTable.Designer.cs">
+      <DependentUpon>frmViewTimeTable.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAppointment.resx">
       <DependentUpon>frmAppointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,7 +143,13 @@
     <EmbeddedResource Include="frmNotifications.resx">
       <DependentUpon>frmNotifications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSchedule.resx">
+    <EmbeddedResource Include="Schedule\frmNewTimeBlock.resx">
+      <DependentUpon>frmNewTimeBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schedule\frmNewTimeTable.resx">
+      <DependentUpon>frmNewTimeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schedule\frmSchedule.resx">
       <DependentUpon>frmSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.resx">
@@ -137,6 +171,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Schedule\frmViewTimeBlock.resx">
+      <DependentUpon>frmViewTimeBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schedule\frmViewTimeTable.resx">
+      <DependentUpon>frmViewTimeTable.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
