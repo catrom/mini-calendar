@@ -14,7 +14,8 @@ namespace miniCalendar
 {
     public partial class frmTodoList : UserControl
     {
-        public Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
+        private Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
+        int _id;
         FlowLayoutPanel fPanel = new FlowLayoutPanel();
         List<frmTask> list = new List<frmTask>();
 
@@ -23,12 +24,14 @@ namespace miniCalendar
             InitializeComponent();
             tbAddTask.Text = "Add a to-do...";
 
+            ShowTaskList();
         }
 
-        public frmTodoList(Dictionary<int, Task> todoList)
+        public frmTodoList(int id, Dictionary<int, Task> todoList)
         {
             InitializeComponent();
             _todoList = todoList;
+            _id = id;
 
             frmTask f = new frmTask();
             pnlTaskDetail.Controls.Add(f);
@@ -46,6 +49,13 @@ namespace miniCalendar
             }
         }
 
+        private void tbAddTask_Enter(object sender, EventArgs e)
+        {
+            if (tbAddTask.Text == "Add a to-do...")
+            {
+                tbAddTask.BackColor = Color.White;
+            }
+        }
         private void tbAddTask_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -60,37 +70,42 @@ namespace miniCalendar
                     MessageBox.Show("Textbox can't be empty!", "Error!!!");
                 else
                 {
-                    //tbAddTask.Text = "";
-                }
+                    
+                    _id = getID();
+                    Task task = new Task();
+                    task.Name = tbAddTask.Text;
+                    task.DueDay = DateTime.Now;
+                    task.RemindDay = DateTime.Now;         
+                    _todoList.Add(_id, task);
 
-                int id = getID();
-                _todoList.Add(id, new Task(tbAddTask.Text, new DateTime(), new DateTime(), new DateTime(), "", ""));
+                    frmTask abc = new frmTask(_id, _todoList);
+                    abc.lbName.BringToFront();
+                    list.Add(abc);
 
-                frmTask abc = new frmTask(id, _todoList);
-                MessageBox.Show(abc.lbTaskName.Text);
+                    tbAddTask.Text = "";
 
-                list.Add(abc);
-
-                abc.Click += new EventHandler(btnTask_Click);
-                fpTaskList.Controls.Add(abc);
+                    abc.Click += new EventHandler(btnTask_Click);
+                    fpTaskList.Controls.Add(abc);
+                }                
             }
 
         }
 
         private void btnTask_Click(object sender, EventArgs e)
         {
-            frmTaskDetail fa = new frmTaskDetail();
+            frmTask abc = sender as frmTask;
+            frmTaskDetail fa = new frmTaskDetail(abc._id, _todoList,false);
             pnlTaskDetail.Controls.Clear();
             pnlTaskDetail.Controls.Add(fa);
             fa.Dock = DockStyle.Fill;
             fa.BringToFront();
         }
 
-        private void tbAddTask_Enter(object sender, EventArgs e)
+        public void ShowTaskList()
         {
-            if (tbAddTask.Text == "Add a to-do...")
+            for(int i=0;i<list.Count;i++)
             {
-                tbAddTask.BackColor = Color.White;
+                fpTaskList.Controls.Add(list[i]);
             }
         }
 

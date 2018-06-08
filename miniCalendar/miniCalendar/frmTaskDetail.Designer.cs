@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaskDetail));
-            this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
+            this.tbComment = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lbInfo = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -41,20 +41,18 @@
             this.nmMinutes = new System.Windows.Forms.NumericUpDown();
             this.nmHour = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dtpRemind_2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpRemindDay = new System.Windows.Forms.DateTimePicker();
             this.lbRemind = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtpDueDay = new System.Windows.Forms.DateTimePicker();
             this.lbDueDay = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlTaskName = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tbTaskName = new System.Windows.Forms.TextBox();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.pnlButton = new System.Windows.Forms.Panel();
-            this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnCancel = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnModify = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnDelete = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -69,16 +67,18 @@
             this.pnlButton.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bunifuTextbox1
+            // tbComment
             // 
-            this.bunifuTextbox1.BackColor = System.Drawing.Color.White;
-            this.bunifuTextbox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuTextbox1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuTextbox1.Location = new System.Drawing.Point(4, 411);
-            this.bunifuTextbox1.Name = "bunifuTextbox1";
-            this.bunifuTextbox1.Size = new System.Drawing.Size(310, 40);
-            this.bunifuTextbox1.TabIndex = 40;
-            this.bunifuTextbox1.text = "";
+            this.tbComment.BackColor = System.Drawing.Color.White;
+            this.tbComment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbComment.BackgroundImage")));
+            this.tbComment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tbComment.ForeColor = System.Drawing.Color.Black;
+            this.tbComment.Icon = ((System.Drawing.Image)(resources.GetObject("tbComment.Icon")));
+            this.tbComment.Location = new System.Drawing.Point(4, 411);
+            this.tbComment.Name = "tbComment";
+            this.tbComment.Size = new System.Drawing.Size(310, 40);
+            this.tbComment.TabIndex = 40;
+            this.tbComment.text = "";
             // 
             // panel6
             // 
@@ -105,7 +105,7 @@
             this.panel4.Controls.Add(this.rtbNote);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 237);
+            this.panel4.Location = new System.Drawing.Point(0, 234);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(319, 90);
             this.panel4.TabIndex = 38;
@@ -131,19 +131,22 @@
             // 
             // panel3
             // 
+            this.panel3.AutoSize = true;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.tbSubtask);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 186);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(319, 51);
+            this.panel3.Size = new System.Drawing.Size(319, 48);
             this.panel3.TabIndex = 37;
             // 
             // tbSubtask
             // 
             this.tbSubtask.BackColor = System.Drawing.Color.White;
+            this.tbSubtask.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbSubtask.BackgroundImage")));
             this.tbSubtask.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tbSubtask.ForeColor = System.Drawing.Color.Gray;
+            this.tbSubtask.Icon = ((System.Drawing.Image)(resources.GetObject("tbSubtask.Icon")));
             this.tbSubtask.Location = new System.Drawing.Point(3, 7);
             this.tbSubtask.Name = "tbSubtask";
             this.tbSubtask.Size = new System.Drawing.Size(310, 36);
@@ -158,7 +161,7 @@
             this.panel2.Controls.Add(this.nmMinutes);
             this.panel2.Controls.Add(this.nmHour);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.dtpRemind_2);
+            this.panel2.Controls.Add(this.dtpRemindDay);
             this.panel2.Controls.Add(this.lbRemind);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 109);
@@ -201,16 +204,18 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
-            // dtpRemind_2
+            // dtpRemindDay
             // 
-            this.dtpRemind_2.CalendarForeColor = System.Drawing.Color.Black;
-            this.dtpRemind_2.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
-            this.dtpRemind_2.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dtpRemind_2.Location = new System.Drawing.Point(54, 49);
-            this.dtpRemind_2.Name = "dtpRemind_2";
-            this.dtpRemind_2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpRemind_2.Size = new System.Drawing.Size(216, 20);
-            this.dtpRemind_2.TabIndex = 24;
+            this.dtpRemindDay.CalendarForeColor = System.Drawing.Color.Black;
+            this.dtpRemindDay.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
+            this.dtpRemindDay.CalendarTitleForeColor = System.Drawing.Color.Black;
+            this.dtpRemindDay.CustomFormat = "dddd, dd MMMM, yyyy";
+            this.dtpRemindDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpRemindDay.Location = new System.Drawing.Point(54, 49);
+            this.dtpRemindDay.Name = "dtpRemindDay";
+            this.dtpRemindDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpRemindDay.Size = new System.Drawing.Size(216, 20);
+            this.dtpRemindDay.TabIndex = 24;
             // 
             // lbRemind
             // 
@@ -237,7 +242,8 @@
             // dtpDueDay
             // 
             this.dtpDueDay.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpDueDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDueDay.CustomFormat = "dd/MM/yyyy";
+            this.dtpDueDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDueDay.Location = new System.Drawing.Point(89, 19);
             this.dtpDueDay.Name = "dtpDueDay";
             this.dtpDueDay.Size = new System.Drawing.Size(113, 20);
@@ -266,7 +272,7 @@
             // pnlTaskName
             // 
             this.pnlTaskName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlTaskName.Controls.Add(this.label1);
+            this.pnlTaskName.Controls.Add(this.tbTaskName);
             this.pnlTaskName.Controls.Add(this.bunifuCheckbox1);
             this.pnlTaskName.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTaskName.Location = new System.Drawing.Point(0, 0);
@@ -274,15 +280,14 @@
             this.pnlTaskName.Size = new System.Drawing.Size(319, 58);
             this.pnlTaskName.TabIndex = 34;
             // 
-            // label1
+            // tbTaskName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.tbTaskName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbTaskName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTaskName.Location = new System.Drawing.Point(48, 15);
+            this.tbTaskName.Name = "tbTaskName";
+            this.tbTaskName.Size = new System.Drawing.Size(258, 25);
+            this.tbTaskName.TabIndex = 1;
             // 
             // bunifuCheckbox1
             // 
@@ -299,8 +304,6 @@
             // pnlButton
             // 
             this.pnlButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlButton.Controls.Add(this.btnDelete);
-            this.pnlButton.Controls.Add(this.btnModify);
             this.pnlButton.Controls.Add(this.btnCancel);
             this.pnlButton.Controls.Add(this.btnSave);
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -308,30 +311,6 @@
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Size = new System.Drawing.Size(319, 48);
             this.pnlButton.TabIndex = 33;
-            // 
-            // btnSave
-            // 
-            this.btnSave.ActiveBorderThickness = 1;
-            this.btnSave.ActiveCornerRadius = 20;
-            this.btnSave.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.btnSave.ActiveForecolor = System.Drawing.Color.White;
-            this.btnSave.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.btnSave.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSave.ButtonText = "SAVE";
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSave.IdleBorderThickness = 1;
-            this.btnSave.IdleCornerRadius = 20;
-            this.btnSave.IdleFillColor = System.Drawing.SystemColors.Control;
-            this.btnSave.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.btnSave.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.btnSave.Location = new System.Drawing.Point(4, 5);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(65, 36);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCancel
             // 
@@ -341,6 +320,7 @@
             this.btnCancel.ActiveForecolor = System.Drawing.Color.White;
             this.btnCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.ButtonText = "CANCEL";
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -350,66 +330,44 @@
             this.btnCancel.IdleFillColor = System.Drawing.Color.Transparent;
             this.btnCancel.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCancel.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCancel.Location = new System.Drawing.Point(238, 5);
+            this.btnCancel.Location = new System.Drawing.Point(205, -1);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 36);
+            this.btnCancel.Size = new System.Drawing.Size(90, 48);
             this.btnCancel.TabIndex = 18;
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnModify
+            // btnSave
             // 
-            this.btnModify.ActiveBorderThickness = 1;
-            this.btnModify.ActiveCornerRadius = 20;
-            this.btnModify.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnModify.ActiveForecolor = System.Drawing.Color.White;
-            this.btnModify.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnModify.BackColor = System.Drawing.SystemColors.Control;
-            this.btnModify.ButtonText = "MODIFY";
-            this.btnModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModify.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModify.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnModify.IdleBorderThickness = 1;
-            this.btnModify.IdleCornerRadius = 20;
-            this.btnModify.IdleFillColor = System.Drawing.SystemColors.Control;
-            this.btnModify.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnModify.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnModify.Location = new System.Drawing.Point(77, 5);
-            this.btnModify.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 36);
-            this.btnModify.TabIndex = 19;
-            this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.ActiveBorderThickness = 1;
-            this.btnDelete.ActiveCornerRadius = 20;
-            this.btnDelete.ActiveFillColor = System.Drawing.Color.Red;
-            this.btnDelete.ActiveForecolor = System.Drawing.Color.White;
-            this.btnDelete.ActiveLineColor = System.Drawing.Color.Red;
-            this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.ButtonText = "DELETE";
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDelete.IdleBorderThickness = 1;
-            this.btnDelete.IdleCornerRadius = 20;
-            this.btnDelete.IdleFillColor = System.Drawing.Color.Transparent;
-            this.btnDelete.IdleForecolor = System.Drawing.Color.Red;
-            this.btnDelete.IdleLineColor = System.Drawing.Color.Red;
-            this.btnDelete.Location = new System.Drawing.Point(160, 5);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(70, 36);
-            this.btnDelete.TabIndex = 20;
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSave.ActiveBorderThickness = 1;
+            this.btnSave.ActiveCornerRadius = 20;
+            this.btnSave.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+            this.btnSave.ActiveForecolor = System.Drawing.Color.White;
+            this.btnSave.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+            this.btnSave.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.ButtonText = "SAVE";
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSave.IdleBorderThickness = 1;
+            this.btnSave.IdleCornerRadius = 20;
+            this.btnSave.IdleFillColor = System.Drawing.SystemColors.Control;
+            this.btnSave.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+            this.btnSave.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+            this.btnSave.Location = new System.Drawing.Point(21, -1);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 48);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmTaskDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.bunifuTextbox1);
+            this.Controls.Add(this.tbComment);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -437,12 +395,13 @@
             this.pnlTaskName.PerformLayout();
             this.pnlButton.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox1;
+        private Bunifu.Framework.UI.BunifuTextbox tbComment;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbInfo;
         private System.Windows.Forms.Panel panel4;
@@ -454,19 +413,17 @@
         private System.Windows.Forms.NumericUpDown nmMinutes;
         private System.Windows.Forms.NumericUpDown nmHour;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker dtpRemind_2;
+        private System.Windows.Forms.DateTimePicker dtpRemindDay;
         private System.Windows.Forms.Label lbRemind;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dtpDueDay;
         private System.Windows.Forms.Label lbDueDay;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pnlTaskName;
-        private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
         private System.Windows.Forms.Panel pnlButton;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSave;
         private Bunifu.Framework.UI.BunifuThinButton2 btnCancel;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnModify;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnDelete;
+        public System.Windows.Forms.TextBox tbTaskName;
     }
 }

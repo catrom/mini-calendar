@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbTaskName = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             this.cbIsDone = new Bunifu.Framework.UI.BunifuCheckbox();
             this.SuspendLayout();
             // 
-            // lbTaskName
+            // lbName
             // 
-            this.lbTaskName.AutoSize = true;
-            this.lbTaskName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTaskName.Location = new System.Drawing.Point(45, 9);
-            this.lbTaskName.Name = "lbTaskName";
-            this.lbTaskName.Size = new System.Drawing.Size(51, 20);
-            this.lbTaskName.TabIndex = 5;
-            this.lbTaskName.Text = "label1";
-            this.lbTaskName.Visible = false;
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(45, 9);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(51, 20);
+            this.lbName.TabIndex = 5;
+            this.lbName.Text = "label1";
             // 
             // cbIsDone
             // 
@@ -58,7 +57,7 @@
             // frmTask
             // 
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Controls.Add(this.lbTaskName);
+            this.Controls.Add(this.lbName);
             this.Controls.Add(this.cbIsDone);
             this.Name = "frmTask";
             this.Size = new System.Drawing.Size(331, 36);
@@ -71,6 +70,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCheckbox cbIsDone;
-        public System.Windows.Forms.Label lbTaskName;
+        public System.Windows.Forms.Label lbName;
     }
 }

@@ -135,6 +135,12 @@
     <EmbeddedResource Include="frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTask.resx">
+      <DependentUpon>frmTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaskDetail.resx">
+      <DependentUpon>frmTaskDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTodoList.resx">
       <DependentUpon>frmTodoList.cs</DependentUpon>
     </EmbeddedResource>

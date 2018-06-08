@@ -1,48 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.IO;
+using System.Drawing;
 
 namespace miniCalendar
 {
     [Serializable]
     public class TodoList
     {
-        public Dictionary<int, Task> todoList = new Dictionary<int, Task>();
+        public Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
         private XmlSerializer formatter = new XmlSerializer(typeof(Task[]), new XmlRootAttribute() { ElementName = "TodoList" });
-        private string fileName = "todoList.xml";
+        private string fileName = "todolist.xml";
 
         public TodoList() { }
 
-        public void Add(Task a)
+        public void Add(Task o)
         {
-            todoList.Add(1, a);
+            _todoList.Add(1, o);
         }
 
-        public void Delete(int id)
+        public void Delete(int ID)
         {
-            todoList.Remove(id);
+            _todoList.Remove(ID);
         }
 
         public void Serialize()
         {
             FileStream fs = new FileStream(fileName, FileMode.Truncate);
-            formatter.Serialize(fs, todoList.Select(kv => new Task()
+            formatter.Serialize(fs, _todoList.Select(kv => new Task()
             {
                 Name = kv.Value.Name,
                 DueDay = kv.Value.DueDay,
                 RemindTime = kv.Value.RemindTime,
                 RemindDay = kv.Value.RemindDay,
                 Note = kv.Value.Note,
-                Comment = kv.Value.Comment
+                Comment = kv.Value.Comment,
             }).ToArray());
 
             fs.Close();
         }
-
         public void Deserialize()
         {
             FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate);
@@ -51,25 +51,26 @@ namespace miniCalendar
                 fs.Close();
                 return;
             }
-            var result = ((Task[])formatter.Deserialize(fs)).Select(kv => new Task()
-            {
-                Name = kv.Name,
-                DueDay = kv.DueDay,
-                RemindTime = kv.RemindTime,
-                RemindDay = kv.RemindDay,
-                Note = kv.Note,
-                Comment = kv.Comment
-            }).ToList();
+            var result = ((Task[])formatter.Deserialize(fs))
+               .Select(kv => new Task()
+               {
+                   Name = kv.Name,
+                   DueDay = kv.DueDay,
+                   RemindTime = kv.RemindTime,
+                   RemindDay = kv.RemindDay,
+                   Note = kv.Note,
+                   Comment = kv.Comment,
+               }).ToList();
 
-            int id = 1;
+            int ID = 1;
 
             for (int i = 0; i < result.Count; i++)
             {
-                todoList.Add(id, result[i]);
-                ++id;
-
-                fs.Close();
+                _todoList.Add(ID, result[i]);
+                ++ID;
             }
+
+            fs.Close();
         }
     }
 }

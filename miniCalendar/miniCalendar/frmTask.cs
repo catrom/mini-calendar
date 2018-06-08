@@ -14,9 +14,10 @@ namespace miniCalendar
     {
         public Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
         public int _id;
-        public string _name = "";
 
-        public frmTask() { }
+        public frmTask() {
+            InitializeComponent();
+        }
 
         public frmTask(int id, Dictionary<int, Task> todoList)
         {
@@ -30,16 +31,14 @@ namespace miniCalendar
 
         public void displayInfo()
         {
-            if (string.IsNullOrEmpty(_todoList[_id].Name))
+            if (_todoList[_id].Name == "")
             {
-                lbTaskName.Text = "(no title)";
+                lbName.Text = "(no title)";
             }
             else
             {
-                lbTaskName.Text = _todoList[_id].Name;
+                lbName.Text = _todoList[_id].Name;
             }
-
-
         }
 
     }
