@@ -258,7 +258,7 @@
             this.btnModify.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnModify.IdleBorderThickness = 1;
             this.btnModify.IdleCornerRadius = 20;
-            this.btnModify.IdleFillColor = System.Drawing.SystemColors.Control;
+            this.btnModify.IdleFillColor = System.Drawing.Color.Transparent;
             this.btnModify.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnModify.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnModify.Location = new System.Drawing.Point(18, 10);

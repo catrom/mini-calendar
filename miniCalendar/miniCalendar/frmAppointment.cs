@@ -14,7 +14,6 @@ using System.IO;
 namespace miniCalendar
 {
     [Serializable]
-
     public partial class frmAppointment : UserControl
     {
         Dictionary<int, Appointment> dataTable = new Dictionary<int, Appointment>();
@@ -22,17 +21,13 @@ namespace miniCalendar
         List<List<int>> taskOfDay = new List<List<int>>();
 
         // for my month calendar
-        List<List<Button>> matrix = new List<List<Button>>();
+        List<List<myButton>> matrix = new List<List<myButton>>();
         List<string> dayOfWeek = new List<string> { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
         DateTime monthSelected = DateTime.Today;
-        DateTime daySelected = DateTime.Today;
+        List<DateTime> daySelected= new List<DateTime> { DateTime.Today };
         List<Bunifu.Framework.UI.BunifuCheckbox> listColor = new List<Bunifu.Framework.UI.BunifuCheckbox>();
         Dictionary<DateTime, int> colorHistory = new Dictionary<DateTime, int>();
         Dictionary<DateTime, int> symbolHistory = new Dictionary<DateTime, int>();
-
-
-
-
 
 
         // mã màu RGB của bảng chọn màu cho ngày
@@ -58,7 +53,7 @@ namespace miniCalendar
             this.symbolHistory = myMonthCalendar.symbolHistory;
 
             lbToday.Text = "Today: " + DateTime.Today.ToString("ddddddddd, dd MMM yyyy");
-            lbpickDay.Text = daySelected.ToString("dd/MM/yy");
+            lbpickDay.Text = daySelected[0].ToString("dd/MM/yy");
 
             updateDrawingTimeTable();
             DrawTimeTable();
@@ -80,11 +75,11 @@ namespace miniCalendar
 
             for (int i = 0; i < 6; i++)
             {
-                matrix.Add(new List<Button>());
+                matrix.Add(new List<myButton>());
                 for (int j = 0; j < 7; j++)
                 {
-                    var btn = new Button();
-
+                    var btn = new myButton();
+                    
                     btn.BackColor = System.Drawing.Color.White;
                     btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
                     btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -100,6 +95,7 @@ namespace miniCalendar
                     btn.TabIndex = id++;
 
                     btn.Click += new EventHandler(day_Click);
+                    btn.DoubleClick += new EventHandler(btnNewAppointment_Click);
 
                     matrix[i].Add(btn);
                     panelMonthCalendar.Controls.Add(btn);
@@ -222,24 +218,37 @@ namespace miniCalendar
             calendarColoring();
         }
 
-        private List<int> getDayClick()
+        private List<List<int>> getButtonPositionClick()
         {
+            List<List<int>> position = new List<List<int>>();
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    if (matrix[i][j].ForeColor == Color.Black && matrix[i][j].Text == daySelected.Day.ToString())
+                    foreach (var daySelect in daySelected)
                     {
-                        return new List<int> { i, j };
+                        if (matrix[i][j].ForeColor == Color.Black && matrix[i][j].Text == daySelect.Day.ToString())
+                        {
+                            position.Add(new List<int> { i, j });
+                        }
                     }
+                    
                 }
             }
-            return null;
+            return position;
         }
+
+        bool firstClick = true;
 
         private void day_Click(object sender, EventArgs e)
         {
             var btn = (Button)sender;
+            if(firstClick)
+            {
+                firstClick = false;
+                return;
+            }
+            firstClick = true;
 
             // thay đổi tháng nếu ô được chọn là của tháng trước / tháng sau
             if (btn.ForeColor == Color.LightGray)
@@ -256,17 +265,55 @@ namespace miniCalendar
             }
 
 
-            daySelected = new DateTime(monthSelected.Year, monthSelected.Month, Convert.ToInt32(btn.Text));
-            lbpickDay.Text = daySelected.ToString("dd/MM/yy");
+            var pick = new DateTime(monthSelected.Year, monthSelected.Month, Convert.ToInt32(btn.Text));
+
+            if (ModifierKeys == Keys.Control)
+            {
+                //MessageBox.Show("Y");
+                if (daySelected.Contains(pick) == true)
+                {
+                    if (daySelected.Count == 1)
+                    {
+                        return;
+                    }
+
+                    daySelected.Remove(pick);
+                }
+                else
+                {
+                    daySelected.Add(pick);
+                }
+            }
+            else
+            {
+                //MessageBox.Show("N");
+                daySelected.Clear();
+                daySelected = new List<DateTime> { pick };
+            }
+
+            lbpickDay.Text = daySelected[0].ToString("dd/MM/yy");
 
             // nếu không nằm trong dateGroup thì đóng 2 cái tag chọn symbol với chọn màu.
-            if (dateGroup.ContainsKey(daySelected) == false)
+            if ((daySelected.Count == 1 && dateGroup.ContainsKey(daySelected[0]) == false) || 
+                daySelected.Count > 1)
             {
                 panelSymbol.Height = 30;
                 panelColor.Height = 30;
             }
+            else
+            {
+                // sửa đổi thông tin ở bảng chọn màu
+                if (colorHistory.ContainsKey(daySelected[0]) == true)
+                {
+                    // un check mấy cái cũ
+                    for (int i = 0; i < 8; i++)
+                    {
+                        listColor[i].Checked = false;
+                    }
 
-
+                    listColor[colorHistory[daySelected[0]]].Checked = true;
+                }
+            }
 
             //MessageBox.Show(daySelected.ToString());
             showMonth(monthSelected);
@@ -274,33 +321,29 @@ namespace miniCalendar
 
 
             // vẽ lại bảng công việc
-            updateDrawingTimeTable();
-            DrawTimeTable();
-
-            // sửa đổi thông tin ở bảng chọn màu
-            if (colorHistory.ContainsKey(daySelected) == true)
+            if (daySelected.Count == 1)
             {
-                // un check mấy cái cũ
-                for (int i = 0; i < 8; i++)
-                {
-                    listColor[i].Checked = false;
-                }
-
-                listColor[colorHistory[daySelected]].Checked = true;
+                updateDrawingTimeTable();
+                DrawTimeTable();
             }
+
         }
 
         private void lbToday_Click(object sender, EventArgs e)
         {
             monthSelected = DateTime.Today;
-            daySelected = DateTime.Today;
+            daySelected[0] = DateTime.Today;
             showMonth(monthSelected);
             calendarColoring();
-            lbpickDay.Text = daySelected.ToString("dd/MM/yy");
+            lbpickDay.Text = daySelected[0].ToString("dd/MM/yy");
+
+            updateDrawingTimeTable();
+            DrawTimeTable();
         }
 
+        public int cnt = 0;
         private void calendarColoring()
-        {
+        { 
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 7; j++)
@@ -373,7 +416,7 @@ namespace miniCalendar
                         {
                             matrix[i][j].BackColor = Color.FromArgb(68, 133, 242);
                         }
-                        else if (dateButton == daySelected)
+                        else if (daySelected.Contains(dateButton) == true)
                         {
                             matrix[i][j].BackColor = Color.FromArgb(223, 223, 223);
                         }
@@ -434,9 +477,14 @@ namespace miniCalendar
             var pick = (Bunifu.Framework.UI.BunifuCheckbox)sender;
             pick.Checked = true;
 
-            List<int> dayInMatrix = getDayClick();
-            matrix[dayInMatrix[0]][dayInMatrix[1]].BackColor = pick.BackColor;
-            colorHistory[daySelected] = pick.TabIndex;
+            var dayInMatrix = getButtonPositionClick();
+
+            for (int i = 0; i < dayInMatrix.Count; i++)
+            {
+                matrix[dayInMatrix[i][0]][dayInMatrix[i][1]].BackColor = pick.BackColor;
+                colorHistory[daySelected[i]] = pick.TabIndex;
+            }
+            
         }
 
         private Image getImage(int index)
@@ -467,17 +515,20 @@ namespace miniCalendar
 
         private void symbol_Click(object sender, EventArgs e)
         {
-            List<int> dayInMatrix = getDayClick();
+            var dayInMatrix = getButtonPositionClick();
             var pick = (Bunifu.Framework.UI.BunifuImageButton)sender;
             int index = pick.Name[pick.Name.Length - 1] - '0';
 
-            matrix[dayInMatrix[0]][dayInMatrix[1]].Image = getImage(index);
-            symbolHistory[daySelected] = index;
+            for (int i = 0; i < dayInMatrix.Count; i++)
+            {
+                matrix[dayInMatrix[i][0]][dayInMatrix[i][1]].Image = getImage(index);
+                symbolHistory[daySelected[i]] = index;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (dateGroup.ContainsKey(daySelected))
+            if (dateGroup.ContainsKey(daySelected[0]))
             {
                 if (panelSymbol.Height == 30)
                 {
@@ -492,7 +543,7 @@ namespace miniCalendar
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            if (dateGroup.ContainsKey(daySelected))
+            if (dateGroup.ContainsKey(daySelected[0]))
             {
                 if (panelColor.Height == 30)
                 {
@@ -522,10 +573,30 @@ namespace miniCalendar
         
         private void btnNewAppointment_Click(object sender, EventArgs e)
         {
-            
-            frmNewAppointment form = new frmNewAppointment(getID(), dataTable, daySelected, false);
-            form.Disposed += new EventHandler(dispose_event);
-            panelNewApp.Controls.Add(form);
+            if (daySelected.Count == 1)
+            {
+                frmNewAppointment form = new frmNewAppointment(new List<int> { getID() }, dataTable, daySelected, false);
+                form.Disposed += new EventHandler(dispose_event);
+                panelNewApp.Controls.Add(form);
+            }
+            else
+            {
+                List<int> listID = new List<int>();
+                int nums = daySelected.Count;
+
+                for (int i = 1; nums > 0; i++)
+                {
+                    if (dataTable.ContainsKey(i) == false)
+                    {
+                        listID.Add(i);
+                        nums--;
+                    }
+                }
+
+                frmNewAppointment form = new frmNewAppointment(listID, dataTable, daySelected, false);
+                form.Disposed += new EventHandler(dispose_event);
+                panelNewApp.Controls.Add(form);
+            }
 
             panelTimeTable.Visible = false;
             btnNewAppointment.Enabled = false;
@@ -536,10 +607,16 @@ namespace miniCalendar
 
         private void dispose_event(object sender, EventArgs e)
         {
-            
-            
             updateDrawingTimeTable();
             DrawTimeTable();
+
+            for (int i = daySelected.Count - 1; i > 0; i--)
+            {
+                daySelected.RemoveAt(i);
+            }
+
+            showMonth(monthSelected);
+            calendarColoring();
 
             panelTimeTable.Visible = true;
             btnNewAppointment.Enabled = true;
@@ -557,12 +634,17 @@ namespace miniCalendar
         {
             foreach (var i in dataTable)
             {
-                DateTime time = new DateTime(i.Value.startHour.Year, i.Value.startHour.Month, i.Value.startHour.Day);
-                if (dateGroup.ContainsKey(time) == false)
+                DateTime timeStart = new DateTime(i.Value.startHour.Year, i.Value.startHour.Month, i.Value.startHour.Day);
+                DateTime timeFinish = new DateTime(i.Value.endHour.Year, i.Value.endHour.Month, i.Value.endHour.Day);
+
+                for (var time = timeStart; time <= timeFinish; time = time.AddDays(1))
                 {
-                    dateGroup.Add(time, new List<int>());
+                    if (dateGroup.ContainsKey(time) == false)
+                    {
+                        dateGroup.Add(time, new List<int>());
+                    }
+                    dateGroup[time].Add(i.Key);
                 }
-                dateGroup[time].Add(i.Key);
             }
         }
 
@@ -655,12 +737,11 @@ namespace miniCalendar
             }
 
             // xoá các giá trị bị dư của color history
-            foreach (var key in colorHistory.Keys)
+            for (int i = colorHistory.Keys.Count - 1; i >= 0; i--)
             {
-                if (dateGroup.ContainsKey(key) == false)
+                if (dateGroup.ContainsKey(colorHistory.Keys.ElementAt(i)) == false)
                 {
-                    colorHistory.Remove(key);
-                    break;
+                    colorHistory.Remove(colorHistory.Keys.ElementAt(i));
                 }
             }
 
@@ -674,25 +755,19 @@ namespace miniCalendar
             }
 
             // xoá các giá trị bị dư của symbol history
-            foreach (var key in symbolHistory.Keys)
+            for (int i = symbolHistory.Keys.Count - 1; i >= 0; i--)
             {
-                if (dateGroup.ContainsKey(key) == false)
+                if (dateGroup.ContainsKey(symbolHistory.Keys.ElementAt(i)) == false)
                 {
-                    symbolHistory.Remove(key);
-                    break;
+                    symbolHistory.Remove(symbolHistory.Keys.ElementAt(i));
                 }
             }
-            
+
         }
 
         // Hàm hiển thị tất cả các task của cùng một ngày ra màn hình
         public void DrawTimeTable()
         {
-            // bolded date in monthcalendar
-            
-            
-
-
             // clear old task
             for (int i = panelTimeTable.Controls.Count - 1; i >= 0; i--)
             {
@@ -705,12 +780,13 @@ namespace miniCalendar
 
 
             // lấy ngày hiện tại của lịch chọn
-            DateTime currentTime = daySelected;
+            DateTime currentTime = daySelected[0];
 
             if (dateGroup.ContainsKey(currentTime) == false)
             {
                 return;
             }
+
 
             List<int> list = dateGroup[currentTime];
 
@@ -750,12 +826,49 @@ namespace miniCalendar
             float width = (float)totalWidth / numsCol;
 
             // height
-            int totalMinutes = (int)(dataTable[ID].endHour - dataTable[ID].startHour).TotalMinutes;
-            float height = ((float)totalMinutes / 60) * (float)22.15; // 23 là độ rộng của một giờ trong timeTable
+            int totalMinutes = 0;
+            float height = 0;
+            int totStart = dataTable[ID].startHour.DayOfYear;
+            int totEnd = dataTable[ID].endHour.DayOfYear;
+            int totSelected = daySelected[0].DayOfYear;
+
+            if (totStart == totEnd) // sự kiện diễn ra trong 1 ngày
+            {
+                totalMinutes = (int)(dataTable[ID].endHour - dataTable[ID].startHour).TotalMinutes;
+            }
+            else
+            {
+                if (totStart == totSelected)
+                {
+                    var temp = new DateTime(dataTable[ID].startHour.Year, dataTable[ID].startHour.Month, dataTable[ID].startHour.Day, 23, 59, 59);
+                    totalMinutes = (int)(temp - dataTable[ID].startHour).TotalMinutes;
+                    
+                } 
+                else if (totSelected < totEnd)
+                {
+                    totalMinutes = 1440;
+                }
+                else
+                {
+                    var temp = new DateTime(daySelected[0].Year, daySelected[0].Month, daySelected[0].Day, 0, 0, 0);
+                    totalMinutes = (int)(dataTable[ID].endHour - temp).TotalMinutes;
+                }
+            }
+            
+            height = ((float)totalMinutes / 60) * (float)22.15; // 23 là độ rộng của một giờ trong timeTable
+
 
             // location
             float X = width * (col - 1) + 41;
-            float Y = (dataTable[ID].startHour.Hour * 2 + dataTable[ID].startHour.Minute / 30) * (float)11.075; // 11.5 pixel là độ dài mỗi khoảng nửa giờ trong timeTable
+            float Y = 0;
+            if (totStart == totSelected)
+            {
+                Y = (dataTable[ID].startHour.Hour * 2 + dataTable[ID].startHour.Minute / 30) * (float)11.075; // 11.5 pixel là độ dài mỗi khoảng nửa giờ trong timeTable
+            }
+            else 
+            {
+                Y = 0;
+            } 
 
             // color
             Color color = new Color();
@@ -791,6 +904,12 @@ namespace miniCalendar
             else
             {
                 task.Text = dataTable[ID].Title;
+
+                if (totStart != totEnd)
+                {
+                    task.Text += "\n";
+                    task.Text += "(" + (totSelected - totStart + 1).ToString() + "/" + (totEnd - totStart + 1).ToString() + ")";
+                }
             }
             
             task.BackColor = color;
@@ -814,6 +933,10 @@ namespace miniCalendar
             panelNewApp.Controls.Add(form);
 
             panelTimeTable.Visible = false;
+            btnNewAppointment.Enabled = false;
+            panelMonthCalendar.Enabled = false;
+            panelColor.Enabled = false;
+            panelSymbol.Enabled = false;
         }
 
         private void panelTimeTable_SizeChanged(object sender, EventArgs e)
@@ -825,6 +948,14 @@ namespace miniCalendar
         private void frmAppointment_Move(object sender, EventArgs e)
         {
             
+        }
+    }
+
+    public class myButton : Button
+    {
+        public myButton()
+        {
+            SetStyle(ControlStyles.StandardClick | ControlStyles.StandardDoubleClick, true);
         }
     }
 }

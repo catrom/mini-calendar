@@ -58,8 +58,8 @@ namespace miniCalendar
             {
                 lbStartHour.ForeColor = Color.Black;
                 lbEndHour.ForeColor = Color.Black;
-                lbStartHour.Text = dataTable[ID].startHour.ToString("ddddddddd, dd MMM yyyy     hh:mm tt");
-                lbEndHour.Text = dataTable[ID].endHour.ToString("ddddddddd, dd MMM yyyy     hh:mm tt");
+                lbStartHour.Text = dataTable[ID].startHour.ToString("ddddddddd, dd MMM yyyy       hh:mm tt");
+                lbEndHour.Text = dataTable[ID].endHour.ToString("ddddddddd, dd MMM yyyy       hh:mm tt");
             }
 
 
@@ -109,7 +109,7 @@ namespace miniCalendar
         {
             panelView.Visible = false;
 
-            frmNewAppointment frmModify = new frmNewAppointment(ID, dataTable, dataTable[ID].startHour, true);
+            frmNewAppointment frmModify = new frmNewAppointment(new List<int> { ID }, dataTable, new List<DateTime> { dataTable[ID].startHour }, true);
             frmModify.Disposed += new EventHandler(dispose_event);
             panelModify.Controls.Add(frmModify);
 
@@ -117,8 +117,16 @@ namespace miniCalendar
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            dataTable.Remove(ID);
-            Dispose();
+            var dialogResult = MessageBox.Show("Delete this appointment?", "", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                dataTable.Remove(ID);
+                Dispose();
+            }
+            else if (dialogResult == DialogResult.No)
+            { 
+            }
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
