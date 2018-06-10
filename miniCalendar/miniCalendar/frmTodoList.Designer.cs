@@ -31,9 +31,9 @@ namespace miniCalendar
         {
             this.pnlTaskDetail = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbAddTask = new System.Windows.Forms.TextBox();
             this.fpTaskList = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,18 +59,10 @@ namespace miniCalendar
             this.panel1.Size = new System.Drawing.Size(347, 74);
             this.panel1.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(11, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // tbAddTask
             // 
             this.tbAddTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAddTask.ForeColor = System.Drawing.Color.Silver;
             this.tbAddTask.Location = new System.Drawing.Point(45, 21);
             this.tbAddTask.Name = "tbAddTask";
             this.tbAddTask.Size = new System.Drawing.Size(290, 32);
@@ -87,6 +79,16 @@ namespace miniCalendar
             this.fpTaskList.Name = "fpTaskList";
             this.fpTaskList.Size = new System.Drawing.Size(347, 457);
             this.fpTaskList.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::miniCalendar.Properties.Resources.icons8_Plus_Math_32;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // frmTodoList
             // 

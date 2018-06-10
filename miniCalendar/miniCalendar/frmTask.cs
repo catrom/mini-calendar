@@ -25,7 +25,7 @@ namespace miniCalendar
 
             _id = id;
             _todoList = todoList;
-
+            
             displayInfo();
         }
 
@@ -40,7 +40,7 @@ namespace miniCalendar
                 lbName.Text = _todoList[_id].Name;
             }
         }
-
+        
     }
 
 }

@@ -93,7 +93,7 @@ namespace miniCalendar
 
         private void btnTodoList_Click(object sender, EventArgs e)
         {
-            frmTodoList form = new frmTodoList();
+            frmTodoList form = new frmTodoList(todoList._todoList);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
             WorkingArea.Controls.Add(form);      

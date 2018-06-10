@@ -283,6 +283,16 @@ namespace miniCalendar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Plus_Math_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Plus_Math_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Plus_Math_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Plus_Math_48", resourceCulture);

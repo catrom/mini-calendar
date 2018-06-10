@@ -49,7 +49,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlTaskName = new System.Windows.Forms.Panel();
             this.tbTaskName = new System.Windows.Forms.TextBox();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.cbIsDone = new Bunifu.Framework.UI.BunifuCheckbox();
             this.pnlButton = new System.Windows.Forms.Panel();
             this.btnCancel = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -273,7 +273,7 @@
             // 
             this.pnlTaskName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTaskName.Controls.Add(this.tbTaskName);
-            this.pnlTaskName.Controls.Add(this.bunifuCheckbox1);
+            this.pnlTaskName.Controls.Add(this.cbIsDone);
             this.pnlTaskName.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTaskName.Location = new System.Drawing.Point(0, 0);
             this.pnlTaskName.Name = "pnlTaskName";
@@ -289,17 +289,18 @@
             this.tbTaskName.Size = new System.Drawing.Size(258, 25);
             this.tbTaskName.TabIndex = 1;
             // 
-            // bunifuCheckbox1
+            // cbIsDone
             // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = false;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(16, 19);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 0;
+            this.cbIsDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.cbIsDone.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.cbIsDone.Checked = false;
+            this.cbIsDone.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.cbIsDone.ForeColor = System.Drawing.Color.White;
+            this.cbIsDone.Location = new System.Drawing.Point(16, 19);
+            this.cbIsDone.Name = "cbIsDone";
+            this.cbIsDone.Size = new System.Drawing.Size(20, 20);
+            this.cbIsDone.TabIndex = 0;
+            this.cbIsDone.OnChange += new System.EventHandler(this.bunifuCheckbox1_OnChange);
             // 
             // pnlButton
             // 
@@ -336,6 +337,7 @@
             this.btnCancel.Size = new System.Drawing.Size(90, 48);
             this.btnCancel.TabIndex = 18;
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -420,7 +422,7 @@
         private System.Windows.Forms.Label lbDueDay;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pnlTaskName;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private Bunifu.Framework.UI.BunifuCheckbox cbIsDone;
         private System.Windows.Forms.Panel pnlButton;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSave;
         private Bunifu.Framework.UI.BunifuThinButton2 btnCancel;

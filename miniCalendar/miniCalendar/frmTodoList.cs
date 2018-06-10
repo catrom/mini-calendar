@@ -16,26 +16,23 @@ namespace miniCalendar
     {
         private Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
         int _id;
-        FlowLayoutPanel fPanel = new FlowLayoutPanel();
-        List<frmTask> list = new List<frmTask>();
+        List<int> _list = new List<int>();
 
         public frmTodoList()
         {
-            InitializeComponent();
-            tbAddTask.Text = "Add a to-do...";
-
-            ShowTaskList();
+            InitializeComponent();            
         }
 
-        public frmTodoList(int id, Dictionary<int, Task> todoList)
+        public frmTodoList(Dictionary<int, Task> todoList)
         {
             InitializeComponent();
+            tbAddTask.Text = "Add a to-do...";
+            ShowTaskList();
             _todoList = todoList;
-            _id = id;
 
-            frmTask f = new frmTask();
-            pnlTaskDetail.Controls.Add(f);
-            f.Click += new EventHandler(btnTask_Click);
+            //frmTask f = new frmTask();
+            //pnlTaskDetail.Controls.Add(f);
+            //f.Click += new EventHandler(btnTask_Click);
         }
 
         private int getID()
@@ -73,6 +70,7 @@ namespace miniCalendar
                     
                     _id = getID();
                     Task task = new Task();
+                    task.Key = _id;
                     task.Name = tbAddTask.Text;
                     task.DueDay = DateTime.Now;
                     task.RemindDay = DateTime.Now;         
@@ -80,7 +78,7 @@ namespace miniCalendar
 
                     frmTask abc = new frmTask(_id, _todoList);
                     abc.lbName.BringToFront();
-                    list.Add(abc);
+                    _list.Add(abc._id);
 
                     tbAddTask.Text = "";
 
@@ -103,11 +101,26 @@ namespace miniCalendar
 
         public void ShowTaskList()
         {
-            for(int i=0;i<list.Count;i++)
+            if (_list.Count > 0)
             {
-                fpTaskList.Controls.Add(list[i]);
+                for (int i = 0; i < _list.Count; i++)
+                {
+                    frmTask aTask = new frmTask(_list[i], _todoList);
+                    fpTaskList.Controls.Add(aTask);
+                }
             }
         }
 
+        private void Delete_detail(int id, Dictionary<int, Task> todoList)
+        {
+            todoList.Remove(id);
+            Dispose();
+        }
+
+        private void Delete_list(int id, List<int> list)
+        {
+            list.Remove(id);
+            Dispose();
+        }
     }
 }

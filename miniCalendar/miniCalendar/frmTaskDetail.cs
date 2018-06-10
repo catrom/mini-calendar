@@ -31,29 +31,7 @@ namespace miniCalendar
             _isModified = isModified;
             tbSubtask.text = "Add a to-do...";
 
-            if(isModified == false)
-            {
-                tbTaskName.Text = _todoList[_id].Name;
-                dtpDueDay.Value = _todoList[_id].DueDay;
-                nmHour.Value = _todoList[_id].RemindTime.Hour;
-                nmMinutes.Value = _todoList[_id].RemindTime.Minute;
-                dtpRemindDay.Value = _todoList[_id].RemindDay;
-                rtbNote.Text = _todoList[_id].Note;
-                tbComment.text = _todoList[_id].Comment;
-            }
-            else
-            {
-                _todoList[_id].Name = tbTaskName.Text;
-                _todoList[_id].DueDay = dtpDueDay.Value;
-
-                DateTime dt = new DateTime();
-                _todoList[_id].RemindTime = dt.AddHours((double)nmHour.Value);
-                _todoList[_id].RemindTime = dt.AddMinutes((double)nmMinutes.Value);
-
-                _todoList[_id].RemindDay = dtpRemindDay.Value;
-                _todoList[_id].Note = rtbNote.Text;
-                _todoList[_id].Comment = tbComment.text;
-            }
+            ShowInfo(_isModified);
         }
 
         private void tbSubtask_KeyDown(object sender, EventArgs e)
@@ -90,6 +68,48 @@ namespace miniCalendar
                 _todoList[_id].RemindDay = dtpRemindDay.Value;
                 _todoList[_id].Note = rtbNote.Text;
                 _todoList[_id].Comment = tbComment.text;
+            }
+        }
+
+        private void ShowInfo(bool isModified)
+        {
+            if (isModified == false)
+            {
+                tbTaskName.Text = _todoList[_id].Name;  
+                dtpDueDay.Value = _todoList[_id].DueDay;
+                nmHour.Value = _todoList[_id].RemindTime.Hour;
+                nmMinutes.Value = _todoList[_id].RemindTime.Minute;
+                dtpRemindDay.Value = _todoList[_id].RemindDay;
+                rtbNote.Text = _todoList[_id].Note;
+                tbComment.text = _todoList[_id].Comment;
+            }
+            else
+            {
+                _todoList[_id].Name = tbTaskName.Text;
+                _todoList[_id].DueDay = dtpDueDay.Value;
+
+                DateTime dt = new DateTime();
+                _todoList[_id].RemindTime = dt.AddHours((double)nmHour.Value);
+                _todoList[_id].RemindTime = dt.AddMinutes((double)nmMinutes.Value);
+
+                _todoList[_id].RemindDay = dtpRemindDay.Value;
+                _todoList[_id].Note = rtbNote.Text;
+                _todoList[_id].Comment = tbComment.text;
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            _isModified = false;
+            ShowInfo(_isModified);
+        }
+
+        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        {
+            if(cbIsDone.Checked)
+            {
+                _todoList.Remove(_id);
+                Dispose();
             }
         }
     }
