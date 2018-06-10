@@ -48,3 +48,7 @@ D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\m
 D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.CopyComplete
 D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
 D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Schedule.frmNewTimeBlock.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Schedule.frmNewTimeTable.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Schedule.frmViewTimeBlock.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Schedule.frmViewTimeTable.resources
