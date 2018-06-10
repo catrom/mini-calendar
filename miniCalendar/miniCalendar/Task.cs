@@ -11,14 +11,14 @@ namespace miniCalendar
     public class Task
     {     
         public Task () { }
-        public Task(string name, DateTime dDay, DateTime rTime, DateTime rDay, string note, string comment)
+        public Task(string name, DateTime dDay, DateTime rTime, DateTime rDay, string note, DateTime sDay)
         {
             Name = name;
             DueDay = dDay;
             RemindTime = rTime;
             RemindDay = rDay;
             Note = note;
-            Comment = comment;
+            StartDay = sDay;
         }
 
         //[XmlAttribute]
@@ -40,6 +40,6 @@ namespace miniCalendar
         public string Note;
 
         [XmlAttribute]
-        public string Comment;
+        public DateTime StartDay;
     }
 }

@@ -20,22 +20,27 @@ namespace miniCalendar
 
         public frmTodoList()
         {
-            InitializeComponent();            
+            InitializeComponent();       
         }
 
         public frmTodoList(Dictionary<int, Task> todoList)
         {
             InitializeComponent();
             tbAddTask.Text = "Add a to-do...";
-            //ShowTaskList();
             _todoList = todoList;
 
-            if(_todoList.Count > 0)
+            showTaskList();
+        }
+
+        public void showTaskList()
+        {
+            if (_todoList.Count > 0)
             {
-                for(int i=1;i<=_todoList.Count;i++)
+                for (int i = 1; i <= _todoList.Count; i++)
                 {
-                    frmTask aTask = new frmTask(i,_todoList);
+                    frmTask aTask = new frmTask(i, _todoList);
                     fpTaskList.Controls.Add(aTask);
+                    aTask.Click += new EventHandler(btnTask_Click);
                 }
             }
         }
@@ -72,19 +77,19 @@ namespace miniCalendar
                     MessageBox.Show("Textbox can't be empty!", "Error!!!");
                 else
                 {
-                    
+                    DateTime now = DateTime.Now;
                     _id = getID();
                     Task task = new Task();
-                    //task.Key = _id;
                     task.Name = tbAddTask.Text;
                     task.DueDay = DateTime.Now;
-                    task.RemindDay = DateTime.Now;         
+                    task.RemindDay = DateTime.Now;
+                    task.RemindTime = DateTime.Now;
+                    task.StartDay = now;    
                     _todoList.Add(_id, task);
 
                     frmTask abc = new frmTask(_id, _todoList);
                     abc.lbName.BringToFront();
                     _list.Add(abc._id);
-                    MessageBox.Show(_list.Count.ToString());
 
                     tbAddTask.Text = "";
 
@@ -95,22 +100,15 @@ namespace miniCalendar
         }
 
         private void btnTask_Click(object sender, EventArgs e)
-        {
-            frmTask abc = sender as frmTask;
-            frmTaskDetail fa = new frmTaskDetail(abc._id, _todoList,false);
+        {         
+            frmTask abc = new frmTask();
+            frmTaskDetail fa = new frmTaskDetail(abc._id, _todoList, false);
+            
             pnlTaskDetail.Controls.Clear();
             pnlTaskDetail.Controls.Add(fa);
             fa.Dock = DockStyle.Fill;
-            fa.BringToFront();
+            fa.BringToFront();      
         }
-
-        private void Delete_detail(int id, Dictionary<int, Task> todoList, List<int> list)
-        {
-            todoList.Remove(id);
-            list.Remove(id);
-            Dispose();
-        }
-
 
     }
 }

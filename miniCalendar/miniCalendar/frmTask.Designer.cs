@@ -36,6 +36,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.ForeColor = System.Drawing.Color.White;
             this.lbName.Location = new System.Drawing.Point(45, 9);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(51, 20);
@@ -53,7 +54,6 @@
             this.cbIsDone.Name = "cbIsDone";
             this.cbIsDone.Size = new System.Drawing.Size(20, 20);
             this.cbIsDone.TabIndex = 4;
-            this.cbIsDone.OnChange += new System.EventHandler(this.cbIsDone_OnChange);
             // 
             // frmTask
             // 
@@ -62,7 +62,6 @@
             this.Controls.Add(this.cbIsDone);
             this.Name = "frmTask";
             this.Size = new System.Drawing.Size(331, 36);
-            this.Load += new System.EventHandler(this.frmTask_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

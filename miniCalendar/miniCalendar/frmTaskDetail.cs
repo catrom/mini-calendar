@@ -58,18 +58,10 @@ namespace miniCalendar
             }
             else
             {
-                _todoList[_id].Name = tbTaskName.Text;
-                _todoList[_id].DueDay = dtpDueDay.Value;
-
-                DateTime dt = new DateTime();
-                _todoList[_id].RemindTime = dt.AddHours((double)nmHours.Value);
-                _todoList[_id].RemindTime = dt.AddMinutes((double)nmMinutes.Value);
-
-                _todoList[_id].RemindDay = dtpRemindDay.Value;
-                _todoList[_id].Note = rtbNote.Text;
-                _todoList[_id].Comment = tbComment.text;
+                _isModified = true;
+                ShowInfo(_isModified);
             }
-            MessageBox.Show(_todoList[_id].Name + "\n" + _todoList[_id].DueDay.ToString());
+            lbInfo.Text = "Last updated on " + DateTime.Now;
         }
 
         private void ShowInfo(bool isModified)
@@ -78,24 +70,19 @@ namespace miniCalendar
             {
                 tbTaskName.Text = _todoList[_id].Name;  
                 dtpDueDay.Value = _todoList[_id].DueDay;
-                nmHours.Value = _todoList[_id].RemindTime.Hour;
-                nmMinutes.Value = _todoList[_id].RemindTime.Minute;
+                dtpRemindTime.Value = _todoList[_id].RemindTime;
                 dtpRemindDay.Value = _todoList[_id].RemindDay;
                 rtbNote.Text = _todoList[_id].Note;
-                tbComment.text = _todoList[_id].Comment;
+                lbInfo.Text = "Created on " + _todoList[_id].StartDay.ToString();
             }
             else
             {
                 _todoList[_id].Name = tbTaskName.Text;
                 _todoList[_id].DueDay = dtpDueDay.Value;
-
-                DateTime dt = new DateTime();
-                _todoList[_id].RemindTime = dt.AddHours((double)nmHours.Value);
-                _todoList[_id].RemindTime = dt.AddMinutes((double)nmMinutes.Value);
-
+                _todoList[_id].RemindTime = dtpRemindTime.Value;
                 _todoList[_id].RemindDay = dtpRemindDay.Value;
                 _todoList[_id].Note = rtbNote.Text;
-                _todoList[_id].Comment = tbComment.text;
+                _todoList[_id].StartDay = DateTime.Now;
             }
         }
 
@@ -105,12 +92,14 @@ namespace miniCalendar
             ShowInfo(_isModified);
         }
 
-        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        private void cbIsDone_OnChange(object sender, EventArgs e)
         {
-            if(cbIsDone.Checked)
+            if (cbIsDone.Checked)
             {
+                frmTodoList newList = new frmTodoList(_todoList);
                 _todoList.Remove(_id);
                 Dispose();
+
             }
         }
     }

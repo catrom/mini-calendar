@@ -43,9 +43,9 @@ namespace miniCalendar
             this.pnlTaskDetail.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnlTaskDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTaskDetail.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlTaskDetail.Location = new System.Drawing.Point(347, 0);
+            this.pnlTaskDetail.Location = new System.Drawing.Point(287, 0);
             this.pnlTaskDetail.Name = "pnlTaskDetail";
-            this.pnlTaskDetail.Size = new System.Drawing.Size(319, 531);
+            this.pnlTaskDetail.Size = new System.Drawing.Size(379, 531);
             this.pnlTaskDetail.TabIndex = 0;
             // 
             // panel1
@@ -56,13 +56,13 @@ namespace miniCalendar
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(347, 74);
+            this.panel1.Size = new System.Drawing.Size(287, 74);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::miniCalendar.Properties.Resources.icons8_Plus_Math_32;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -73,9 +73,9 @@ namespace miniCalendar
             // 
             this.tbAddTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAddTask.ForeColor = System.Drawing.Color.Silver;
-            this.tbAddTask.Location = new System.Drawing.Point(45, 21);
+            this.tbAddTask.Location = new System.Drawing.Point(34, 21);
             this.tbAddTask.Name = "tbAddTask";
-            this.tbAddTask.Size = new System.Drawing.Size(290, 32);
+            this.tbAddTask.Size = new System.Drawing.Size(229, 32);
             this.tbAddTask.TabIndex = 3;
             this.tbAddTask.Enter += new System.EventHandler(this.tbAddTask_Enter);
             this.tbAddTask.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbAddTask_KeyDown);
@@ -87,7 +87,7 @@ namespace miniCalendar
             this.fpTaskList.Dock = System.Windows.Forms.DockStyle.Top;
             this.fpTaskList.Location = new System.Drawing.Point(0, 74);
             this.fpTaskList.Name = "fpTaskList";
-            this.fpTaskList.Size = new System.Drawing.Size(347, 457);
+            this.fpTaskList.Size = new System.Drawing.Size(287, 457);
             this.fpTaskList.TabIndex = 2;
             // 
             // frmTodoList
