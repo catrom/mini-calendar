@@ -40,7 +40,25 @@ namespace miniCalendar
                 lbName.Text = _todoList[_id].Name;
             }
         }
-        
+
+        private void cbIsDone_OnChange(object sender, EventArgs e)
+        {
+            frmTodoList tdl = new frmTodoList();
+            if(cbIsDone.Checked)
+            {
+                
+            }
+        }
+
+        private void frmTask_Load(object sender, EventArgs e)
+        {
+            frmTodoList abc = new frmTodoList(_todoList);
+            frmTaskDetail fa = new frmTaskDetail(_id, _todoList, false);
+            abc.pnlTaskDetail.Controls.Clear();
+            abc.pnlTaskDetail.Controls.Add(fa);
+            fa.Dock = DockStyle.Fill;
+            fa.BringToFront();
+        }
     }
 
 }

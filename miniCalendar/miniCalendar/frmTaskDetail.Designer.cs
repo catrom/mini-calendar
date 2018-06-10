@@ -39,7 +39,7 @@
             this.tbSubtask = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.nmMinutes = new System.Windows.Forms.NumericUpDown();
-            this.nmHour = new System.Windows.Forms.NumericUpDown();
+            this.nmHours = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtpRemindDay = new System.Windows.Forms.DateTimePicker();
             this.lbRemind = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmMinutes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -159,7 +159,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.nmMinutes);
-            this.panel2.Controls.Add(this.nmHour);
+            this.panel2.Controls.Add(this.nmHours);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.dtpRemindDay);
             this.panel2.Controls.Add(this.lbRemind);
@@ -181,17 +181,17 @@
             this.nmMinutes.Size = new System.Drawing.Size(43, 20);
             this.nmMinutes.TabIndex = 26;
             // 
-            // nmHour
+            // nmHours
             // 
-            this.nmHour.Location = new System.Drawing.Point(55, 23);
-            this.nmHour.Maximum = new decimal(new int[] {
+            this.nmHours.Location = new System.Drawing.Point(55, 23);
+            this.nmHours.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
-            this.nmHour.Name = "nmHour";
-            this.nmHour.Size = new System.Drawing.Size(43, 20);
-            this.nmHour.TabIndex = 25;
+            this.nmHours.Name = "nmHours";
+            this.nmHours.Size = new System.Drawing.Size(43, 20);
+            this.nmHours.TabIndex = 25;
             // 
             // pictureBox1
             // 
@@ -388,7 +388,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmMinutes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -413,7 +413,7 @@
         private Bunifu.Framework.UI.BunifuTextbox tbSubtask;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.NumericUpDown nmMinutes;
-        private System.Windows.Forms.NumericUpDown nmHour;
+        private System.Windows.Forms.NumericUpDown nmHours;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dtpRemindDay;
         private System.Windows.Forms.Label lbRemind;

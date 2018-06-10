@@ -27,12 +27,17 @@ namespace miniCalendar
         {
             InitializeComponent();
             tbAddTask.Text = "Add a to-do...";
-            ShowTaskList();
+            //ShowTaskList();
             _todoList = todoList;
 
-            //frmTask f = new frmTask();
-            //pnlTaskDetail.Controls.Add(f);
-            //f.Click += new EventHandler(btnTask_Click);
+            if(_todoList.Count > 0)
+            {
+                for(int i=1;i<=_todoList.Count;i++)
+                {
+                    frmTask aTask = new frmTask(i,_todoList);
+                    fpTaskList.Controls.Add(aTask);
+                }
+            }
         }
 
         private int getID()
@@ -70,7 +75,7 @@ namespace miniCalendar
                     
                     _id = getID();
                     Task task = new Task();
-                    task.Key = _id;
+                    //task.Key = _id;
                     task.Name = tbAddTask.Text;
                     task.DueDay = DateTime.Now;
                     task.RemindDay = DateTime.Now;         
@@ -79,6 +84,7 @@ namespace miniCalendar
                     frmTask abc = new frmTask(_id, _todoList);
                     abc.lbName.BringToFront();
                     _list.Add(abc._id);
+                    MessageBox.Show(_list.Count.ToString());
 
                     tbAddTask.Text = "";
 
@@ -86,7 +92,6 @@ namespace miniCalendar
                     fpTaskList.Controls.Add(abc);
                 }                
             }
-
         }
 
         private void btnTask_Click(object sender, EventArgs e)
@@ -99,28 +104,13 @@ namespace miniCalendar
             fa.BringToFront();
         }
 
-        public void ShowTaskList()
-        {
-            if (_list.Count > 0)
-            {
-                for (int i = 0; i < _list.Count; i++)
-                {
-                    frmTask aTask = new frmTask(_list[i], _todoList);
-                    fpTaskList.Controls.Add(aTask);
-                }
-            }
-        }
-
-        private void Delete_detail(int id, Dictionary<int, Task> todoList)
+        private void Delete_detail(int id, Dictionary<int, Task> todoList, List<int> list)
         {
             todoList.Remove(id);
-            Dispose();
-        }
-
-        private void Delete_list(int id, List<int> list)
-        {
             list.Remove(id);
             Dispose();
         }
+
+
     }
 }

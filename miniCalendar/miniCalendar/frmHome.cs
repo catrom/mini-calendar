@@ -96,7 +96,7 @@ namespace miniCalendar
             frmTodoList form = new frmTodoList(todoList._todoList);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
-            WorkingArea.Controls.Add(form);      
+            WorkingArea.Controls.Add(form);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)

@@ -62,13 +62,14 @@ namespace miniCalendar
                 _todoList[_id].DueDay = dtpDueDay.Value;
 
                 DateTime dt = new DateTime();
-                _todoList[_id].RemindTime = dt.AddHours((double)nmHour.Value);
+                _todoList[_id].RemindTime = dt.AddHours((double)nmHours.Value);
                 _todoList[_id].RemindTime = dt.AddMinutes((double)nmMinutes.Value);
 
                 _todoList[_id].RemindDay = dtpRemindDay.Value;
                 _todoList[_id].Note = rtbNote.Text;
                 _todoList[_id].Comment = tbComment.text;
             }
+            MessageBox.Show(_todoList[_id].Name + "\n" + _todoList[_id].DueDay.ToString());
         }
 
         private void ShowInfo(bool isModified)
@@ -77,7 +78,7 @@ namespace miniCalendar
             {
                 tbTaskName.Text = _todoList[_id].Name;  
                 dtpDueDay.Value = _todoList[_id].DueDay;
-                nmHour.Value = _todoList[_id].RemindTime.Hour;
+                nmHours.Value = _todoList[_id].RemindTime.Hour;
                 nmMinutes.Value = _todoList[_id].RemindTime.Minute;
                 dtpRemindDay.Value = _todoList[_id].RemindDay;
                 rtbNote.Text = _todoList[_id].Note;
@@ -89,7 +90,7 @@ namespace miniCalendar
                 _todoList[_id].DueDay = dtpDueDay.Value;
 
                 DateTime dt = new DateTime();
-                _todoList[_id].RemindTime = dt.AddHours((double)nmHour.Value);
+                _todoList[_id].RemindTime = dt.AddHours((double)nmHours.Value);
                 _todoList[_id].RemindTime = dt.AddMinutes((double)nmMinutes.Value);
 
                 _todoList[_id].RemindDay = dtpRemindDay.Value;

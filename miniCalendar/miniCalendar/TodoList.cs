@@ -33,7 +33,7 @@ namespace miniCalendar
             FileStream fs = new FileStream(fileName, FileMode.Truncate);
             formatter.Serialize(fs, _todoList.Select(kv => new Task()
             {
-                Key = kv.Value.Key,
+                //Key = kv.Value.Key,
                 Name = kv.Value.Name,
                 DueDay = kv.Value.DueDay,
                 RemindTime = kv.Value.RemindTime,
@@ -55,7 +55,7 @@ namespace miniCalendar
             var result = ((Task[])formatter.Deserialize(fs))
                .Select(kv => new Task()
                {
-                   Key = kv.Key,
+                   //Key = kv.Key,
                    Name = kv.Name,
                    DueDay = kv.DueDay,
                    RemindTime = kv.RemindTime,
