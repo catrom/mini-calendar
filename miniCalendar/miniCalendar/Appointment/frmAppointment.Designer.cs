@@ -287,7 +287,7 @@
             this.panelColor.Controls.Add(this.label31);
             this.panelColor.Controls.Add(this.pictureBox5);
             this.panelColor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelColor.Location = new System.Drawing.Point(0, 30);
+            this.panelColor.Location = new System.Drawing.Point(0, 60);
             this.panelColor.Name = "panelColor";
             this.panelColor.Size = new System.Drawing.Size(244, 30);
             this.panelColor.TabIndex = 11;
@@ -329,7 +329,7 @@
             this.panelSymbol.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSymbol.Location = new System.Drawing.Point(0, 0);
             this.panelSymbol.Name = "panelSymbol";
-            this.panelSymbol.Size = new System.Drawing.Size(244, 30);
+            this.panelSymbol.Size = new System.Drawing.Size(244, 60);
             this.panelSymbol.TabIndex = 10;
             // 
             // symbol7
@@ -344,7 +344,7 @@
             this.symbol7.TabIndex = 9;
             this.symbol7.TabStop = false;
             this.symbol7.Zoom = 10;
-            this.symbol7.Click += new System.EventHandler(this.symbol_Click);
+            this.symbol7.Click += new System.EventHandler(this.symbolPicker);
             // 
             // symbol3
             // 
@@ -358,7 +358,7 @@
             this.symbol3.TabIndex = 9;
             this.symbol3.TabStop = false;
             this.symbol3.Zoom = 10;
-            this.symbol3.Click += new System.EventHandler(this.symbol_Click);
+            this.symbol3.Click += new System.EventHandler(this.symbolPicker);
             // 
             // symbol6
             // 
@@ -372,7 +372,7 @@
             this.symbol6.TabIndex = 9;
             this.symbol6.TabStop = false;
             this.symbol6.Zoom = 10;
-            this.symbol6.Click += new System.EventHandler(this.symbol_Click);
+            this.symbol6.Click += new System.EventHandler(this.symbolPicker);
             // 
             // symbol5
             // 
@@ -386,7 +386,7 @@
             this.symbol5.TabIndex = 9;
             this.symbol5.TabStop = false;
             this.symbol5.Zoom = 10;
-            this.symbol5.Click += new System.EventHandler(this.symbol_Click);
+            this.symbol5.Click += new System.EventHandler(this.symbolPicker);
             // 
             // symbol2
             // 
@@ -400,7 +400,7 @@
             this.symbol2.TabIndex = 9;
             this.symbol2.TabStop = false;
             this.symbol2.Zoom = 10;
-            this.symbol2.Click += new System.EventHandler(this.symbol_Click);
+            this.symbol2.Click += new System.EventHandler(this.symbolPicker);
             // 
             // symbol4
             // 
@@ -414,7 +414,7 @@
             this.symbol4.TabIndex = 9;
             this.symbol4.TabStop = false;
             this.symbol4.Zoom = 10;
-            this.symbol4.Click += new System.EventHandler(this.symbol_Click);
+            this.symbol4.Click += new System.EventHandler(this.symbolPicker);
             // 
             // symbol1
             // 
@@ -428,7 +428,7 @@
             this.symbol1.TabIndex = 9;
             this.symbol1.TabStop = false;
             this.symbol1.Zoom = 10;
-            this.symbol1.Click += new System.EventHandler(this.symbol_Click);
+            this.symbol1.Click += new System.EventHandler(this.symbolPicker);
             // 
             // symbol0
             // 
@@ -442,7 +442,7 @@
             this.symbol0.TabIndex = 9;
             this.symbol0.TabStop = false;
             this.symbol0.Zoom = 10;
-            this.symbol0.Click += new System.EventHandler(this.symbol_Click);
+            this.symbol0.Click += new System.EventHandler(this.symbolPicker);
             // 
             // label32
             // 
@@ -838,7 +838,6 @@
             this.Controls.Add(this.panel3);
             this.Name = "frmAppointment";
             this.Size = new System.Drawing.Size(668, 533);
-            this.Move += new System.EventHandler(this.frmAppointment_Move);
             this.panel3.ResumeLayout(false);
             this.panelMonthCalendar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ibtnNext)).EndInit();

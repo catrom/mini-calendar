@@ -428,7 +428,6 @@
             this.tbLocation.TabIndex = 4;
             this.tbLocation.Text = "Add a location";
             this.tbLocation.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbLocation.Enter += new System.EventHandler(this.tbLocation_Enter);
             this.tbLocation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLocation_KeyPress);
             this.tbLocation.Leave += new System.EventHandler(this.tbLocation_Leave);
             // 
@@ -474,7 +473,6 @@
             this.tbDescription.Size = new System.Drawing.Size(329, 68);
             this.tbDescription.TabIndex = 4;
             this.tbDescription.Text = "Add descriptions";
-            this.tbDescription.Enter += new System.EventHandler(this.tbDescription_Enter);
             this.tbDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDescription_KeyPress);
             this.tbDescription.Leave += new System.EventHandler(this.tbDescription_Leave);
             // 

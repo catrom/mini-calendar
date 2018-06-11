@@ -50,12 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appointment.cs" />
-    <Compile Include="DataTable.cs" />
-    <Compile Include="frmAppointment.cs">
+    <Compile Include="Appointment\Appointment.cs" />
+    <Compile Include="Appointment\DataTable.cs" />
+    <Compile Include="Appointment\frmAppointment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmAppointment.Designer.cs">
+    <Compile Include="Appointment\frmAppointment.Designer.cs">
       <DependentUpon>frmAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHome.cs">
@@ -64,10 +64,10 @@
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNewAppointment.cs">
+    <Compile Include="Appointment\frmNewAppointment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmNewAppointment.Designer.cs">
+    <Compile Include="Appointment\frmNewAppointment.Designer.cs">
       <DependentUpon>frmNewAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNotifications.cs">
@@ -94,22 +94,22 @@
     <Compile Include="frmTodoList.Designer.cs">
       <DependentUpon>frmTodoList.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmViewAppointment.cs">
+    <Compile Include="Appointment\frmViewAppointment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmViewAppointment.Designer.cs">
+    <Compile Include="Appointment\frmViewAppointment.Designer.cs">
       <DependentUpon>frmViewAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="monthItem.cs" />
+    <Compile Include="Appointment\monthItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAppointment.resx">
+    <EmbeddedResource Include="Appointment\frmAppointment.resx">
       <DependentUpon>frmAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNewAppointment.resx">
+    <EmbeddedResource Include="Appointment\frmNewAppointment.resx">
       <DependentUpon>frmNewAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNotifications.resx">
@@ -124,7 +124,7 @@
     <EmbeddedResource Include="frmTodoList.resx">
       <DependentUpon>frmTodoList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmViewAppointment.resx">
+    <EmbeddedResource Include="Appointment\frmViewAppointment.resx">
       <DependentUpon>frmViewAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

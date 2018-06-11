@@ -10,12 +10,25 @@ using System.Windows.Forms;
 
 namespace miniCalendar
 {
+    /// <summary>
+    /// Hiển thị thông tin của một cuộc hẹn.
+    /// </summary>
     public partial class frmViewAppointment : UserControl
     {
-        public Dictionary<int, Appointment> dataTable = new Dictionary<int, Appointment>();
-        public int ID;
-    
+        #region Các thuộc tính
 
+        // Danh sách các appointment theo ID đã có
+        public Dictionary<int, Appointment> dataTable = new Dictionary<int, Appointment>();
+        // ID của appointment 
+        public int ID;
+
+        #endregion
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="ID">ID của appointment cần xem (lấy từ tabIndex khi người dùng click vào task)</param>
+        /// <param name="dataTable">Danh sách các appointment theo ID đã có</param>
         public frmViewAppointment(int ID, Dictionary<int, Appointment> dataTable)
         {
             InitializeComponent();
@@ -26,9 +39,14 @@ namespace miniCalendar
             displayInfo();
         }
 
+        #region Hiển thị thông tin ra màn hình
+
+        /// <summary>
+        /// Hiển thị thông tin của appointment ra màn hình.
+        /// </summary>
         private void displayInfo()
         {
-            // display Title
+            // Hiển thị Title
             if (dataTable[ID].Title == "")
             {
                 lbTitle.Text = "(No Title)";
@@ -38,7 +56,7 @@ namespace miniCalendar
                 lbTitle.Text = dataTable[ID].Title;
             }
 
-            // Time
+            // Hiển thị thời gian
             if (dataTable[ID].startHour.Date == dataTable[ID].endHour.Date)
             {
                 lbStartHour.Text = dataTable[ID].startHour.ToString("ddddddddd, dd MMM yyyy");
@@ -62,7 +80,7 @@ namespace miniCalendar
                 lbEndHour.Text = dataTable[ID].endHour.ToString("ddddddddd, dd MMM yyyy       hh:mm tt");
             }
 
-
+            // Hiển thị location
             if (dataTable[ID].Location == "")
             {
                 panelLocation.Visible = false;
@@ -73,6 +91,7 @@ namespace miniCalendar
                 lbLocation.Text = dataTable[ID].Location;
             }
 
+            // Hiển thị giá trị noti và đơn vị noti
             lbNoti.Text = Convert.ToString(dataTable[ID].notiValue) + " " + dataTable[ID].notiUnit + " before";
 
             if (dataTable[ID].Description == "")
@@ -85,6 +104,7 @@ namespace miniCalendar
                 lbDescription.Text = dataTable[ID].Description;
             }
 
+            // Thay đổi màu nền của form view appointment
             switch (dataTable[ID].Color)
             {
                 case "Red":
@@ -105,16 +125,31 @@ namespace miniCalendar
             }
         }
 
+        #endregion
+
+        #region Xử lí sự kiện
+
+        /// <summary>
+        /// Xử lí sự kiện button Modify được click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModify_Click(object sender, EventArgs e)
         {
+            // Ẩn panelView chứa thông tin của cuộc hẹn đi
             panelView.Visible = false;
-
-            frmNewAppointment frmModify = new frmNewAppointment(new List<int> { ID }, dataTable, new List<DateTime> { dataTable[ID].startHour }, true);
+                    
+            // Gọi form newAppointment ở chế độ chỉnh sửa
+            frmNewAppointment frmModify = new frmNewAppointment(new List<int> { ID }, dataTable, new List<DateTime> { dataTable[ID].startHour }, true); // true là ở chế độ chỉnh sửa
             frmModify.Disposed += new EventHandler(dispose_event);
             panelModify.Controls.Add(frmModify);
-
         }
 
+        /// <summary>
+        /// Xử lí sự kiện button Delete được click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var dialogResult = MessageBox.Show("Delete this appointment?", "", MessageBoxButtons.YesNo);
@@ -129,16 +164,27 @@ namespace miniCalendar
             
         }
 
+        /// <summary>
+        /// Xử lí sự kiện button Back được click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBack_Click(object sender, EventArgs e)
         {
             Dispose();
         }
 
+        /// <summary>
+        /// Sự kiện khi form chỉnh sửa bị disposed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dispose_event(object sender, EventArgs e)
         {
             panelView.Visible = true;
             displayInfo();
         }
 
+        #endregion
     }
 }

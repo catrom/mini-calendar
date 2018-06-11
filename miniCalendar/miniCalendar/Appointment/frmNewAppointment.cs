@@ -10,12 +10,23 @@ using System.Windows.Forms;
 
 namespace miniCalendar
 {
+    /// <summary>
+    /// Nhập thông tin cho một cuộc hẹn mới.
+    /// </summary>
     public partial class frmNewAppointment : UserControl
     {
+        #region Các thuộc tính
+
+        // Danh sách các appointment theo ID
         public Dictionary<int, Appointment> dataTable = new Dictionary<int, Appointment>();
+        // Danh sách các ngày được chọn để tạo lịch từ monthCalendar
         public List<DateTime> dateTime = new List<DateTime>();
+        // Danh sách các ID dùng để gán cho appointment
         public List<int> ID = new List<int>();
-        public bool isModified;
+        // Vì form này được dùng cho cả 2 chức năng: thêm mới và chỉnh sửa một appointment,
+        // cần dùng biến này để xác định đang mở form ở chế độ nào.
+        public bool isModified = false;
+        // Các thuộc tính sau của một appointment sẽ được nhập/hiển thị trên form tuỳ vào chế độ.
         public string title = "";
         public DateTime startHour;
         public DateTime endHour;
@@ -25,12 +36,17 @@ namespace miniCalendar
         public string color = "Blue";
         public string description = "";
 
-        
-        public frmNewAppointment()
-        {
-            InitializeComponent();
-        }
-        
+        #endregion
+
+        #region Constructor (Hơi dài, vì gộp chung phần xử lí cho cả form tạo mới và form chỉnh sửa)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID">Danh sách các ID khả dụng</param>
+        /// <param name="dataTable">Danh sách appointment theo ID đã có</param>
+        /// <param name="dateTime">Danh sách các ngày được chọn để tạo lịch hẹn</param>
+        /// <param name="isModified">Tham số dùng để xác định cần xử lí ở chế độ nào (false = thêm mới, true = chỉnh sửa)</param>
         public frmNewAppointment(List<int> ID, Dictionary<int, Appointment> dataTable, List<DateTime> dateTime, bool isModified)
         {
             InitializeComponent();
@@ -39,12 +55,15 @@ namespace miniCalendar
             this.dataTable = dataTable;
             this.dateTime = dateTime;
 
+            // Cần xử lí 2 trường hợp: appointment diễn ra trong 1 ngày và kéo dài trong nhiều ngày.
+            // Trường hợp xảy ra trong 1 ngày (cần 1 ID)
             if (ID.Count == 1)
             {
                 clListDay.Visible = false;
                 var obj = dateTime[0];
                 var id = ID[0];
 
+                // Xử lí form ở chế độ thêm mới
                 if (isModified == false)
                 {
                     dtpStartDay.Value = new DateTime(obj.Year, obj.Month, obj.Day);
@@ -64,7 +83,7 @@ namespace miniCalendar
                     cbStartHour.Visible = false;
                     cbEndHour.Visible = false;
                 }
-                else
+                else // Xử lí form ở chế độ chỉnh sửa
                 {
                     if (dataTable[id].Title == "")
                     {
@@ -144,14 +163,15 @@ namespace miniCalendar
                     }
                 }
             }
-            else
+            else // Trường hợp xảy ra trong nhiều ngày 
             {
-                dateTime.Sort();
-
-                clListDay.Visible = true;
                 dtpStartDay.Visible = false;
                 dtpEndDay.Visible = false;
 
+                // Sắp xếp lại các ngày được chọn và đưa vào checkedlist box
+                dateTime.Sort();
+
+                clListDay.Visible = true;
                 for (int i = 0; i < ID.Count; i++)
                 {
                     clListDay.Items.Insert(i, new DateTime(dateTime[i].Year, dateTime[i].Month, dateTime[i].Day).ToString("ddddddddd dd MMM yyyy"));
@@ -176,9 +196,18 @@ namespace miniCalendar
             }
         }
 
+        #endregion
 
+        #region Xử lí sự kiện
+
+        /// <summary>
+        /// Xử lí sự kiện button Save được click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnSave_Click(object sender, EventArgs e)
         {
+            // Kiểm tra điều kiện giờ bắt đầu <= Giờ kết thúc
             if (dtpStartDay.Value > dtpEndDay.Value ||
                 (dtpStartDay.Value == dtpEndDay.Value && cbStartHour.SelectedIndex > cbEndHour.SelectedIndex))
             {
@@ -186,7 +215,7 @@ namespace miniCalendar
             }
             else
             {
-                // set value
+                // Gán giá trị cho các thuộc tính
                 if (tbTitle.Text == "Enter Title" || tbTitle.Text == "(No Title)")
                 {
                     title = "";
@@ -240,6 +269,7 @@ namespace miniCalendar
 
                     Appointment fin = new Appointment(title, startHour, endHour, location, notiValue, notiUnit, color, description);
 
+                    // Xử lí cho 2 chế độ: tạo mới và chỉnh sửa.
                     if (isModified == true)
                     {
                         dataTable[ID[i]] = fin;
@@ -250,16 +280,25 @@ namespace miniCalendar
                     }
                 }
 
-               
                 Dispose();
             }
         }
 
+        /// <summary>
+        /// Xử lí sự kiện button Cancel được click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnCancel_Click(object sender, EventArgs e)
         {
             Dispose();
         }
-        
+
+        /// <summary>
+        /// Xử lí sự kiện switch Allday thay đổi giá trị.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void switchAllday_OnValueChange(object sender, EventArgs e)
         {
             if (switchAllday.Value == true)
@@ -287,6 +326,63 @@ namespace miniCalendar
             }
         }
 
+        /// <summary>
+        /// Xử lí sự kiện checkbox màu đỏ được chọn.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void checkRed_OnChange(object sender, EventArgs e)
+        {
+            changeColorRed();
+        }
+
+        /// <summary>
+        /// Xử lí sự kiện checkbox màu cam được chọn.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void checkOrange_OnChange(object sender, EventArgs e)
+        {
+            changeColorOrange();
+        }
+
+        /// <summary>
+        /// Xử lí sự kiện checkbox màu vàng được chọn.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void checkYellow_OnChange(object sender, EventArgs e)
+        {
+            changeColorYellow();
+        }
+
+        /// <summary>
+        /// Xử lí sự kiện checkbox màu xanh lá được chọn.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void checkGreen_OnChange(object sender, EventArgs e)
+        {
+            changeColorGreen();
+        }
+
+        /// <summary>
+        /// Xử lí sự kiện checkbox màu xanh dương được chọn.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void checkBlue_OnChange(object sender, EventArgs e)
+        {
+            changeColorBlue();
+        }
+
+        #endregion
+
+        #region Các hàm xử lí dữ liệu và hiển thị 
+
+        /// <summary>
+        /// Hàm xử lí khi người dùng muốn đổi màu sang đỏ.
+        /// </summary>
         public void changeColorRed()
         {
             setUncheckColor();
@@ -296,6 +392,9 @@ namespace miniCalendar
             switchAllday.OnColor = Color.FromArgb(192, 0, 0);
         }
 
+        /// <summary>
+        /// Hàm xử lí khi người dùng muốn đổi màu sang cam.
+        /// </summary>
         public void changeColorOrange()
         {
             setUncheckColor();
@@ -305,6 +404,9 @@ namespace miniCalendar
             switchAllday.OnColor = Color.FromArgb(255, 128, 0);
         }
 
+        /// <summary>
+        /// Hàm xử lí khi người dùng muốn đổi màu sang vàng.
+        /// </summary>
         public void changeColorYellow()
         {
             setUncheckColor();
@@ -314,6 +416,9 @@ namespace miniCalendar
             switchAllday.OnColor = Color.FromArgb(192, 192, 0);
         }
 
+        /// <summary>
+        /// Hàm xử lí khi người dùng muốn đổi màu sang xanh lá.
+        /// </summary>
         public void changeColorGreen()
         {
             setUncheckColor();
@@ -323,6 +428,9 @@ namespace miniCalendar
             switchAllday.OnColor = Color.FromArgb(0, 192, 0);
         }
 
+        /// <summary>
+        /// Hàm xử lí khi người dùng muốn đổi màu sang xanh dương.
+        /// </summary>
         public void changeColorBlue()
         {
             setUncheckColor();
@@ -332,6 +440,10 @@ namespace miniCalendar
             switchAllday.OnColor = Color.FromArgb(0, 192, 192);
         }
 
+        /// <summary>
+        /// Uncheck tất cả các checkbox màu.
+        /// (vì không đưa các checkbox vô một list nên phải uncheck bằng tay)
+        /// </summary>
         public void setUncheckColor()
         {
             if (color == "Red") checkRed.Checked = false;
@@ -341,38 +453,7 @@ namespace miniCalendar
             else checkBlue.Checked = false;
         }
 
-        public void checkRed_OnChange(object sender, EventArgs e)
-        {
-            changeColorRed();
-        }
-        
-
-        public void checkOrange_OnChange(object sender, EventArgs e)
-        {
-            changeColorOrange();
-        }
-
-        public void checkYellow_OnChange(object sender, EventArgs e)
-        {
-            changeColorYellow();
-        }
-
-        public void checkGreen_OnChange(object sender, EventArgs e)
-        {
-            changeColorGreen();
-        }
-
-        public void checkBlue_OnChange(object sender, EventArgs e)
-        {
-            changeColorBlue();
-        }
-
-
-        //
-        // For UX
-        //
-        //
-
+        // Các hàm sau đây có mục đích nâng cao trải nghiệm người dùng (khi người dùng focus vào một textbox)
         private void tbTitle_Enter(object sender, EventArgs e)
         {
             if (tbTitle.Text == "Enter Title")
@@ -401,11 +482,6 @@ namespace miniCalendar
             }
         }
 
-        private void tbLocation_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbLocation_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (tbLocation.Text == "Add a location")
@@ -422,11 +498,6 @@ namespace miniCalendar
                 tbLocation.Text = "Add a location";
                 tbLocation.ForeColor = Color.DarkGray;
             }
-        }
-
-        private void tbDescription_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void tbDescription_KeyPress(object sender, KeyPressEventArgs e)
@@ -446,5 +517,7 @@ namespace miniCalendar
                 tbDescription.ForeColor = Color.DarkGray;
             }
         }
+
+        #endregion
     }
 }
