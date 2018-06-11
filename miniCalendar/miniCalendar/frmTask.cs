@@ -42,6 +42,24 @@ namespace miniCalendar
                 lbName.Text = _todoList[_id].Name;
             }
         }
+
+        public void Dispose(int id)
+        {
+            Dispose();
+        }
+
+        private void cbIsDone_OnChange(object sender, EventArgs e)
+        {
+            if(cbIsDone.Checked)
+            {
+                _todoList.Remove(_id);
+                Dispose();
+
+                //frmTodoList td = new frmTodoList();
+                //td.Dispose();
+
+            }
+        }
     } 
 
 }

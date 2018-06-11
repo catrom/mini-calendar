@@ -37,6 +37,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbSubtask = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpRemindTime = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtpRemindDay = new System.Windows.Forms.DateTimePicker();
             this.lbRemind = new System.Windows.Forms.Label();
@@ -51,7 +52,15 @@
             this.btnCancel = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dtpRemindTime = new System.Windows.Forms.DateTimePicker();
+            this.lbImportance = new System.Windows.Forms.Label();
+            this.checkRed = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.checkYellow = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.checkGreen = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.checkGray = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -62,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlTaskName.SuspendLayout();
             this.pnlButton.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
@@ -70,7 +80,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(0, 453);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(379, 30);
+            this.panel6.Size = new System.Drawing.Size(329, 30);
             this.panel6.TabIndex = 39;
             // 
             // lbInfo
@@ -91,7 +101,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 234);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(379, 90);
+            this.panel4.Size = new System.Drawing.Size(329, 90);
             this.panel4.TabIndex = 38;
             // 
             // rtbNote
@@ -121,7 +131,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 186);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(379, 48);
+            this.panel3.Size = new System.Drawing.Size(329, 48);
             this.panel3.TabIndex = 37;
             // 
             // tbSubtask
@@ -149,8 +159,17 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 109);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(379, 77);
+            this.panel2.Size = new System.Drawing.Size(329, 77);
             this.panel2.TabIndex = 36;
+            // 
+            // dtpRemindTime
+            // 
+            this.dtpRemindTime.CustomFormat = "HH:mm";
+            this.dtpRemindTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpRemindTime.Location = new System.Drawing.Point(55, 23);
+            this.dtpRemindTime.Name = "dtpRemindTime";
+            this.dtpRemindTime.Size = new System.Drawing.Size(77, 20);
+            this.dtpRemindTime.TabIndex = 25;
             // 
             // pictureBox1
             // 
@@ -195,7 +214,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 51);
+            this.panel1.Size = new System.Drawing.Size(329, 51);
             this.panel1.TabIndex = 35;
             // 
             // dtpDueDay
@@ -236,7 +255,7 @@
             this.pnlTaskName.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTaskName.Location = new System.Drawing.Point(0, 0);
             this.pnlTaskName.Name = "pnlTaskName";
-            this.pnlTaskName.Size = new System.Drawing.Size(379, 58);
+            this.pnlTaskName.Size = new System.Drawing.Size(329, 58);
             this.pnlTaskName.TabIndex = 34;
             // 
             // tbTaskName
@@ -269,7 +288,7 @@
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButton.Location = new System.Drawing.Point(0, 483);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Size = new System.Drawing.Size(379, 48);
+            this.pnlButton.Size = new System.Drawing.Size(329, 48);
             this.pnlButton.TabIndex = 33;
             // 
             // btnCancel
@@ -326,20 +345,122 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.checkGray);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.checkGreen);
+            this.panel5.Controls.Add(this.checkYellow);
+            this.panel5.Controls.Add(this.checkRed);
+            this.panel5.Controls.Add(this.lbImportance);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 405);
+            this.panel5.Location = new System.Drawing.Point(0, 371);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(379, 48);
+            this.panel5.Size = new System.Drawing.Size(329, 82);
             this.panel5.TabIndex = 40;
             // 
-            // dtpRemindTime
+            // lbImportance
             // 
-            this.dtpRemindTime.CustomFormat = "HH:mm";
-            this.dtpRemindTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpRemindTime.Location = new System.Drawing.Point(55, 23);
-            this.dtpRemindTime.Name = "dtpRemindTime";
-            this.dtpRemindTime.Size = new System.Drawing.Size(77, 20);
-            this.dtpRemindTime.TabIndex = 25;
+            this.lbImportance.AutoSize = true;
+            this.lbImportance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbImportance.Location = new System.Drawing.Point(4, 4);
+            this.lbImportance.Name = "lbImportance";
+            this.lbImportance.Size = new System.Drawing.Size(165, 17);
+            this.lbImportance.TabIndex = 0;
+            this.lbImportance.Text = "Rate level of importance:";
+            // 
+            // checkRed
+            // 
+            this.checkRed.BackColor = System.Drawing.Color.Red;
+            this.checkRed.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkRed.Checked = false;
+            this.checkRed.CheckedOnColor = System.Drawing.Color.Red;
+            this.checkRed.ForeColor = System.Drawing.Color.White;
+            this.checkRed.Location = new System.Drawing.Point(49, 35);
+            this.checkRed.Name = "checkRed";
+            this.checkRed.Size = new System.Drawing.Size(20, 20);
+            this.checkRed.TabIndex = 1;
+            // 
+            // checkYellow
+            // 
+            this.checkYellow.BackColor = System.Drawing.Color.Yellow;
+            this.checkYellow.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkYellow.Checked = false;
+            this.checkYellow.CheckedOnColor = System.Drawing.Color.Yellow;
+            this.checkYellow.ForeColor = System.Drawing.Color.White;
+            this.checkYellow.Location = new System.Drawing.Point(136, 35);
+            this.checkYellow.Name = "checkYellow";
+            this.checkYellow.Size = new System.Drawing.Size(20, 20);
+            this.checkYellow.TabIndex = 2;
+            // 
+            // checkGreen
+            // 
+            this.checkGreen.BackColor = System.Drawing.Color.Green;
+            this.checkGreen.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkGreen.Checked = false;
+            this.checkGreen.CheckedOnColor = System.Drawing.Color.Green;
+            this.checkGreen.ForeColor = System.Drawing.Color.White;
+            this.checkGreen.Location = new System.Drawing.Point(206, 35);
+            this.checkGreen.Name = "checkGreen";
+            this.checkGreen.Size = new System.Drawing.Size(20, 20);
+            this.checkGreen.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(12, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Very Important";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkKhaki;
+            this.label2.Location = new System.Drawing.Point(118, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Important";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Green;
+            this.label3.Location = new System.Drawing.Point(191, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Normal";
+            // 
+            // checkGray
+            // 
+            this.checkGray.BackColor = System.Drawing.Color.Gray;
+            this.checkGray.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkGray.Checked = true;
+            this.checkGray.CheckedOnColor = System.Drawing.Color.Gray;
+            this.checkGray.ForeColor = System.Drawing.Color.White;
+            this.checkGray.Location = new System.Drawing.Point(275, 35);
+            this.checkGray.Name = "checkGray";
+            this.checkGray.Size = new System.Drawing.Size(20, 20);
+            this.checkGray.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(250, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Unknown";
             // 
             // frmTaskDetail
             // 
@@ -354,7 +475,7 @@
             this.Controls.Add(this.pnlTaskName);
             this.Controls.Add(this.pnlButton);
             this.Name = "frmTaskDetail";
-            this.Size = new System.Drawing.Size(379, 531);
+            this.Size = new System.Drawing.Size(329, 531);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -370,6 +491,8 @@
             this.pnlTaskName.ResumeLayout(false);
             this.pnlTaskName.PerformLayout();
             this.pnlButton.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +522,14 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DateTimePicker dtpRemindTime;
         public System.Windows.Forms.Label lbInfo;
+        private System.Windows.Forms.Label lbImportance;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuCheckbox checkGreen;
+        private Bunifu.Framework.UI.BunifuCheckbox checkYellow;
+        private Bunifu.Framework.UI.BunifuCheckbox checkRed;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuCheckbox checkGray;
     }
 }

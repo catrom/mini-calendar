@@ -38,6 +38,7 @@ namespace miniCalendar
                 RemindTime = kv.Value.RemindTime,
                 RemindDay = kv.Value.RemindDay,
                 Note = kv.Value.Note,
+                Color = kv.Value.Color,
                 StartDay = kv.Value.StartDay
             }).ToArray());
 
@@ -59,6 +60,7 @@ namespace miniCalendar
                    RemindTime = kv.RemindTime,
                    RemindDay = kv.RemindDay,
                    Note = kv.Note,
+                   Color = kv.Color,
                    StartDay = kv.StartDay
                }).ToList();
 

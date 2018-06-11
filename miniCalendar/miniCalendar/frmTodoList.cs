@@ -35,7 +35,7 @@ namespace miniCalendar
         public void showTaskList()
         {
             if (_todoList.Count > 0)
-            {
+            {              
                 for (int i = 1; i <= _todoList.Count; i++)
                 {
                     frmTask aTask = new frmTask(i, _todoList);
@@ -43,6 +43,7 @@ namespace miniCalendar
                     aTask.Click += new EventHandler(btnTask_Click);
                 }
             }
+            //fpTaskList.Controls.Clear();
         }
 
         private int getID()
@@ -84,6 +85,7 @@ namespace miniCalendar
                     task.DueDay = DateTime.Now;
                     task.RemindDay = DateTime.Now;
                     task.RemindTime = DateTime.Now;
+                    task.Color = "Gray";
                     task.StartDay = now;    
                     _todoList.Add(_id, task);
 
@@ -102,7 +104,7 @@ namespace miniCalendar
         private void btnTask_Click(object sender, EventArgs e)
         {         
             frmTask abc = new frmTask();
-            frmTaskDetail fa = new frmTaskDetail(abc._id, _todoList, false);
+            frmTaskDetail fa = new frmTaskDetail(abc._id+1, _todoList, false);
             
             pnlTaskDetail.Controls.Clear();
             pnlTaskDetail.Controls.Add(fa);

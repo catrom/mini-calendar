@@ -54,6 +54,7 @@
             this.cbIsDone.Name = "cbIsDone";
             this.cbIsDone.Size = new System.Drawing.Size(20, 20);
             this.cbIsDone.TabIndex = 4;
+            this.cbIsDone.OnChange += new System.EventHandler(this.cbIsDone_OnChange);
             // 
             // frmTask
             // 
