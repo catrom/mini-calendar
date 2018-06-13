@@ -15,6 +15,7 @@ namespace miniCalendar
         public int _id;
         Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
         public bool _isModified;
+        List<frmSubTask> _listSubTask = new List<frmSubTask>();
 
         public DateTime _dueDay;
         public Point _remindTime;
@@ -54,6 +55,8 @@ namespace miniCalendar
                     changeColorGray();
                     break;
             }
+
+            showSubTaskList();
         }
 
         private void tbSubtask_KeyDown(object sender, EventArgs e)
@@ -93,7 +96,7 @@ namespace miniCalendar
         {
             if (isModified == false)
             {
-                MessageBox.Show(_id.ToString());
+                //MessageBox.Show(_id.ToString());
                 tbTaskName.Text = _todoList[_id].Name;  
                 dtpDueDay.Value = _todoList[_id].DueDay;
                 dtpRemindTime.Value = _todoList[_id].RemindTime;
@@ -125,6 +128,7 @@ namespace miniCalendar
                     changeColorGray();
                 }
                 lbInfo.Text = "Created on " + _todoList[_id].StartDay.ToString();
+                
             }
             else
             {
@@ -149,6 +153,7 @@ namespace miniCalendar
                     _todoList[_id].Color = "Gray";
                 }
                 _todoList[_id].StartDay = DateTime.Now;
+
             }
         }
 
@@ -235,6 +240,10 @@ namespace miniCalendar
             fpSubTask.Controls.Add(st);
             st.BringToFront();
             st.Dock = DockStyle.Top;
+            st.pictureBox1.Click += new EventHandler(pictureBox1_Click);
+
+            _listSubTask.Add(st);
+            _todoList[_id].subTasks.Add(tbSubtask.text);
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -242,5 +251,23 @@ namespace miniCalendar
             Dispose();
         }
 
+        private void showSubTaskList()
+        {
+            var list = _todoList[_id].subTasks;
+
+            foreach(string i in list)
+            {
+                frmSubTask st = new frmSubTask(i);
+                fpSubTask.Controls.Add(st);
+                st.BringToFront();
+                st.Dock = DockStyle.Top;
+                _listSubTask.Add(st);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

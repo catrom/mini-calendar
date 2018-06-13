@@ -37,7 +37,7 @@
             // 
             // cbIsDone
             // 
-            this.cbIsDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.cbIsDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.cbIsDone.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.cbIsDone.Checked = false;
             this.cbIsDone.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
@@ -85,7 +85,7 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuCheckbox cbIsDone;
-        private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }

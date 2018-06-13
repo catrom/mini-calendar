@@ -17,6 +17,7 @@ namespace miniCalendar
         private Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
         int _id;
         List<int> _list = new List<int>();
+        List<string> _listSubTask = new List<string>();
 
         public frmTodoList()
         {
@@ -149,7 +150,7 @@ namespace miniCalendar
 
             var pick = (Bunifu.Framework.UI.BunifuFlatButton)sender;
             int idpick = pick.TabIndex;
-            MessageBox.Show(idpick.ToString());
+           // MessageBox.Show(idpick.ToString());
             frmTaskDetail fa = new frmTaskDetail(idpick, _todoList, false);
             fa.Disposed += new EventHandler(dispose_event);
             
@@ -157,6 +158,8 @@ namespace miniCalendar
             pnlTaskDetail.Controls.Add(fa);
             fa.Dock = DockStyle.Fill;
             fa.BringToFront();      
+
+
         }
 
         public bool moreImportant(string a, string b)
