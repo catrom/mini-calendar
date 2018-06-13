@@ -11,8 +11,9 @@ namespace miniCalendar
     public class Task
     {     
         public Task () { }
-        public Task(string name, DateTime dDay, DateTime rTime, DateTime rDay, string note, string color, DateTime sDay)
+        public Task(int id, string name, DateTime dDay, DateTime rTime, DateTime rDay, string note, string color, DateTime sDay, List<string> subtasks)
         {
+            ID = id;
             Name = name;
             DueDay = dDay;
             RemindTime = rTime;
@@ -20,10 +21,11 @@ namespace miniCalendar
             Note = note;
             Color = color;
             StartDay = sDay;
+            subTasks = subtasks;
         }
 
-        //[XmlAttribute]
-        //public int Key;
+        [XmlAttribute]
+        public int ID;
 
         [XmlAttribute]
         public string Name;
@@ -45,5 +47,8 @@ namespace miniCalendar
 
         [XmlAttribute]
         public DateTime StartDay;
+
+        [XmlAttribute]
+        public List<string> subTasks = new List<string>();
     }
-}
+} 

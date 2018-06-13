@@ -88,6 +88,12 @@
     <Compile Include="frmSettings.Designer.cs">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSubTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmSubTask.Designer.cs">
+      <DependentUpon>frmSubTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubTask.resx">
+      <DependentUpon>frmSubTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTask.resx">
       <DependentUpon>frmTask.cs</DependentUpon>
@@ -292,6 +301,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Plus_Math_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Alarm_Clock_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Double_Left_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

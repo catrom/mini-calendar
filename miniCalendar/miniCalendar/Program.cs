@@ -22,6 +22,7 @@ namespace miniCalendar
 
             TodoList todoList = new TodoList();
             todoList.Deserialize();
+                
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -37,6 +37,23 @@ namespace miniCalendar
             tbSubtask.text = "Add a to-do...";
 
             ShowInfo(_isModified);
+
+            setUncheckColor();
+            switch (color)
+            {
+                case "Red":
+                    changeColorRed();
+                    break;
+                case "Yellow":
+                    changeColorYellow();
+                    break;
+                case "Green":
+                    changeColorGreen();
+                    break;
+                case "Gray":
+                    changeColorGray();
+                    break;
+            }
         }
 
         private void tbSubtask_KeyDown(object sender, EventArgs e)
@@ -67,12 +84,16 @@ namespace miniCalendar
                 ShowInfo(_isModified);
             }
             lbInfo.Text = "Last updated on " + DateTime.Now;
+
+            frmTask aTask = new frmTask(_id, _todoList);
+            aTask.btnTaskName.Normalcolor = Color.Red;
         }
 
         private void ShowInfo(bool isModified)
         {
             if (isModified == false)
             {
+                MessageBox.Show(_id.ToString());
                 tbTaskName.Text = _todoList[_id].Name;  
                 dtpDueDay.Value = _todoList[_id].DueDay;
                 dtpRemindTime.Value = _todoList[_id].RemindTime;
@@ -83,8 +104,26 @@ namespace miniCalendar
                     rtbNote.ForeColor = Color.Green;
                 }
                 rtbNote.Text = _todoList[_id].Note;
-                color = _todoList[_id].Color;
-                setUncheckColor();
+                if(_todoList[_id].Color == "Red")
+                {
+                    setUncheckColor();
+                    changeColorRed();
+                }
+                else if (_todoList[_id].Color == "Yellow")
+                {
+                    setUncheckColor();
+                    changeColorYellow();
+                }
+                else if (_todoList[_id].Color == "Green")
+                {
+                    setUncheckColor();
+                    changeColorGreen();
+                }
+                else if (_todoList[_id].Color == "Gray")
+                {
+                    setUncheckColor();
+                    changeColorGray();
+                }
                 lbInfo.Text = "Created on " + _todoList[_id].StartDay.ToString();
             }
             else
@@ -94,6 +133,21 @@ namespace miniCalendar
                 _todoList[_id].RemindTime = dtpRemindTime.Value;
                 _todoList[_id].RemindDay = dtpRemindDay.Value;
                 _todoList[_id].Note = rtbNote.Text;
+                if(checkRed.Checked)
+                {
+                    _todoList[_id].Color = "Red";
+                }
+                else if(checkYellow.Checked) {
+                    _todoList[_id].Color = "Yellow";
+                }
+                else if(checkGreen.Checked)
+                {
+                    _todoList[_id].Color = "Green";
+                }
+                else if(checkGray.Checked)
+                {
+                    _todoList[_id].Color = "Gray";
+                }
                 _todoList[_id].StartDay = DateTime.Now;
             }
         }
@@ -112,17 +166,16 @@ namespace miniCalendar
                 _todoList.Remove(_id);
                 Dispose();
 
-                newList.fpTaskList.Dispose();
-                newList.showTaskList();
+                
             }
         }
 
+        #region Color
         public void changeColorRed()
         {
             setUncheckColor();
             checkRed.Checked = true;
             color = "Red";
-            pnlTaskName.BackColor = Color.FromArgb(192, 0, 0);
         }
 
         public void changeColorYellow()
@@ -130,7 +183,6 @@ namespace miniCalendar
             setUncheckColor();
             checkYellow.Checked = true;
             color = "Yellow";
-            pnlTaskName.BackColor = Color.FromArgb(192, 192, 0);
         }
 
         public void changeColorGreen()
@@ -138,7 +190,6 @@ namespace miniCalendar
             setUncheckColor();
             checkGreen.Checked = true;
             color = "Green";
-            pnlTaskName.BackColor = Color.FromArgb(0, 192, 0);
         }
 
         public void changeColorGray()
@@ -146,7 +197,6 @@ namespace miniCalendar
             setUncheckColor();
             checkGray.Checked = true;
             color = "Gray";
-            pnlTaskName.BackColor = Color.FromArgb(0, 192, 192);
         }
 
         public void setUncheckColor()
@@ -177,23 +227,20 @@ namespace miniCalendar
             changeColorGray();
         }
 
-        void setColor(string color)
+        #endregion
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            switch (color)
-            {
-                case "Red":
-                    changeColorRed();
-                    break;
-                case "Yellow":
-                    changeColorYellow();
-                    break;
-                case "Green":
-                    changeColorGreen();
-                    break;
-                case "Gray":
-                    changeColorGray();
-                    break;
-            }
+            frmSubTask st = new frmSubTask(tbSubtask.text);
+            fpSubTask.Controls.Add(st);
+            st.BringToFront();
+            st.Dock = DockStyle.Top;
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
     }
 }

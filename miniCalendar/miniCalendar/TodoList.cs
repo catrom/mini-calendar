@@ -33,6 +33,7 @@ namespace miniCalendar
             FileStream fs = new FileStream(fileName, FileMode.Truncate);
             formatter.Serialize(fs, _todoList.Select(kv => new Task()
             {
+                ID = kv.Value.ID,
                 Name = kv.Value.Name,
                 DueDay = kv.Value.DueDay,
                 RemindTime = kv.Value.RemindTime,
@@ -43,7 +44,23 @@ namespace miniCalendar
             }).ToArray());
 
             fs.Close();
+
+            foreach (var i in _todoList)
+            {
+                string fileNameSub = i.Key.ToString() + ".xml";
+                SerializeSubTask(i.Value.subTasks, fileNameSub);
+            }
         }
+
+        public void SerializeSubTask(List<string> list, string fileName)
+        {
+            var serializer = new XmlSerializer(typeof(List<string>));
+            using (var stream = File.Create(fileName))
+            {
+                serializer.Serialize(stream, list);
+            }
+        }
+
         public void Deserialize()
         {
             FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate);
@@ -55,6 +72,7 @@ namespace miniCalendar
             var result = ((Task[])formatter.Deserialize(fs))
                .Select(kv => new Task()
                {
+                   ID = kv.ID,
                    Name = kv.Name,
                    DueDay = kv.DueDay,
                    RemindTime = kv.RemindTime,
@@ -64,13 +82,29 @@ namespace miniCalendar
                    StartDay = kv.StartDay
                }).ToList();
 
-            int ID = 1;
+            fs.Close();
 
-            for (int i = 0; i < result.Count; i++)
+            foreach (var i in result)
             {
-                _todoList.Add(ID, result[i]);
-                ++ID;
+                List<string> subTask = new List<string>();
+                string fileNameSub = i.ID.ToString() + ".xml";
+                DeserializeSubTask(subTask, fileNameSub);
+                _todoList.Add(i.ID, new Task(i.ID, i.Name, i.DueDay, i.RemindTime, i.RemindDay, i.Note, i.Color, i.StartDay, subTask));
             }
+        }
+
+        public void DeserializeSubTask(List<string> list, string fileName)
+        {
+            var serializer = new XmlSerializer(typeof(List<string>));
+            FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate);
+
+            if (fs.Length == 0)
+            {
+                fs.Close();
+                return;
+            }
+            var result = ((List<string>)serializer.Deserialize(fs))
+               .Select(kv => new Task()).ToList();
 
             fs.Close();
         }

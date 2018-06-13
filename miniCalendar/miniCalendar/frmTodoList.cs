@@ -29,18 +29,50 @@ namespace miniCalendar
             tbAddTask.Text = "Add a to-do...";
             _todoList = todoList;
 
+            foreach (var i in _todoList)
+            {
+                Console.WriteLine(i.Key.ToString() + "  " + i.Value.ID.ToString());
+            }
+
             showTaskList();
+            _id = getID();
+
+            
         }
 
         public void showTaskList()
         {
             if (_todoList.Count > 0)
             {              
-                for (int i = 1; i <= _todoList.Count; i++)
+                foreach (var task in _todoList)
                 {
-                    frmTask aTask = new frmTask(i, _todoList);
+                    frmTask aTask = new frmTask(task.Value.ID, _todoList);
+                    aTask.btnTaskName.TabIndex = task.Value.ID;
+                    aTask.btnTaskName.Click += new EventHandler(btnTask_Click);
+                    
+                    if (task.Value.Color == "Red")
+                    {
+                        aTask.btnTaskName.Normalcolor = Color.Red;
+                        aTask.btnTaskName.Activecolor = Color.White;
+
+                    }
+                    else if (task.Value.Color == "Yellow")
+                    {
+                        aTask.btnTaskName.Normalcolor = Color.Yellow;
+                        aTask.btnTaskName.Activecolor = Color.White;
+                    }
+                    else if (task.Value.Color == "Green")
+                    {
+                        aTask.btnTaskName.Normalcolor = Color.Green;
+                        aTask.btnTaskName.Activecolor = Color.White;
+                    }
+                    else if (task.Value.Color == "Gray")
+                    {
+                        aTask.btnTaskName.Normalcolor = Color.Gray;
+                        aTask.btnTaskName.Activecolor = Color.White;
+                    }
+
                     fpTaskList.Controls.Add(aTask);
-                    aTask.Click += new EventHandler(btnTask_Click);
                 }
             }
             //fpTaskList.Controls.Clear();
@@ -66,7 +98,7 @@ namespace miniCalendar
         }
         private void tbAddTask_KeyDown(object sender, KeyEventArgs e)
         {
-
+            _id = getID();
             if (tbAddTask.Text == "Add a to-do...")
             {
                 tbAddTask.Text = "";
@@ -78,9 +110,9 @@ namespace miniCalendar
                     MessageBox.Show("Textbox can't be empty!", "Error!!!");
                 else
                 {
-                    DateTime now = DateTime.Now;
-                    _id = getID();
+                    DateTime now = DateTime.Now;                   
                     Task task = new Task();
+                    task.ID = _id;
                     task.Name = tbAddTask.Text;
                     task.DueDay = DateTime.Now;
                     task.RemindDay = DateTime.Now;
@@ -90,27 +122,81 @@ namespace miniCalendar
                     _todoList.Add(_id, task);
 
                     frmTask abc = new frmTask(_id, _todoList);
-                    abc.lbName.BringToFront();
+                    abc.btnTaskName.TabIndex = _id;
+                    abc.btnTaskName.BackColor = Color.Red;
+                    abc.btnTaskName.BringToFront();
                     _list.Add(abc._id);
 
                     tbAddTask.Text = "";
 
-                    abc.Click += new EventHandler(btnTask_Click);
+                    abc.btnTaskName.Click += new EventHandler(btnTask_Click);
+                    abc.Disposed += new EventHandler(disposed_event);
                     fpTaskList.Controls.Add(abc);
                 }                
             }
         }
 
         private void btnTask_Click(object sender, EventArgs e)
-        {         
-            frmTask abc = new frmTask();
-            frmTaskDetail fa = new frmTaskDetail(abc._id+1, _todoList, false);
+        {
+            for (int i = pnlTaskDetail.Controls.Count - 1; i >= 0; i--)
+            {
+                if (pnlTaskDetail.Controls[i] is frmTaskDetail)
+                {
+                    pnlTaskDetail.Controls.RemoveAt(i);
+                }
+            }
             
-            pnlTaskDetail.Controls.Clear();
+
+            var pick = (Bunifu.Framework.UI.BunifuFlatButton)sender;
+            int idpick = pick.TabIndex;
+            MessageBox.Show(idpick.ToString());
+            frmTaskDetail fa = new frmTaskDetail(idpick, _todoList, false);
+            fa.Disposed += new EventHandler(dispose_event);
+            
+            
             pnlTaskDetail.Controls.Add(fa);
             fa.Dock = DockStyle.Fill;
             fa.BringToFront();      
         }
 
+        public bool moreImportant(string a, string b)
+        {
+            if (a == "Red")
+                return true;
+            else if(a == "Yellow")
+            {
+                if (b == "Red" || b == "Yellow")
+                    return false;
+                else return true;
+            }
+            else if(a == "Green")
+            {
+                if (b == "Green" || b == "Gray")
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
+        }
+
+        public void swapLocation(frmTask a, frmTask b)
+        {
+            Point temp = new Point();
+            temp = a.Location;
+            a.Location = b.Location;
+            b.Location = temp;
+        }
+
+        public void dispose_event(object sender, EventArgs e)
+        {
+            fpTaskList.Controls.Clear();
+            showTaskList();
+        }
+
+        public void disposed_event(object sender, EventArgs e)
+        {
+            pnlTaskDetail.Controls.Clear();
+        }
     }
 }

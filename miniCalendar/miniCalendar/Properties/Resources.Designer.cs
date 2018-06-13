@@ -73,6 +73,16 @@ namespace miniCalendar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Alarm_Clock_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Alarm_Clock_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Alarm_Clock_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Alarm_Clock_32", resourceCulture);
@@ -166,6 +176,16 @@ namespace miniCalendar.Properties {
         internal static System.Drawing.Bitmap icons8_Destination_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Destination_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Double_Left_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Double_Left_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

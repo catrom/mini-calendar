@@ -14,7 +14,6 @@ namespace miniCalendar
     {
         public Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
         public int _id;
-        //public bool _isModified;
 
         public frmTask() {
             InitializeComponent();
@@ -26,8 +25,9 @@ namespace miniCalendar
 
             _id = id;
             _todoList = todoList;
-            //_isModified = isModified;
-            
+
+            this.btnTaskName.TabIndex = id;
+
             displayInfo();
         }
 
@@ -35,18 +35,15 @@ namespace miniCalendar
         {
             if (_todoList[_id].Name == "")
             {
-                lbName.Text = "(no title)";
+                btnTaskName.Text = "(no title)";
             }
             else
             {
-                lbName.Text = _todoList[_id].Name;
+                btnTaskName.Text = _todoList[_id].Name;
             }
         }
 
-        public void Dispose(int id)
-        {
-            Dispose();
-        }
+        
 
         private void cbIsDone_OnChange(object sender, EventArgs e)
         {
@@ -54,10 +51,6 @@ namespace miniCalendar
             {
                 _todoList.Remove(_id);
                 Dispose();
-
-                //frmTodoList td = new frmTodoList();
-                //td.Dispose();
-
             }
         }
     } 
