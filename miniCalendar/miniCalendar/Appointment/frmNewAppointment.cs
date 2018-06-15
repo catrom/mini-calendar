@@ -249,9 +249,14 @@ namespace miniCalendar
 
                 for (int i = 0; i < ID.Count; i++)
                 {
-                    if (clListDay.GetItemCheckState(i) == CheckState.Unchecked)
+                    // Thêm dòng fix lỗi sau khi thêm checkboxList
+                    // Ngày 14/6/2018
+                    if (ID.Count > 1)
                     {
-                        continue;
+                        if (clListDay.GetItemCheckState(i) == CheckState.Unchecked)
+                        {
+                            continue;
+                        }
                     }
 
                     if (switchAllday.Value == true)
@@ -263,8 +268,18 @@ namespace miniCalendar
                     {
                         int X = cbStartHour.SelectedIndex;
                         int Y = cbEndHour.SelectedIndex;
-                        startHour = new DateTime(dateTime[i].Year, dateTime[i].Month, dateTime[i].Day, X / 2, 30 * (X % 2), 0);
-                        endHour = new DateTime(dateTime[i].Year, dateTime[i].Month, dateTime[i].Day, Y / 2, 30 * (Y % 2), 0);
+
+                        // Fix lỗi đặt lịch hẹn diễn ra trong nhiều ngày
+                        if (ID.Count == 1)
+                        {
+                            startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, X / 2, 30 * (X % 2), 0);
+                            endHour = new DateTime(dtpEndDay.Value.Year, dtpEndDay.Value.Month, dtpEndDay.Value.Day, Y / 2, 30 * (Y % 2), 0);
+                        }
+                        else
+                        {
+                            startHour = new DateTime(dateTime[i].Year, dateTime[i].Month, dateTime[i].Day, X / 2, 30 * (X % 2), 0);
+                            endHour = new DateTime(dateTime[i].Year, dateTime[i].Month, dateTime[i].Day, Y / 2, 30 * (Y % 2), 0);
+                        }
                     }
 
                     Appointment fin = new Appointment(title, startHour, endHour, location, notiValue, notiUnit, color, description);
