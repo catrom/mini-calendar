@@ -16,7 +16,7 @@ namespace miniCalendar
         private string fileName = "tasks.xml";
 
         public DataTable() { }
-        
+
         public void Add(Appointment o)
         {
             dataTable.Add(1, o);
@@ -25,7 +25,13 @@ namespace miniCalendar
         public void Delete(int ID)
         {
             dataTable.Remove(ID);
-        } 
+        }
+
+        public Appointment this[int i]
+        {
+            get { return dataTable[i]; }
+            set { dataTable[i] = value; }
+        }
 
         public void Serialize()
         {
@@ -58,7 +64,7 @@ namespace miniCalendar
                                                notiUnit = kv.notiUnit,
                                                Color = kv.Color,
                                                Description = kv.Description
-                                           }).ToList();
+                                               }).ToList();
 
             int ID = 1;
 

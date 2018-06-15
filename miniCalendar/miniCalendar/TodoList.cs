@@ -28,6 +28,12 @@ namespace miniCalendar
             _todoList.Remove(ID);
         }
 
+        public Task this[int i]
+        {
+            get { return _todoList[i]; }
+            set { _todoList[i] = value; }
+        }
+
         public void Serialize()
         {
             FileStream fs = new FileStream(fileName, FileMode.Truncate);
