@@ -170,8 +170,18 @@ namespace miniCalendar
             _id = idpick;
             frmTaskDetail fa = new frmTaskDetail(_id, _todoList, false);
             fa.Disposed += new EventHandler(dispose_event);
-            
-            
+
+            fa.checkRed.BackColor = Color.FromArgb(217, 84, 79);
+            fa.checkRed.ChechedOffColor = Color.FromArgb(217, 84, 79);
+            fa.checkRed.CheckedOnColor = Color.FromArgb(217, 84, 79);
+            fa.checkYellow.BackColor = Color.FromArgb(239, 173, 77);
+            fa.checkYellow.ChechedOffColor = Color.FromArgb(239, 173, 77);
+            fa.checkYellow.CheckedOnColor = Color.FromArgb(239, 173, 77);
+            fa.checkGreen.BackColor = Color.FromArgb(91, 192, 222);
+            fa.checkGreen.ChechedOffColor = Color.FromArgb(91, 192, 222);
+            fa.checkGreen.CheckedOnColor = Color.FromArgb(91, 192, 222);
+
+
             pnlTaskDetail.Controls.Add(fa);
             fa.Dock = DockStyle.Fill;
             fa.BringToFront();

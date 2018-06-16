@@ -4,11 +4,11 @@
     <subTasks />
     <subTaskStatus />
   </Task>
-  <Task ID="2" Name="2 " DueDay="2018-06-18T23:59:59" RemindTime="2018-06-17T01:14:19.2759621+07:00" RemindDay="2018-06-17T01:14:19.2759621+07:00" Note="" Color="Gray" StartDay="2018-06-17T01:22:39.1322695+07:00">
+  <Task ID="2" Name="2 " DueDay="2018-06-18T23:59:59" RemindTime="2018-06-17T01:14:19.2759621+07:00" RemindDay="2018-06-17T01:14:19.2759621+07:00" Note="" Color="Yellow" StartDay="2018-06-17T01:30:18.5210569+07:00">
     <subTasks />
     <subTaskStatus />
   </Task>
-  <Task ID="3" Name="3" DueDay="2018-06-20T23:59:59" RemindTime="2018-06-17T01:14:21.5555063+07:00" RemindDay="2018-06-17T01:14:21.5555063+07:00" Note="" Color="Gray" StartDay="2018-06-17T01:23:14.1842202+07:00">
+  <Task ID="3" Name="3" DueDay="2018-06-20T23:59:59" RemindTime="2018-06-17T01:14:21.5555063+07:00" RemindDay="2018-06-17T01:14:21.5555063+07:00" Note="" Color="Green" StartDay="2018-06-17T01:35:20.7790176+07:00">
     <subTasks />
     <subTaskStatus />
   </Task>

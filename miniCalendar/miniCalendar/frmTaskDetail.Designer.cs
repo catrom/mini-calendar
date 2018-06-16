@@ -426,7 +426,7 @@
             // checkYellow
             // 
             this.checkYellow.BackColor = System.Drawing.Color.DarkKhaki;
-            this.checkYellow.ChechedOffColor = System.Drawing.Color.DarkKhaki;
+            this.checkYellow.ChechedOffColor = System.Drawing.Color.DarkRed;
             this.checkYellow.Checked = false;
             this.checkYellow.CheckedOnColor = System.Drawing.Color.DarkKhaki;
             this.checkYellow.ForeColor = System.Drawing.Color.White;
@@ -564,15 +564,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuCheckbox checkGreen;
-        private Bunifu.Framework.UI.BunifuCheckbox checkYellow;
-        private Bunifu.Framework.UI.BunifuCheckbox checkRed;
         private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuCheckbox checkGray;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuTextbox tbSubtask;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FlowLayoutPanel fpSubTask;
         public System.Windows.Forms.PictureBox pictureBox4;
+        public Bunifu.Framework.UI.BunifuCheckbox checkGreen;
+        public Bunifu.Framework.UI.BunifuCheckbox checkYellow;
+        public Bunifu.Framework.UI.BunifuCheckbox checkRed;
+        public Bunifu.Framework.UI.BunifuCheckbox checkGray;
     }
 }
