@@ -9,9 +9,10 @@ using System.Drawing;
 namespace miniCalendar
 {
     public class Task
-    {     
-        public Task () { }
-        public Task(int id, string name, DateTime dDay, DateTime rTime, DateTime rDay, string note, string color, DateTime sDay, List<string> subtasks)
+    {
+        public Task() { }
+        public Task(int id, string name, DateTime dDay, DateTime rTime,
+                    DateTime rDay, string note, string color, DateTime sDay, List<string> subtasks, List<int> subtasksStatus)
         {
             ID = id;
             Name = name;
@@ -22,6 +23,7 @@ namespace miniCalendar
             Color = color;
             StartDay = sDay;
             subTasks = subtasks;
+            subTaskStatus = subtasksStatus;
         }
 
         [XmlAttribute]
@@ -48,7 +50,10 @@ namespace miniCalendar
         [XmlAttribute]
         public DateTime StartDay;
 
-        [XmlAttribute]
+        [XmlArray]
         public List<string> subTasks = new List<string>();
+
+        [XmlArray]
+        public List<int> subTaskStatus = new List<int>();
     }
-} 
+}

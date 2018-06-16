@@ -14,7 +14,7 @@ namespace miniCalendar
     {
         public Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
         private XmlSerializer formatter = new XmlSerializer(typeof(Task[]), new XmlRootAttribute() { ElementName = "TodoList" });
-        private string fileName = "todolist.xml";
+        private string fileName = "todolist/todolist.xml";
 
         public TodoList() { }
 
@@ -47,14 +47,26 @@ namespace miniCalendar
 
             foreach (var i in _todoList)
             {
-                string fileNameSub = i.Key.ToString() + ".xml";
+                string fileNameSub = "todolist/sub/" + i.Key.ToString() + ".xml";
                 SerializeSubTask(i.Value.subTasks, fileNameSub);
+
+                string fileNameStatus = "todolist/stt/" + i.Key.ToString() + ".xml";
+                SerializeSubTaskStatus(i.Value.subTaskStatus, fileNameStatus);
             }
         }
 
         public void SerializeSubTask(List<string> list, string fileName)
         {
             var serializer = new XmlSerializer(typeof(List<string>));
+            using (var stream = File.Create(fileName))
+            {
+                serializer.Serialize(stream, list);
+            }
+        }
+
+        public void SerializeSubTaskStatus(List<int> list, string fileName)
+        {
+            var serializer = new XmlSerializer(typeof(List<int>));
             using (var stream = File.Create(fileName))
             {
                 serializer.Serialize(stream, list);
@@ -87,26 +99,37 @@ namespace miniCalendar
             foreach (var i in result)
             {
                 List<string> subTask = new List<string>();
-                string fileNameSub = i.ID.ToString() + ".xml";
+                string fileNameSub = "todolist/sub/" + i.ID.ToString() + ".xml";
                 DeserializeSubTask(subTask, fileNameSub);
-                _todoList.Add(i.ID, new Task(i.ID, i.Name, i.DueDay, i.RemindTime, i.RemindDay, i.Note, i.Color, i.StartDay, subTask));
+
+                List<int> subtaskStatus = new List<int>();
+                string fileNameStt = "todolist/stt/" + i.ID.ToString() + ".xml";
+                DeserializeSubTaskStatus(subtaskStatus, fileNameStt);
+
+                _todoList.Add(i.ID, new Task(i.ID, i.Name, i.DueDay, i.RemindTime, i.RemindDay, i.Note, i.Color, i.StartDay, subTask, subtaskStatus));
             }
         }
 
         public void DeserializeSubTask(List<string> list, string fileName)
         {
             var serializer = new XmlSerializer(typeof(List<string>));
-            FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate);
-
-            if (fs.Length == 0)
+            using (var stream = File.OpenRead(fileName))
             {
-                fs.Close();
-                return;
+                var other = (List<string>)(serializer.Deserialize(stream));
+                list.Clear();
+                list.AddRange(other);
             }
-            var result = ((List<string>)serializer.Deserialize(fs))
-               .Select(kv => new Task()).ToList();
+        }
 
-            fs.Close();
+        public void DeserializeSubTaskStatus(List<int> list, string fileName)
+        {
+            var serializer = new XmlSerializer(typeof(List<int>));
+            using (var stream = File.OpenRead(fileName))
+            {
+                var other = (List<int>)(serializer.Deserialize(stream));
+                list.Clear();
+                list.AddRange(other);
+            }
         }
     }
 }

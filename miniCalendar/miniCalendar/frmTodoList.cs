@@ -36,9 +36,7 @@ namespace miniCalendar
             }
 
             showTaskList();
-            _id = getID();
-
-            
+            _id = getID();         
         }
 
         public void showTaskList()
@@ -119,7 +117,7 @@ namespace miniCalendar
                     task.RemindDay = DateTime.Now;
                     task.RemindTime = DateTime.Now;
                     task.Color = "Gray";
-                    task.StartDay = now;    
+                    task.StartDay = now;
                     _todoList.Add(_id, task);
 
                     frmTask abc = new frmTask(_id, _todoList);
@@ -137,7 +135,7 @@ namespace miniCalendar
             }
         }
 
-        private void btnTask_Click(object sender, EventArgs e)
+        private void clearpnlTaskDetail()
         {
             for (int i = pnlTaskDetail.Controls.Count - 1; i >= 0; i--)
             {
@@ -146,50 +144,52 @@ namespace miniCalendar
                     pnlTaskDetail.Controls.RemoveAt(i);
                 }
             }
-            
+        }
 
+        private void btnTask_Click(object sender, EventArgs e)
+        {
+            clearpnlTaskDetail();
             var pick = (Bunifu.Framework.UI.BunifuFlatButton)sender;
             int idpick = pick.TabIndex;
-           // MessageBox.Show(idpick.ToString());
             frmTaskDetail fa = new frmTaskDetail(idpick, _todoList, false);
             fa.Disposed += new EventHandler(dispose_event);
+            fa.btnCancel.Click += new EventHandler(close_event);
             
             
             pnlTaskDetail.Controls.Add(fa);
             fa.Dock = DockStyle.Fill;
-            fa.BringToFront();      
-
+            fa.BringToFront();
 
         }
 
-        public bool moreImportant(string a, string b)
-        {
-            if (a == "Red")
-                return true;
-            else if(a == "Yellow")
-            {
-                if (b == "Red" || b == "Yellow")
-                    return false;
-                else return true;
-            }
-            else if(a == "Green")
-            {
-                if (b == "Green" || b == "Gray")
-                    return true;
-                else
-                    return false;
-            }
-            else
-                return false;
-        }
+        //public bool moreImportant(string a, string b)
+        //{
+        //    if (a == "Red")
+        //        return true;
+        //    else if(a == "Yellow")
+        //    {
+        //        if (b == "Red" || b == "Yellow")
+        //            return false;
+        //        else return true;
+        //    }
+        //    else if(a == "Green")
+        //    {
+        //        if (b == "Green" || b == "Gray")
+        //            return true;
+        //        else
+        //            return false;
+        //    }
+        //    else
+        //        return false;
+        //}
 
-        public void swapLocation(frmTask a, frmTask b)
-        {
-            Point temp = new Point();
-            temp = a.Location;
-            a.Location = b.Location;
-            b.Location = temp;
-        }
+        //public void swapLocation(frmTask a, frmTask b)
+        //{
+        //    Point temp = new Point();
+        //    temp = a.Location;
+        //    a.Location = b.Location;
+        //    b.Location = temp;
+        //}
 
         public void dispose_event(object sender, EventArgs e)
         {
@@ -200,6 +200,11 @@ namespace miniCalendar
         public void disposed_event(object sender, EventArgs e)
         {
             pnlTaskDetail.Controls.Clear();
+        }
+
+        private void close_event(object sender, EventArgs e)
+        {
+            clearpnlTaskDetail();
         }
     }
 }

@@ -30,6 +30,14 @@
         {
             this.cbIsDone = new Bunifu.Framework.UI.BunifuCheckbox();
             this.btnTaskName = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbDayLeft = new System.Windows.Forms.Label();
+            this.pnlDayPast = new System.Windows.Forms.Panel();
+            this.pnlNumTask = new System.Windows.Forms.Panel();
+            this.lbTaskDone = new System.Windows.Forms.Label();
+            this.pnlTaskDone = new System.Windows.Forms.Panel();
+            this.panel2.SuspendLayout();
+            this.pnlNumTask.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbIsDone
@@ -81,14 +89,77 @@
             this.btnTaskName.Textcolor = System.Drawing.Color.Black;
             this.btnTaskName.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lbDayLeft);
+            this.panel2.Controls.Add(this.pnlDayPast);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(331, 20);
+            this.panel2.TabIndex = 7;
+            // 
+            // lbDayLeft
+            // 
+            this.lbDayLeft.AutoSize = true;
+            this.lbDayLeft.Location = new System.Drawing.Point(130, 2);
+            this.lbDayLeft.Name = "lbDayLeft";
+            this.lbDayLeft.Size = new System.Drawing.Size(46, 13);
+            this.lbDayLeft.TabIndex = 1;
+            this.lbDayLeft.Text = "days left";
+            // 
+            // pnlDayPast
+            // 
+            this.pnlDayPast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlDayPast.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlDayPast.Location = new System.Drawing.Point(0, 0);
+            this.pnlDayPast.Name = "pnlDayPast";
+            this.pnlDayPast.Size = new System.Drawing.Size(78, 18);
+            this.pnlDayPast.TabIndex = 0;
+            // 
+            // pnlNumTask
+            // 
+            this.pnlNumTask.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNumTask.Controls.Add(this.lbTaskDone);
+            this.pnlNumTask.Controls.Add(this.pnlTaskDone);
+            this.pnlNumTask.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlNumTask.Location = new System.Drawing.Point(0, 36);
+            this.pnlNumTask.Name = "pnlNumTask";
+            this.pnlNumTask.Size = new System.Drawing.Size(331, 20);
+            this.pnlNumTask.TabIndex = 8;
+            // 
+            // lbTaskDone
+            // 
+            this.lbTaskDone.AutoSize = true;
+            this.lbTaskDone.Location = new System.Drawing.Point(130, 3);
+            this.lbTaskDone.Name = "lbTaskDone";
+            this.lbTaskDone.Size = new System.Drawing.Size(35, 13);
+            this.lbTaskDone.TabIndex = 1;
+            this.lbTaskDone.Text = "label1";
+            // 
+            // pnlTaskDone
+            // 
+            this.pnlTaskDone.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlTaskDone.Location = new System.Drawing.Point(0, 0);
+            this.pnlTaskDone.Name = "pnlTaskDone";
+            this.pnlTaskDone.Size = new System.Drawing.Size(78, 18);
+            this.pnlTaskDone.TabIndex = 0;
+            // 
             // frmTask
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.pnlNumTask);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnTaskName);
             this.Controls.Add(this.cbIsDone);
             this.Name = "frmTask";
-            this.Size = new System.Drawing.Size(331, 36);
+            this.Size = new System.Drawing.Size(331, 76);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.pnlNumTask.ResumeLayout(false);
+            this.pnlNumTask.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -96,7 +167,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        public Bunifu.Framework.UI.BunifuFlatButton btnTaskName;
         public Bunifu.Framework.UI.BunifuCheckbox cbIsDone;
+        public Bunifu.Framework.UI.BunifuFlatButton btnTaskName;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbDayLeft;
+        private System.Windows.Forms.Panel pnlDayPast;
+        private System.Windows.Forms.Panel pnlNumTask;
+        private System.Windows.Forms.Label lbTaskDone;
+        private System.Windows.Forms.Panel pnlTaskDone;
     }
 }

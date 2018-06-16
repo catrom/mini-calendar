@@ -44,7 +44,6 @@
             this.lbDueDay = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlTaskName = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tbTaskName = new System.Windows.Forms.TextBox();
             this.cbIsDone = new Bunifu.Framework.UI.BunifuCheckbox();
             this.pnlButton = new System.Windows.Forms.Panel();
@@ -60,10 +59,10 @@
             this.checkYellow = new Bunifu.Framework.UI.BunifuCheckbox();
             this.checkRed = new Bunifu.Framework.UI.BunifuCheckbox();
             this.lbImportance = new System.Windows.Forms.Label();
-            this.fpSubTask = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbSubtask = new Bunifu.Framework.UI.BunifuTextbox();
             this.button1 = new System.Windows.Forms.Button();
+            this.fpSubTask = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -72,10 +71,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlTaskName.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.pnlButton.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.fpSubTask.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +80,7 @@
             // 
             this.panel6.Controls.Add(this.lbInfo);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 453);
+            this.panel6.Location = new System.Drawing.Point(0, 465);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(329, 30);
             this.panel6.TabIndex = 39;
@@ -103,9 +100,9 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.rtbNote);
             this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Location = new System.Drawing.Point(0, 316);
+            this.panel4.Location = new System.Drawing.Point(0, 355);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(329, 57);
+            this.panel4.Size = new System.Drawing.Size(329, 42);
             this.panel4.TabIndex = 38;
             // 
             // rtbNote
@@ -114,9 +111,9 @@
             this.rtbNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbNote.Location = new System.Drawing.Point(55, 3);
             this.rtbNote.Name = "rtbNote";
-            this.rtbNote.Size = new System.Drawing.Size(240, 44);
+            this.rtbNote.Size = new System.Drawing.Size(240, 32);
             this.rtbNote.TabIndex = 14;
-            this.rtbNote.Text = "";
+            this.rtbNote.Text = "Add a note...";
             // 
             // pictureBox3
             // 
@@ -203,7 +200,7 @@
             this.dtpDueDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDueDay.Location = new System.Drawing.Point(89, 12);
             this.dtpDueDay.Name = "dtpDueDay";
-            this.dtpDueDay.Size = new System.Drawing.Size(113, 20);
+            this.dtpDueDay.Size = new System.Drawing.Size(105, 20);
             this.dtpDueDay.TabIndex = 19;
             // 
             // lbDueDay
@@ -229,7 +226,6 @@
             // pnlTaskName
             // 
             this.pnlTaskName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlTaskName.Controls.Add(this.pictureBox4);
             this.pnlTaskName.Controls.Add(this.tbTaskName);
             this.pnlTaskName.Controls.Add(this.cbIsDone);
             this.pnlTaskName.Dock = System.Windows.Forms.DockStyle.Top;
@@ -237,18 +233,6 @@
             this.pnlTaskName.Name = "pnlTaskName";
             this.pnlTaskName.Size = new System.Drawing.Size(329, 52);
             this.pnlTaskName.TabIndex = 34;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox4.Image = global::miniCalendar.Properties.Resources.icons8_Double_Left_48;
-            this.pictureBox4.Location = new System.Drawing.Point(304, 15);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // tbTaskName
             // 
@@ -279,9 +263,9 @@
             this.pnlButton.Controls.Add(this.btnCancel);
             this.pnlButton.Controls.Add(this.btnSave);
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButton.Location = new System.Drawing.Point(0, 483);
+            this.pnlButton.Location = new System.Drawing.Point(0, 495);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Size = new System.Drawing.Size(329, 48);
+            this.pnlButton.Size = new System.Drawing.Size(329, 36);
             this.pnlButton.TabIndex = 33;
             // 
             // btnCancel
@@ -293,7 +277,7 @@
             this.btnCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.ButtonText = "CANCEL";
+            this.btnCancel.ButtonText = "CLOSE";
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -302,10 +286,10 @@
             this.btnCancel.IdleFillColor = System.Drawing.Color.Transparent;
             this.btnCancel.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCancel.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCancel.Location = new System.Drawing.Point(205, -1);
+            this.btnCancel.Location = new System.Drawing.Point(205, -3);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(90, 48);
+            this.btnCancel.Size = new System.Drawing.Size(90, 40);
             this.btnCancel.TabIndex = 18;
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -328,10 +312,10 @@
             this.btnSave.IdleFillColor = System.Drawing.SystemColors.Control;
             this.btnSave.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
             this.btnSave.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.btnSave.Location = new System.Drawing.Point(21, -1);
+            this.btnSave.Location = new System.Drawing.Point(21, -3);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(90, 48);
+            this.btnSave.Size = new System.Drawing.Size(90, 40);
             this.btnSave.TabIndex = 17;
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -349,19 +333,19 @@
             this.panel5.Controls.Add(this.checkRed);
             this.panel5.Controls.Add(this.lbImportance);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 371);
+            this.panel5.Location = new System.Drawing.Point(0, 397);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(329, 82);
+            this.panel5.Size = new System.Drawing.Size(329, 68);
             this.panel5.TabIndex = 40;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(250, 58);
+            this.label4.Location = new System.Drawing.Point(249, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 17);
+            this.label4.Size = new System.Drawing.Size(58, 15);
             this.label4.TabIndex = 8;
             this.label4.Text = "Unknown";
             // 
@@ -372,7 +356,7 @@
             this.checkGray.Checked = false;
             this.checkGray.CheckedOnColor = System.Drawing.Color.Gray;
             this.checkGray.ForeColor = System.Drawing.Color.White;
-            this.checkGray.Location = new System.Drawing.Point(275, 35);
+            this.checkGray.Location = new System.Drawing.Point(267, 22);
             this.checkGray.Name = "checkGray";
             this.checkGray.Size = new System.Drawing.Size(20, 20);
             this.checkGray.TabIndex = 7;
@@ -381,33 +365,33 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label3.ForeColor = System.Drawing.Color.Green;
-            this.label3.Location = new System.Drawing.Point(191, 58);
+            this.label3.Location = new System.Drawing.Point(179, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 17);
+            this.label3.Size = new System.Drawing.Size(47, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Normal";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label2.ForeColor = System.Drawing.Color.DarkKhaki;
-            this.label2.Location = new System.Drawing.Point(118, 58);
+            this.label2.Location = new System.Drawing.Point(97, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Important";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(12, 58);
+            this.label1.Location = new System.Drawing.Point(8, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.Size = new System.Drawing.Size(85, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "Very Important";
             // 
@@ -418,7 +402,7 @@
             this.checkGreen.Checked = false;
             this.checkGreen.CheckedOnColor = System.Drawing.Color.Green;
             this.checkGreen.ForeColor = System.Drawing.Color.White;
-            this.checkGreen.Location = new System.Drawing.Point(206, 35);
+            this.checkGreen.Location = new System.Drawing.Point(192, 22);
             this.checkGreen.Name = "checkGreen";
             this.checkGreen.Size = new System.Drawing.Size(20, 20);
             this.checkGreen.TabIndex = 3;
@@ -431,7 +415,7 @@
             this.checkYellow.Checked = false;
             this.checkYellow.CheckedOnColor = System.Drawing.Color.DarkKhaki;
             this.checkYellow.ForeColor = System.Drawing.Color.White;
-            this.checkYellow.Location = new System.Drawing.Point(139, 35);
+            this.checkYellow.Location = new System.Drawing.Point(117, 22);
             this.checkYellow.Name = "checkYellow";
             this.checkYellow.Size = new System.Drawing.Size(20, 20);
             this.checkYellow.TabIndex = 2;
@@ -444,7 +428,7 @@
             this.checkRed.Checked = false;
             this.checkRed.CheckedOnColor = System.Drawing.Color.Red;
             this.checkRed.ForeColor = System.Drawing.Color.White;
-            this.checkRed.Location = new System.Drawing.Point(49, 35);
+            this.checkRed.Location = new System.Drawing.Point(42, 22);
             this.checkRed.Name = "checkRed";
             this.checkRed.Size = new System.Drawing.Size(20, 20);
             this.checkRed.TabIndex = 1;
@@ -454,31 +438,21 @@
             // 
             this.lbImportance.AutoSize = true;
             this.lbImportance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbImportance.Location = new System.Drawing.Point(4, 4);
+            this.lbImportance.Location = new System.Drawing.Point(2, 0);
             this.lbImportance.Name = "lbImportance";
             this.lbImportance.Size = new System.Drawing.Size(153, 17);
             this.lbImportance.TabIndex = 0;
             this.lbImportance.Text = "Rate level of importance:";
             // 
-            // fpSubTask
-            // 
-            this.fpSubTask.AutoScroll = true;
-            this.fpSubTask.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fpSubTask.Controls.Add(this.panel3);
-            this.fpSubTask.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fpSubTask.Location = new System.Drawing.Point(0, 169);
-            this.fpSubTask.Name = "fpSubTask";
-            this.fpSubTask.Size = new System.Drawing.Size(329, 147);
-            this.fpSubTask.TabIndex = 41;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.tbSubtask);
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 169);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(321, 29);
-            this.panel3.TabIndex = 0;
+            this.panel3.Size = new System.Drawing.Size(329, 30);
+            this.panel3.TabIndex = 42;
             // 
             // tbSubtask
             // 
@@ -487,29 +461,38 @@
             this.tbSubtask.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tbSubtask.ForeColor = System.Drawing.Color.Gray;
             this.tbSubtask.Icon = ((System.Drawing.Image)(resources.GetObject("tbSubtask.Icon")));
-            this.tbSubtask.Location = new System.Drawing.Point(8, -1);
+            this.tbSubtask.Location = new System.Drawing.Point(8, 0);
             this.tbSubtask.Name = "tbSubtask";
-            this.tbSubtask.Size = new System.Drawing.Size(267, 31);
-            this.tbSubtask.TabIndex = 14;
+            this.tbSubtask.Size = new System.Drawing.Size(263, 31);
+            this.tbSubtask.TabIndex = 16;
             this.tbSubtask.text = "";
             this.tbSubtask.KeyDown += new System.EventHandler(this.tbSubtask_KeyDown);
             this.tbSubtask.Enter += new System.EventHandler(this.tbSubtask_Enter);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(281, -1);
+            this.button1.Location = new System.Drawing.Point(276, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 29);
-            this.button1.TabIndex = 15;
+            this.button1.Size = new System.Drawing.Size(36, 29);
+            this.button1.TabIndex = 17;
             this.button1.Text = "add";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // fpSubTask
+            // 
+            this.fpSubTask.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fpSubTask.Location = new System.Drawing.Point(0, 199);
+            this.fpSubTask.Name = "fpSubTask";
+            this.fpSubTask.Size = new System.Drawing.Size(329, 156);
+            this.fpSubTask.TabIndex = 43;
             // 
             // frmTaskDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.fpSubTask);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
@@ -531,11 +514,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlTaskName.ResumeLayout(false);
             this.pnlTaskName.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnlButton.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.fpSubTask.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -557,7 +538,6 @@
         private System.Windows.Forms.Panel pnlTaskName;
         private System.Windows.Forms.Panel pnlButton;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSave;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancel;
         public System.Windows.Forms.TextBox tbTaskName;
         public Bunifu.Framework.UI.BunifuCheckbox cbIsDone;
         private System.Windows.Forms.Panel panel5;
@@ -572,10 +552,10 @@
         private Bunifu.Framework.UI.BunifuCheckbox checkRed;
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuCheckbox checkGray;
-        public System.Windows.Forms.FlowLayoutPanel fpSubTask;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuTextbox tbSubtask;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FlowLayoutPanel fpSubTask;
+        public Bunifu.Framework.UI.BunifuThinButton2 btnCancel;
     }
 }

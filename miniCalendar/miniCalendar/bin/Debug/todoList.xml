@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<TodoList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Task ID="1" Name="1" DueDay="2018-06-13T21:05:40.5583094+07:00" RemindTime="2018-06-13T21:05:40.5583094+07:00" RemindDay="2018-06-13T21:05:40.5583094+07:00" Note="" Color="Gray" StartDay="2018-06-13T21:06:50.3568387+07:00" subTasks="" />
-  <Task ID="2" Name="23" DueDay="2018-06-13T21:09:25.0774125+07:00" RemindTime="2018-06-13T21:09:25.0774125+07:00" RemindDay="2018-06-13T21:09:25.0774125+07:00" Note="" Color="Gray" StartDay="2018-06-13T21:09:29.9928951+07:00" subTasks="" />
-</TodoList>

@@ -36,6 +36,7 @@ namespace miniCalendar
             _todoList = todoList;
             _isModified = isModified;
             tbSubtask.text = "Add a to-do...";
+            rtbNote.Text = "Add a note...";
 
             ShowInfo(_isModified);
 
@@ -88,8 +89,8 @@ namespace miniCalendar
             }
             lbInfo.Text = "Last updated on " + DateTime.Now;
 
-            frmTask aTask = new frmTask(_id, _todoList);
-            aTask.btnTaskName.Normalcolor = Color.Red;
+            //frmTask aTask = new frmTask(_id, _todoList);
+            //aTask.btnTaskName.Normalcolor = Color.Red;
         }
 
         private void ShowInfo(bool isModified)
@@ -159,8 +160,8 @@ namespace miniCalendar
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            _isModified = false;
-            ShowInfo(_isModified);
+            frmTodoList tdl = new frmTodoList();
+            tdl.pnlTaskDetail.Controls.Clear();
         }
 
         public void cbIsDone_OnChange(object sender, EventArgs e)
@@ -169,9 +170,7 @@ namespace miniCalendar
             {
                 frmTodoList newList = new frmTodoList( _todoList);
                 _todoList.Remove(_id);
-                Dispose();
-
-                
+                Dispose();       
             }
         }
 
@@ -236,38 +235,71 @@ namespace miniCalendar
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmSubTask st = new frmSubTask(tbSubtask.text);
+            frmSubTask st = new frmSubTask(_todoList, _id, tbSubtask.text);
+            st.Disposed += new EventHandler(dispose_event);
             fpSubTask.Controls.Add(st);
             st.BringToFront();
             st.Dock = DockStyle.Top;
-            st.pictureBox1.Click += new EventHandler(pictureBox1_Click);
 
             _listSubTask.Add(st);
             _todoList[_id].subTasks.Add(tbSubtask.text);
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            Dispose();
+            _todoList[_id].subTaskStatus.Add(0);
+            tbSubtask.text = "";
         }
 
         private void showSubTaskList()
         {
+            _listSubTask.Clear();
+            clearfpSubTask();
             var list = _todoList[_id].subTasks;
 
-            foreach(string i in list)
+            for (int i = 0; i < list.Count; i++)
             {
-                frmSubTask st = new frmSubTask(i);
+                frmSubTask st = new frmSubTask(_todoList, _id, list[i]);
                 fpSubTask.Controls.Add(st);
                 st.BringToFront();
                 st.Dock = DockStyle.Top;
                 _listSubTask.Add(st);
+
+                if (_todoList[_id].subTaskStatus[i] == 1)
+                {
+                    st.cbIsDone.Checked = true;
+                }
+                else
+                {
+                    st.cbIsDone.Checked = false;
+                }
+
+
+                st.Disposed += new EventHandler(dispose_event);
+            }
+            updateIndexSub();
+        }
+
+        private void updateIndexSub()
+        {
+            for (int i = 0; i < _listSubTask.Count; i++)
+            {
+                _listSubTask[i].cbIsDone.TabIndex = i;
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void clearfpSubTask()
         {
-            Dispose();
+            for (int i = fpSubTask.Controls.Count - 1; i >= 0; i--)
+            {
+                if (fpSubTask.Controls[i] is frmSubTask)
+                {
+                    fpSubTask.Controls.RemoveAt(i);
+                }
+            }
+        }
+
+        public void dispose_event(object sender, EventArgs e)
+        {
+            clearfpSubTask();
+            showSubTaskList();
+            updateIndexSub();
         }
     }
 }
