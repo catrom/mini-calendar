@@ -105,7 +105,7 @@ namespace miniCalendar
                     pnlDayPast.BackColor = Color.FromArgb(217, 84, 79);
             }            
             
-            if(_todoList[_id].DueDay < DateTime.Now)
+            if(_todoList[_id].DueDay.Day < DateTime.Now.Day)
             {
                 _todoList[_id].Name += " (MISSED)";
             }

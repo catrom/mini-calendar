@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <TodoList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Task ID="1" Name="1" DueDay="2018-06-17T23:59:59" RemindTime="2018-06-17T00:36:39.0669739+07:00" RemindDay="2018-06-17T00:36:39.0669739+07:00" Note="" Color="Gray" StartDay="2018-06-17T00:59:59.2337807+07:00">
+  <Task ID="1" Name="1" DueDay="2018-06-17T23:59:59" RemindTime="2018-06-17T00:36:39.0669739+07:00" RemindDay="2018-06-17T00:36:39.0669739+07:00" Note="" Color="Red" StartDay="2018-06-17T01:22:42.6951864+07:00">
     <subTasks />
     <subTaskStatus />
   </Task>
-  <Task ID="2" Name="2 (MISSED)" DueDay="2018-06-17T01:14:19.2759621+07:00" RemindTime="2018-06-17T01:14:19.2759621+07:00" RemindDay="2018-06-17T01:14:19.2759621+07:00" Color="Gray" StartDay="2018-06-17T01:14:19.2759621+07:00">
+  <Task ID="2" Name="2 " DueDay="2018-06-18T23:59:59" RemindTime="2018-06-17T01:14:19.2759621+07:00" RemindDay="2018-06-17T01:14:19.2759621+07:00" Note="" Color="Gray" StartDay="2018-06-17T01:22:39.1322695+07:00">
     <subTasks />
     <subTaskStatus />
   </Task>
-  <Task ID="3" Name="3 (MISSED)" DueDay="2018-06-17T01:14:21.5555063+07:00" RemindTime="2018-06-17T01:14:21.5555063+07:00" RemindDay="2018-06-17T01:14:21.5555063+07:00" Color="Gray" StartDay="2018-06-17T01:14:21.5555063+07:00">
+  <Task ID="3" Name="3" DueDay="2018-06-20T23:59:59" RemindTime="2018-06-17T01:14:21.5555063+07:00" RemindDay="2018-06-17T01:14:21.5555063+07:00" Note="" Color="Gray" StartDay="2018-06-17T01:23:14.1842202+07:00">
     <subTasks />
     <subTaskStatus />
   </Task>
