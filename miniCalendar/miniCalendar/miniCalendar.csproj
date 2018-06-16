@@ -76,7 +76,7 @@
     <Compile Include="frmNotifications.Designer.cs">
       <DependentUpon>frmNotifications.cs</DependentUpon>
     </Compile>
-    <Compile Include="Schedule\DataTable.cs" />
+    <Compile Include="Schedule\ScheduleDataTable.cs" />
     <Compile Include="Schedule\frmNewTimeBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +122,7 @@
     <Compile Include="Schedule\frmViewTimeBlock.Designer.cs">
       <DependentUpon>frmViewTimeBlock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Schedule\Helper.cs" />
     <Compile Include="Schedule\TestingGround.cs" />
     <Compile Include="Schedule\TimeBlock.cs" />
     <Compile Include="Schedule\TimeTable.cs" />

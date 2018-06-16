@@ -116,7 +116,7 @@
             this.pnlEnableWeekDay.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlEnableWeekDay.Location = new System.Drawing.Point(0, 150);
             this.pnlEnableWeekDay.Name = "pnlEnableWeekDay";
-            this.pnlEnableWeekDay.Size = new System.Drawing.Size(445, 325);
+            this.pnlEnableWeekDay.Size = new System.Drawing.Size(445, 425);
             this.pnlEnableWeekDay.TabIndex = 0;
             // 
             // chkSaturday
@@ -320,7 +320,7 @@
             this.pnlTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTime.Location = new System.Drawing.Point(445, 150);
             this.pnlTime.Name = "pnlTime";
-            this.pnlTime.Size = new System.Drawing.Size(446, 325);
+            this.pnlTime.Size = new System.Drawing.Size(446, 425);
             this.pnlTime.TabIndex = 1;
             // 
             // pbTime
@@ -461,7 +461,7 @@
             this.pnlControl.Controls.Add(this.btnDelete);
             this.pnlControl.Controls.Add(this.btnBack);
             this.pnlControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlControl.Location = new System.Drawing.Point(0, 475);
+            this.pnlControl.Location = new System.Drawing.Point(0, 575);
             this.pnlControl.Name = "pnlControl";
             this.pnlControl.Size = new System.Drawing.Size(891, 81);
             this.pnlControl.TabIndex = 2;
@@ -550,7 +550,7 @@
             this.Controls.Add(this.pnlControl);
             this.Controls.Add(this.pnlTitle);
             this.Name = "frmViewTimeTable";
-            this.Size = new System.Drawing.Size(891, 556);
+            this.Size = new System.Drawing.Size(891, 656);
             this.pnlTitle.ResumeLayout(false);
             this.pnlEnableWeekDay.ResumeLayout(false);
             this.pnlEnableWeekDay.PerformLayout();

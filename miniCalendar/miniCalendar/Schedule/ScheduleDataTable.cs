@@ -1,36 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.IO;
+
+
 
 namespace miniCalendar.Schedule
 {
     [Serializable]
-    public class DataTable
+    public class ScheduleDataTable
     {
-        public List<TimeTable> dataTable = new List<TimeTable>();
-        private XmlSerializer serializer = new XmlSerializer(typeof(List<TimeTable>));
-        private string fileName = "testingSchedule.xml";
+        public List<TimeTable> timeTables = new List<TimeTable>();
 
-        public DataTable() { }
-        
-        public void Add(TimeTable o)
+        private XmlSerializer serializer = new XmlSerializer(typeof(List<TimeTable>));
+        private string fileName = "ScheduleDataTable.xml";
+
+        public ScheduleDataTable() { }
+
+        public void Add(TimeTable timeTable)
         {
-            dataTable.Add(o);
+            foreach (var item in timeTables)
+                if (timeTable.Title == item.Title)
+                    return;
+
+            timeTables.Add(timeTable);
         }
 
-        public void Remove(TimeTable o)
+        public void Remove(TimeTable timeTable)
         {
-            dataTable.Remove(o);
+            timeTables.Remove(timeTable);
         }
 
         public void Serialize()
         {
             FileStream fs = new FileStream(fileName, FileMode.Truncate);
-            serializer.Serialize(fs, dataTable);
+            serializer.Serialize(fs, timeTables);
             fs.Close();
         }
 
@@ -44,7 +51,7 @@ namespace miniCalendar.Schedule
             }
             var result = (List<TimeTable>)serializer.Deserialize(fs);
             foreach (var i in result)
-                dataTable.Add(i);
+                timeTables.Add(i);
             fs.Close();
         }
     }

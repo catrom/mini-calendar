@@ -11,29 +11,15 @@ namespace miniCalendar.Schedule
     public class TimeTable
     {
         [XmlAttribute]
-        int id;
-        [XmlAttribute]
         string title;
         [XmlArray]
-        bool[] enableWeekDay = new bool[7];
+        bool[] enableWeekDay = new bool[7] { true, true, true, true, true, true, true };
         [XmlAttribute]
         DateTime startTime;
         [XmlAttribute]
         DateTime endTime;
         [XmlArray]
         List<TimeBlock> timeBlocks;
-
-        public int ID
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                id = value;
-            }
-        }
 
         public string Title
         {
@@ -43,7 +29,8 @@ namespace miniCalendar.Schedule
             }
             set
             {
-                title = value;
+                if (value == "") throw new Exception("Title invalid");
+                else title = value;
             }
         }
 
@@ -97,14 +84,89 @@ namespace miniCalendar.Schedule
 
         public TimeTable() { }
 
-        public TimeTable(int id, string title, bool[] enableWeekDay, DateTime startTime, DateTime endTime, List<TimeBlock> timeBlocks)
+        public TimeTable(string title, bool[] enableWeekDay, DateTime startTime, DateTime endTime, List<TimeBlock> timeBlocks)
         {
-            this.id = id;
             this.title = title;
             this.enableWeekDay = enableWeekDay;
-            this.startTime = startTime;
-            this.endTime = endTime;
+            if ((startTime.Hour > endTime.Hour)
+                || (startTime.Hour == endTime.Hour) && (startTime.Minute >= endTime.Hour))
+                throw new Exception("Start time and End time invalid");
+            else
+            {
+                this.startTime = startTime;
+                Helper.toDefaultDay(ref this.startTime);
+
+                this.endTime = endTime;
+                Helper.toDefaultDay(ref this.endTime);
+            }
             this.timeBlocks = timeBlocks;
+        }
+
+        public void Add(TimeBlock timeBlock)
+        {
+            if (isTimeBlockValid(timeBlock))
+            {
+                foreach (var item in timeBlocks)
+                {
+                    if (timeBlock.SubjectTitle == item.SubjectTitle)
+                        throw new Exception("Title already taken");
+                    if (timeBlock.WeekDay == item.WeekDay)
+                    {
+                        if (isOverlapped(timeBlock, item))
+                            throw new Exception("Time frame overlapped");
+                    }
+                }
+                timeBlocks.Add(timeBlock);
+            }
+            else throw new Exception("TimeBlock invalid");
+        }
+
+        public bool isTimeBlockValid(TimeBlock timeBlock)
+        {
+            //Check time
+            if ((timeBlock.StartTime.Hour < StartTime.Hour)
+                || ((timeBlock.StartTime.Hour == startTime.Hour) && (timeBlock.StartTime.Minute < startTime.Minute)))
+                return false;
+
+            if ((timeBlock.EndTime.Hour > EndTime.Hour)
+                || ((timeBlock.EndTime.Hour == startTime.Hour) && (timeBlock.StartTime.Minute > startTime.Minute)))
+                return false;
+
+            //Check weekday
+            if (!enableWeekDay[timeBlock.WeekDay])
+                return false;
+
+            return true;
+        }
+
+        public bool isOverlapped(TimeBlock a, TimeBlock b)
+        {
+            if ((a.StartTime.Hour < b.StartTime.Hour)
+                || (a.StartTime.Hour == b.StartTime.Hour) && (a.StartTime.Minute < b.StartTime.Minute))
+            {
+                if ((a.EndTime.Hour > b.StartTime.Hour)
+                    || (a.EndTime.Hour == b.StartTime.Hour) && (a.EndTime.Minute > b.StartTime.Minute))
+                    return true;
+            }
+
+            else if ((a.StartTime.Hour == b.StartTime.Hour) && (a.StartTime.Minute == b.StartTime.Minute))
+                return true;
+
+            else if ((a.StartTime.Hour > b.StartTime.Hour)
+                || (a.StartTime.Hour == b.StartTime.Hour) && (a.StartTime.Hour > b.StartTime.Minute))
+            {
+                if ((a.StartTime.Hour < b.EndTime.Hour)
+                    || (a.StartTime.Hour == b.EndTime.Hour) && (a.StartTime.Minute < b.EndTime.Minute))
+                    return true;
+            }
+
+            return false;
+        }
+
+
+        public void Remove(TimeBlock timeBlock)
+        {
+            timeBlocks.Remove(timeBlock);
         }
     }
 }

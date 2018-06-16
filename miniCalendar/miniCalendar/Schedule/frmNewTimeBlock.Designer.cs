@@ -66,6 +66,7 @@
             this.tbDescription = new System.Windows.Forms.RichTextBox();
             this.pbDescription = new System.Windows.Forms.PictureBox();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.lblNotiMin = new System.Windows.Forms.Label();
             this.pnlTitle.SuspendLayout();
             this.pnlDayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTime)).BeginInit();
@@ -290,7 +291,7 @@
             this.pnlControl.Controls.Add(this.btnCancel);
             this.pnlControl.Controls.Add(this.btnSave);
             this.pnlControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlControl.Location = new System.Drawing.Point(0, 475);
+            this.pnlControl.Location = new System.Drawing.Point(0, 575);
             this.pnlControl.Name = "pnlControl";
             this.pnlControl.Size = new System.Drawing.Size(891, 81);
             this.pnlControl.TabIndex = 0;
@@ -348,13 +349,14 @@
             // pnlNotification
             // 
             this.pnlNotification.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNotification.Controls.Add(this.lblNotiMin);
             this.pnlNotification.Controls.Add(this.numNotiValue);
             this.pnlNotification.Controls.Add(this.pbNotification);
             this.pnlNotification.Controls.Add(this.lblNotification);
             this.pnlNotification.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlNotification.Location = new System.Drawing.Point(0, 280);
             this.pnlNotification.Name = "pnlNotification";
-            this.pnlNotification.Size = new System.Drawing.Size(441, 95);
+            this.pnlNotification.Size = new System.Drawing.Size(441, 108);
             this.pnlNotification.TabIndex = 0;
             // 
             // numNotiValue
@@ -401,7 +403,7 @@
             this.pnlColor.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlColor.Location = new System.Drawing.Point(441, 280);
             this.pnlColor.Name = "pnlColor";
-            this.pnlColor.Size = new System.Drawing.Size(450, 95);
+            this.pnlColor.Size = new System.Drawing.Size(450, 108);
             this.pnlColor.TabIndex = 0;
             // 
             // checkBlue
@@ -498,9 +500,9 @@
             this.pnlDescription.Controls.Add(this.pbDescription);
             this.pnlDescription.Controls.Add(this.lblDescription);
             this.pnlDescription.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDescription.Location = new System.Drawing.Point(0, 375);
+            this.pnlDescription.Location = new System.Drawing.Point(0, 388);
             this.pnlDescription.Name = "pnlDescription";
-            this.pnlDescription.Size = new System.Drawing.Size(891, 100);
+            this.pnlDescription.Size = new System.Drawing.Size(891, 187);
             this.pnlDescription.TabIndex = 0;
             // 
             // tbDescription
@@ -510,7 +512,7 @@
             this.tbDescription.Location = new System.Drawing.Point(63, 40);
             this.tbDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(786, 53);
+            this.tbDescription.Size = new System.Drawing.Size(786, 111);
             this.tbDescription.TabIndex = 7;
             this.tbDescription.Text = "Add descriptions";
             // 
@@ -536,6 +538,17 @@
             this.lblDescription.TabIndex = 5;
             this.lblDescription.Text = "Description";
             // 
+            // lblNotiMin
+            // 
+            this.lblNotiMin.AutoSize = true;
+            this.lblNotiMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblNotiMin.Location = new System.Drawing.Point(139, 49);
+            this.lblNotiMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNotiMin.Name = "lblNotiMin";
+            this.lblNotiMin.Size = new System.Drawing.Size(64, 23);
+            this.lblNotiMin.TabIndex = 19;
+            this.lblNotiMin.Text = "Minute";
+            // 
             // frmNewTimeBlock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -547,7 +560,7 @@
             this.Controls.Add(this.pnlDayTime);
             this.Controls.Add(this.pnlTitle);
             this.Name = "frmNewTimeBlock";
-            this.Size = new System.Drawing.Size(891, 556);
+            this.Size = new System.Drawing.Size(891, 656);
             this.pnlTitle.ResumeLayout(false);
             this.pnlDayTime.ResumeLayout(false);
             this.pnlDayTime.PerformLayout();
@@ -607,5 +620,6 @@
         private System.Windows.Forms.Label lblDescription;
         private Bunifu.Framework.UI.BunifuThinButton2 btnCancel;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSave;
+        private System.Windows.Forms.Label lblNotiMin;
     }
 }

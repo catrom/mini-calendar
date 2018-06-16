@@ -1,7 +1,2 @@
 <?xml version="1.0"?>
-<Tasks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Appointment Title="abc" startHour="2018-06-01T01:00:00" endHour="2018-06-01T23:30:00" Location="somewhere" notiValue="30" notiUnit="minutes" Color="Orange" Description="asdf&#xA;ab" />
-  <Appointment Title="cba" startHour="2018-06-01T08:30:00" endHour="2018-06-01T19:30:00" Location="xyz" notiValue="30" notiUnit="minutes" Color="Red" Description="fsdasdasd" />
-  <Appointment Title="this title" startHour="2018-06-01T19:30:00" endHour="2018-06-01T23:30:00" Location="ppp" notiValue="30" notiUnit="hours" Color="Blue" Description="a&#xA;b&#xA;c" />
-  <Appointment Title="old title" startHour="2018-05-28T00:00:00" endHour="2018-05-28T23:59:59" Location="school" notiValue="30" notiUnit="minutes" Color="Blue" Description="abc &#xA;xyz" />
-</Tasks>
+<Tasks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />

@@ -30,44 +30,44 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewTimeBlock));
             this.pnlTitle = new System.Windows.Forms.Panel();
-            this.pnlDayTime = new System.Windows.Forms.Panel();
-            this.pnlControl = new System.Windows.Forms.Panel();
-            this.pnlNoti = new System.Windows.Forms.Panel();
-            this.pnlDescript = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.pnlDayTime = new System.Windows.Forms.Panel();
+            this.lblEndTime = new System.Windows.Forms.Label();
+            this.lblEndMin = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblStartTime = new System.Windows.Forms.Label();
+            this.pbTime = new System.Windows.Forms.PictureBox();
+            this.lblStartMin = new System.Windows.Forms.Label();
+            this.lblWeekday = new System.Windows.Forms.Label();
+            this.lblStartHour = new System.Windows.Forms.Label();
+            this.pbEnableWeekday = new System.Windows.Forms.PictureBox();
+            this.lblEndHour = new System.Windows.Forms.Label();
+            this.lblWeekdayDisplay = new System.Windows.Forms.Label();
+            this.lblStartHourDisplay = new System.Windows.Forms.Label();
+            this.lblEndHourDisplay = new System.Windows.Forms.Label();
+            this.lblEndMinDisplay = new System.Windows.Forms.Label();
+            this.lblStartMinDisplay = new System.Windows.Forms.Label();
+            this.pnlControl = new System.Windows.Forms.Panel();
             this.btnModify = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnDelete = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.pbTime = new System.Windows.Forms.PictureBox();
-            this.lblWeekday = new System.Windows.Forms.Label();
-            this.pbEnableWeekday = new System.Windows.Forms.PictureBox();
-            this.lblWeekdayDisplay = new System.Windows.Forms.Label();
-            this.lblEndTime = new System.Windows.Forms.Label();
-            this.lblEndMin = new System.Windows.Forms.Label();
-            this.lblStartMin = new System.Windows.Forms.Label();
-            this.lblEndHour = new System.Windows.Forms.Label();
-            this.lblEndMinDisplay = new System.Windows.Forms.Label();
-            this.lblEndHourDisplay = new System.Windows.Forms.Label();
-            this.lblStartMinDisplay = new System.Windows.Forms.Label();
-            this.lblStartHourDisplay = new System.Windows.Forms.Label();
-            this.lblStartHour = new System.Windows.Forms.Label();
-            this.lblStartTime = new System.Windows.Forms.Label();
+            this.pnlNoti = new System.Windows.Forms.Panel();
+            this.lblNotiMin = new System.Windows.Forms.Label();
             this.pbNotification = new System.Windows.Forms.PictureBox();
             this.lblNotification = new System.Windows.Forms.Label();
-            this.lblNotiMin = new System.Windows.Forms.Label();
             this.lblNotiMinDisplay = new System.Windows.Forms.Label();
+            this.pnlDescript = new System.Windows.Forms.Panel();
             this.pbDescription = new System.Windows.Forms.PictureBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblDescriptionDisplay = new System.Windows.Forms.Label();
             this.pnlTitle.SuspendLayout();
             this.pnlDayTime.SuspendLayout();
-            this.pnlControl.SuspendLayout();
-            this.pnlNoti.SuspendLayout();
-            this.pnlDescript.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnableWeekday)).BeginInit();
+            this.pnlControl.SuspendLayout();
+            this.pnlNoti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).BeginInit();
+            this.pnlDescript.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDescription)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,18 @@
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(891, 150);
             this.pnlTitle.TabIndex = 0;
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.White;
+            this.lbTitle.Location = new System.Drawing.Point(80, 82);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(77, 32);
+            this.lbTitle.TabIndex = 2;
+            this.lbTitle.Text = "label1";
             // 
             // pnlDayTime
             // 
@@ -106,6 +118,170 @@
             this.pnlDayTime.Size = new System.Drawing.Size(891, 100);
             this.pnlDayTime.TabIndex = 0;
             // 
+            // lblEndTime
+            // 
+            this.lblEndTime.AutoSize = true;
+            this.lblEndTime.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblEndTime.Location = new System.Drawing.Point(468, 64);
+            this.lblEndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEndTime.Name = "lblEndTime";
+            this.lblEndTime.Size = new System.Drawing.Size(39, 23);
+            this.lblEndTime.TabIndex = 22;
+            this.lblEndTime.Text = "End";
+            // 
+            // lblEndMin
+            // 
+            this.lblEndMin.AutoSize = true;
+            this.lblEndMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblEndMin.Location = new System.Drawing.Point(773, 64);
+            this.lblEndMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEndMin.Name = "lblEndMin";
+            this.lblEndMin.Size = new System.Drawing.Size(64, 23);
+            this.lblEndMin.TabIndex = 23;
+            this.lblEndMin.Text = "Minute";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblTime.Location = new System.Drawing.Point(468, 11);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(47, 23);
+            this.lblTime.TabIndex = 21;
+            this.lblTime.Text = "Time";
+            // 
+            // lblStartTime
+            // 
+            this.lblStartTime.AutoSize = true;
+            this.lblStartTime.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblStartTime.Location = new System.Drawing.Point(468, 38);
+            this.lblStartTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartTime.Name = "lblStartTime";
+            this.lblStartTime.Size = new System.Drawing.Size(45, 23);
+            this.lblStartTime.TabIndex = 31;
+            this.lblStartTime.Text = "Start";
+            // 
+            // pbTime
+            // 
+            this.pbTime.Image = global::miniCalendar.Properties.Resources.icons8_Clock_32;
+            this.pbTime.Location = new System.Drawing.Point(434, 9);
+            this.pbTime.Name = "pbTime";
+            this.pbTime.Size = new System.Drawing.Size(27, 25);
+            this.pbTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTime.TabIndex = 20;
+            this.pbTime.TabStop = false;
+            // 
+            // lblStartMin
+            // 
+            this.lblStartMin.AutoSize = true;
+            this.lblStartMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblStartMin.Location = new System.Drawing.Point(773, 38);
+            this.lblStartMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartMin.Name = "lblStartMin";
+            this.lblStartMin.Size = new System.Drawing.Size(64, 23);
+            this.lblStartMin.TabIndex = 24;
+            this.lblStartMin.Text = "Minute";
+            // 
+            // lblWeekday
+            // 
+            this.lblWeekday.AutoSize = true;
+            this.lblWeekday.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblWeekday.Location = new System.Drawing.Point(52, 11);
+            this.lblWeekday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWeekday.Name = "lblWeekday";
+            this.lblWeekday.Size = new System.Drawing.Size(78, 23);
+            this.lblWeekday.TabIndex = 19;
+            this.lblWeekday.Text = "Weekday";
+            // 
+            // lblStartHour
+            // 
+            this.lblStartHour.AutoSize = true;
+            this.lblStartHour.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblStartHour.Location = new System.Drawing.Point(608, 38);
+            this.lblStartHour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartHour.Name = "lblStartHour";
+            this.lblStartHour.Size = new System.Drawing.Size(48, 23);
+            this.lblStartHour.TabIndex = 30;
+            this.lblStartHour.Text = "Hour";
+            // 
+            // pbEnableWeekday
+            // 
+            this.pbEnableWeekday.Image = global::miniCalendar.Properties.Resources.icons8_Planner_32;
+            this.pbEnableWeekday.Location = new System.Drawing.Point(17, 6);
+            this.pbEnableWeekday.Margin = new System.Windows.Forms.Padding(4);
+            this.pbEnableWeekday.Name = "pbEnableWeekday";
+            this.pbEnableWeekday.Size = new System.Drawing.Size(27, 28);
+            this.pbEnableWeekday.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEnableWeekday.TabIndex = 18;
+            this.pbEnableWeekday.TabStop = false;
+            // 
+            // lblEndHour
+            // 
+            this.lblEndHour.AutoSize = true;
+            this.lblEndHour.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblEndHour.Location = new System.Drawing.Point(608, 64);
+            this.lblEndHour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEndHour.Name = "lblEndHour";
+            this.lblEndHour.Size = new System.Drawing.Size(48, 23);
+            this.lblEndHour.TabIndex = 25;
+            this.lblEndHour.Text = "Hour";
+            // 
+            // lblWeekdayDisplay
+            // 
+            this.lblWeekdayDisplay.AutoSize = true;
+            this.lblWeekdayDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblWeekdayDisplay.Location = new System.Drawing.Point(52, 38);
+            this.lblWeekdayDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWeekdayDisplay.Name = "lblWeekdayDisplay";
+            this.lblWeekdayDisplay.Size = new System.Drawing.Size(39, 23);
+            this.lblWeekdayDisplay.TabIndex = 5;
+            this.lblWeekdayDisplay.Text = "text";
+            // 
+            // lblStartHourDisplay
+            // 
+            this.lblStartHourDisplay.AutoSize = true;
+            this.lblStartHourDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblStartHourDisplay.Location = new System.Drawing.Point(521, 38);
+            this.lblStartHourDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartHourDisplay.Name = "lblStartHourDisplay";
+            this.lblStartHourDisplay.Size = new System.Drawing.Size(39, 23);
+            this.lblStartHourDisplay.TabIndex = 29;
+            this.lblStartHourDisplay.Text = "text";
+            // 
+            // lblEndHourDisplay
+            // 
+            this.lblEndHourDisplay.AutoSize = true;
+            this.lblEndHourDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblEndHourDisplay.Location = new System.Drawing.Point(521, 64);
+            this.lblEndHourDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEndHourDisplay.Name = "lblEndHourDisplay";
+            this.lblEndHourDisplay.Size = new System.Drawing.Size(39, 23);
+            this.lblEndHourDisplay.TabIndex = 27;
+            this.lblEndHourDisplay.Text = "text";
+            // 
+            // lblEndMinDisplay
+            // 
+            this.lblEndMinDisplay.AutoSize = true;
+            this.lblEndMinDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblEndMinDisplay.Location = new System.Drawing.Point(698, 64);
+            this.lblEndMinDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEndMinDisplay.Name = "lblEndMinDisplay";
+            this.lblEndMinDisplay.Size = new System.Drawing.Size(39, 23);
+            this.lblEndMinDisplay.TabIndex = 26;
+            this.lblEndMinDisplay.Text = "text";
+            // 
+            // lblStartMinDisplay
+            // 
+            this.lblStartMinDisplay.AutoSize = true;
+            this.lblStartMinDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblStartMinDisplay.Location = new System.Drawing.Point(698, 38);
+            this.lblStartMinDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartMinDisplay.Name = "lblStartMinDisplay";
+            this.lblStartMinDisplay.Size = new System.Drawing.Size(39, 23);
+            this.lblStartMinDisplay.TabIndex = 28;
+            this.lblStartMinDisplay.Text = "text";
+            // 
             // pnlControl
             // 
             this.pnlControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -113,46 +289,10 @@
             this.pnlControl.Controls.Add(this.btnDelete);
             this.pnlControl.Controls.Add(this.btnBack);
             this.pnlControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlControl.Location = new System.Drawing.Point(0, 450);
+            this.pnlControl.Location = new System.Drawing.Point(0, 550);
             this.pnlControl.Name = "pnlControl";
             this.pnlControl.Size = new System.Drawing.Size(891, 106);
             this.pnlControl.TabIndex = 0;
-            // 
-            // pnlNoti
-            // 
-            this.pnlNoti.Controls.Add(this.lblNotiMin);
-            this.pnlNoti.Controls.Add(this.pbNotification);
-            this.pnlNoti.Controls.Add(this.lblNotification);
-            this.pnlNoti.Controls.Add(this.lblNotiMinDisplay);
-            this.pnlNoti.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNoti.Location = new System.Drawing.Point(0, 250);
-            this.pnlNoti.Name = "pnlNoti";
-            this.pnlNoti.Size = new System.Drawing.Size(891, 100);
-            this.pnlNoti.TabIndex = 0;
-            // 
-            // pnlDescript
-            // 
-            this.pnlDescript.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDescript.Controls.Add(this.pbDescription);
-            this.pnlDescript.Controls.Add(this.lblDescription);
-            this.pnlDescript.Controls.Add(this.lblDescriptionDisplay);
-            this.pnlDescript.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDescript.Location = new System.Drawing.Point(0, 350);
-            this.pnlDescript.Name = "pnlDescript";
-            this.pnlDescript.Size = new System.Drawing.Size(891, 100);
-            this.pnlDescript.TabIndex = 0;
-            // 
-            // lbTitle
-            // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(80, 82);
-            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(77, 32);
-            this.lbTitle.TabIndex = 2;
-            this.lbTitle.Text = "label1";
             // 
             // btnModify
             // 
@@ -229,169 +369,28 @@
             this.btnBack.TabIndex = 9;
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblTime
+            // pnlNoti
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblTime.Location = new System.Drawing.Point(468, 11);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(47, 23);
-            this.lblTime.TabIndex = 21;
-            this.lblTime.Text = "Time";
+            this.pnlNoti.Controls.Add(this.lblNotiMin);
+            this.pnlNoti.Controls.Add(this.pbNotification);
+            this.pnlNoti.Controls.Add(this.lblNotification);
+            this.pnlNoti.Controls.Add(this.lblNotiMinDisplay);
+            this.pnlNoti.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlNoti.Location = new System.Drawing.Point(0, 250);
+            this.pnlNoti.Name = "pnlNoti";
+            this.pnlNoti.Size = new System.Drawing.Size(891, 120);
+            this.pnlNoti.TabIndex = 0;
             // 
-            // pbTime
+            // lblNotiMin
             // 
-            this.pbTime.Image = global::miniCalendar.Properties.Resources.icons8_Clock_32;
-            this.pbTime.Location = new System.Drawing.Point(434, 9);
-            this.pbTime.Name = "pbTime";
-            this.pbTime.Size = new System.Drawing.Size(27, 25);
-            this.pbTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbTime.TabIndex = 20;
-            this.pbTime.TabStop = false;
-            // 
-            // lblWeekday
-            // 
-            this.lblWeekday.AutoSize = true;
-            this.lblWeekday.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblWeekday.Location = new System.Drawing.Point(52, 11);
-            this.lblWeekday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblWeekday.Name = "lblWeekday";
-            this.lblWeekday.Size = new System.Drawing.Size(78, 23);
-            this.lblWeekday.TabIndex = 19;
-            this.lblWeekday.Text = "Weekday";
-            // 
-            // pbEnableWeekday
-            // 
-            this.pbEnableWeekday.Image = global::miniCalendar.Properties.Resources.icons8_Planner_32;
-            this.pbEnableWeekday.Location = new System.Drawing.Point(17, 6);
-            this.pbEnableWeekday.Margin = new System.Windows.Forms.Padding(4);
-            this.pbEnableWeekday.Name = "pbEnableWeekday";
-            this.pbEnableWeekday.Size = new System.Drawing.Size(27, 28);
-            this.pbEnableWeekday.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbEnableWeekday.TabIndex = 18;
-            this.pbEnableWeekday.TabStop = false;
-            // 
-            // lblWeekdayDisplay
-            // 
-            this.lblWeekdayDisplay.AutoSize = true;
-            this.lblWeekdayDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblWeekdayDisplay.Location = new System.Drawing.Point(52, 38);
-            this.lblWeekdayDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblWeekdayDisplay.Name = "lblWeekdayDisplay";
-            this.lblWeekdayDisplay.Size = new System.Drawing.Size(39, 23);
-            this.lblWeekdayDisplay.TabIndex = 5;
-            this.lblWeekdayDisplay.Text = "text";
-            // 
-            // lblEndTime
-            // 
-            this.lblEndTime.AutoSize = true;
-            this.lblEndTime.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblEndTime.Location = new System.Drawing.Point(468, 64);
-            this.lblEndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEndTime.Name = "lblEndTime";
-            this.lblEndTime.Size = new System.Drawing.Size(39, 23);
-            this.lblEndTime.TabIndex = 22;
-            this.lblEndTime.Text = "End";
-            // 
-            // lblEndMin
-            // 
-            this.lblEndMin.AutoSize = true;
-            this.lblEndMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblEndMin.Location = new System.Drawing.Point(773, 64);
-            this.lblEndMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEndMin.Name = "lblEndMin";
-            this.lblEndMin.Size = new System.Drawing.Size(64, 23);
-            this.lblEndMin.TabIndex = 23;
-            this.lblEndMin.Text = "Minute";
-            // 
-            // lblStartMin
-            // 
-            this.lblStartMin.AutoSize = true;
-            this.lblStartMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblStartMin.Location = new System.Drawing.Point(773, 38);
-            this.lblStartMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStartMin.Name = "lblStartMin";
-            this.lblStartMin.Size = new System.Drawing.Size(64, 23);
-            this.lblStartMin.TabIndex = 24;
-            this.lblStartMin.Text = "Minute";
-            // 
-            // lblEndHour
-            // 
-            this.lblEndHour.AutoSize = true;
-            this.lblEndHour.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblEndHour.Location = new System.Drawing.Point(608, 64);
-            this.lblEndHour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEndHour.Name = "lblEndHour";
-            this.lblEndHour.Size = new System.Drawing.Size(48, 23);
-            this.lblEndHour.TabIndex = 25;
-            this.lblEndHour.Text = "Hour";
-            // 
-            // lblEndMinDisplay
-            // 
-            this.lblEndMinDisplay.AutoSize = true;
-            this.lblEndMinDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblEndMinDisplay.Location = new System.Drawing.Point(698, 64);
-            this.lblEndMinDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEndMinDisplay.Name = "lblEndMinDisplay";
-            this.lblEndMinDisplay.Size = new System.Drawing.Size(39, 23);
-            this.lblEndMinDisplay.TabIndex = 26;
-            this.lblEndMinDisplay.Text = "text";
-            // 
-            // lblEndHourDisplay
-            // 
-            this.lblEndHourDisplay.AutoSize = true;
-            this.lblEndHourDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblEndHourDisplay.Location = new System.Drawing.Point(521, 64);
-            this.lblEndHourDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEndHourDisplay.Name = "lblEndHourDisplay";
-            this.lblEndHourDisplay.Size = new System.Drawing.Size(39, 23);
-            this.lblEndHourDisplay.TabIndex = 27;
-            this.lblEndHourDisplay.Text = "text";
-            // 
-            // lblStartMinDisplay
-            // 
-            this.lblStartMinDisplay.AutoSize = true;
-            this.lblStartMinDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblStartMinDisplay.Location = new System.Drawing.Point(698, 38);
-            this.lblStartMinDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStartMinDisplay.Name = "lblStartMinDisplay";
-            this.lblStartMinDisplay.Size = new System.Drawing.Size(39, 23);
-            this.lblStartMinDisplay.TabIndex = 28;
-            this.lblStartMinDisplay.Text = "text";
-            // 
-            // lblStartHourDisplay
-            // 
-            this.lblStartHourDisplay.AutoSize = true;
-            this.lblStartHourDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblStartHourDisplay.Location = new System.Drawing.Point(521, 38);
-            this.lblStartHourDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStartHourDisplay.Name = "lblStartHourDisplay";
-            this.lblStartHourDisplay.Size = new System.Drawing.Size(39, 23);
-            this.lblStartHourDisplay.TabIndex = 29;
-            this.lblStartHourDisplay.Text = "text";
-            // 
-            // lblStartHour
-            // 
-            this.lblStartHour.AutoSize = true;
-            this.lblStartHour.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblStartHour.Location = new System.Drawing.Point(608, 38);
-            this.lblStartHour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStartHour.Name = "lblStartHour";
-            this.lblStartHour.Size = new System.Drawing.Size(48, 23);
-            this.lblStartHour.TabIndex = 30;
-            this.lblStartHour.Text = "Hour";
-            // 
-            // lblStartTime
-            // 
-            this.lblStartTime.AutoSize = true;
-            this.lblStartTime.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblStartTime.Location = new System.Drawing.Point(468, 38);
-            this.lblStartTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStartTime.Name = "lblStartTime";
-            this.lblStartTime.Size = new System.Drawing.Size(45, 23);
-            this.lblStartTime.TabIndex = 31;
-            this.lblStartTime.Text = "Start";
+            this.lblNotiMin.AutoSize = true;
+            this.lblNotiMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblNotiMin.Location = new System.Drawing.Point(108, 51);
+            this.lblNotiMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNotiMin.Name = "lblNotiMin";
+            this.lblNotiMin.Size = new System.Drawing.Size(64, 23);
+            this.lblNotiMin.TabIndex = 18;
+            this.lblNotiMin.Text = "Minute";
             // 
             // pbNotification
             // 
@@ -415,17 +414,6 @@
             this.lblNotification.TabIndex = 8;
             this.lblNotification.Text = "Notification";
             // 
-            // lblNotiMin
-            // 
-            this.lblNotiMin.AutoSize = true;
-            this.lblNotiMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblNotiMin.Location = new System.Drawing.Point(108, 51);
-            this.lblNotiMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNotiMin.Name = "lblNotiMin";
-            this.lblNotiMin.Size = new System.Drawing.Size(64, 23);
-            this.lblNotiMin.TabIndex = 18;
-            this.lblNotiMin.Text = "Minute";
-            // 
             // lblNotiMinDisplay
             // 
             this.lblNotiMinDisplay.AutoSize = true;
@@ -436,6 +424,18 @@
             this.lblNotiMinDisplay.Size = new System.Drawing.Size(39, 23);
             this.lblNotiMinDisplay.TabIndex = 5;
             this.lblNotiMinDisplay.Text = "text";
+            // 
+            // pnlDescript
+            // 
+            this.pnlDescript.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDescript.Controls.Add(this.pbDescription);
+            this.pnlDescript.Controls.Add(this.lblDescription);
+            this.pnlDescript.Controls.Add(this.lblDescriptionDisplay);
+            this.pnlDescript.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDescript.Location = new System.Drawing.Point(0, 370);
+            this.pnlDescript.Name = "pnlDescript";
+            this.pnlDescript.Size = new System.Drawing.Size(891, 180);
+            this.pnlDescript.TabIndex = 0;
             // 
             // pbDescription
             // 
@@ -480,19 +480,19 @@
             this.Controls.Add(this.pnlDayTime);
             this.Controls.Add(this.pnlTitle);
             this.Name = "frmViewTimeBlock";
-            this.Size = new System.Drawing.Size(891, 556);
+            this.Size = new System.Drawing.Size(891, 656);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
             this.pnlDayTime.ResumeLayout(false);
             this.pnlDayTime.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEnableWeekday)).EndInit();
             this.pnlControl.ResumeLayout(false);
             this.pnlNoti.ResumeLayout(false);
             this.pnlNoti.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).EndInit();
             this.pnlDescript.ResumeLayout(false);
             this.pnlDescript.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEnableWeekday)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotification)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDescription)).EndInit();
             this.ResumeLayout(false);
 

@@ -15,6 +15,8 @@ namespace miniCalendar
         DataTable dataTable = new DataTable();
         monthItem myMonthCalendar = new monthItem();
 
+        Schedule.ScheduleDataTable scDataTable = new Schedule.ScheduleDataTable();
+
         public frmMain(DataTable dataTable, monthItem monthItem)
         {
             InitializeComponent();
@@ -25,6 +27,19 @@ namespace miniCalendar
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Add(form);
         }
+
+        // Testing shit //
+        public frmMain(Schedule.ScheduleDataTable scDataTable)
+        {
+            InitializeComponent();
+            this.scDataTable = scDataTable;
+
+            frmNotifications form = new frmNotifications();
+            form.Dock = DockStyle.Fill;
+            WorkingArea.Controls.Add(form);
+        }
+        // ------------ //
+
         Bunifu.Framework.UI.Drag MoveForm = new Bunifu.Framework.UI.Drag();
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -74,7 +89,7 @@ namespace miniCalendar
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
-            frmSchedule form = new frmSchedule();
+            frmSchedule form = new frmSchedule(scDataTable.timeTables);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
             WorkingArea.Controls.Add(form);

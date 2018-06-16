@@ -10,8 +10,6 @@ namespace miniCalendar.Schedule
     public class TimeBlock
     {
         [XmlAttribute]
-        int id;
-        [XmlAttribute]
         string subjectTitle;
         [XmlAttribute]
         int weekDay;
@@ -26,19 +24,6 @@ namespace miniCalendar.Schedule
         [XmlAttribute]
         string description;
 
-        public int ID
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
-
         public string SubjectTitle
         {
             get
@@ -47,7 +32,8 @@ namespace miniCalendar.Schedule
             }
             set
             {
-                subjectTitle = value;
+                if (value == "") throw new Exception("Subject Title invalid");
+                else subjectTitle = value;
             }
         }
 
@@ -59,6 +45,7 @@ namespace miniCalendar.Schedule
             }
             set
             {
+                if (value < 0 || value > 6) throw new Exception("Weekday invalid");
                 weekDay = value;
             }
         }
@@ -107,6 +94,7 @@ namespace miniCalendar.Schedule
             }
             set
             {
+                if (value < 0) throw new Exception("Notification delay time invalid");
                 notiUnit = value;
             }
         }
@@ -125,15 +113,23 @@ namespace miniCalendar.Schedule
 
         public TimeBlock() { }
 
-        public TimeBlock(int id, string subjectTitle, int weekDay, DateTime startTime, DateTime endTime, string color)
+        public TimeBlock(string subjectTitle, int weekDay, DateTime startTime, DateTime endTime, string color, int notiUnit)
         {
-            this.id = id;
             this.subjectTitle = subjectTitle;
             this.weekDay = weekDay;
-            this.startTime = startTime;
-            this.endTime = endTime;
             this.color = color;
-        }
+            this.notiUnit = notiUnit;
+            if ((startTime.Hour > endTime.Hour)
+                || (startTime.Hour == endTime.Hour) && (startTime.Minute >= endTime.Hour))
+                throw new Exception("Start time and End time invalid");
+            else
+            {
+                this.startTime = startTime;
+                Helper.toDefaultDay(ref this.startTime);
 
+                this.endTime = endTime;
+                Helper.toDefaultDay(ref this.endTime);
+            }
+        }
     }
 }

@@ -12,9 +12,24 @@ namespace miniCalendar.Schedule
 {
     public partial class frmNewTimeTable : UserControl
     {
+        List<TimeTable> timeTables = new List<TimeTable>();
+
+        public string title = "";
+        public DateTime startTime;
+        public DateTime endTime;
+        public bool[] enableWeekday = new bool[7];
+        public bool isModified;
+
         public frmNewTimeTable()
         {
             InitializeComponent();
+        }
+        
+        public frmNewTimeTable(List<TimeTable> timeTables)
+        {
+            InitializeComponent();
+            this.timeTables = timeTables;
+
         }
     }
 }

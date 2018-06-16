@@ -36,17 +36,25 @@
             this.lblThursday = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblFriday = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblSaturday = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pnlTime = new System.Windows.Forms.Panel();
+            this.pnlSunday = new System.Windows.Forms.Panel();
+            this.pnlMonday = new System.Windows.Forms.Panel();
+            this.pnlTuesday = new System.Windows.Forms.Panel();
+            this.pnlWednesday = new System.Windows.Forms.Panel();
+            this.pnlThursday = new System.Windows.Forms.Panel();
+            this.pnlFriday = new System.Windows.Forms.Panel();
+            this.pnlSaturday = new System.Windows.Forms.Panel();
             this.drpTimeTable = new Bunifu.Framework.UI.BunifuDropdown();
             this.pnlTimeTableSelection = new System.Windows.Forms.Panel();
-            this.pnlTimeBlockOption = new System.Windows.Forms.Panel();
-            this.btnAddTimeBlock = new Bunifu.Framework.UI.BunifuFlatButton();
             this.ibtnAddTimeTable = new Bunifu.Framework.UI.BunifuImageButton();
             this.ibtnViewTimeTable = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pnlTimeBlockOption = new System.Windows.Forms.Panel();
+            this.btnAddTimeBlock = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tlpWeekDayDisplayArea.SuspendLayout();
             this.pnlTimeTableSelection.SuspendLayout();
-            this.pnlTimeBlockOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnAddTimeTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnViewTimeTable)).BeginInit();
+            this.pnlTimeBlockOption.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpWeekDayDisplayArea
@@ -70,12 +78,116 @@
             this.tlpWeekDayDisplayArea.Controls.Add(this.lblThursday, 5, 0);
             this.tlpWeekDayDisplayArea.Controls.Add(this.lblFriday, 6, 0);
             this.tlpWeekDayDisplayArea.Controls.Add(this.lblSaturday, 7, 0);
+            this.tlpWeekDayDisplayArea.Controls.Add(this.pnlTime, 0, 0);
+            this.tlpWeekDayDisplayArea.Controls.Add(this.pnlSunday, 1, 1);
+            this.tlpWeekDayDisplayArea.Controls.Add(this.pnlMonday, 2, 1);
+            this.tlpWeekDayDisplayArea.Controls.Add(this.pnlTuesday, 3, 1);
+            this.tlpWeekDayDisplayArea.Controls.Add(this.pnlWednesday, 4, 1);
+            this.tlpWeekDayDisplayArea.Controls.Add(this.pnlThursday, 5, 1);
+            this.tlpWeekDayDisplayArea.Controls.Add(this.pnlFriday, 6, 1);
+            this.tlpWeekDayDisplayArea.Controls.Add(this.pnlSaturday, 7, 1);
             this.tlpWeekDayDisplayArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpWeekDayDisplayArea.Location = new System.Drawing.Point(0, 50);
             this.tlpWeekDayDisplayArea.Margin = new System.Windows.Forms.Padding(0);
             this.tlpWeekDayDisplayArea.Name = "tlpWeekDayDisplayArea";
             this.tlpWeekDayDisplayArea.RowCount = 2;
             this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpWeekDayDisplayArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpWeekDayDisplayArea.Size = new System.Drawing.Size(891, 556);
@@ -193,10 +305,92 @@
             this.lblSaturday.Text = "Saturday";
             this.lblSaturday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlTime
+            // 
+            this.pnlTime.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTime.Location = new System.Drawing.Point(2, 2);
+            this.pnlTime.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTime.Name = "pnlTime";
+            this.tlpWeekDayDisplayArea.SetRowSpan(this.pnlTime, 2);
+            this.pnlTime.Size = new System.Drawing.Size(109, 552);
+            this.pnlTime.TabIndex = 1;
+            // 
+            // pnlSunday
+            // 
+            this.pnlSunday.BackColor = System.Drawing.Color.Transparent;
+            this.pnlSunday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSunday.Location = new System.Drawing.Point(113, 54);
+            this.pnlSunday.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSunday.Name = "pnlSunday";
+            this.pnlSunday.Size = new System.Drawing.Size(109, 500);
+            this.pnlSunday.TabIndex = 2;
+            // 
+            // pnlMonday
+            // 
+            this.pnlMonday.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMonday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMonday.Location = new System.Drawing.Point(224, 54);
+            this.pnlMonday.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMonday.Name = "pnlMonday";
+            this.pnlMonday.Size = new System.Drawing.Size(109, 500);
+            this.pnlMonday.TabIndex = 3;
+            // 
+            // pnlTuesday
+            // 
+            this.pnlTuesday.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTuesday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTuesday.Location = new System.Drawing.Point(335, 54);
+            this.pnlTuesday.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTuesday.Name = "pnlTuesday";
+            this.pnlTuesday.Size = new System.Drawing.Size(109, 500);
+            this.pnlTuesday.TabIndex = 3;
+            // 
+            // pnlWednesday
+            // 
+            this.pnlWednesday.BackColor = System.Drawing.Color.Transparent;
+            this.pnlWednesday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlWednesday.Location = new System.Drawing.Point(446, 54);
+            this.pnlWednesday.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlWednesday.Name = "pnlWednesday";
+            this.pnlWednesday.Size = new System.Drawing.Size(109, 500);
+            this.pnlWednesday.TabIndex = 3;
+            // 
+            // pnlThursday
+            // 
+            this.pnlThursday.BackColor = System.Drawing.Color.Transparent;
+            this.pnlThursday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlThursday.Location = new System.Drawing.Point(557, 54);
+            this.pnlThursday.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlThursday.Name = "pnlThursday";
+            this.pnlThursday.Size = new System.Drawing.Size(109, 500);
+            this.pnlThursday.TabIndex = 3;
+            // 
+            // pnlFriday
+            // 
+            this.pnlFriday.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFriday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFriday.Location = new System.Drawing.Point(668, 54);
+            this.pnlFriday.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlFriday.Name = "pnlFriday";
+            this.pnlFriday.Size = new System.Drawing.Size(109, 500);
+            this.pnlFriday.TabIndex = 3;
+            // 
+            // pnlSaturday
+            // 
+            this.pnlSaturday.BackColor = System.Drawing.Color.Transparent;
+            this.pnlSaturday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSaturday.Location = new System.Drawing.Point(779, 54);
+            this.pnlSaturday.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSaturday.Name = "pnlSaturday";
+            this.pnlSaturday.Size = new System.Drawing.Size(110, 500);
+            this.pnlSaturday.TabIndex = 3;
+            // 
             // drpTimeTable
             // 
             this.drpTimeTable.BackColor = System.Drawing.Color.Transparent;
             this.drpTimeTable.BorderRadius = 3;
+            this.drpTimeTable.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.drpTimeTable.DisabledColor = System.Drawing.Color.Gray;
             this.drpTimeTable.ForeColor = System.Drawing.Color.White;
             this.drpTimeTable.Items = new string[0];
@@ -208,6 +402,9 @@
             this.drpTimeTable.selectedIndex = -1;
             this.drpTimeTable.Size = new System.Drawing.Size(787, 43);
             this.drpTimeTable.TabIndex = 0;
+            this.drpTimeTable.onItemSelected += new System.EventHandler(this.drpTimeTable_onItemSelected);
+            this.drpTimeTable.onItemAdded += new System.EventHandler(this.drpTimeTable_onItemAdded);
+            this.drpTimeTable.onItemRemoved += new System.EventHandler(this.drpTimeTable_onItemRemoved);
             // 
             // pnlTimeTableSelection
             // 
@@ -219,6 +416,34 @@
             this.pnlTimeTableSelection.Name = "pnlTimeTableSelection";
             this.pnlTimeTableSelection.Size = new System.Drawing.Size(891, 50);
             this.pnlTimeTableSelection.TabIndex = 2;
+            // 
+            // ibtnAddTimeTable
+            // 
+            this.ibtnAddTimeTable.BackColor = System.Drawing.Color.Silver;
+            this.ibtnAddTimeTable.Image = global::miniCalendar.Properties.Resources.icons8_Positive_32;
+            this.ibtnAddTimeTable.ImageActive = null;
+            this.ibtnAddTimeTable.Location = new System.Drawing.Point(798, 4);
+            this.ibtnAddTimeTable.Name = "ibtnAddTimeTable";
+            this.ibtnAddTimeTable.Size = new System.Drawing.Size(43, 43);
+            this.ibtnAddTimeTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ibtnAddTimeTable.TabIndex = 1;
+            this.ibtnAddTimeTable.TabStop = false;
+            this.ibtnAddTimeTable.Zoom = 10;
+            this.ibtnAddTimeTable.Click += new System.EventHandler(this.ibtnAddTimeTable_Click);
+            // 
+            // ibtnViewTimeTable
+            // 
+            this.ibtnViewTimeTable.BackColor = System.Drawing.Color.Silver;
+            this.ibtnViewTimeTable.Image = global::miniCalendar.Properties.Resources.edit_3_64;
+            this.ibtnViewTimeTable.ImageActive = null;
+            this.ibtnViewTimeTable.Location = new System.Drawing.Point(845, 4);
+            this.ibtnViewTimeTable.Name = "ibtnViewTimeTable";
+            this.ibtnViewTimeTable.Size = new System.Drawing.Size(43, 43);
+            this.ibtnViewTimeTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ibtnViewTimeTable.TabIndex = 1;
+            this.ibtnViewTimeTable.TabStop = false;
+            this.ibtnViewTimeTable.Zoom = 10;
+            this.ibtnViewTimeTable.Click += new System.EventHandler(this.ibtnViewTimeTable_Click);
             // 
             // pnlTimeBlockOption
             // 
@@ -263,32 +488,7 @@
             this.btnAddTimeBlock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddTimeBlock.Textcolor = System.Drawing.Color.White;
             this.btnAddTimeBlock.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            // 
-            // ibtnAddTimeTable
-            // 
-            this.ibtnAddTimeTable.BackColor = System.Drawing.Color.Silver;
-            this.ibtnAddTimeTable.Image = global::miniCalendar.Properties.Resources.icons8_Positive_32;
-            this.ibtnAddTimeTable.ImageActive = null;
-            this.ibtnAddTimeTable.Location = new System.Drawing.Point(798, 4);
-            this.ibtnAddTimeTable.Name = "ibtnAddTimeTable";
-            this.ibtnAddTimeTable.Size = new System.Drawing.Size(43, 43);
-            this.ibtnAddTimeTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnAddTimeTable.TabIndex = 1;
-            this.ibtnAddTimeTable.TabStop = false;
-            this.ibtnAddTimeTable.Zoom = 10;
-            // 
-            // ibtnViewTimeTable
-            // 
-            this.ibtnViewTimeTable.BackColor = System.Drawing.Color.Silver;
-            this.ibtnViewTimeTable.Image = global::miniCalendar.Properties.Resources.edit_3_64;
-            this.ibtnViewTimeTable.ImageActive = null;
-            this.ibtnViewTimeTable.Location = new System.Drawing.Point(845, 4);
-            this.ibtnViewTimeTable.Name = "ibtnViewTimeTable";
-            this.ibtnViewTimeTable.Size = new System.Drawing.Size(43, 43);
-            this.ibtnViewTimeTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnViewTimeTable.TabIndex = 1;
-            this.ibtnViewTimeTable.TabStop = false;
-            this.ibtnViewTimeTable.Zoom = 10;
+            this.btnAddTimeBlock.Click += new System.EventHandler(this.btnAddTimeBlock_Click);
             // 
             // frmSchedule
             // 
@@ -304,9 +504,9 @@
             this.tlpWeekDayDisplayArea.ResumeLayout(false);
             this.tlpWeekDayDisplayArea.PerformLayout();
             this.pnlTimeTableSelection.ResumeLayout(false);
-            this.pnlTimeBlockOption.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ibtnAddTimeTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnViewTimeTable)).EndInit();
+            this.pnlTimeBlockOption.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -326,5 +526,13 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnAddTimeBlock;
         private System.Windows.Forms.Panel pnlTimeTableSelection;
         private System.Windows.Forms.Panel pnlTimeBlockOption;
+        private System.Windows.Forms.Panel pnlTime;
+        private System.Windows.Forms.Panel pnlSunday;
+        private System.Windows.Forms.Panel pnlMonday;
+        private System.Windows.Forms.Panel pnlTuesday;
+        private System.Windows.Forms.Panel pnlWednesday;
+        private System.Windows.Forms.Panel pnlThursday;
+        private System.Windows.Forms.Panel pnlFriday;
+        private System.Windows.Forms.Panel pnlSaturday;
     }
 }
