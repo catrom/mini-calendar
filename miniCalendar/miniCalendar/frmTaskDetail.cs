@@ -12,16 +12,17 @@ namespace miniCalendar
 {
     public partial class frmTaskDetail : UserControl
     {
-        public int _id;
         Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
+        public int _id;
+        public string _color;
+
+        Task temptask = new Task();
+        List<int> tempstt = new List<int>();
+        List<string> tempsub = new List<string>();
+
         public bool _isModified;
         List<frmSubTask> _listSubTask = new List<frmSubTask>();
 
-        public DateTime _dueDay;
-        public Point _remindTime;
-        public DateTime _remindDay;
-        public string _note = "";
-        public string color = "Gray";  
 
         public frmTaskDetail()
         {
@@ -32,15 +33,21 @@ namespace miniCalendar
         {
             InitializeComponent();
 
-            _id = id;
             _todoList = todoList;
+            _id = id;
+
+            temptask = todoList[id];
+            tempstt = todoList[id].subTaskStatus.ToList();
+            tempsub = todoList[id].subTasks.ToList();
+
             _isModified = isModified;
             tbSubtask.text = "Add a to-do...";
+            rtbNote.Text = "Add a note...";
 
             ShowInfo(_isModified);
 
             setUncheckColor();
-            switch (color)
+            switch (_color)
             {
                 case "Red":
                     changeColorRed();
@@ -88,15 +95,20 @@ namespace miniCalendar
             }
             lbInfo.Text = "Last updated on " + DateTime.Now;
 
-            frmTask aTask = new frmTask(_id, _todoList);
-            aTask.btnTaskName.Normalcolor = Color.Red;
+            frmTodoList tdl = new frmTodoList(_todoList);
+            tdl.showTaskList();
+
+            temptask = _todoList[_id];
+            tempstt = _todoList[_id].subTaskStatus.ToList();
+            tempsub = _todoList[_id].subTasks.ToList();
+
+            Dispose();
         }
 
         private void ShowInfo(bool isModified)
         {
             if (isModified == false)
             {
-                //MessageBox.Show(_id.ToString());
                 tbTaskName.Text = _todoList[_id].Name;  
                 dtpDueDay.Value = _todoList[_id].DueDay;
                 dtpRemindTime.Value = _todoList[_id].RemindTime;
@@ -133,7 +145,7 @@ namespace miniCalendar
             else
             {
                 _todoList[_id].Name = tbTaskName.Text;
-                _todoList[_id].DueDay = dtpDueDay.Value;
+                _todoList[_id].DueDay = new DateTime(dtpDueDay.Value.Year, dtpDueDay.Value.Month, dtpDueDay.Value.Day, 23, 59, 59);
                 _todoList[_id].RemindTime = dtpRemindTime.Value;
                 _todoList[_id].RemindDay = dtpRemindDay.Value;
                 _todoList[_id].Note = rtbNote.Text;
@@ -158,9 +170,20 @@ namespace miniCalendar
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
-        {
-            _isModified = false;
+        { 
+            Console.WriteLine("tempstt " + tempstt.Count + "   " + "list" + _todoList[_id].subTaskStatus.Count);
+            Console.WriteLine("tempsub " + tempsub.Count + "   " + "list" + _todoList[_id].subTasks.Count);
+
+            _todoList[_id] = temptask;
+            _todoList[_id].subTasks = tempsub.ToList();
+            _todoList[_id].subTaskStatus = tempstt.ToList();
+            
+
+            Console.WriteLine("-tempstt " + tempstt.Count + "   " + "list" + _todoList[_id].subTaskStatus.Count);
+            Console.WriteLine("-tempsub " + tempsub.Count + "   " + "list" + _todoList[_id].subTasks.Count);
+
             ShowInfo(_isModified);
+            showSubTaskList();
         }
 
         public void cbIsDone_OnChange(object sender, EventArgs e)
@@ -169,9 +192,7 @@ namespace miniCalendar
             {
                 frmTodoList newList = new frmTodoList( _todoList);
                 _todoList.Remove(_id);
-                Dispose();
-
-                
+                Dispose();       
             }
         }
 
@@ -180,35 +201,35 @@ namespace miniCalendar
         {
             setUncheckColor();
             checkRed.Checked = true;
-            color = "Red";
+            _color = "Red";
         }
 
         public void changeColorYellow()
         {
             setUncheckColor();
             checkYellow.Checked = true;
-            color = "Yellow";
+            _color = "Yellow";
         }
 
         public void changeColorGreen()
         {
             setUncheckColor();
             checkGreen.Checked = true;
-            color = "Green";
+            _color = "Green";
         }
 
         public void changeColorGray()
         {
             setUncheckColor();
             checkGray.Checked = true;
-            color = "Gray";
+            _color = "Gray";
         }
 
         public void setUncheckColor()
         {
-            if (color == "Red") checkRed.Checked = false;
-            else if (color == "Yellow") checkYellow.Checked = false;
-            else if (color == "Green") checkGreen.Checked = false;
+            if (_color == "Red") checkRed.Checked = false;
+            else if (_color == "Yellow") checkYellow.Checked = false;
+            else if (_color == "Green") checkGreen.Checked = false;
             else checkGray.Checked = false;
         }
 
@@ -236,14 +257,20 @@ namespace miniCalendar
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmSubTask st = new frmSubTask(tbSubtask.text);
+            frmSubTask st = new frmSubTask(_todoList, _id, tbSubtask.text);
+            st.Disposed += new EventHandler(dispose_event);
+            //st.cbIsDone.OnChange += new EventHandler(cbOnChange);
             fpSubTask.Controls.Add(st);
             st.BringToFront();
             st.Dock = DockStyle.Top;
-            st.pictureBox1.Click += new EventHandler(pictureBox1_Click);
 
             _listSubTask.Add(st);
+            st.pbdelete.Tag = _listSubTask.Count.ToString();
             _todoList[_id].subTasks.Add(tbSubtask.text);
+            _todoList[_id].subTaskStatus.Add(0);
+            tbSubtask.text = "";
+
+            //Console.WriteLine(tempTodo[_id].subTasks.Count + "   " + _todoList[_id].subTasks.Count);
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -251,23 +278,73 @@ namespace miniCalendar
             Dispose();
         }
 
+        private void clearfpSubTask()
+        {
+            for (int i = fpSubTask.Controls.Count - 1; i >= 0; i--)
+            {
+                if (fpSubTask.Controls[i] is frmSubTask)
+                {
+                    fpSubTask.Controls.RemoveAt(i);
+                }
+            }
+        }
+
         private void showSubTaskList()
         {
-            var list = _todoList[_id].subTasks;
+            _listSubTask.Clear();
+            clearfpSubTask();
 
-            foreach(string i in list)
+            var list = _todoList[_id].subTasks;
+            Console.WriteLine(list.Count);
+            for (int i = 0; i < list.Count; i++)
             {
-                frmSubTask st = new frmSubTask(i);
+                frmSubTask st = new frmSubTask(_todoList, _id, list[i]);
+                st.pbdelete.Tag = i.ToString();
+                st.pbdelete.Click += new EventHandler(pbdelete);
                 fpSubTask.Controls.Add(st);
                 st.BringToFront();
                 st.Dock = DockStyle.Top;
                 _listSubTask.Add(st);
+
+                if (_todoList[_id].subTaskStatus[i] == 1)
+                {
+                    st.cbIsDone.Checked = true;
+                }
+                else
+                {
+                    st.cbIsDone.Checked = false;
+                }
+
+
+                st.Disposed += new EventHandler(dispose_event);
+            }
+
+            updateIndexSub();
+        }
+
+        private void updateIndexSub()
+        {
+            for (int i = 0; i < _listSubTask.Count; i++)
+            {
+                _listSubTask[i].cbIsDone.TabIndex = i;
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void dispose_event(object sender, EventArgs e)
         {
-            Dispose();
+            clearfpSubTask();
+            showSubTaskList();
+            updateIndexSub();
+        }
+        
+        private void pbdelete(object sender, EventArgs e)
+        {
+            var pbdel = (PictureBox)sender;
+            var index = Convert.ToInt32(pbdel.Tag);
+            _todoList[_id].subTasks.RemoveAt(index);
+            _todoList[_id].subTaskStatus.RemoveAt(index);
+
+            showSubTaskList();      
         }
     }
 }

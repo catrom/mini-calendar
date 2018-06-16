@@ -50,9 +50,10 @@ namespace miniCalendar
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.tbAddTask);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -75,7 +76,7 @@ namespace miniCalendar
             this.tbAddTask.ForeColor = System.Drawing.Color.Silver;
             this.tbAddTask.Location = new System.Drawing.Point(34, 21);
             this.tbAddTask.Name = "tbAddTask";
-            this.tbAddTask.Size = new System.Drawing.Size(229, 32);
+            this.tbAddTask.Size = new System.Drawing.Size(286, 32);
             this.tbAddTask.TabIndex = 3;
             this.tbAddTask.Enter += new System.EventHandler(this.tbAddTask_Enter);
             this.tbAddTask.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbAddTask_KeyDown);

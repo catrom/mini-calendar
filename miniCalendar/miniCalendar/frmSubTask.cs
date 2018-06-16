@@ -12,18 +12,35 @@ namespace miniCalendar
 {
     public partial class frmSubTask : UserControl
     {
+        Dictionary<int, Task> _todoList;
+        int _id;
         public string _name;
         public frmSubTask()
         {
             InitializeComponent();
         }
 
-        public frmSubTask(string name)
+        public frmSubTask(Dictionary<int, Task> _todoList, int _id, string name)
         {
             InitializeComponent();
-            label1.Text = name;
+            this._todoList = _todoList;
+            this._id = _id;
+            lbSubtaskName.Text = name;
+            _name = name;
         }
 
+        private void cbIsDone_OnChange(object sender, EventArgs e)
+        {
+            Console.WriteLine(this.TabIndex);
 
+            if (cbIsDone.Checked == true)
+            {
+                _todoList[_id].subTaskStatus[this.TabIndex] = 1;
+            }
+            else
+            {
+                _todoList[_id].subTaskStatus[this.TabIndex] = 0;
+            }
+        }
     }
 }

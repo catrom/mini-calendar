@@ -41,8 +41,20 @@ namespace miniCalendar
             
         }
 
+        private void clearTaskList()
+        {
+            for (int i = fpTaskList.Controls.Count - 1; i >= 0; i--)
+            {
+                if (fpTaskList.Controls[i] is frmTask)
+                {
+                    fpTaskList.Controls.RemoveAt(i);
+                }
+            }
+        }
+
         public void showTaskList()
         {
+            clearTaskList();
             if (_todoList.Count > 0)
             {              
                 foreach (var task in _todoList)
@@ -53,18 +65,18 @@ namespace miniCalendar
                     
                     if (task.Value.Color == "Red")
                     {
-                        aTask.btnTaskName.Normalcolor = Color.Red;
+                        aTask.btnTaskName.Normalcolor = Color.FromArgb(217, 84, 79);
                         aTask.btnTaskName.Activecolor = Color.White;
 
                     }
                     else if (task.Value.Color == "Yellow")
                     {
-                        aTask.btnTaskName.Normalcolor = Color.Yellow;
+                        aTask.btnTaskName.Normalcolor = Color.FromArgb(239, 173, 77);
                         aTask.btnTaskName.Activecolor = Color.White;
                     }
                     else if (task.Value.Color == "Green")
                     {
-                        aTask.btnTaskName.Normalcolor = Color.Green;
+                        aTask.btnTaskName.Normalcolor = Color.FromArgb(91, 192, 222);
                         aTask.btnTaskName.Activecolor = Color.White;
                     }
                     else if (task.Value.Color == "Gray")
@@ -94,7 +106,7 @@ namespace miniCalendar
         {
             if (tbAddTask.Text == "Add a to-do...")
             {
-                tbAddTask.BackColor = Color.White;
+                tbAddTask.ForeColor = Color.Black;
             }
         }
         private void tbAddTask_KeyDown(object sender, KeyEventArgs e)
@@ -119,7 +131,7 @@ namespace miniCalendar
                     task.RemindDay = DateTime.Now;
                     task.RemindTime = DateTime.Now;
                     task.Color = "Gray";
-                    task.StartDay = now;    
+                    task.StartDay = DateTime.Now;
                     _todoList.Add(_id, task);
 
                     frmTask abc = new frmTask(_id, _todoList);
@@ -137,7 +149,7 @@ namespace miniCalendar
             }
         }
 
-        private void btnTask_Click(object sender, EventArgs e)
+        private void clearpnlTaskDetail()
         {
             for (int i = pnlTaskDetail.Controls.Count - 1; i >= 0; i--)
             {
@@ -146,20 +158,23 @@ namespace miniCalendar
                     pnlTaskDetail.Controls.RemoveAt(i);
                 }
             }
+        }
+
+        private void btnTask_Click(object sender, EventArgs e)
+        {
+            clearpnlTaskDetail();
             
 
             var pick = (Bunifu.Framework.UI.BunifuFlatButton)sender;
             int idpick = pick.TabIndex;
-           // MessageBox.Show(idpick.ToString());
-            frmTaskDetail fa = new frmTaskDetail(idpick, _todoList, false);
+            _id = idpick;
+            frmTaskDetail fa = new frmTaskDetail(_id, _todoList, false);
             fa.Disposed += new EventHandler(dispose_event);
             
             
             pnlTaskDetail.Controls.Add(fa);
             fa.Dock = DockStyle.Fill;
-            fa.BringToFront();      
-
-
+            fa.BringToFront();
         }
 
         public bool moreImportant(string a, string b)
@@ -182,16 +197,21 @@ namespace miniCalendar
             else
                 return false;
         }
-
-        public void swapLocation(frmTask a, frmTask b)
+        public void dispose_event(object sender, EventArgs e)
         {
-            Point temp = new Point();
-            temp = a.Location;
-            a.Location = b.Location;
-            b.Location = temp;
+            fpTaskList.Controls.Clear();
+            showTaskList();
+
+            //frmTaskDetail fa = new frmTaskDetail(_id, _todoList, false);
+            //fa.Disposed += new EventHandler(dispose_event);
+            //fa.pictureBox4.Click += new EventHandler(close_event);
+
+            //pnlTaskDetail.Controls.Add(fa);
+            //fa.Dock = DockStyle.Fill;
+            //fa.BringToFront();
         }
 
-        public void dispose_event(object sender, EventArgs e)
+        public void frmTaskDetailDispose(object sender, EventArgs e)
         {
             fpTaskList.Controls.Clear();
             showTaskList();
@@ -200,6 +220,11 @@ namespace miniCalendar
         public void disposed_event(object sender, EventArgs e)
         {
             pnlTaskDetail.Controls.Clear();
+        }
+
+        private void close_event(object sender, EventArgs e)
+        {
+            clearpnlTaskDetail();
         }
     }
 }

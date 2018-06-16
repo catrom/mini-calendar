@@ -30,6 +30,14 @@
         {
             this.cbIsDone = new Bunifu.Framework.UI.BunifuCheckbox();
             this.btnTaskName = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbDayLeft = new System.Windows.Forms.Label();
+            this.pnlDayPast = new System.Windows.Forms.Panel();
+            this.pnlNumTask = new System.Windows.Forms.Panel();
+            this.lbTaskDone = new System.Windows.Forms.Label();
+            this.pnlTaskDone = new System.Windows.Forms.Panel();
+            this.panel2.SuspendLayout();
+            this.pnlNumTask.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbIsDone
@@ -39,7 +47,7 @@
             this.cbIsDone.Checked = false;
             this.cbIsDone.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.cbIsDone.ForeColor = System.Drawing.Color.White;
-            this.cbIsDone.Location = new System.Drawing.Point(7, 9);
+            this.cbIsDone.Location = new System.Drawing.Point(11, 10);
             this.cbIsDone.Name = "cbIsDone";
             this.cbIsDone.Size = new System.Drawing.Size(20, 20);
             this.cbIsDone.TabIndex = 6;
@@ -51,9 +59,10 @@
             this.btnTaskName.BackColor = System.Drawing.Color.White;
             this.btnTaskName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTaskName.BorderRadius = 5;
-            this.btnTaskName.ButtonText = "     Todo List";
+            this.btnTaskName.ButtonText = "Todo List";
             this.btnTaskName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTaskName.DisabledColor = System.Drawing.Color.Gray;
+            this.btnTaskName.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnTaskName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaskName.ForeColor = System.Drawing.Color.Black;
             this.btnTaskName.Iconcolor = System.Drawing.Color.Transparent;
@@ -68,27 +77,96 @@
             this.btnTaskName.IconVisible = true;
             this.btnTaskName.IconZoom = 50D;
             this.btnTaskName.IsTab = true;
-            this.btnTaskName.Location = new System.Drawing.Point(33, -2);
+            this.btnTaskName.Location = new System.Drawing.Point(42, 0);
             this.btnTaskName.Name = "btnTaskName";
             this.btnTaskName.Normalcolor = System.Drawing.Color.White;
             this.btnTaskName.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnTaskName.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(80)))), ((int)(((byte)(110)))));
             this.btnTaskName.selected = false;
-            this.btnTaskName.Size = new System.Drawing.Size(300, 40);
+            this.btnTaskName.Size = new System.Drawing.Size(289, 40);
             this.btnTaskName.TabIndex = 5;
-            this.btnTaskName.Text = "     Todo List";
+            this.btnTaskName.Text = "Todo List";
             this.btnTaskName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaskName.Textcolor = System.Drawing.Color.Black;
             this.btnTaskName.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.pnlDayPast);
+            this.panel2.Controls.Add(this.lbDayLeft);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(331, 20);
+            this.panel2.TabIndex = 7;
+            // 
+            // lbDayLeft
+            // 
+            this.lbDayLeft.AutoSize = true;
+            this.lbDayLeft.BackColor = System.Drawing.Color.Transparent;
+            this.lbDayLeft.Location = new System.Drawing.Point(131, 2);
+            this.lbDayLeft.Name = "lbDayLeft";
+            this.lbDayLeft.Size = new System.Drawing.Size(46, 13);
+            this.lbDayLeft.TabIndex = 1;
+            this.lbDayLeft.Text = "days left";
+            this.lbDayLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlDayPast
+            // 
+            this.pnlDayPast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlDayPast.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlDayPast.Location = new System.Drawing.Point(0, 0);
+            this.pnlDayPast.Name = "pnlDayPast";
+            this.pnlDayPast.Size = new System.Drawing.Size(78, 18);
+            this.pnlDayPast.TabIndex = 0;
+            // 
+            // pnlNumTask
+            // 
+            this.pnlNumTask.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNumTask.Controls.Add(this.pnlTaskDone);
+            this.pnlNumTask.Controls.Add(this.lbTaskDone);
+            this.pnlNumTask.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlNumTask.Location = new System.Drawing.Point(0, 40);
+            this.pnlNumTask.Name = "pnlNumTask";
+            this.pnlNumTask.Size = new System.Drawing.Size(331, 20);
+            this.pnlNumTask.TabIndex = 8;
+            // 
+            // lbTaskDone
+            // 
+            this.lbTaskDone.AutoSize = true;
+            this.lbTaskDone.BackColor = System.Drawing.Color.Transparent;
+            this.lbTaskDone.Enabled = false;
+            this.lbTaskDone.Location = new System.Drawing.Point(131, 2);
+            this.lbTaskDone.Name = "lbTaskDone";
+            this.lbTaskDone.Size = new System.Drawing.Size(48, 13);
+            this.lbTaskDone.TabIndex = 1;
+            this.lbTaskDone.Text = "Progress";
+            this.lbTaskDone.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlTaskDone
+            // 
+            this.pnlTaskDone.BackColor = System.Drawing.Color.Aqua;
+            this.pnlTaskDone.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlTaskDone.Location = new System.Drawing.Point(0, 0);
+            this.pnlTaskDone.Name = "pnlTaskDone";
+            this.pnlTaskDone.Size = new System.Drawing.Size(78, 18);
+            this.pnlTaskDone.TabIndex = 0;
             // 
             // frmTask
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.btnTaskName);
+            this.Controls.Add(this.pnlNumTask);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.cbIsDone);
             this.Name = "frmTask";
-            this.Size = new System.Drawing.Size(331, 36);
+            this.Size = new System.Drawing.Size(331, 80);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.pnlNumTask.ResumeLayout(false);
+            this.pnlNumTask.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -96,7 +174,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        public Bunifu.Framework.UI.BunifuFlatButton btnTaskName;
         public Bunifu.Framework.UI.BunifuCheckbox cbIsDone;
+        public Bunifu.Framework.UI.BunifuFlatButton btnTaskName;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbDayLeft;
+        private System.Windows.Forms.Panel pnlNumTask;
+        private System.Windows.Forms.Label lbTaskDone;
+        public System.Windows.Forms.Panel pnlDayPast;
+        public System.Windows.Forms.Panel pnlTaskDone;
     }
 }
