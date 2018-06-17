@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<<<<<<< HEAD
+  <colorItem key="2018-06-01T00:00:00" value="5" />
+  <colorItem key="2018-05-28T00:00:00" value="6" />
+  <colorItem key="2018-06-06T00:00:00" value="0" />
+=======
   <colorItem key="2018-06-01T00:00:00" value="7" />
   <colorItem key="2018-05-28T00:00:00" value="1" />
   <colorItem key="2018-06-06T00:00:00" value="3" />
@@ -12,4 +17,5 @@
   <colorItem key="2018-05-27T00:00:00" value="0" />
   <colorItem key="2018-06-29T00:00:00" value="5" />
   <colorItem key="2018-06-18T00:00:00" value="3" />
+>>>>>>> upstream/master
 </items>

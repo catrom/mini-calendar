@@ -25,6 +25,26 @@ namespace miniCalendar
             this.Description = Description;
         }
 
+        public DateTime NotiTime()
+        {
+            switch (notiUnit)
+            {
+                case "minutes":
+                    {
+                        return startHour.AddMinutes(-notiValue);
+                    }
+                case "hours":
+                    {
+                        return startHour.AddHours(-notiValue);
+                    }
+                case "days":
+                    {
+                        return startHour.AddDays(-notiValue);
+                    }
+            }
+            return startHour;
+        }
+
         [XmlAttribute] public string Title;
         [XmlAttribute] public DateTime startHour;
         [XmlAttribute] public DateTime endHour;

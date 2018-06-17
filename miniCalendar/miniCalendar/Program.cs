@@ -1,4 +1,5 @@
 ﻿using System;
+using miniCalendar.Schedule;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,10 +21,15 @@ namespace miniCalendar
             monthItem myMonthCalendar = new monthItem();
             myMonthCalendar.Deserialize();
 
+            TodoList todoList = new TodoList();
+            todoList.Deserialize();
+
+            Schedule.ScheduleDataTable scDataTable = new Schedule.ScheduleDataTable();
+            scDataTable.Deserialize();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain(dataTable, myMonthCalendar));
+            Application.Run(new frmMain(dataTable, myMonthCalendar, todoList, scDataTable));
         }
-        
     }
 }

@@ -22,6 +22,22 @@ namespace miniCalendar
 
         public DataTable() { }
 
+        public void Add(Appointment o)
+        {
+            dataTable.Add(1, o);
+        }
+
+        public void Delete(int ID)
+        {
+            dataTable.Remove(ID);
+        }
+
+        public Appointment this[int i]
+        {
+            get { return dataTable[i]; }
+            set { dataTable[i] = value; }
+        }
+
         public void Serialize()
         {
             FileStream fs = new FileStream(fileName, FileMode.Truncate);
@@ -53,7 +69,7 @@ namespace miniCalendar
                                                notiUnit = kv.notiUnit,
                                                Color = kv.Color,
                                                Description = kv.Description
-                                           }).ToList();
+                                               }).ToList();
 
 
             // Mỗi appointment khi lưu xuống bộ nhớ sẽ không cần ID, 
