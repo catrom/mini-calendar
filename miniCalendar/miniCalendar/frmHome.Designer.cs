@@ -47,8 +47,8 @@
             this.WorkingArea = new System.Windows.Forms.Panel();
             this.menuTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notiTimer = new System.Windows.Forms.Timer(this.components);
+            this.sysTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnExit)).BeginInit();
@@ -389,16 +389,16 @@
             this.menuTransition.DefaultAnimation = animation1;
             this.menuTransition.MaxAnimationTime = 2000;
             // 
-            // timer1
+            // notiTimer
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.notiTimer.Enabled = true;
+            this.notiTimer.Tick += new System.EventHandler(this.notiTimer_Tick);
             // 
-            // notifyIcon
+            // sysTrayIcon
             // 
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "notifyIcon1";
-            this.notifyIcon.Visible = true;
+            this.sysTrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("sysTrayIcon.Icon")));
+            this.sysTrayIcon.Text = "miniCalendar";
+            this.sysTrayIcon.Visible = true;
             // 
             // frmMain
             // 
@@ -443,8 +443,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnSettings;
         private BunifuAnimatorNS.BunifuTransition menuTransition;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.Timer notiTimer;
+        private System.Windows.Forms.NotifyIcon sysTrayIcon;
     }
 }
 

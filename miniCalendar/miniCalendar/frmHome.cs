@@ -120,7 +120,7 @@ namespace miniCalendar
             }
         }
         #region Notification Handling
-        private void timer1_Tick(object sender, EventArgs e)
+        private void notiTimer_Tick(object sender, EventArgs e)
         {
             CheckNotifications();
         }
