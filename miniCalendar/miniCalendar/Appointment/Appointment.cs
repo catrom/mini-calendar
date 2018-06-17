@@ -11,6 +11,7 @@ namespace miniCalendar
     public class Appointment
     {
         public Appointment() { }
+
         public Appointment(string Title, DateTime startHour, DateTime endHour, string Location, 
                             int notiValue, string notiUnit, string Color, string Description)
         {
@@ -24,21 +25,13 @@ namespace miniCalendar
             this.Description = Description;
         }
 
-        [XmlAttribute]
-        public string Title;
-        [XmlAttribute]
-        public DateTime startHour;
-        [XmlAttribute]
-        public DateTime endHour;
-        [XmlAttribute]
-        public string Location;
-        [XmlAttribute]
-        public int notiValue;
-        [XmlAttribute]
-        public string notiUnit;
-        [XmlAttribute]
-        public string Color;
-        [XmlAttribute]
-        public string Description;
+        [XmlAttribute] public string Title;
+        [XmlAttribute] public DateTime startHour;
+        [XmlAttribute] public DateTime endHour;
+        [XmlAttribute] public string Location;
+        [XmlAttribute] public int notiValue;
+        [XmlAttribute] public string notiUnit;
+        [XmlAttribute] public string Color;
+        [XmlAttribute] public string Description;
     }
 }

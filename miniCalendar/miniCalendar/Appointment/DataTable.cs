@@ -9,6 +9,11 @@ using System.IO;
 namespace miniCalendar
 {
     [Serializable]
+
+    /// <summary>
+    /// Dictionary<int, Appointment> dataTable -> danh sách các appointment theo ID
+    /// Serialize và Deserialize dataTable
+    /// </summary>
     public class DataTable
     {
         public Dictionary<int, Appointment> dataTable = new Dictionary<int, Appointment>();
@@ -66,6 +71,11 @@ namespace miniCalendar
                                                Description = kv.Description
                                                }).ToList();
 
+
+            // Mỗi appointment khi lưu xuống bộ nhớ sẽ không cần ID, 
+            // tuy nhiên khi truy xuất và làm việc thì cần có ID để dễ dàng cho việc thêm, xoá, sửa một appointment
+            // Đoạn code sau thực hiện việc lấy ID tự động theo thứ tự tăng dần
+            // cho mỗi appointment và add vào dataTable trong lúc deserialize.
             int ID = 1;
 
             for (int i = 0; i < result.Count; i++)

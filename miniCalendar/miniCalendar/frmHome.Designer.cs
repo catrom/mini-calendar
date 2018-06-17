@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
             BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
+=======
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+>>>>>>> upstream/master
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.ibtnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
@@ -372,6 +376,7 @@
             // 
             this.menuTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.menuTransition.Cursor = null;
+<<<<<<< HEAD
             animation6.AnimateOnlyDifferences = true;
             animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
             animation6.LeafCoeff = 0F;
@@ -388,6 +393,24 @@
             animation6.TimeCoeff = 2F;
             animation6.TransparencyCoeff = 0F;
             this.menuTransition.DefaultAnimation = animation6;
+=======
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.menuTransition.DefaultAnimation = animation1;
+>>>>>>> upstream/master
             this.menuTransition.MaxAnimationTime = 2000;
             // 
             // timer1
