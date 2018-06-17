@@ -193,12 +193,9 @@ namespace miniCalendar
                     startHour = new DateTime(dtpStartDay.Value.Year, dtpStartDay.Value.Month, dtpStartDay.Value.Day, X / 2, 30 * (X % 2), 0);
                     endHour = new DateTime(dtpEndDay.Value.Year, dtpEndDay.Value.Month, dtpEndDay.Value.Day, Y / 2, 30 * (Y % 2), 0);
                 }
-
                 
-
                 Appointment fin = new Appointment(title, startHour, endHour, location, notiValue, notiUnit, color, description);
-
-
+                
                 if (isModified == true)
                 {
                     dataTable[ID] = fin;

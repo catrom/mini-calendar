@@ -89,7 +89,7 @@ namespace miniCalendar
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
-            frmSchedule form = new frmSchedule(scDataTable.timeTables);
+            frmSchedule form = new frmSchedule(scDataTable);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
             WorkingArea.Controls.Add(form);

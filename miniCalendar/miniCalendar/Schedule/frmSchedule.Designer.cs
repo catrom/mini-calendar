@@ -45,16 +45,16 @@
             this.pnlFriday = new System.Windows.Forms.Panel();
             this.pnlSaturday = new System.Windows.Forms.Panel();
             this.drpTimeTable = new Bunifu.Framework.UI.BunifuDropdown();
-            this.pnlTimeTableSelection = new System.Windows.Forms.Panel();
-            this.ibtnAddTimeTable = new Bunifu.Framework.UI.BunifuImageButton();
-            this.ibtnViewTimeTable = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlTimeBlockOption = new System.Windows.Forms.Panel();
             this.btnAddTimeBlock = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pnlTimeTableSelection = new System.Windows.Forms.Panel();
+            this.ibtnViewTimeTable = new Bunifu.Framework.UI.BunifuImageButton();
+            this.ibtnAddTimeTable = new Bunifu.Framework.UI.BunifuImageButton();
             this.tlpWeekDayDisplayArea.SuspendLayout();
-            this.pnlTimeTableSelection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnAddTimeTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnViewTimeTable)).BeginInit();
             this.pnlTimeBlockOption.SuspendLayout();
+            this.pnlTimeTableSelection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ibtnViewTimeTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ibtnAddTimeTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpWeekDayDisplayArea
@@ -403,47 +403,6 @@
             this.drpTimeTable.Size = new System.Drawing.Size(787, 43);
             this.drpTimeTable.TabIndex = 0;
             this.drpTimeTable.onItemSelected += new System.EventHandler(this.drpTimeTable_onItemSelected);
-            this.drpTimeTable.onItemAdded += new System.EventHandler(this.drpTimeTable_onItemAdded);
-            this.drpTimeTable.onItemRemoved += new System.EventHandler(this.drpTimeTable_onItemRemoved);
-            // 
-            // pnlTimeTableSelection
-            // 
-            this.pnlTimeTableSelection.Controls.Add(this.drpTimeTable);
-            this.pnlTimeTableSelection.Controls.Add(this.ibtnAddTimeTable);
-            this.pnlTimeTableSelection.Controls.Add(this.ibtnViewTimeTable);
-            this.pnlTimeTableSelection.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTimeTableSelection.Location = new System.Drawing.Point(0, 0);
-            this.pnlTimeTableSelection.Name = "pnlTimeTableSelection";
-            this.pnlTimeTableSelection.Size = new System.Drawing.Size(891, 50);
-            this.pnlTimeTableSelection.TabIndex = 2;
-            // 
-            // ibtnAddTimeTable
-            // 
-            this.ibtnAddTimeTable.BackColor = System.Drawing.Color.Silver;
-            this.ibtnAddTimeTable.Image = global::miniCalendar.Properties.Resources.icons8_Positive_32;
-            this.ibtnAddTimeTable.ImageActive = null;
-            this.ibtnAddTimeTable.Location = new System.Drawing.Point(798, 4);
-            this.ibtnAddTimeTable.Name = "ibtnAddTimeTable";
-            this.ibtnAddTimeTable.Size = new System.Drawing.Size(43, 43);
-            this.ibtnAddTimeTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnAddTimeTable.TabIndex = 1;
-            this.ibtnAddTimeTable.TabStop = false;
-            this.ibtnAddTimeTable.Zoom = 10;
-            this.ibtnAddTimeTable.Click += new System.EventHandler(this.ibtnAddTimeTable_Click);
-            // 
-            // ibtnViewTimeTable
-            // 
-            this.ibtnViewTimeTable.BackColor = System.Drawing.Color.Silver;
-            this.ibtnViewTimeTable.Image = global::miniCalendar.Properties.Resources.edit_3_64;
-            this.ibtnViewTimeTable.ImageActive = null;
-            this.ibtnViewTimeTable.Location = new System.Drawing.Point(845, 4);
-            this.ibtnViewTimeTable.Name = "ibtnViewTimeTable";
-            this.ibtnViewTimeTable.Size = new System.Drawing.Size(43, 43);
-            this.ibtnViewTimeTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnViewTimeTable.TabIndex = 1;
-            this.ibtnViewTimeTable.TabStop = false;
-            this.ibtnViewTimeTable.Zoom = 10;
-            this.ibtnViewTimeTable.Click += new System.EventHandler(this.ibtnViewTimeTable_Click);
             // 
             // pnlTimeBlockOption
             // 
@@ -490,6 +449,45 @@
             this.btnAddTimeBlock.TextFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAddTimeBlock.Click += new System.EventHandler(this.btnAddTimeBlock_Click);
             // 
+            // pnlTimeTableSelection
+            // 
+            this.pnlTimeTableSelection.Controls.Add(this.drpTimeTable);
+            this.pnlTimeTableSelection.Controls.Add(this.ibtnAddTimeTable);
+            this.pnlTimeTableSelection.Controls.Add(this.ibtnViewTimeTable);
+            this.pnlTimeTableSelection.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTimeTableSelection.Location = new System.Drawing.Point(0, 0);
+            this.pnlTimeTableSelection.Name = "pnlTimeTableSelection";
+            this.pnlTimeTableSelection.Size = new System.Drawing.Size(891, 50);
+            this.pnlTimeTableSelection.TabIndex = 2;
+            // 
+            // ibtnViewTimeTable
+            // 
+            this.ibtnViewTimeTable.BackColor = System.Drawing.Color.Silver;
+            this.ibtnViewTimeTable.Image = global::miniCalendar.Properties.Resources.edit_3_64;
+            this.ibtnViewTimeTable.ImageActive = null;
+            this.ibtnViewTimeTable.Location = new System.Drawing.Point(845, 4);
+            this.ibtnViewTimeTable.Name = "ibtnViewTimeTable";
+            this.ibtnViewTimeTable.Size = new System.Drawing.Size(43, 43);
+            this.ibtnViewTimeTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ibtnViewTimeTable.TabIndex = 1;
+            this.ibtnViewTimeTable.TabStop = false;
+            this.ibtnViewTimeTable.Zoom = 10;
+            this.ibtnViewTimeTable.Click += new System.EventHandler(this.ibtnViewTimeTable_Click);
+            // 
+            // ibtnAddTimeTable
+            // 
+            this.ibtnAddTimeTable.BackColor = System.Drawing.Color.Silver;
+            this.ibtnAddTimeTable.Image = global::miniCalendar.Properties.Resources.icons8_Positive_32;
+            this.ibtnAddTimeTable.ImageActive = null;
+            this.ibtnAddTimeTable.Location = new System.Drawing.Point(798, 4);
+            this.ibtnAddTimeTable.Name = "ibtnAddTimeTable";
+            this.ibtnAddTimeTable.Size = new System.Drawing.Size(43, 43);
+            this.ibtnAddTimeTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ibtnAddTimeTable.TabIndex = 1;
+            this.ibtnAddTimeTable.TabStop = false;
+            this.ibtnAddTimeTable.Zoom = 10;
+            this.ibtnAddTimeTable.Click += new System.EventHandler(this.ibtnAddTimeTable_Click);
+            // 
             // frmSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -503,10 +501,10 @@
             this.Size = new System.Drawing.Size(891, 656);
             this.tlpWeekDayDisplayArea.ResumeLayout(false);
             this.tlpWeekDayDisplayArea.PerformLayout();
-            this.pnlTimeTableSelection.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnAddTimeTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnViewTimeTable)).EndInit();
             this.pnlTimeBlockOption.ResumeLayout(false);
+            this.pnlTimeTableSelection.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ibtnViewTimeTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ibtnAddTimeTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,11 +518,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblThursday;
         private Bunifu.Framework.UI.BunifuCustomLabel lblFriday;
         private Bunifu.Framework.UI.BunifuCustomLabel lblSaturday;
-        private Bunifu.Framework.UI.BunifuImageButton ibtnAddTimeTable;
-        private Bunifu.Framework.UI.BunifuImageButton ibtnViewTimeTable;
         private Bunifu.Framework.UI.BunifuDropdown drpTimeTable;
         private Bunifu.Framework.UI.BunifuFlatButton btnAddTimeBlock;
-        private System.Windows.Forms.Panel pnlTimeTableSelection;
         private System.Windows.Forms.Panel pnlTimeBlockOption;
         private System.Windows.Forms.Panel pnlTime;
         private System.Windows.Forms.Panel pnlSunday;
@@ -534,5 +529,8 @@
         private System.Windows.Forms.Panel pnlThursday;
         private System.Windows.Forms.Panel pnlFriday;
         private System.Windows.Forms.Panel pnlSaturday;
+        private System.Windows.Forms.Panel pnlTimeTableSelection;
+        private Bunifu.Framework.UI.BunifuImageButton ibtnAddTimeTable;
+        private Bunifu.Framework.UI.BunifuImageButton ibtnViewTimeTable;
     }
 }

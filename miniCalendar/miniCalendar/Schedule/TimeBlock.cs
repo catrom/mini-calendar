@@ -20,7 +20,7 @@ namespace miniCalendar.Schedule
         [XmlAttribute]
         string color;
         [XmlAttribute]
-        int notiUnit;
+        int notiValue;
         [XmlAttribute]
         string description;
 
@@ -86,16 +86,16 @@ namespace miniCalendar.Schedule
             }
         }
 
-        public int NotiUnit
+        public int NotiValue
         {
             get
             {
-                return notiUnit;
+                return notiValue;
             }
             set
             {
                 if (value < 0) throw new Exception("Notification delay time invalid");
-                notiUnit = value;
+                notiValue = value;
             }
         }
 
@@ -113,14 +113,15 @@ namespace miniCalendar.Schedule
 
         public TimeBlock() { }
 
-        public TimeBlock(string subjectTitle, int weekDay, DateTime startTime, DateTime endTime, string color, int notiUnit)
+        public TimeBlock(string subjectTitle, int weekDay, DateTime startTime, DateTime endTime, string color, int notiValue, string description)
         {
             this.subjectTitle = subjectTitle;
             this.weekDay = weekDay;
             this.color = color;
-            this.notiUnit = notiUnit;
+            this.notiValue = notiValue;
+            this.description = description;
             if ((startTime.Hour > endTime.Hour)
-                || (startTime.Hour == endTime.Hour) && (startTime.Minute >= endTime.Hour))
+                || (startTime.Hour == endTime.Hour) && (startTime.Minute >= endTime.Minute))
                 throw new Exception("Start time and End time invalid");
             else
             {

@@ -123,7 +123,6 @@
       <DependentUpon>frmViewTimeBlock.cs</DependentUpon>
     </Compile>
     <Compile Include="Schedule\Helper.cs" />
-    <Compile Include="Schedule\TestingGround.cs" />
     <Compile Include="Schedule\TimeBlock.cs" />
     <Compile Include="Schedule\TimeTable.cs" />
     <Compile Include="Schedule\frmViewTimeTable.cs">

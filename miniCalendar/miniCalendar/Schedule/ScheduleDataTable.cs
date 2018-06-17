@@ -24,7 +24,7 @@ namespace miniCalendar.Schedule
         {
             foreach (var item in timeTables)
                 if (timeTable.Title == item.Title)
-                    return;
+                    throw new Exception("Title already taken.");
 
             timeTables.Add(timeTable);
         }

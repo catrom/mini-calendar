@@ -102,6 +102,9 @@
             this.tbTitle.TabIndex = 0;
             this.tbTitle.Text = "Enter Title";
             this.tbTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbTitle.Enter += new System.EventHandler(this.tbTitle_Enter);
+            this.tbTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTitle_KeyPress);
+            this.tbTitle.Leave += new System.EventHandler(this.tbTitle_Leave);
             // 
             // pnlEnableWeekDay
             // 
@@ -334,6 +337,7 @@
             // 
             // cbEndMin
             // 
+            this.cbEndMin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEndMin.FormattingEnabled = true;
             this.cbEndMin.Items.AddRange(new object[] {
             "0",
@@ -355,6 +359,7 @@
             // 
             // cbEndHour
             // 
+            this.cbEndHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEndHour.FormattingEnabled = true;
             this.cbEndHour.Items.AddRange(new object[] {
             "0",
@@ -380,14 +385,17 @@
             "20",
             "21",
             "22",
-            "23"});
+            "23",
+            "24"});
             this.cbEndHour.Location = new System.Drawing.Point(62, 203);
             this.cbEndHour.Name = "cbEndHour";
             this.cbEndHour.Size = new System.Drawing.Size(76, 24);
             this.cbEndHour.TabIndex = 2;
+            this.cbEndHour.SelectedIndexChanged += new System.EventHandler(this.cbEndHour_SelectedIndexChanged);
             // 
             // cbStartMin
             // 
+            this.cbStartMin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStartMin.FormattingEnabled = true;
             this.cbStartMin.Items.AddRange(new object[] {
             "0",
@@ -409,6 +417,7 @@
             // 
             // cbStartHour
             // 
+            this.cbStartHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStartHour.FormattingEnabled = true;
             this.cbStartHour.Items.AddRange(new object[] {
             "0",
@@ -562,6 +571,7 @@
             this.btnCancel.Size = new System.Drawing.Size(113, 58);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -587,6 +597,7 @@
             this.btnSave.Size = new System.Drawing.Size(113, 58);
             this.btnSave.TabIndex = 10;
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmNewTimeTable
             // 

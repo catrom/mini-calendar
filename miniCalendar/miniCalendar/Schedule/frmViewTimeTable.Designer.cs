@@ -125,6 +125,7 @@
             this.chkSaturday.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.chkSaturday.Checked = true;
             this.chkSaturday.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkSaturday.Enabled = false;
             this.chkSaturday.ForeColor = System.Drawing.Color.White;
             this.chkSaturday.Location = new System.Drawing.Point(168, 270);
             this.chkSaturday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -138,6 +139,7 @@
             this.chkFriday.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.chkFriday.Checked = true;
             this.chkFriday.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkFriday.Enabled = false;
             this.chkFriday.ForeColor = System.Drawing.Color.White;
             this.chkFriday.Location = new System.Drawing.Point(168, 235);
             this.chkFriday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -151,6 +153,7 @@
             this.chkThursday.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.chkThursday.Checked = true;
             this.chkThursday.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkThursday.Enabled = false;
             this.chkThursday.ForeColor = System.Drawing.Color.White;
             this.chkThursday.Location = new System.Drawing.Point(168, 200);
             this.chkThursday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -164,6 +167,7 @@
             this.chkWednesday.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.chkWednesday.Checked = true;
             this.chkWednesday.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkWednesday.Enabled = false;
             this.chkWednesday.ForeColor = System.Drawing.Color.White;
             this.chkWednesday.Location = new System.Drawing.Point(168, 165);
             this.chkWednesday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -177,6 +181,7 @@
             this.chkTuesday.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.chkTuesday.Checked = true;
             this.chkTuesday.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkTuesday.Enabled = false;
             this.chkTuesday.ForeColor = System.Drawing.Color.White;
             this.chkTuesday.Location = new System.Drawing.Point(168, 130);
             this.chkTuesday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -190,6 +195,7 @@
             this.chkMonday.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.chkMonday.Checked = true;
             this.chkMonday.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkMonday.Enabled = false;
             this.chkMonday.ForeColor = System.Drawing.Color.White;
             this.chkMonday.Location = new System.Drawing.Point(168, 95);
             this.chkMonday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -203,6 +209,7 @@
             this.chkSunday.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.chkSunday.Checked = true;
             this.chkSunday.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkSunday.Enabled = false;
             this.chkSunday.ForeColor = System.Drawing.Color.White;
             this.chkSunday.Location = new System.Drawing.Point(168, 63);
             this.chkSunday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -490,6 +497,7 @@
             this.btnModify.Size = new System.Drawing.Size(113, 58);
             this.btnModify.TabIndex = 8;
             this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnDelete
             // 
@@ -515,6 +523,7 @@
             this.btnDelete.Size = new System.Drawing.Size(113, 58);
             this.btnDelete.TabIndex = 10;
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnBack
             // 
@@ -540,6 +549,7 @@
             this.btnBack.Size = new System.Drawing.Size(113, 58);
             this.btnBack.TabIndex = 9;
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmViewTimeTable
             // 

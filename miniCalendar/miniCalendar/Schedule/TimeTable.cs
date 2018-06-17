@@ -86,10 +86,15 @@ namespace miniCalendar.Schedule
 
         public TimeTable(string title, bool[] enableWeekDay, DateTime startTime, DateTime endTime, List<TimeBlock> timeBlocks)
         {
-            this.title = title;
+            if (title == "")
+                throw new Exception("Title must not be blank");
+            else
+                this.title = title;
+
             this.enableWeekDay = enableWeekDay;
+
             if ((startTime.Hour > endTime.Hour)
-                || (startTime.Hour == endTime.Hour) && (startTime.Minute >= endTime.Hour))
+                || (startTime.Hour == endTime.Hour) && (startTime.Minute >= endTime.Minute))
                 throw new Exception("Start time and End time invalid");
             else
             {
@@ -99,21 +104,33 @@ namespace miniCalendar.Schedule
                 this.endTime = endTime;
                 Helper.toDefaultDay(ref this.endTime);
             }
-            this.timeBlocks = timeBlocks;
+
+            this.timeBlocks = new List<TimeBlock>();
+            if (timeBlocks != null)
+            {
+                foreach (var item in timeBlocks)
+                {
+                    Add(item);
+                }
+            }
         }
 
         public void Add(TimeBlock timeBlock)
         {
             if (isTimeBlockValid(timeBlock))
             {
-                foreach (var item in timeBlocks)
+                if (timeBlocks != null)
                 {
-                    if (timeBlock.SubjectTitle == item.SubjectTitle)
-                        throw new Exception("Title already taken");
-                    if (timeBlock.WeekDay == item.WeekDay)
+                    foreach (var item in timeBlocks)
                     {
-                        if (isOverlapped(timeBlock, item))
-                            throw new Exception("Time frame overlapped");
+                        if (timeBlock.SubjectTitle == item.SubjectTitle)
+                            throw new Exception("Title already taken");
+                        if (timeBlock.WeekDay == item.WeekDay)
+                        {
+
+                            if (isOverlapped(timeBlock, item))
+                                throw new Exception("Time frame overlapped");
+                        }
                     }
                 }
                 timeBlocks.Add(timeBlock);
@@ -150,10 +167,12 @@ namespace miniCalendar.Schedule
             }
 
             else if ((a.StartTime.Hour == b.StartTime.Hour) && (a.StartTime.Minute == b.StartTime.Minute))
+            {
                 return true;
+            }
 
             else if ((a.StartTime.Hour > b.StartTime.Hour)
-                || (a.StartTime.Hour == b.StartTime.Hour) && (a.StartTime.Hour > b.StartTime.Minute))
+                || (a.StartTime.Hour == b.StartTime.Hour) && (a.StartTime.Minute > b.StartTime.Minute))
             {
                 if ((a.StartTime.Hour < b.EndTime.Hour)
                     || (a.StartTime.Hour == b.EndTime.Hour) && (a.StartTime.Minute < b.EndTime.Minute))
@@ -163,10 +182,26 @@ namespace miniCalendar.Schedule
             return false;
         }
 
-
         public void Remove(TimeBlock timeBlock)
         {
             timeBlocks.Remove(timeBlock);
+        }
+
+        public void Sort()
+        {
+            List<TimeBlock> tempTimeBlocks;
+            tempTimeBlocks = TimeBlocks.OrderBy(o => o.WeekDay).ThenBy(o => o.StartTime).ToList();
+            TimeBlocks = tempTimeBlocks;
+        }
+
+        public void Update()
+        {
+            if(timeBlocks != null)
+            {
+                foreach (var item in timeBlocks)
+                    if (!isTimeBlockValid(item))
+                        Remove(item);
+            }
         }
     }
 }

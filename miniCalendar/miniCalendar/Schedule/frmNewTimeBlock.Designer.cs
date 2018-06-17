@@ -51,6 +51,7 @@
             this.btnCancel = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pnlNotification = new System.Windows.Forms.Panel();
+            this.lblNotiMin = new System.Windows.Forms.Label();
             this.numNotiValue = new System.Windows.Forms.NumericUpDown();
             this.pbNotification = new System.Windows.Forms.PictureBox();
             this.lblNotification = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.tbDescription = new System.Windows.Forms.RichTextBox();
             this.pbDescription = new System.Windows.Forms.PictureBox();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.lblNotiMin = new System.Windows.Forms.Label();
             this.pnlTitle.SuspendLayout();
             this.pnlDayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTime)).BeginInit();
@@ -111,6 +111,8 @@
             this.tbTitle.TabIndex = 1;
             this.tbTitle.Text = "Enter Title";
             this.tbTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbTitle.Enter += new System.EventHandler(this.tbTitle_Enter);
+            this.tbTitle.Leave += new System.EventHandler(this.tbTitle_Leave);
             // 
             // pnlDayTime
             // 
@@ -149,7 +151,21 @@
             // 
             // cbEndMin
             // 
+            this.cbEndMin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEndMin.FormattingEnabled = true;
+            this.cbEndMin.Items.AddRange(new object[] {
+            "0",
+            "5",
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55"});
             this.cbEndMin.Location = new System.Drawing.Point(707, 87);
             this.cbEndMin.Name = "cbEndMin";
             this.cbEndMin.Size = new System.Drawing.Size(71, 24);
@@ -157,7 +173,34 @@
             // 
             // cbEndHour
             // 
+            this.cbEndHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEndHour.FormattingEnabled = true;
+            this.cbEndHour.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"});
             this.cbEndHour.Location = new System.Drawing.Point(537, 87);
             this.cbEndHour.Name = "cbEndHour";
             this.cbEndHour.Size = new System.Drawing.Size(76, 24);
@@ -165,7 +208,21 @@
             // 
             // cbStartMin
             // 
+            this.cbStartMin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStartMin.FormattingEnabled = true;
+            this.cbStartMin.Items.AddRange(new object[] {
+            "0",
+            "5",
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55"});
             this.cbStartMin.Location = new System.Drawing.Point(707, 57);
             this.cbStartMin.Name = "cbStartMin";
             this.cbStartMin.Size = new System.Drawing.Size(71, 24);
@@ -173,7 +230,33 @@
             // 
             // cbStartHour
             // 
+            this.cbStartHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStartHour.FormattingEnabled = true;
+            this.cbStartHour.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
             this.cbStartHour.Location = new System.Drawing.Point(537, 57);
             this.cbStartHour.Name = "cbStartHour";
             this.cbStartHour.Size = new System.Drawing.Size(76, 24);
@@ -279,7 +362,16 @@
             // 
             // cbWeekday
             // 
+            this.cbWeekday.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbWeekday.FormattingEnabled = true;
+            this.cbWeekday.Items.AddRange(new object[] {
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"});
             this.cbWeekday.Location = new System.Drawing.Point(63, 59);
             this.cbWeekday.Name = "cbWeekday";
             this.cbWeekday.Size = new System.Drawing.Size(168, 24);
@@ -320,6 +412,7 @@
             this.btnCancel.Size = new System.Drawing.Size(113, 58);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -345,6 +438,7 @@
             this.btnSave.Size = new System.Drawing.Size(113, 58);
             this.btnSave.TabIndex = 8;
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnlNotification
             // 
@@ -358,6 +452,17 @@
             this.pnlNotification.Name = "pnlNotification";
             this.pnlNotification.Size = new System.Drawing.Size(441, 108);
             this.pnlNotification.TabIndex = 0;
+            // 
+            // lblNotiMin
+            // 
+            this.lblNotiMin.AutoSize = true;
+            this.lblNotiMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lblNotiMin.Location = new System.Drawing.Point(139, 49);
+            this.lblNotiMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNotiMin.Name = "lblNotiMin";
+            this.lblNotiMin.Size = new System.Drawing.Size(64, 23);
+            this.lblNotiMin.TabIndex = 19;
+            this.lblNotiMin.Text = "Minute";
             // 
             // numNotiValue
             // 
@@ -418,6 +523,7 @@
             this.checkBlue.Name = "checkBlue";
             this.checkBlue.Size = new System.Drawing.Size(20, 20);
             this.checkBlue.TabIndex = 12;
+            this.checkBlue.OnChange += new System.EventHandler(this.checkBlue_OnChange);
             // 
             // checkGreen
             // 
@@ -431,6 +537,7 @@
             this.checkGreen.Name = "checkGreen";
             this.checkGreen.Size = new System.Drawing.Size(20, 20);
             this.checkGreen.TabIndex = 11;
+            this.checkGreen.OnChange += new System.EventHandler(this.checkGreen_OnChange);
             // 
             // checkYellow
             // 
@@ -444,6 +551,7 @@
             this.checkYellow.Name = "checkYellow";
             this.checkYellow.Size = new System.Drawing.Size(20, 20);
             this.checkYellow.TabIndex = 9;
+            this.checkYellow.OnChange += new System.EventHandler(this.checkYellow_OnChange);
             // 
             // checkOrange
             // 
@@ -457,6 +565,7 @@
             this.checkOrange.Name = "checkOrange";
             this.checkOrange.Size = new System.Drawing.Size(20, 20);
             this.checkOrange.TabIndex = 8;
+            this.checkOrange.OnChange += new System.EventHandler(this.checkOrange_OnChange);
             // 
             // checkRed
             // 
@@ -470,6 +579,7 @@
             this.checkRed.Name = "checkRed";
             this.checkRed.Size = new System.Drawing.Size(20, 20);
             this.checkRed.TabIndex = 7;
+            this.checkRed.OnChange += new System.EventHandler(this.checkRed_OnChange);
             // 
             // pbColor
             // 
@@ -515,6 +625,7 @@
             this.tbDescription.Size = new System.Drawing.Size(786, 111);
             this.tbDescription.TabIndex = 7;
             this.tbDescription.Text = "Add descriptions";
+            this.tbDescription.Leave += new System.EventHandler(this.tbDescription_Leave);
             // 
             // pbDescription
             // 
@@ -537,17 +648,6 @@
             this.lblDescription.Size = new System.Drawing.Size(96, 23);
             this.lblDescription.TabIndex = 5;
             this.lblDescription.Text = "Description";
-            // 
-            // lblNotiMin
-            // 
-            this.lblNotiMin.AutoSize = true;
-            this.lblNotiMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblNotiMin.Location = new System.Drawing.Point(139, 49);
-            this.lblNotiMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNotiMin.Name = "lblNotiMin";
-            this.lblNotiMin.Size = new System.Drawing.Size(64, 23);
-            this.lblNotiMin.TabIndex = 19;
-            this.lblNotiMin.Text = "Minute";
             // 
             // frmNewTimeBlock
             // 
