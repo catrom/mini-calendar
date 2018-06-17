@@ -32,7 +32,8 @@ namespace miniCalendar.Schedule
             }
             set
             {
-                if (value == "") throw new Exception("Subject Title invalid");
+                if (value == "")
+                { throw new Exception("Subject Title invalid"); }
                 else subjectTitle = value;
             }
         }
@@ -115,7 +116,10 @@ namespace miniCalendar.Schedule
 
         public TimeBlock(string subjectTitle, int weekDay, DateTime startTime, DateTime endTime, string color, int notiValue, string description)
         {
-            this.subjectTitle = subjectTitle;
+            if (subjectTitle == "")
+                throw new Exception("Title must not be blank");
+            else
+                this.subjectTitle = subjectTitle;
             this.weekDay = weekDay;
             this.color = color;
             this.notiValue = notiValue;

@@ -72,10 +72,10 @@ namespace miniCalendar.Schedule
                     }
             }
 
-            lblStartHourDisplay.Text = timeTable.StartTime.Hour.ToString();
-            lblStartMinDisplay.Text = timeTable.StartTime.Minute.ToString();
-            lblEndHourDisplay.Text = timeTable.EndTime.Hour.ToString();
-            lblEndMinDisplay.Text = timeTable.EndTime.Minute.ToString();
+            lblStartHourDisplay.Text = timeBlock.StartTime.Hour.ToString();
+            lblStartMinDisplay.Text = timeBlock.StartTime.Minute.ToString();
+            lblEndHourDisplay.Text = timeBlock.EndTime.Hour.ToString();
+            lblEndMinDisplay.Text = timeBlock.EndTime.Minute.ToString();
 
             lblNotiMinDisplay.Text = timeBlock.NotiValue.ToString();
 

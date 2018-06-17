@@ -318,6 +318,7 @@
             this.btnModify.Size = new System.Drawing.Size(113, 58);
             this.btnModify.TabIndex = 8;
             this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnDelete
             // 
@@ -343,6 +344,7 @@
             this.btnDelete.Size = new System.Drawing.Size(113, 58);
             this.btnDelete.TabIndex = 10;
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnBack
             // 
@@ -368,6 +370,7 @@
             this.btnBack.Size = new System.Drawing.Size(113, 58);
             this.btnBack.TabIndex = 9;
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // pnlNoti
             // 

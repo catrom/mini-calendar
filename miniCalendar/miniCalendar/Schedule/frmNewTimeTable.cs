@@ -180,6 +180,7 @@ namespace miniCalendar.Schedule
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return;
             }
 
             if (result != null)
@@ -201,6 +202,7 @@ namespace miniCalendar.Schedule
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
+                        return;
                     }
                 }
             }

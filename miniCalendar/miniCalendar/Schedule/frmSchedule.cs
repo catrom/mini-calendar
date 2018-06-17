@@ -320,66 +320,32 @@ namespace miniCalendar
 
         public void drawTimeBlock(TimeTable timeTable)
         {
-            Panel currentPanel = new Panel();
-            float timeBlockStartPoint;
+            float timeBlockY;
+            float timeBlockX;
             float timeBlockHeight;
+            float timeBlockWidth;
             Button timeBlock;
 
             foreach (var item in timeTable.TimeBlocks)
             {
+                timeBlockX = (111 * (item.WeekDay + 1)) + 1;
 
-                switch (item.WeekDay)
-                {
-                    case 0:
-                        {
-                            currentPanel = pnlSunday;
-                            break;
-                        }
-                    case 1:
-                        {
-                            currentPanel = pnlMonday;
-                            break;
-                        }
-                    case 2:
-                        {
-                            currentPanel = pnlTuesday;
-                            break;
-                        }
-                    case 3:
-                        {
-                            currentPanel = pnlWednesday;
-                            break;
-                        }
-                    case 4:
-                        {
-                            currentPanel = pnlThursday;
-                            break;
-                        }
-                    case 5:
-                        {
-                            currentPanel = pnlFriday;
-                            break;
-                        }
-                    case 6:
-                        {
-                            currentPanel = pnlSaturday;
-                            break;
-                        }
-                }
+                timeBlockY = 102 + (((float)(item.StartTime.TimeOfDay.TotalMinutes - timeTable.StartTime.TimeOfDay.TotalMinutes) / 5) * pixelPer5Min);
 
-                timeBlockStartPoint = ((float)(item.StartTime.TimeOfDay.TotalMinutes - timeTable.StartTime.TimeOfDay.TotalMinutes) / 5) * pixelPer5Min;
+                timeBlockWidth = 110;
 
                 timeBlockHeight = ((float)(item.EndTime.TimeOfDay.TotalMinutes - item.StartTime.TimeOfDay.TotalMinutes) / 5) * pixelPer5Min;
 
                 timeBlock = new Button();
-                timeBlock.Location = new Point(0, (int)timeBlockStartPoint);
-                timeBlock.Size = new Size(109, (int)timeBlockHeight);
+                timeBlock.Location = new Point((int)timeBlockX,(int)timeBlockY);
+                timeBlock.Size = new Size((int)timeBlockWidth, (int)timeBlockHeight);
                 timeBlock.BackColor = Helper.ColorPicker(item.Color);
                 timeBlock.Text = item.SubjectTitle;
+                timeBlock.Margin = new Padding(0);
                 timeBlock.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 timeBlock.ForeColor = System.Drawing.Color.White;
+                Controls.Add(timeBlock);
                 timeBlock.Click += btnTimeBlock_Click;
-                currentPanel.Controls.Add(timeBlock);
                 timeBlock.Visible = true;
                 timeBlock.BringToFront();
             }
@@ -387,55 +353,13 @@ namespace miniCalendar
 
         public void clearTimeBlock()
         {
-            Panel currentPanel = new Panel();
-            for (int i = 0; i < 7; i++)
-            {
-                switch (i)
+                for (int j = Controls.Count - 1; j >= 0; j--)
                 {
-                    case 0:
-                        {
-                            currentPanel = pnlSunday;
-                            break;
-                        }
-                    case 1:
-                        {
-                            currentPanel = pnlMonday;
-                            break;
-                        }
-                    case 2:
-                        {
-                            currentPanel = pnlTuesday;
-                            break;
-                        }
-                    case 3:
-                        {
-                            currentPanel = pnlWednesday;
-                            break;
-                        }
-                    case 4:
-                        {
-                            currentPanel = pnlThursday;
-                            break;
-                        }
-                    case 5:
-                        {
-                            currentPanel = pnlFriday;
-                            break;
-                        }
-                    case 6:
-                        {
-                            currentPanel = pnlSaturday;
-                            break;
-                        }
-                }
-                for (int j = currentPanel.Controls.Count - 1; j >= 0; j--)
-                {
-                    if (currentPanel.Controls[j] is Button)
+                    if (Controls[j] is Button)
                     {
-                        currentPanel.Controls.RemoveAt(j);
+                    Controls.RemoveAt(j);
                     }
                 }
-            }
         }
 
         private void drpTimeTable_onItemSelected(object sender, EventArgs e)
@@ -477,6 +401,7 @@ namespace miniCalendar
             this.pnlTimeBlockOption.Visible = false;
             this.pnlTimeTableSelection.Visible = false;
             this.tlpWeekDayDisplayArea.Visible = false;
+            form.BringToFront();
         }
 
         private void ibtnViewTimeTable_Click(object sender, EventArgs e)
@@ -488,6 +413,7 @@ namespace miniCalendar
             this.pnlTimeBlockOption.Visible = false;
             this.pnlTimeTableSelection.Visible = false;
             this.tlpWeekDayDisplayArea.Visible = false;
+            form.BringToFront();
         }
 
         private void btnAddTimeBlock_Click(object sender, EventArgs e)
@@ -499,6 +425,7 @@ namespace miniCalendar
             this.pnlTimeBlockOption.Visible = false;
             this.pnlTimeTableSelection.Visible = false;
             this.tlpWeekDayDisplayArea.Visible = false;
+            form.BringToFront();
         }
 
         public void btnTimeBlock_Click(object sender, EventArgs e)
@@ -517,6 +444,7 @@ namespace miniCalendar
             pnlTimeTableSelection.Visible = false;
             pnlTimeBlockOption.Visible = false;
             tlpWeekDayDisplayArea.Visible = false;
+            form.BringToFront();
         }
 
         public void drpTimeTableUpdate()
@@ -533,7 +461,7 @@ namespace miniCalendar
             pnlTimeTableSelection.Visible = true;
             pnlTimeBlockOption.Visible = true;
             tlpWeekDayDisplayArea.Visible = true;
-            
+
             drpTimeTableUpdate();
         }
     }
