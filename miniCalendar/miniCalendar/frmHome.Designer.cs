@@ -392,6 +392,7 @@
             // notiTimer
             // 
             this.notiTimer.Enabled = true;
+            this.notiTimer.Interval = 60000;
             this.notiTimer.Tick += new System.EventHandler(this.notiTimer_Tick);
             // 
             // sysTrayIcon

@@ -23,7 +23,7 @@ namespace ToastNotifications
         /// <param name="duration"></param>
         /// <param name="animation"></param>
         /// <param name="direction"></param>
-        public NotificationPopup(string title, string body, int duration, FormAnimator.AnimationMethod animation, FormAnimator.AnimationDirection direction)
+        public NotificationPopup(Image image, string title, string body, int duration, FormAnimator.AnimationMethod animation, FormAnimator.AnimationDirection direction)
         {
             InitializeComponent();
 
@@ -35,6 +35,7 @@ namespace ToastNotifications
             lifeTimer.Interval = duration;
             labelTitle.Text = title;
             labelBody.Text = body;
+            pictureBox1.Image = image;
 
             _animator = new FormAnimator(this, animation, direction, 500);
 

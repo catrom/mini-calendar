@@ -34,9 +34,16 @@ namespace miniCalendar
             this.text = task.Name;
         }
 
+        public Notification(Schedule.TimeBlock timeBlock)
+        {
+            this.image = new Bitmap(@"Resources\\icons8_Schedule_32.png");
+            this.startTime = timeBlock.StartTime;
+            this.text = timeBlock.SubjectTitle;
+        }
+
         public void DisplayNotification()
         {
-            NotificationPopup toastNotification = new NotificationPopup(startTime.ToString(), text, 10, FormAnimator.AnimationMethod.Roll, FormAnimator.AnimationDirection.Up);
+            NotificationPopup toastNotification = new NotificationPopup(image, startTime.ToString(), text, 10, FormAnimator.AnimationMethod.Roll, FormAnimator.AnimationDirection.Up);
             toastNotification.Show();
         }
     }
