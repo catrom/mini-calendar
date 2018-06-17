@@ -23,17 +23,13 @@ namespace miniCalendar
 
             TodoList todoList = new TodoList();
             todoList.Deserialize();
-                
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain(dataTable, myMonthCalendar, todoList));
             Schedule.ScheduleDataTable scDataTable = new Schedule.ScheduleDataTable();
+            scDataTable.Deserialize();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain(scDataTable));
+            Application.Run(new frmMain(dataTable, myMonthCalendar, todoList, scDataTable));
         }
-
     }
 }

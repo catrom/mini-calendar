@@ -18,32 +18,31 @@ namespace miniCalendar
         monthItem myMonthCalendar = new monthItem();
         TodoList todoList = new TodoList();
         List<Notification> notifications = new List<Notification>();
-
-        public frmMain(DataTable dataTable, monthItem monthItem, TodoList todoList)
         Schedule.ScheduleDataTable scDataTable = new Schedule.ScheduleDataTable();
 
-        public frmMain(DataTable dataTable, monthItem monthItem)
+        public frmMain(DataTable dataTable, monthItem monthItem, TodoList todoList, Schedule.ScheduleDataTable scDataTable)
         {
             InitializeComponent();
             this.dataTable = dataTable;
             this.myMonthCalendar = monthItem;
             this.todoList = todoList;
+            this.scDataTable = scDataTable;
 
-            frmNotifications form = new frmNotifications();
+            frmNotifications form = new frmNotifications(notifications);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Add(form);
         }
 
         // Testing shit //
-        public frmMain(Schedule.ScheduleDataTable scDataTable)
-        {
-            InitializeComponent();
-            this.scDataTable = scDataTable;
+        //public frmMain(Schedule.ScheduleDataTable scDataTable)
+        //{
+        //    InitializeComponent();
+        //    this.scDataTable = scDataTable;
 
-            frmNotifications form = new frmNotifications();
-            form.Dock = DockStyle.Fill;
-            WorkingArea.Controls.Add(form);
-        }
+        //    frmNotifications form = new frmNotifications();
+        //    form.Dock = DockStyle.Fill;
+        //    WorkingArea.Controls.Add(form);
+        //}
         // ------------ //
 
         Bunifu.Framework.UI.Drag MoveForm = new Bunifu.Framework.UI.Drag();
@@ -169,6 +168,20 @@ namespace miniCalendar
                         notifications.RemoveAt(0);
                 }
             }
+            for (int i = 0; i < scDataTable.timeTables.Count; i++)
+                for (int j = 0; j < scDataTable.timeTables[i].TimeBlocks.Count; j++)
+                {
+                    DateTime notiTime = scDataTable.timeTables[i].TimeBlocks[j].StartTime.AddMinutes(-(scDataTable.timeTables[i].TimeBlocks[j].NotiValue));
+                    if (scDataTable.timeTables[i].TimeBlocks[j].GetDayOfWeek() == DateTime.Now.DayOfWeek &&
+                        notiTime.Hour == DateTime.Now.Hour &&
+                        notiTime.Minute == DateTime.Now.Minute)
+                    {
+                        notifications.Add(new Notification(todoList[i]));
+                        notifications[notifications.Count - 1].DisplayNotification();
+                        if (notifications.Count > 6)
+                            notifications.RemoveAt(0);
+                    }
+                }
         }
         #endregion //Notification Handling
     }
