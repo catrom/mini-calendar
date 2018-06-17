@@ -66,7 +66,18 @@ namespace miniCalendar
             dataTable.Serialize();
             myMonthCalendar.Serialize();
             todoList.Serialize();
+            scDataTable.Serialize();
+            sysTrayIcon.Visible = false;
             Environment.Exit(0);
+        }
+        private void ibtnMinimize_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void sysTrayIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
         }
 
         private void ibtnMenu_Click(object sender, EventArgs e)
@@ -147,7 +158,8 @@ namespace miniCalendar
                 if (dataTable[i].NotiTime().Year == DateTime.Now.Year && dataTable[i].NotiTime().Month == DateTime.Now.Month &&
                                                           dataTable[i].NotiTime().Day == DateTime.Now.Day &&
                                                           dataTable[i].NotiTime().Hour == DateTime.Now.Hour &&
-                                                          dataTable[i].NotiTime().Minute == DateTime.Now.Minute)
+                                                          dataTable[i].NotiTime().Minute == DateTime.Now.Minute &&
+                                                          DateTime.Now.Second == 0)
                 {
                     notifications.Add(new Notification(dataTable[i]));
                     notifications[notifications.Count - 1].DisplayNotification();
@@ -160,7 +172,8 @@ namespace miniCalendar
                 if (todoList[i].RemindTime.Year == DateTime.Now.Year && todoList[i].RemindTime.Month == DateTime.Now.Month &&
                                                                         todoList[i].RemindTime.Day == DateTime.Now.Day &&
                                                                         todoList[i].RemindTime.Hour == DateTime.Now.Hour &&
-                                                                        todoList[i].RemindTime.Minute == DateTime.Now.Minute)
+                                                                        todoList[i].RemindTime.Minute == DateTime.Now.Minute &&
+                                                                        DateTime.Now.Second == 0)
                 {
                     notifications.Add(new Notification(todoList[i]));
                     notifications[notifications.Count - 1].DisplayNotification();
@@ -174,7 +187,8 @@ namespace miniCalendar
                     DateTime notiTime = scDataTable.timeTables[i].TimeBlocks[j].StartTime.AddMinutes(-(scDataTable.timeTables[i].TimeBlocks[j].NotiValue));
                     if (scDataTable.timeTables[i].TimeBlocks[j].GetDayOfWeek() == DateTime.Now.DayOfWeek &&
                         notiTime.Hour == DateTime.Now.Hour &&
-                        notiTime.Minute == DateTime.Now.Minute)
+                        notiTime.Minute == DateTime.Now.Minute &&
+                        DateTime.Now.Second == 0)
                     {
                         notifications.Add(new Notification(todoList[i]));
                         notifications[notifications.Count - 1].DisplayNotification();

@@ -35,7 +35,7 @@ namespace ToastNotifications
             lifeTimer.Interval = duration;
             labelTitle.Text = title;
             labelBody.Text = body;
-            pictureBox1.Image = image;
+            pictureBox.Image = image;
 
             _animator = new FormAnimator(this, animation, direction, 500);
 

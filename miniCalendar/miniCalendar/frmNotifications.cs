@@ -25,11 +25,6 @@ namespace miniCalendar
             InitializeComponent();
         }
 
-        private void bunifuSwitch1_Click(object sender, EventArgs e)
-        {
-            enable = !enable;
-        }
-
         private void DrawNotifications()
         {
             if (notifications.Count() >= 1)

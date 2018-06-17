@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.ibtnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
@@ -88,6 +88,7 @@
             this.ibtnMinimize.TabIndex = 2;
             this.ibtnMinimize.TabStop = false;
             this.ibtnMinimize.Zoom = 15;
+            this.ibtnMinimize.Click += new System.EventHandler(this.ibtnMinimize_Click);
             // 
             // ibtnExit
             // 
@@ -371,28 +372,28 @@
             // 
             this.menuTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.menuTransition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 1;
-            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 2F;
-            animation1.TransparencyCoeff = 0F;
-            this.menuTransition.DefaultAnimation = animation1;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 1;
+            animation3.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 2F;
+            animation3.TransparencyCoeff = 0F;
+            this.menuTransition.DefaultAnimation = animation3;
             this.menuTransition.MaxAnimationTime = 2000;
             // 
             // notiTimer
             // 
             this.notiTimer.Enabled = true;
-            this.notiTimer.Interval = 60000;
+            this.notiTimer.Interval = 1000;
             this.notiTimer.Tick += new System.EventHandler(this.notiTimer_Tick);
             // 
             // sysTrayIcon
@@ -400,6 +401,7 @@
             this.sysTrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("sysTrayIcon.Icon")));
             this.sysTrayIcon.Text = "miniCalendar";
             this.sysTrayIcon.Visible = true;
+            this.sysTrayIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.sysTrayIcon_MouseDoubleClick);
             // 
             // frmMain
             // 

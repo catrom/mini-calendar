@@ -35,8 +35,8 @@ namespace ToastNotifications
             this.labelBody = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // lifeTimer
@@ -94,13 +94,13 @@ namespace ToastNotifications
             // 
             // pictureBox1
             // 
-            this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox1.Location = new System.Drawing.Point(12, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.bunifuTransition1.SetDecoration(this.pictureBox, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox.Location = new System.Drawing.Point(12, 36);
+            this.pictureBox.Name = "pictureBox1";
+            this.pictureBox.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 1;
+            this.pictureBox.TabStop = false;
             // 
             // NotificationPopup
             // 
@@ -111,7 +111,7 @@ namespace ToastNotifications
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(255, 80);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.labelBody);
             this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -128,7 +128,7 @@ namespace ToastNotifications
             this.Load += new System.EventHandler(this.Notification_Load);
             this.Shown += new System.EventHandler(this.Notification_Shown);
             this.Click += new System.EventHandler(this.Notification_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,6 +139,6 @@ namespace ToastNotifications
         private System.Windows.Forms.Label labelBody;
         private System.Windows.Forms.Label labelTitle;
         private BunifuAnimatorNS.BunifuTransition bunifuTransition1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }
