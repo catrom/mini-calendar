@@ -36,6 +36,7 @@ namespace miniCalendar
             _todoList = todoList;
             _id = id;
 
+            // lưu giá trị tạm thời
             temptask = todoList[id];
             tempstt = todoList[id].subTaskStatus.ToList();
             tempsub = todoList[id].subTasks.ToList();
@@ -46,6 +47,7 @@ namespace miniCalendar
 
             ShowInfo(_isModified);
 
+            // xét giá trị cho biến _color
             setUncheckColor();
             switch (_color)
             {
@@ -66,6 +68,7 @@ namespace miniCalendar
             showSubTaskList();
         }
 
+        //  clear textbox khi gõ 1 phím bất kì
         private void tbSubtask_KeyDown(object sender, EventArgs e)
         {
             if (tbSubtask.text == "Add a to-do...")
@@ -82,6 +85,7 @@ namespace miniCalendar
             }
         }
 
+        // lưu dữ liệu xuống khi nhấn button save
         private void btnSave_Click(object sender, EventArgs e)
         {
             if(dtpRemindDay.Value > dtpDueDay.Value)
@@ -105,6 +109,7 @@ namespace miniCalendar
             Dispose();
         }
 
+        // lưu dữ liệu hoặc xuất info
         private void ShowInfo(bool isModified)
         {
             if (isModified == false)
@@ -169,7 +174,8 @@ namespace miniCalendar
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        // Undo
+        private void btnUndo_Click(object sender, EventArgs e)
         { 
             Console.WriteLine("tempstt " + tempstt.Count + "   " + "list" + _todoList[_id].subTaskStatus.Count);
             Console.WriteLine("tempsub " + tempsub.Count + "   " + "list" + _todoList[_id].subTasks.Count);
@@ -186,6 +192,7 @@ namespace miniCalendar
             showSubTaskList();
         }
 
+        // xoá task khi check vào checkbox
         public void cbIsDone_OnChange(object sender, EventArgs e)
         {
             if (cbIsDone.Checked)
@@ -255,11 +262,11 @@ namespace miniCalendar
 
         #endregion
 
+        // add 1 subtask khi click vào button add-
         private void button1_Click(object sender, EventArgs e)
         {
             frmSubTask st = new frmSubTask(_todoList, _id, tbSubtask.text);
             st.Disposed += new EventHandler(dispose_event);
-            //st.cbIsDone.OnChange += new EventHandler(cbOnChange);
             fpSubTask.Controls.Add(st);
             st.BringToFront();
             st.Dock = DockStyle.Top;
@@ -269,15 +276,9 @@ namespace miniCalendar
             _todoList[_id].subTasks.Add(tbSubtask.text);
             _todoList[_id].subTaskStatus.Add(0);
             tbSubtask.text = "";
-
-            //Console.WriteLine(tempTodo[_id].subTasks.Count + "   " + _todoList[_id].subTasks.Count);
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
-
+        // clear panel SubTask trước khi vẽ lại
         private void clearfpSubTask()
         {
             for (int i = fpSubTask.Controls.Count - 1; i >= 0; i--)
@@ -289,6 +290,7 @@ namespace miniCalendar
             }
         }
 
+        // show subtask list khi load form
         private void showSubTaskList()
         {
             _listSubTask.Clear();
@@ -322,6 +324,7 @@ namespace miniCalendar
             updateIndexSub();
         }
 
+        // update lại chỉ số của subtask khi xoá hoặc thêm subtask
         private void updateIndexSub()
         {
             for (int i = 0; i < _listSubTask.Count; i++)
@@ -330,13 +333,15 @@ namespace miniCalendar
             }
         }
 
+        // sự kiện đóng form
         public void dispose_event(object sender, EventArgs e)
         {
             clearfpSubTask();
             showSubTaskList();
             updateIndexSub();
         }
-        
+
+        // xử lý sự kiện xoá 1 subtask
         private void pbdelete(object sender, EventArgs e)
         {
             var pbdel = (PictureBox)sender;

@@ -31,6 +31,7 @@ namespace miniCalendar
             displayInfo();
         }
 
+        // show info của task khi load form
         public void displayInfo()
         {
             if (_todoList[_id].Name == "")
@@ -128,6 +129,7 @@ namespace miniCalendar
             return false;
         }
 
+        // xoá task khi check ô checkbox
         private void cbIsDone_OnChange(object sender, EventArgs e)
         {
             if(cbIsDone.Checked)

@@ -133,7 +133,7 @@
         0QfMqDFQnd6kbwjljgIyAQMDAAVf8BCym+zqAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnCancel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnUndo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFoAAAAoCAYAAAB+Qu3IAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAISSURBVGhD7Zo9S8NQFIY7ujm6Obo5ujm6Obr5L9zcdBAc

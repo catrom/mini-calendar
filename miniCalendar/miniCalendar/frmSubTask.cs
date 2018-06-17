@@ -29,6 +29,7 @@ namespace miniCalendar
             _name = name;
         }
 
+        // Lưu status cho subtask khi check hoặc uncheck vào checkbox
         private void cbIsDone_OnChange(object sender, EventArgs e)
         {
             Console.WriteLine(this.TabIndex);

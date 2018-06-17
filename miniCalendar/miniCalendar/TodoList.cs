@@ -45,6 +45,7 @@ namespace miniCalendar
 
             fs.Close();
 
+            // tạo file cho subtask và status của subtask
             foreach (var i in _todoList)
             {
                 string fileNameSub = "todolist/sub/" + i.Key.ToString() + ".xml";
@@ -55,6 +56,7 @@ namespace miniCalendar
             }
         }
 
+        // lưu dữ liệu cho subtask của 1 task
         public void SerializeSubTask(List<string> list, string fileName)
         {
             var serializer = new XmlSerializer(typeof(List<string>));
@@ -64,6 +66,7 @@ namespace miniCalendar
             }
         }
 
+        // lưu status cho từng subtask
         public void SerializeSubTaskStatus(List<int> list, string fileName)
         {
             var serializer = new XmlSerializer(typeof(List<int>));
@@ -96,6 +99,7 @@ namespace miniCalendar
 
             fs.Close();
 
+            // đọc dữ liệu từ file subtask và status
             foreach (var i in result)
             {
                 List<string> subTask = new List<string>();

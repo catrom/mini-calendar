@@ -48,7 +48,7 @@
             this.tbTaskName = new System.Windows.Forms.TextBox();
             this.cbIsDone = new Bunifu.Framework.UI.BunifuCheckbox();
             this.pnlButton = new System.Windows.Forms.Panel();
-            this.btnCancel = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnUndo = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -91,7 +91,7 @@
             // 
             this.lbInfo.AutoSize = true;
             this.lbInfo.ForeColor = System.Drawing.Color.Gray;
-            this.lbInfo.Location = new System.Drawing.Point(74, 9);
+            this.lbInfo.Location = new System.Drawing.Point(75, 9);
             this.lbInfo.Name = "lbInfo";
             this.lbInfo.Size = new System.Drawing.Size(59, 13);
             this.lbInfo.TabIndex = 15;
@@ -120,7 +120,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(16, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(14, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(20, 20);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -144,7 +144,7 @@
             // 
             this.dtpRemindTime.CustomFormat = "HH:mm";
             this.dtpRemindTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpRemindTime.Location = new System.Drawing.Point(55, 23);
+            this.dtpRemindTime.Location = new System.Drawing.Point(48, 23);
             this.dtpRemindTime.Name = "dtpRemindTime";
             this.dtpRemindTime.Size = new System.Drawing.Size(77, 20);
             this.dtpRemindTime.TabIndex = 25;
@@ -167,7 +167,7 @@
             this.dtpRemindDay.CalendarTitleForeColor = System.Drawing.Color.Black;
             this.dtpRemindDay.CustomFormat = "dddd, dd MMMM, yyyy";
             this.dtpRemindDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpRemindDay.Location = new System.Drawing.Point(54, 49);
+            this.dtpRemindDay.Location = new System.Drawing.Point(48, 49);
             this.dtpRemindDay.Name = "dtpRemindDay";
             this.dtpRemindDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpRemindDay.Size = new System.Drawing.Size(216, 20);
@@ -177,7 +177,7 @@
             // 
             this.lbRemind.AutoSize = true;
             this.lbRemind.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRemind.Location = new System.Drawing.Point(52, 3);
+            this.lbRemind.Location = new System.Drawing.Point(45, 3);
             this.lbRemind.Name = "lbRemind";
             this.lbRemind.Size = new System.Drawing.Size(89, 17);
             this.lbRemind.TabIndex = 23;
@@ -200,7 +200,7 @@
             this.dtpDueDay.CalendarMonthBackground = System.Drawing.Color.Silver;
             this.dtpDueDay.CustomFormat = "dd/MM/yyyy";
             this.dtpDueDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDueDay.Location = new System.Drawing.Point(89, 12);
+            this.dtpDueDay.Location = new System.Drawing.Point(82, 12);
             this.dtpDueDay.Name = "dtpDueDay";
             this.dtpDueDay.Size = new System.Drawing.Size(105, 20);
             this.dtpDueDay.TabIndex = 19;
@@ -209,7 +209,7 @@
             // 
             this.lbDueDay.AutoSize = true;
             this.lbDueDay.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDueDay.Location = new System.Drawing.Point(52, 12);
+            this.lbDueDay.Location = new System.Drawing.Point(45, 12);
             this.lbDueDay.Name = "lbDueDay";
             this.lbDueDay.Size = new System.Drawing.Size(31, 17);
             this.lbDueDay.TabIndex = 18;
@@ -247,7 +247,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // tbTaskName
             // 
@@ -275,7 +274,7 @@
             // pnlButton
             // 
             this.pnlButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlButton.Controls.Add(this.btnCancel);
+            this.pnlButton.Controls.Add(this.btnUndo);
             this.pnlButton.Controls.Add(this.btnSave);
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButton.Location = new System.Drawing.Point(0, 495);
@@ -283,31 +282,31 @@
             this.pnlButton.Size = new System.Drawing.Size(329, 36);
             this.pnlButton.TabIndex = 33;
             // 
-            // btnCancel
+            // btnUndo
             // 
-            this.btnCancel.ActiveBorderThickness = 1;
-            this.btnCancel.ActiveCornerRadius = 20;
-            this.btnCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCancel.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.ButtonText = "UNDO";
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.IdleBorderThickness = 1;
-            this.btnCancel.IdleCornerRadius = 20;
-            this.btnCancel.IdleFillColor = System.Drawing.Color.Transparent;
-            this.btnCancel.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCancel.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCancel.Location = new System.Drawing.Point(205, -3);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(90, 40);
-            this.btnCancel.TabIndex = 18;
-            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnUndo.ActiveBorderThickness = 1;
+            this.btnUndo.ActiveCornerRadius = 20;
+            this.btnUndo.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnUndo.ActiveForecolor = System.Drawing.Color.White;
+            this.btnUndo.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnUndo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnUndo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUndo.BackgroundImage")));
+            this.btnUndo.ButtonText = "UNDO";
+            this.btnUndo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUndo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUndo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUndo.IdleBorderThickness = 1;
+            this.btnUndo.IdleCornerRadius = 20;
+            this.btnUndo.IdleFillColor = System.Drawing.Color.Transparent;
+            this.btnUndo.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnUndo.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnUndo.Location = new System.Drawing.Point(205, -3);
+            this.btnUndo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(90, 40);
+            this.btnUndo.TabIndex = 18;
+            this.btnUndo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // btnSave
             // 
@@ -371,7 +370,7 @@
             this.checkGray.Checked = false;
             this.checkGray.CheckedOnColor = System.Drawing.Color.Gray;
             this.checkGray.ForeColor = System.Drawing.Color.White;
-            this.checkGray.Location = new System.Drawing.Point(267, 22);
+            this.checkGray.Location = new System.Drawing.Point(268, 22);
             this.checkGray.Name = "checkGray";
             this.checkGray.Size = new System.Drawing.Size(20, 20);
             this.checkGray.TabIndex = 7;
@@ -393,7 +392,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label2.ForeColor = System.Drawing.Color.DarkKhaki;
-            this.label2.Location = new System.Drawing.Point(97, 44);
+            this.label2.Location = new System.Drawing.Point(99, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 5;
@@ -417,7 +416,7 @@
             this.checkGreen.Checked = false;
             this.checkGreen.CheckedOnColor = System.Drawing.Color.Green;
             this.checkGreen.ForeColor = System.Drawing.Color.White;
-            this.checkGreen.Location = new System.Drawing.Point(192, 22);
+            this.checkGreen.Location = new System.Drawing.Point(193, 22);
             this.checkGreen.Name = "checkGreen";
             this.checkGreen.Size = new System.Drawing.Size(20, 20);
             this.checkGreen.TabIndex = 3;
@@ -425,12 +424,12 @@
             // 
             // checkYellow
             // 
-            this.checkYellow.BackColor = System.Drawing.Color.DarkKhaki;
+            this.checkYellow.BackColor = System.Drawing.Color.DarkRed;
             this.checkYellow.ChechedOffColor = System.Drawing.Color.DarkRed;
             this.checkYellow.Checked = false;
             this.checkYellow.CheckedOnColor = System.Drawing.Color.DarkKhaki;
             this.checkYellow.ForeColor = System.Drawing.Color.White;
-            this.checkYellow.Location = new System.Drawing.Point(117, 22);
+            this.checkYellow.Location = new System.Drawing.Point(118, 22);
             this.checkYellow.Name = "checkYellow";
             this.checkYellow.Size = new System.Drawing.Size(20, 20);
             this.checkYellow.TabIndex = 2;
@@ -453,7 +452,7 @@
             // 
             this.lbImportance.AutoSize = true;
             this.lbImportance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbImportance.Location = new System.Drawing.Point(2, 0);
+            this.lbImportance.Location = new System.Drawing.Point(13, -1);
             this.lbImportance.Name = "lbImportance";
             this.lbImportance.Size = new System.Drawing.Size(153, 17);
             this.lbImportance.TabIndex = 0;
@@ -476,7 +475,7 @@
             this.tbSubtask.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tbSubtask.ForeColor = System.Drawing.Color.Gray;
             this.tbSubtask.Icon = ((System.Drawing.Image)(resources.GetObject("tbSubtask.Icon")));
-            this.tbSubtask.Location = new System.Drawing.Point(8, 0);
+            this.tbSubtask.Location = new System.Drawing.Point(15, 0);
             this.tbSubtask.Name = "tbSubtask";
             this.tbSubtask.Size = new System.Drawing.Size(263, 31);
             this.tbSubtask.TabIndex = 16;
@@ -486,7 +485,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(276, 0);
+            this.button1.Location = new System.Drawing.Point(284, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(36, 29);
             this.button1.TabIndex = 17;
@@ -496,6 +495,7 @@
             // 
             // fpSubTask
             // 
+            this.fpSubTask.AutoScroll = true;
             this.fpSubTask.Dock = System.Windows.Forms.DockStyle.Top;
             this.fpSubTask.Location = new System.Drawing.Point(0, 199);
             this.fpSubTask.Name = "fpSubTask";
@@ -554,7 +554,7 @@
         private System.Windows.Forms.Panel pnlTaskName;
         private System.Windows.Forms.Panel pnlButton;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSave;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancel;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnUndo;
         public System.Windows.Forms.TextBox tbTaskName;
         public Bunifu.Framework.UI.BunifuCheckbox cbIsDone;
         private System.Windows.Forms.Panel panel5;

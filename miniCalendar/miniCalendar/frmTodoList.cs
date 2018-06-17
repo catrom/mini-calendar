@@ -30,17 +30,11 @@ namespace miniCalendar
             tbAddTask.Text = "Add a to-do...";
             _todoList = todoList;
 
-            foreach (var i in _todoList)
-            {
-                Console.WriteLine(i.Key.ToString() + "  " + i.Value.ID.ToString());
-            }
-
             showTaskList();
-            _id = getID();
-
-            
+            _id = getID();      
         }
 
+        // clear tasklist trước rồi mới vẽ lại 
         private void clearTaskList()
         {
             for (int i = fpTaskList.Controls.Count - 1; i >= 0; i--)
@@ -52,6 +46,7 @@ namespace miniCalendar
             }
         }
 
+        // vẽ list các task
         public void showTaskList()
         {
             clearTaskList();
@@ -88,9 +83,9 @@ namespace miniCalendar
                     fpTaskList.Controls.Add(aTask);
                 }
             }
-            //fpTaskList.Controls.Clear();
         }
 
+        // lấy giá trị cho ID
         private int getID()
         {
             for (int i = 1; ; i++)
@@ -102,6 +97,7 @@ namespace miniCalendar
             }
         }
 
+        // đổi màu chữ khi click chuột vào textbox
         private void tbAddTask_Enter(object sender, EventArgs e)
         {
             if (tbAddTask.Text == "Add a to-do...")
@@ -109,6 +105,8 @@ namespace miniCalendar
                 tbAddTask.ForeColor = Color.Black;
             }
         }
+
+        // xét sự kiện nhấn phím
         private void tbAddTask_KeyDown(object sender, KeyEventArgs e)
         {
             _id = getID();
@@ -149,17 +147,7 @@ namespace miniCalendar
             }
         }
 
-        private void clearpnlTaskDetail()
-        {
-            for (int i = pnlTaskDetail.Controls.Count - 1; i >= 0; i--)
-            {
-                if (pnlTaskDetail.Controls[i] is frmTaskDetail)
-                {
-                    pnlTaskDetail.Controls.RemoveAt(i);
-                }
-            }
-        }
-
+        // click vào task sẽ show taskdetail
         private void btnTask_Click(object sender, EventArgs e)
         {
             clearpnlTaskDetail();
@@ -170,6 +158,7 @@ namespace miniCalendar
             _id = idpick;
             frmTaskDetail fa = new frmTaskDetail(_id, _todoList, false);
             fa.Disposed += new EventHandler(dispose_event);
+            fa.pictureBox4.Click += new EventHandler(closeTaskDetail);
 
             fa.checkRed.BackColor = Color.FromArgb(217, 84, 79);
             fa.checkRed.ChechedOffColor = Color.FromArgb(217, 84, 79);
@@ -187,38 +176,11 @@ namespace miniCalendar
             fa.BringToFront();
         }
 
-        public bool moreImportant(string a, string b)
-        {
-            if (a == "Red")
-                return true;
-            else if(a == "Yellow")
-            {
-                if (b == "Red" || b == "Yellow")
-                    return false;
-                else return true;
-            }
-            else if(a == "Green")
-            {
-                if (b == "Green" || b == "Gray")
-                    return true;
-                else
-                    return false;
-            }
-            else
-                return false;
-        }
+        #region Dispose_event
         public void dispose_event(object sender, EventArgs e)
         {
             fpTaskList.Controls.Clear();
             showTaskList();
-
-            //frmTaskDetail fa = new frmTaskDetail(_id, _todoList, false);
-            //fa.Disposed += new EventHandler(dispose_event);
-            //fa.pictureBox4.Click += new EventHandler(close_event);
-
-            //pnlTaskDetail.Controls.Add(fa);
-            //fa.Dock = DockStyle.Fill;
-            //fa.BringToFront();
         }
 
         public void frmTaskDetailDispose(object sender, EventArgs e)
@@ -236,5 +198,25 @@ namespace miniCalendar
         {
             clearpnlTaskDetail();
         }
+        #endregion
+
+        // clear panel taskdetail trước khi vẽ lại
+        private void clearpnlTaskDetail()
+        {
+            for (int i = pnlTaskDetail.Controls.Count - 1; i >= 0; i--)
+            {
+                if (pnlTaskDetail.Controls[i] is frmTaskDetail)
+                {
+                    pnlTaskDetail.Controls.RemoveAt(i);
+                }
+            }
+        }
+
+        // đóng panel TaskDetail
+        private void closeTaskDetail(object sender, EventArgs e)
+        {
+            clearpnlTaskDetail();
+        }
+
     }
 }
