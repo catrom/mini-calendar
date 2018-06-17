@@ -130,9 +130,13 @@
     <Compile Include="Appointment\monthItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="Task.cs" />
     <Compile Include="TodoList.cs" />
     <EmbeddedResource Include="Appointment\frmAppointment.resx">
+=======
+    <EmbeddedResource Include="frmAppointment.resx">
+>>>>>>> feature/schedule
       <DependentUpon>frmAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
@@ -319,6 +323,7 @@
     <None Include="Resources\icons8_Heart_Outline_48.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\icons8_Plus_Math_32.png" />
   </ItemGroup>
   <ItemGroup>
@@ -326,6 +331,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Double_Left_48.png" />
+=======
+>>>>>>> feature/schedule
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
