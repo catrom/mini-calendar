@@ -1,48 +1,76 @@
-C:\Users\CatRom\Desktop\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe.config
-C:\Users\CatRom\Desktop\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe
-C:\Users\CatRom\Desktop\miniCalendar\miniCalendar\bin\Debug\miniCalendar.pdb
-C:\Users\CatRom\Desktop\miniCalendar\miniCalendar\bin\Debug\Bunifu_UI_v1.5.3.dll
-C:\Users\CatRom\Desktop\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Properties.Resources.resources
-C:\Users\CatRom\Desktop\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.Cache
-C:\Users\CatRom\Desktop\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
-C:\Users\CatRom\Desktop\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
-C:\Users\CatRom\Desktop\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmMain.resources
-C:\Users\CatRom\Desktop\mini-calendar-master\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe.config
-C:\Users\CatRom\Desktop\mini-calendar-master\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
-C:\Users\CatRom\Desktop\mini-calendar-master\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
-C:\Users\CatRom\Desktop\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csprojResolveAssemblyReference.cache
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe.config
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.pdb
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmMain.resources
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNewAppointment.resources
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNotifications.resources
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSchedule.resources
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSettings.resources
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTodoList.resources
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Properties.Resources.resources
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.Cache
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmViewAppointment.resources
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmAppointment.resources
-C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csprojResolveAssemblyReference.cache
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe.config
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.pdb
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csprojResolveAssemblyReference.cache
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmAppointment.resources
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmMain.resources
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNewAppointment.resources
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNotifications.resources
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSchedule.resources
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSettings.resources
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTodoList.resources
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmViewAppointment.resources
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\ToastNotifications.NotificationPopup.resources
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Properties.Resources.resources
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.cache
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.CoreCompileInputs.cache
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.CopyComplete
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
-C:\Users\lordp\Source\Repos\personal\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe.config
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.pdb
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csprojResolveAssemblyReference.cache
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmAppointment.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmMain.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNewAppointment.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNotifications.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSchedule.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSettings.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTask.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTaskDetail.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTodoList.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmViewAppointment.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Properties.Resources.resources
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.Cache
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
+C:\Users\Tung\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSubTask.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe.config
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.pdb
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csprojResolveAssemblyReference.cache
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmAppointment.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmMain.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNewAppointment.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNotifications.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSchedule.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSettings.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSubTask.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTask.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTaskDetail.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTodoList.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmViewAppointment.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Properties.Resources.resources
+C:\Users\CatRom\Downloads\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.Cache
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe.config
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.pdb
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csprojResolveAssemblyReference.cache
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmAppointment.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmMain.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNewAppointment.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNotifications.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSchedule.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSettings.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSubTask.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTask.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTaskDetail.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTodoList.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmViewAppointment.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Properties.Resources.resources
+C:\Users\Tung\Documents\Visual Studio 2015\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.Cache
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe.config
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csprojResolveAssemblyReference.cache
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmAppointment.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmMain.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNewAppointment.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNotifications.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSchedule.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSettings.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSubTask.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTask.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTaskDetail.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTodoList.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmViewAppointment.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Properties.Resources.resources
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.Cache
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe
+C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.pdb
