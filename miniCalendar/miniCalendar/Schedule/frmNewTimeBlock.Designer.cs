@@ -112,6 +112,7 @@
             this.tbTitle.Text = "Enter Title";
             this.tbTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbTitle.Enter += new System.EventHandler(this.tbTitle_Enter);
+            this.tbTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTitle_KeyPress);
             this.tbTitle.Leave += new System.EventHandler(this.tbTitle_Leave);
             // 
             // pnlDayTime
@@ -625,6 +626,8 @@
             this.tbDescription.Size = new System.Drawing.Size(786, 111);
             this.tbDescription.TabIndex = 7;
             this.tbDescription.Text = "Add descriptions";
+            this.tbDescription.Enter += new System.EventHandler(this.tbDescription_Enter);
+            this.tbDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDescription_KeyPress);
             this.tbDescription.Leave += new System.EventHandler(this.tbDescription_Leave);
             // 
             // pbDescription

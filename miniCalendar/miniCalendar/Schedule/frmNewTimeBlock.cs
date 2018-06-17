@@ -12,7 +12,6 @@ namespace miniCalendar.Schedule
 {
     public partial class frmNewTimeBlock : UserControl
     {
-        ScheduleDataTable dataTable = new ScheduleDataTable();
         public TimeTable timeTable = new TimeTable();
         public TimeBlock timeBlock = new TimeBlock();
         public TimeBlock result = new TimeBlock();
@@ -32,10 +31,9 @@ namespace miniCalendar.Schedule
             InitializeComponent();
         }
 
-        public frmNewTimeBlock(ScheduleDataTable dataTable, TimeTable timeTable, TimeBlock timeBlock, bool isModified)
+        public frmNewTimeBlock(TimeTable timeTable, TimeBlock timeBlock, bool isModified)
         {
             InitializeComponent();
-            this.dataTable = dataTable;
             this.timeTable = timeTable;
             this.isModified = isModified;
 
@@ -194,8 +192,12 @@ namespace miniCalendar.Schedule
                 tbTitle.ForeColor = Color.White;
             }
         }
+        
+        private void tbDescription_Enter(object sender, EventArgs e)
+        {
 
-
+        }
+        
         private void tbDescription_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (tbDescription.Text == "Add descriptions")
@@ -257,7 +259,7 @@ namespace miniCalendar.Schedule
 
             try
             {
-                result = new TimeTable(title, enableWeekday, startTime, endTime, null);
+                result = new TimeBlock(title, weekday, startTime, endTime, color, notiValue, description);
             }
             catch (Exception ex)
             {
@@ -268,17 +270,21 @@ namespace miniCalendar.Schedule
             {
                 if (isModified)
                 {
-                    foreach (var item in timeTable.TimeBlocks)
-                        if (result.isTimeBlockValid(item))
-                            result.Add(item);
-                    dataTable.Remove(timeTable);
-                    dataTable.Add(result);
+                    try
+                    {
+                        timeTable.Remove(timeBlock);
+                        timeTable.Add(result);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 else
                 {
                     try
                     {
-                        dataTable.Add(result);
+                        timeTable.Add(result);
                     }
                     catch (Exception ex)
                     {

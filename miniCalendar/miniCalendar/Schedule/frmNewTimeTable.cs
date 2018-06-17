@@ -26,7 +26,7 @@ namespace miniCalendar.Schedule
         {
             InitializeComponent();
         }
-        
+
         public frmNewTimeTable(ScheduleDataTable dataTable, TimeTable timeTable, bool isModified)
         {
             InitializeComponent();
@@ -112,7 +112,7 @@ namespace miniCalendar.Schedule
                 return;
             }
 
-                if (tbTitle.Text == "Enter Title" || tbTitle.Text == "")
+            if (tbTitle.Text == "Enter Title" || tbTitle.Text == "")
             {
                 title = "";
             }
@@ -121,10 +121,7 @@ namespace miniCalendar.Schedule
                 title = tbTitle.Text;
             }
 
-            
-                
-
-            startTime = new DateTime(1, 1, 1, cbStartHour.SelectedIndex , cbStartMin.SelectedIndex * 5, 0);
+            startTime = new DateTime(1, 1, 1, cbStartHour.SelectedIndex, cbStartMin.SelectedIndex * 5, 0);
             if (cbEndHour.SelectedIndex == 24)
             {
                 endTime = new DateTime(1, 1, 1, 23, 55, 0);
@@ -180,7 +177,7 @@ namespace miniCalendar.Schedule
             {
                 result = new TimeTable(title, enableWeekday, startTime, endTime, null);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -214,6 +211,7 @@ namespace miniCalendar.Schedule
         {
             Dispose();
         }
+
 
         private void tbTitle_Enter(object sender, EventArgs e)
         {

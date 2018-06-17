@@ -15,6 +15,7 @@ namespace miniCalendar
     {
         ScheduleDataTable dataTable = new ScheduleDataTable();
         TimeTable selectedTimeTable;
+        TimeBlock selectedTimeBlock;
 
         //static properties
         static float pixelPer5Min = 0;
@@ -44,8 +45,9 @@ namespace miniCalendar
                 }
                 dataTable.Add(selectedTimeTable);
             }
-            
+
             drpTimeTableUpdate();
+
         }
 
         public static void InitParameter(TimeTable timeTable)
@@ -377,7 +379,6 @@ namespace miniCalendar
                 timeBlock.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 timeBlock.ForeColor = System.Drawing.Color.White;
                 timeBlock.Click += btnTimeBlock_Click;
-
                 currentPanel.Controls.Add(timeBlock);
                 timeBlock.Visible = true;
                 timeBlock.BringToFront();
@@ -439,6 +440,7 @@ namespace miniCalendar
 
         private void drpTimeTable_onItemSelected(object sender, EventArgs e)
         {
+
             foreach (var item in dataTable.timeTables)
                 if (drpTimeTable.selectedValue == item.Title)
                 {
@@ -446,8 +448,15 @@ namespace miniCalendar
                     break;
                 }
 
-            tlpWeekDayDisplayArea.Visible = false;
+            this.tlpWeekDayDisplayArea.Visible = false;
 
+            updateTable();
+            
+            this.tlpWeekDayDisplayArea.Visible = true;
+        }
+
+        public void updateTable()
+        {
             clearTimeBlock();
             clearWeekdayTable();
             clearBaseTable();
@@ -457,8 +466,6 @@ namespace miniCalendar
             drawBaseTable(selectedTimeTable);
             drawWeekdayTable(selectedTimeTable);
             drawTimeBlock(selectedTimeTable);
-
-            tlpWeekDayDisplayArea.Visible = true;
         }
 
         private void ibtnAddTimeTable_Click(object sender, EventArgs e)
@@ -485,8 +492,10 @@ namespace miniCalendar
 
         private void btnAddTimeBlock_Click(object sender, EventArgs e)
         {
-            Schedule.frmNewTimeBlock form = new Schedule.frmNewTimeBlock();
+            Schedule.frmNewTimeBlock form = new Schedule.frmNewTimeBlock(selectedTimeTable, selectedTimeBlock, false);
+            form.Disposed += new EventHandler(dispose_event);
             this.Controls.Add(form);
+
             this.pnlTimeBlockOption.Visible = false;
             this.pnlTimeTableSelection.Visible = false;
             this.tlpWeekDayDisplayArea.Visible = false;
@@ -495,8 +504,15 @@ namespace miniCalendar
         public void btnTimeBlock_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            frmViewTimeBlock form = new frmViewTimeBlock();
+            foreach(var item in selectedTimeTable.TimeBlocks)
+            {
+                if (btn.Text == item.SubjectTitle)
+                    selectedTimeBlock = item;
+            }
+
+            frmViewTimeBlock form = new frmViewTimeBlock(selectedTimeTable, selectedTimeBlock);
             this.Controls.Add(form);
+            form.Disposed += new EventHandler(dispose_event);
 
             pnlTimeTableSelection.Visible = false;
             pnlTimeBlockOption.Visible = false;

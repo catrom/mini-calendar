@@ -48,13 +48,13 @@
             this.pnlTimeBlockOption = new System.Windows.Forms.Panel();
             this.btnAddTimeBlock = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnlTimeTableSelection = new System.Windows.Forms.Panel();
-            this.ibtnViewTimeTable = new Bunifu.Framework.UI.BunifuImageButton();
             this.ibtnAddTimeTable = new Bunifu.Framework.UI.BunifuImageButton();
+            this.ibtnViewTimeTable = new Bunifu.Framework.UI.BunifuImageButton();
             this.tlpWeekDayDisplayArea.SuspendLayout();
             this.pnlTimeBlockOption.SuspendLayout();
             this.pnlTimeTableSelection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnViewTimeTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnAddTimeTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ibtnViewTimeTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpWeekDayDisplayArea
@@ -460,20 +460,6 @@
             this.pnlTimeTableSelection.Size = new System.Drawing.Size(891, 50);
             this.pnlTimeTableSelection.TabIndex = 2;
             // 
-            // ibtnViewTimeTable
-            // 
-            this.ibtnViewTimeTable.BackColor = System.Drawing.Color.Silver;
-            this.ibtnViewTimeTable.Image = global::miniCalendar.Properties.Resources.edit_3_64;
-            this.ibtnViewTimeTable.ImageActive = null;
-            this.ibtnViewTimeTable.Location = new System.Drawing.Point(845, 4);
-            this.ibtnViewTimeTable.Name = "ibtnViewTimeTable";
-            this.ibtnViewTimeTable.Size = new System.Drawing.Size(43, 43);
-            this.ibtnViewTimeTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ibtnViewTimeTable.TabIndex = 1;
-            this.ibtnViewTimeTable.TabStop = false;
-            this.ibtnViewTimeTable.Zoom = 10;
-            this.ibtnViewTimeTable.Click += new System.EventHandler(this.ibtnViewTimeTable_Click);
-            // 
             // ibtnAddTimeTable
             // 
             this.ibtnAddTimeTable.BackColor = System.Drawing.Color.Silver;
@@ -487,6 +473,20 @@
             this.ibtnAddTimeTable.TabStop = false;
             this.ibtnAddTimeTable.Zoom = 10;
             this.ibtnAddTimeTable.Click += new System.EventHandler(this.ibtnAddTimeTable_Click);
+            // 
+            // ibtnViewTimeTable
+            // 
+            this.ibtnViewTimeTable.BackColor = System.Drawing.Color.Silver;
+            this.ibtnViewTimeTable.Image = global::miniCalendar.Properties.Resources.edit_3_64;
+            this.ibtnViewTimeTable.ImageActive = null;
+            this.ibtnViewTimeTable.Location = new System.Drawing.Point(845, 4);
+            this.ibtnViewTimeTable.Name = "ibtnViewTimeTable";
+            this.ibtnViewTimeTable.Size = new System.Drawing.Size(43, 43);
+            this.ibtnViewTimeTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ibtnViewTimeTable.TabIndex = 1;
+            this.ibtnViewTimeTable.TabStop = false;
+            this.ibtnViewTimeTable.Zoom = 10;
+            this.ibtnViewTimeTable.Click += new System.EventHandler(this.ibtnViewTimeTable_Click);
             // 
             // frmSchedule
             // 
@@ -503,8 +503,8 @@
             this.tlpWeekDayDisplayArea.PerformLayout();
             this.pnlTimeBlockOption.ResumeLayout(false);
             this.pnlTimeTableSelection.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ibtnViewTimeTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnAddTimeTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ibtnViewTimeTable)).EndInit();
             this.ResumeLayout(false);
 
         }
