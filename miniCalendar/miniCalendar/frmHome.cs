@@ -127,32 +127,12 @@ namespace miniCalendar
 
         private void CheckNotifications()
         {
-            bool check;
             for (int i = 1; i <= dataTable.dataTable.Count; i++)
-            {
-                DateTime notiTime = new DateTime();
-                switch (dataTable[i].notiUnit)
-                {
-                    case "minutes":
-                        {
-                            notiTime = dataTable.dataTable[i].startHour.AddMinutes(-(dataTable[i].notiValue));
-                            break;
-                        }
-                    case "hours":
-                        {
-                            notiTime = dataTable.dataTable[i].startHour.AddHours(-(dataTable[i].notiValue));
-                            break;
-                        }
-                    case "days":
-                        {
-                            notiTime = dataTable.dataTable[i].startHour.AddDays(-(dataTable[i].notiValue));
-                            break;
-                        }
-                }
-                if (notiTime.Year == DateTime.Now.Year && notiTime.Month == DateTime.Now.Month && 
-                                                          notiTime.Day == DateTime.Now.Day &&
-                                                          notiTime.Hour == DateTime.Now.Hour &&
-                                                          notiTime.Minute == DateTime.Now.Minute)
+            {           
+                if (dataTable[i].NotiTime().Year == DateTime.Now.Year && dataTable[i].NotiTime().Month == DateTime.Now.Month &&
+                                                          dataTable[i].NotiTime().Day == DateTime.Now.Day &&
+                                                          dataTable[i].NotiTime().Hour == DateTime.Now.Hour &&
+                                                          dataTable[i].NotiTime().Minute == DateTime.Now.Minute)
                 {
                     notifications.Add(new Notification(dataTable[i]));
                     notifications[notifications.Count - 1].DisplayNotification();
@@ -175,10 +155,5 @@ namespace miniCalendar
             }
         }
         #endregion //Notification Handling
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            button1.Text = notifications.Count.ToString();
-        }
     }
 }

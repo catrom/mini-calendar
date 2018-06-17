@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
-            BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
-=======
             BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
->>>>>>> upstream/master
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.ibtnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
@@ -52,7 +48,7 @@
             this.menuTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibtnExit)).BeginInit();
@@ -127,7 +123,6 @@
             // 
             this.menuPanel.BackColor = System.Drawing.Color.White;
             this.menuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.menuPanel.Controls.Add(this.button1);
             this.menuPanel.Controls.Add(this.menuSlide);
             this.menuPanel.Controls.Add(this.btnNotifications);
             this.menuPanel.Controls.Add(this.btnSettings);
@@ -376,24 +371,6 @@
             // 
             this.menuTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.menuTransition.Cursor = null;
-<<<<<<< HEAD
-            animation6.AnimateOnlyDifferences = true;
-            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
-            animation6.LeafCoeff = 0F;
-            animation6.MaxTime = 1F;
-            animation6.MinTime = 0F;
-            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
-            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
-            animation6.MosaicSize = 1;
-            animation6.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation6.RotateCoeff = 0F;
-            animation6.RotateLimit = 0F;
-            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
-            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
-            animation6.TimeCoeff = 2F;
-            animation6.TransparencyCoeff = 0F;
-            this.menuTransition.DefaultAnimation = animation6;
-=======
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
             animation1.LeafCoeff = 0F;
@@ -410,7 +387,6 @@
             animation1.TimeCoeff = 2F;
             animation1.TransparencyCoeff = 0F;
             this.menuTransition.DefaultAnimation = animation1;
->>>>>>> upstream/master
             this.menuTransition.MaxAnimationTime = 2000;
             // 
             // timer1
@@ -418,16 +394,11 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button1
+            // notifyIcon
             // 
-            this.menuTransition.SetDecoration(this.button1, BunifuAnimatorNS.DecorationType.None);
-            this.button1.Location = new System.Drawing.Point(-10, 418);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(224, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "notifyIcon1";
+            this.notifyIcon.Visible = true;
             // 
             // frmMain
             // 
@@ -473,7 +444,7 @@
         private BunifuAnimatorNS.BunifuTransition menuTransition;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 
