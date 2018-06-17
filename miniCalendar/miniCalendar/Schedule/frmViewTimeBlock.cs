@@ -105,6 +105,7 @@ namespace miniCalendar.Schedule
         private void dispose_event(object sender, EventArgs e)
         {
             Dispose();
+            BringToFront();
         }
     }
 }

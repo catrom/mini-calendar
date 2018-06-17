@@ -7,8 +7,15 @@ using System.Xml.Serialization;
 
 namespace miniCalendar.Schedule
 {
+    /// <summary>
+    /// Lớp lưu trữ khung giờ làm việc,
+    /// Một TimeBlock chứa thông tin về khung giờ làm việc như
+    /// Tên công việc, thứ trong tuần, thời gian bắt đầu, thời gian kết thúc, màu, thời gian thông báo, ghi chú mô tả
+    /// </summary>
     public class TimeBlock
     {
+        #region Trường và Thuộc tính
+
         [XmlAttribute]
         string subjectTitle;
         [XmlAttribute]
@@ -24,6 +31,9 @@ namespace miniCalendar.Schedule
         [XmlAttribute]
         string description;
 
+        /// <summary>
+        /// Tên khung giờ làm việc - thuộc tính khóa
+        /// </summary>
         public string SubjectTitle
         {
             get
@@ -38,6 +48,9 @@ namespace miniCalendar.Schedule
             }
         }
 
+        /// <summary>
+        /// Thứ trong tuần của khung giờ làm việc
+        /// </summary>
         public int WeekDay
         {
             get
@@ -51,6 +64,9 @@ namespace miniCalendar.Schedule
             }
         }
 
+        /// <summary>
+        /// Thời gian bắt đầu khung giờ làm việc
+        /// </summary>
         public DateTime StartTime
         {
             get
@@ -63,6 +79,9 @@ namespace miniCalendar.Schedule
             }
         }
 
+        /// <summary>
+        /// Thời gian kết thúc khung giờ làm việc
+        /// </summary>
         public DateTime EndTime
         {
             get
@@ -75,6 +94,9 @@ namespace miniCalendar.Schedule
             }
         }
 
+        /// <summary>
+        /// Màu khung giờ làm việc
+        /// </summary>
         public string Color
         {
             get
@@ -87,6 +109,9 @@ namespace miniCalendar.Schedule
             }
         }
 
+        /// <summary>
+        /// Thời gian thông báo trước khung giờ
+        /// </summary>
         public int NotiValue
         {
             get
@@ -100,6 +125,9 @@ namespace miniCalendar.Schedule
             }
         }
 
+        /// <summary>
+        /// Ghi chú mô tả khung giờ làm việc
+        /// </summary>
         public string Description
         {
             get
@@ -111,9 +139,21 @@ namespace miniCalendar.Schedule
                 description = value;
             }
         }
+        #endregion
 
+        #region Hàm dựng
         public TimeBlock() { }
 
+        /// <summary>
+        /// Hàm dựng và khởi tạo khung giờ làm việc
+        /// </summary>
+        /// <param name="subjectTitle">Tên khung giờ</param>
+        /// <param name="weekDay">Thứ trong tuần</param>
+        /// <param name="startTime">Thời gian bắt đầu</param>
+        /// <param name="endTime">Thời gian kết thúc</param>
+        /// <param name="color">Màu</param>
+        /// <param name="notiValue">Thời gian thông báo trước</param>
+        /// <param name="description">Ghi chú mô tả</param>
         public TimeBlock(string subjectTitle, int weekDay, DateTime startTime, DateTime endTime, string color, int notiValue, string description)
         {
             if (subjectTitle == "")
@@ -136,7 +176,13 @@ namespace miniCalendar.Schedule
                 Helper.toDefaultDay(ref this.endTime);
             }
         }
-        
+        #endregion
+
+        #region Hàm chức năng
+        /// <summary>
+        /// Hàm chuyển đỗi giữa thuộc tính Weekday của lớp và DayOfWeek của DateTime
+        /// </summary>
+        /// <returns>DayOfWeek</returns>
         public DayOfWeek GetDayOfWeek()
         {
             switch(weekDay)
@@ -158,5 +204,6 @@ namespace miniCalendar.Schedule
             }
             return DayOfWeek.Monday;
         }
+        #endregion
     }
 }

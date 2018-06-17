@@ -74,3 +74,31 @@ C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\m
 C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.Cache
 C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe
 C:\Users\Tung\Documents\Visual Studio 2015\Projects\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.pdb
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\bin\Debug\Resources\icons8_Planner_32.png
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\bin\Debug\Resources\icons8_Schedule_32.png
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\bin\Debug\Resources\icons8_Todo_List_32.png
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe.config
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.exe
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\bin\Debug\miniCalendar.pdb
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csprojResolveAssemblyReference.cache
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmAppointment.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmMain.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNewAppointment.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmNotifications.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Schedule.frmNewTimeBlock.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Schedule.frmNewTimeTable.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSchedule.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmSubTask.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTask.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTaskDetail.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmTodoList.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.frmViewAppointment.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\ToastNotifications.NotificationPopup.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Properties.Resources.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Schedule.frmViewTimeBlock.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.Schedule.frmViewTimeTable.resources
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.GenerateResource.cache
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.CoreCompileInputs.cache
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.csproj.CopyComplete
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.exe
+D:\WIP\DoAn_LapTrinhTrucQuan\mini-calendar\miniCalendar\miniCalendar\obj\Debug\miniCalendar.pdb

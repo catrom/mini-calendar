@@ -50,15 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAnimator.cs" />
-    <Compile Include="NativeMethods.cs" />
-    <Compile Include="NotificationPopup.cs">
+    <Compile Include="Notification\FormAnimator.cs" />
+    <Compile Include="Notification\NativeMethods.cs" />
+    <Compile Include="Notification\NotificationPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NotificationPopup.Designer.cs">
+    <Compile Include="Notification\NotificationPopup.Designer.cs">
       <DependentUpon>NotificationPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notification.cs" />
+    <Compile Include="Notification\Notification.cs" />
     <Compile Include="Appointment\Appointment.cs" />
     <Compile Include="Appointment\DataTable.cs" />
     <Compile Include="Appointment\frmAppointment.cs">
@@ -79,11 +79,16 @@
     <Compile Include="Appointment\frmNewAppointment.Designer.cs">
       <DependentUpon>frmNewAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNotifications.cs">
+    <Compile Include="Notification\frmNotifications.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmNotifications.Designer.cs">
+    <Compile Include="Notification\frmNotifications.Designer.cs">
       <DependentUpon>frmNotifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Schedule\ScheduleDataTable.cs" />
     <Compile Include="Schedule\frmNewTimeBlock.cs">
@@ -104,34 +109,28 @@
     <Compile Include="Schedule\frmSchedule.Designer.cs">
       <DependentUpon>frmSchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSettings.cs">
+    <Compile Include="TodoList\frmSubTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmSettings.Designer.cs">
-      <DependentUpon>frmSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSubTask.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="frmSubTask.Designer.cs">
+    <Compile Include="TodoList\frmSubTask.Designer.cs">
       <DependentUpon>frmSubTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTask.cs">
+    <Compile Include="TodoList\frmTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmTask.Designer.cs">
+    <Compile Include="TodoList\frmTask.Designer.cs">
       <DependentUpon>frmTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaskDetail.cs">
+    <Compile Include="TodoList\frmTaskDetail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmTaskDetail.Designer.cs">
+    <Compile Include="TodoList\frmTaskDetail.Designer.cs">
       <DependentUpon>frmTaskDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTodoList.cs">
+    <Compile Include="TodoList\frmTodoList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmTodoList.Designer.cs">
+    <Compile Include="TodoList\frmTodoList.Designer.cs">
       <DependentUpon>frmTodoList.cs</DependentUpon>
     </Compile>
     <Compile Include="Appointment\frmViewAppointment.cs">
@@ -143,8 +142,8 @@
     <Compile Include="Appointment\monthItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task.cs" />
-    <Compile Include="TodoList.cs" />
+    <Compile Include="TodoList\Task.cs" />
+    <Compile Include="TodoList\TodoList.cs" />
     <EmbeddedResource Include="Appointment\frmAppointment.resx">
       <DependentUpon>frmAppointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,7 +169,7 @@
     <EmbeddedResource Include="Appointment\frmNewAppointment.resx">
       <DependentUpon>frmNewAppointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNotifications.resx">
+    <EmbeddedResource Include="Notification\frmNotifications.resx">
       <DependentUpon>frmNotifications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Schedule\frmNewTimeBlock.resx">
@@ -182,37 +181,29 @@
     <EmbeddedResource Include="Schedule\frmSchedule.resx">
       <DependentUpon>frmSchedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSettings.resx">
-      <DependentUpon>frmSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSubTask.resx">
+    <EmbeddedResource Include="TodoList\frmSubTask.resx">
       <DependentUpon>frmSubTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTask.resx">
+    <EmbeddedResource Include="TodoList\frmTask.resx">
       <DependentUpon>frmTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTaskDetail.resx">
+    <EmbeddedResource Include="TodoList\frmTaskDetail.resx">
       <DependentUpon>frmTaskDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTodoList.resx">
+    <EmbeddedResource Include="TodoList\frmTodoList.resx">
       <DependentUpon>frmTodoList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Appointment\frmViewAppointment.resx">
       <DependentUpon>frmViewAppointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotificationPopup.resx">
+    <EmbeddedResource Include="Notification\NotificationPopup.resx">
       <DependentUpon>NotificationPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Schedule\frmViewTimeBlock.resx">
       <DependentUpon>frmViewTimeBlock.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,7 +365,7 @@
     <None Include="Resources\icon_edit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\edit-3-64.png" />
+    <None Include="Resources\edit_3_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

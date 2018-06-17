@@ -35,6 +35,7 @@ namespace miniCalendar.Schedule
         {
             InitializeComponent();
             this.timeTable = timeTable;
+            this.timeBlock = timeBlock;
             this.isModified = isModified;
 
             if (!isModified)
@@ -54,6 +55,7 @@ namespace miniCalendar.Schedule
             else
             {
                 tbTitle.Text = timeBlock.SubjectTitle;
+                pnlTitle.BackColor = Helper.ColorPicker(timeBlock.Color);
 
                 cbWeekday.SelectedIndex = timeBlock.WeekDay;
 

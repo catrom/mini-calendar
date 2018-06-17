@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace miniCalendar
 {
@@ -15,6 +16,13 @@ namespace miniCalendar
         [STAThread]
         static void Main()
         {
+            //Tạo thư mục mặc định chứa dữ liệu
+            Directory.CreateDirectory("Data/Appointment");
+            Directory.CreateDirectory("Data/Schedule");
+            Directory.CreateDirectory("Data/ToDoList/Stt");
+            Directory.CreateDirectory("Data/ToDoList/Sub");
+            
+            //Lấy dữ liệu
             DataTable dataTable = new DataTable();
             dataTable.Deserialize();
 

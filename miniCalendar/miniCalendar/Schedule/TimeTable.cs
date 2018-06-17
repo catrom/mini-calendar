@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace miniCalendar.Schedule
 {
+    /// <summary>
+    /// Lớp lưu trữ bảng thời khóa biểu,
+    /// Một TimeTable chứa thông tin về thời khóa biểu như
+    /// Tên, ngày có hiệu lực, khung thời gian, danh sách các TimeBlock.
+    /// </summary>
     public class TimeTable
     {
+        #region Trường và Thuộc tính
         [XmlAttribute]
         string title;
         [XmlArray]
@@ -21,6 +27,9 @@ namespace miniCalendar.Schedule
         [XmlArray]
         List<TimeBlock> timeBlocks;
 
+        /// <summary>
+        /// Tên bảng thời khóa biểu - thuộc tính khóa
+        /// </summary>
         public string Title
         {
             get
@@ -34,6 +43,9 @@ namespace miniCalendar.Schedule
             }
         }
 
+        /// <summary>
+        /// Mảng lưu ngày có hiệu lực trong tuần
+        /// </summary>
         public bool[] EnableWeekDay
         {
             get
@@ -46,6 +58,9 @@ namespace miniCalendar.Schedule
             }
         }
 
+        /// <summary>
+        /// Thời gian bắt đầu trong ngày
+        /// </summary>
         public DateTime StartTime
         {
             get
@@ -58,6 +73,9 @@ namespace miniCalendar.Schedule
             }
         }
 
+        /// <summary>
+        /// Thời gian kết thúc trong ngày
+        /// </summary>
         public DateTime EndTime
         {
             get
@@ -70,6 +88,9 @@ namespace miniCalendar.Schedule
             }
         }
 
+        /// <summary>
+        /// Danh sách các khung giờ làm việc
+        /// </summary>
         public List<TimeBlock> TimeBlocks
         {
             get
@@ -81,9 +102,20 @@ namespace miniCalendar.Schedule
                 timeBlocks = value;
             }
         }
+        #endregion
+
+        #region Hàm dựng
 
         public TimeTable() { }
 
+        /// <summary>
+        /// Hàm dựng và khởi tạo bảng thời khóa biểu
+        /// </summary>
+        /// <param name="title">Tên bảng thời khóa biểu</param>
+        /// <param name="enableWeekDay">Mảng ngày có hiệu lực</param>
+        /// <param name="startTime">Thời gian bắt đầu</param>
+        /// <param name="endTime">Thời gian kết thúc</param>
+        /// <param name="timeBlocks">Danh sách khung giờ làm việc</param>
         public TimeTable(string title, bool[] enableWeekDay, DateTime startTime, DateTime endTime, List<TimeBlock> timeBlocks)
         {
             if (title == "")
@@ -115,6 +147,13 @@ namespace miniCalendar.Schedule
             }
         }
 
+        #endregion
+
+        #region Hàm chức năng
+        /// <summary>
+        /// Hàm thêm khung giờ làm việc (có kiểm tra)
+        /// </summary>
+        /// <param name="timeBlock">Khung giờ làm việc</param>
         public void Add(TimeBlock timeBlock)
         {
             if (isTimeBlockValid(timeBlock))
@@ -138,6 +177,22 @@ namespace miniCalendar.Schedule
             else throw new Exception("TimeBlock invalid");
         }
 
+        /// <summary>
+        /// Hàm xóa khung giờ làm việc
+        /// </summary>
+        /// <param name="timeBlock">Khung giờ làm việc</param>
+        public void Remove(TimeBlock timeBlock)
+        {
+            timeBlocks.Remove(timeBlock);
+        }
+
+        /// <summary>
+        /// Hàm kiểm tra khung giờ làm việc hợp lệ
+        /// Không lấn giờ bắt đầu và giờ kết thúc
+        /// Không thuộc ngày không có hiệu lực
+        /// </summary>
+        /// <param name="timeBlock">Khung giờ làm việc</param>
+        /// <returns></returns>
         public bool isTimeBlockValid(TimeBlock timeBlock)
         {
             //Check time
@@ -156,6 +211,12 @@ namespace miniCalendar.Schedule
             return true;
         }
 
+        /// <summary>
+        /// Hàm kiểm tra khung giờ làm việc không chồng lấn
+        /// </summary>
+        /// <param name="a">Khung giờ làm việc 1</param>
+        /// <param name="b">Khung giờ làm việc 2</param>
+        /// <returns></returns>
         public bool isOverlapped(TimeBlock a, TimeBlock b)
         {
             if ((a.StartTime.Hour < b.StartTime.Hour)
@@ -182,11 +243,10 @@ namespace miniCalendar.Schedule
             return false;
         }
 
-        public void Remove(TimeBlock timeBlock)
-        {
-            timeBlocks.Remove(timeBlock);
-        }
-
+        /// <summary>
+        /// Hàm sắp xếp thứ tự khung giờ làm việc trong bảng thời khóa biểu
+        /// Chưa dùng
+        /// </summary>
         public void Sort()
         {
             List<TimeBlock> tempTimeBlocks;
@@ -194,6 +254,10 @@ namespace miniCalendar.Schedule
             TimeBlocks = tempTimeBlocks;
         }
 
+        /// <summary>
+        /// Hàm kiểm tra loại bỏ khung giờ không hợp lệ
+        /// Chưa dùng
+        /// </summary>
         public void Update()
         {
             if(timeBlocks != null)
@@ -203,5 +267,6 @@ namespace miniCalendar.Schedule
                         Remove(item);
             }
         }
+        #endregion
     }
 }

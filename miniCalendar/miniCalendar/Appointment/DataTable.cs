@@ -18,7 +18,7 @@ namespace miniCalendar
     {
         public Dictionary<int, Appointment> dataTable = new Dictionary<int, Appointment>();
         private XmlSerializer formatter = new XmlSerializer(typeof(Appointment[]), new XmlRootAttribute() { ElementName = "Tasks" });
-        private string fileName = "tasks.xml";
+        private string fileName = "Data/Appointment/tasks.xml";
 
         public DataTable() { }
 

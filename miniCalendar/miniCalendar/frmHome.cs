@@ -33,18 +33,6 @@ namespace miniCalendar
             WorkingArea.Controls.Add(form);
         }
 
-        // Testing shit //
-        //public frmMain(Schedule.ScheduleDataTable scDataTable)
-        //{
-        //    InitializeComponent();
-        //    this.scDataTable = scDataTable;
-
-        //    frmNotifications form = new frmNotifications();
-        //    form.Dock = DockStyle.Fill;
-        //    WorkingArea.Controls.Add(form);
-        //}
-        // ------------ //
-
         Bunifu.Framework.UI.Drag MoveForm = new Bunifu.Framework.UI.Drag();
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -68,7 +56,7 @@ namespace miniCalendar
             todoList.Serialize();
             scDataTable.Serialize();
             sysTrayIcon.Visible = false;
-            Environment.Exit(0);
+            Environment.Exit(exitCode: 0);
         }
         private void ibtnMinimize_Click(object sender, EventArgs e)
         {
@@ -98,7 +86,7 @@ namespace miniCalendar
 
         private void btnNotifications_Click(object sender, EventArgs e)
         {
-            frmNotifications form = new frmNotifications();
+            frmNotifications form = new frmNotifications(notifications);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
             WorkingArea.Controls.Add(form);
@@ -127,17 +115,7 @@ namespace miniCalendar
             WorkingArea.Controls.Clear();
             WorkingArea.Controls.Add(form);
         }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            clearWorkingArea();
-
-            frmSettings form = new frmSettings();
-            form.Dock = DockStyle.Fill;
-            WorkingArea.Controls.Clear();
-            WorkingArea.Controls.Add(form);
-        }
-
+        
         private void clearWorkingArea()
         {
             for (int i = WorkingArea.Controls.Count - 1; i >= 0; i--)
@@ -190,7 +168,7 @@ namespace miniCalendar
                         notiTime.Minute == DateTime.Now.Minute &&
                         DateTime.Now.Second == 0)
                     {
-                        notifications.Add(new Notification(todoList[i]));
+                        notifications.Add(new Notification(scDataTable.timeTables[i].TimeBlocks[j]));
                         notifications[notifications.Count - 1].DisplayNotification();
                         if (notifications.Count > 6)
                             notifications.RemoveAt(0);

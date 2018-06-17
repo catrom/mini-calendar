@@ -16,7 +16,7 @@ namespace miniCalendar.Schedule
         public List<TimeTable> timeTables = new List<TimeTable>();
 
         private XmlSerializer serializer = new XmlSerializer(typeof(List<TimeTable>));
-        private string fileName = "ScheduleDataTable.xml";
+        private string fileName = "Data/Schedule/Schedule.xml";
 
         public ScheduleDataTable() { }
 

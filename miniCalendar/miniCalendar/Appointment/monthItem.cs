@@ -32,7 +32,7 @@ namespace miniCalendar
 
         public void colorSerialize()
         {
-            FileStream fs = new FileStream("colorItem.xml", FileMode.Truncate);
+            FileStream fs = new FileStream("Data/Appointment/ColorItem.xml", FileMode.Truncate);
             colorSerializer.Serialize(fs, colorHistory.Select(kv => new colorItem() { key = kv.Key, value = kv.Value }).ToArray());
 
             fs.Close();
@@ -40,7 +40,7 @@ namespace miniCalendar
 
         public void symbolSerialize()
         {
-            FileStream fs = new FileStream("symbolItem.xml", FileMode.Truncate);
+            FileStream fs = new FileStream("Data/Appointment/SymbolItem.xml", FileMode.Truncate);
             symbolSerializer.Serialize(fs, symbolHistory.Select(kv => new symbolItem() { key = kv.Key, value = kv.Value }).ToArray());
 
             fs.Close();
@@ -54,7 +54,7 @@ namespace miniCalendar
 
         public void colorDeserialize()
         {
-            FileStream fs = new FileStream("colorItem.xml", FileMode.OpenOrCreate);
+            FileStream fs = new FileStream("Data/Appointment/ColorItem.xml", FileMode.OpenOrCreate);
 
             if (fs.Length == 0)
             {
@@ -70,7 +70,7 @@ namespace miniCalendar
 
         public void symbolDeserialize()
         {
-            FileStream fs = new FileStream("symbolItem.xml", FileMode.OpenOrCreate);
+            FileStream fs = new FileStream("Data/Appointment/SymbolItem.xml", FileMode.OpenOrCreate);
 
             if (fs.Length == 0)
             {

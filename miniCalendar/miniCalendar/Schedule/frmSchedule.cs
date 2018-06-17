@@ -17,7 +17,7 @@ namespace miniCalendar
         TimeTable selectedTimeTable;
         TimeBlock selectedTimeBlock;
 
-        //static properties
+        //static properties cho vẽ bảng
         static float pixelPer5Min = 0;
         static int addRow = 0;
         static int timeSpanInMinute = 0;
@@ -46,10 +46,15 @@ namespace miniCalendar
                 dataTable.Add(selectedTimeTable);
             }
 
+            tlpWeekDayDisplayArea.Visible = false;
+
             drpTimeTableUpdate();
+
+            tlpWeekDayDisplayArea.Visible = true;
 
         }
 
+        //Khởi tạo giá trị cho các biến static dựa vào TimeTable đang được chọn
         public static void InitParameter(TimeTable timeTable)
         {
             timeSpanInMinute = (int)(timeTable.EndTime.TimeOfDay.TotalMinutes - timeTable.StartTime.TimeOfDay.TotalMinutes);
@@ -86,6 +91,7 @@ namespace miniCalendar
             }
         }
 
+        //Đặt về mặc định các giá trị cho các biến static 
         public static void ClearParameter()
         {
             pixelPer5Min = 0;
@@ -96,7 +102,7 @@ namespace miniCalendar
             tail = 0;
         }
 
-
+        //Vẽ bảng nền gồm cột số, số dòng thêm vào bảng nền
         public void drawBaseTable(TimeTable timeTable)
         {
             timeDrawing = new Point(25, 40);
@@ -166,6 +172,7 @@ namespace miniCalendar
             }
         }
 
+        //Dọn dẹp bảng nền
         public void clearBaseTable()
         {
             for (int i = pnlTime.Controls.Count - 1; i >= 0; i--)
@@ -179,6 +186,7 @@ namespace miniCalendar
             tlpWeekDayDisplayArea.RowCount = 2;
         }
 
+        //Vẽ các cột thứ trong tuần (dùng để tô đen những ngày không có hiệu lực)
         public void drawWeekdayTable(TimeTable timeTable)
         {
             for (int i = 0; i < 7; i++)
@@ -259,6 +267,7 @@ namespace miniCalendar
             }
         }
 
+        //Dọn dẹp các cột bị tô đen
         public void clearWeekdayTable()
         {
             for (int i = 0; i < 7; i++)
@@ -318,6 +327,7 @@ namespace miniCalendar
             }
         }
 
+        //Vẽ các khung giờ làm việc lên bảng bằng Button (work around)
         public void drawTimeBlock(TimeTable timeTable)
         {
             float timeBlockY;
@@ -351,6 +361,7 @@ namespace miniCalendar
             }
         }
 
+        //Dọn dẹp các khung giờ làm việc
         public void clearTimeBlock()
         {
                 for (int j = Controls.Count - 1; j >= 0; j--)
@@ -362,6 +373,39 @@ namespace miniCalendar
                 }
         }
 
+        //Hàm cập nhật bảng
+        public void updateTable()
+        {
+            tlpWeekDayDisplayArea.Visible = false;
+
+            clearTimeBlock();
+            clearWeekdayTable();
+            clearBaseTable();
+            ClearParameter();
+
+            InitParameter(selectedTimeTable);
+            drawBaseTable(selectedTimeTable);
+            drawWeekdayTable(selectedTimeTable);
+            drawTimeBlock(selectedTimeTable);
+
+            tlpWeekDayDisplayArea.Visible = true;
+        }
+
+        //Hàm cập nhật dropdown chọn TimeTable
+        public void drpTimeTableUpdate()
+        {
+            drpTimeTable.Clear();
+            foreach (var item in dataTable.timeTables)
+            {
+                drpTimeTable.AddItem(item.Title);
+            }
+            if (this.drpTimeTable.selectedIndex == -1)
+                drpTimeTable.selectedIndex = 0;
+
+            drpTimeTable.selectedIndex = dataTable.timeTables.IndexOf(selectedTimeTable);
+        }
+
+        //Xử lý sự kiện chọn bảng trong dropdown
         private void drpTimeTable_onItemSelected(object sender, EventArgs e)
         {
 
@@ -372,62 +416,49 @@ namespace miniCalendar
                     break;
                 }
 
-            this.tlpWeekDayDisplayArea.Visible = false;
-
             updateTable();
-            
-            this.tlpWeekDayDisplayArea.Visible = true;
         }
-
-        public void updateTable()
-        {
-            clearTimeBlock();
-            clearWeekdayTable();
-            clearBaseTable();
-            ClearParameter();
-
-            InitParameter(selectedTimeTable);
-            drawBaseTable(selectedTimeTable);
-            drawWeekdayTable(selectedTimeTable);
-            drawTimeBlock(selectedTimeTable);
-        }
-
+        
+        //Xử lý sự kiện nút thêm bảng
         private void ibtnAddTimeTable_Click(object sender, EventArgs e)
         {
             Schedule.frmNewTimeTable form = new Schedule.frmNewTimeTable(dataTable, selectedTimeTable, false);
             form.Disposed += new EventHandler(dispose_event);
             this.Controls.Add(form);
 
+            this.tlpWeekDayDisplayArea.Visible = false;
             this.pnlTimeBlockOption.Visible = false;
             this.pnlTimeTableSelection.Visible = false;
-            this.tlpWeekDayDisplayArea.Visible = false;
             form.BringToFront();
         }
 
+        //Xử lý sự kiện nút xem thông tin bảng
         private void ibtnViewTimeTable_Click(object sender, EventArgs e)
         {
             Schedule.frmViewTimeTable form = new Schedule.frmViewTimeTable(dataTable, selectedTimeTable);
             form.Disposed += new EventHandler(dispose_event);
             this.Controls.Add(form);
 
+            this.tlpWeekDayDisplayArea.Visible = false;
             this.pnlTimeBlockOption.Visible = false;
             this.pnlTimeTableSelection.Visible = false;
-            this.tlpWeekDayDisplayArea.Visible = false;
             form.BringToFront();
         }
 
+        //Xử lý sự kiện nút thêm khung thời gian
         private void btnAddTimeBlock_Click(object sender, EventArgs e)
         {
             Schedule.frmNewTimeBlock form = new Schedule.frmNewTimeBlock(selectedTimeTable, selectedTimeBlock, false);
             form.Disposed += new EventHandler(dispose_event);
             this.Controls.Add(form);
 
+            this.tlpWeekDayDisplayArea.Visible = false;
             this.pnlTimeBlockOption.Visible = false;
             this.pnlTimeTableSelection.Visible = false;
-            this.tlpWeekDayDisplayArea.Visible = false;
             form.BringToFront();
         }
 
+        //Xử lý sự kiện nút xem thông tin khung thời gian
         public void btnTimeBlock_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -441,26 +472,19 @@ namespace miniCalendar
             this.Controls.Add(form);
             form.Disposed += new EventHandler(dispose_event);
 
-            pnlTimeTableSelection.Visible = false;
-            pnlTimeBlockOption.Visible = false;
-            tlpWeekDayDisplayArea.Visible = false;
+            this.tlpWeekDayDisplayArea.Visible = false;
+            this.pnlTimeBlockOption.Visible = false;
+            this.pnlTimeTableSelection.Visible = false;
             form.BringToFront();
         }
 
-        public void drpTimeTableUpdate()
-        {
-            drpTimeTable.Clear();
-            foreach (var item in dataTable.timeTables)
-                drpTimeTable.AddItem(item.Title);
-
-            drpTimeTable.selectedIndex = 0;
-        }
-
+        //Xử lý sự kiện thoát các form con
         private void dispose_event(object sender, EventArgs e)
         {
-            pnlTimeTableSelection.Visible = true;
-            pnlTimeBlockOption.Visible = true;
-            tlpWeekDayDisplayArea.Visible = true;
+            this.pnlTimeBlockOption.Visible = true;
+            this.pnlTimeTableSelection.Visible = true;
+            this.tlpWeekDayDisplayArea.Visible = true;
+          
 
             drpTimeTableUpdate();
         }

@@ -23,6 +23,7 @@ namespace miniCalendar
         {
             this.notifications = notifications;
             InitializeComponent();
+            DrawNotifications();
         }
 
         private void DrawNotifications()
@@ -35,31 +36,31 @@ namespace miniCalendar
             }
             if (notifications.Count() >= 2)
             {
-                pictureBox1.Image = notifications[notifications.Count - 2].image;
+                pictureBox2.Image = notifications[notifications.Count - 2].image;
                 label2.Text = notifications[notifications.Count - 2].text;
                 label8.Text = notifications[notifications.Count - 2].startTime.ToString();
             }
             if (notifications.Count() >= 3)
             {
-                pictureBox1.Image = notifications[notifications.Count - 3].image;
+                pictureBox3.Image = notifications[notifications.Count - 3].image;
                 label3.Text = notifications[notifications.Count - 3].text;
                 label9.Text = notifications[notifications.Count - 3].startTime.ToString();
             }
             if (notifications.Count() >= 4)
             {
-                pictureBox1.Image = notifications[notifications.Count - 4].image;
+                pictureBox4.Image = notifications[notifications.Count - 4].image;
                 label4.Text = notifications[notifications.Count - 4].text;
                 label10.Text = notifications[notifications.Count - 4].startTime.ToString();
             }
             if (notifications.Count() >= 5)
             {
-                pictureBox1.Image = notifications[notifications.Count - 5].image;
+                pictureBox5.Image = notifications[notifications.Count - 5].image;
                 label5.Text = notifications[notifications.Count - 5].text;
                 label11.Text = notifications[notifications.Count - 5].startTime.ToString();
             }
             if (notifications.Count() == 6)
             {
-                pictureBox1.Image = notifications[notifications.Count - 6].image;
+                pictureBox6.Image = notifications[notifications.Count - 6].image;
                 label6.Text = notifications[notifications.Count - 6].text;
                 label12.Text = notifications[notifications.Count - 6].startTime.ToString();
             }

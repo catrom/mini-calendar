@@ -14,7 +14,7 @@ namespace miniCalendar
     {
         public Dictionary<int, Task> _todoList = new Dictionary<int, Task>();
         private XmlSerializer formatter = new XmlSerializer(typeof(Task[]), new XmlRootAttribute() { ElementName = "TodoList" });
-        private string fileName = "todolist/todolist.xml";
+        private string fileName = "Data/ToDoList/ToDoList.xml";
 
         public TodoList() { }
 
@@ -53,10 +53,10 @@ namespace miniCalendar
             // tạo file cho subtask và status của subtask
             foreach (var i in _todoList)
             {
-                string fileNameSub = "todolist/sub/" + i.Key.ToString() + ".xml";
+                string fileNameSub = "Data/ToDoList/Sub/" + i.Key.ToString() + ".xml";
                 SerializeSubTask(i.Value.subTasks, fileNameSub);
 
-                string fileNameStatus = "todolist/stt/" + i.Key.ToString() + ".xml";
+                string fileNameStatus = "Data/ToDoList/Stt/" + i.Key.ToString() + ".xml";
                 SerializeSubTaskStatus(i.Value.subTaskStatus, fileNameStatus);
             }
         }
@@ -108,11 +108,11 @@ namespace miniCalendar
             foreach (var i in result)
             {
                 List<string> subTask = new List<string>();
-                string fileNameSub = "todolist/sub/" + i.ID.ToString() + ".xml";
+                string fileNameSub = "Data/ToDoList/Sub/" + i.ID.ToString() + ".xml";
                 DeserializeSubTask(ref subTask, fileNameSub);
 
                 List<int> subtaskStatus = new List<int>();
-                string fileNameStt = "todolist/stt/" + i.ID.ToString() + ".xml";
+                string fileNameStt = "Data/ToDoList/Stt/" + i.ID.ToString() + ".xml";
                 DeserializeSubTaskStatus(ref subtaskStatus, fileNameStt);
 
                 _todoList.Add(i.ID, new Task(i.ID, i.Name, i.DueDay, i.RemindTime, i.RemindDay, i.Note, i.Color, i.StartDay, subTask, subtaskStatus));
