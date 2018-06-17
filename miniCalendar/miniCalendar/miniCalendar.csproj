@@ -62,6 +62,9 @@
     <Compile Include="Notification.cs" />
     <Compile Include="DataTable.cs" />
     <Compile Include="frmAppointment.cs">
+    <Compile Include="Appointment\Appointment.cs" />
+    <Compile Include="Appointment\DataTable.cs" />
+    <Compile Include="Appointment\frmAppointment.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Appointment\frmAppointment.Designer.cs">
