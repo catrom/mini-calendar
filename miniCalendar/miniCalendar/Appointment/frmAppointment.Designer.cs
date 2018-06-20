@@ -276,7 +276,6 @@
             this.panel2.Controls.Add(this.panelColor);
             this.panel2.Controls.Add(this.panelSymbol);
             this.panel2.Controls.Add(this.btnNewAppointment);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 270);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(246, 263);
@@ -287,7 +286,7 @@
             this.panelColor.Controls.Add(this.label31);
             this.panelColor.Controls.Add(this.pictureBox5);
             this.panelColor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelColor.Location = new System.Drawing.Point(0, 60);
+            this.panelColor.Location = new System.Drawing.Point(0, 30);
             this.panelColor.Name = "panelColor";
             this.panelColor.Size = new System.Drawing.Size(244, 30);
             this.panelColor.TabIndex = 11;
@@ -329,7 +328,7 @@
             this.panelSymbol.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSymbol.Location = new System.Drawing.Point(0, 0);
             this.panelSymbol.Name = "panelSymbol";
-            this.panelSymbol.Size = new System.Drawing.Size(244, 60);
+            this.panelSymbol.Size = new System.Drawing.Size(244, 30);
             this.panelSymbol.TabIndex = 10;
             // 
             // symbol7

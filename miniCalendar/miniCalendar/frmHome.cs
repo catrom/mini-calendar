@@ -22,7 +22,12 @@ namespace miniCalendar
 
         public frmMain(DataTable dataTable, monthItem monthItem, TodoList todoList, Schedule.ScheduleDataTable scDataTable)
         {
+            SplashScreen ss = new SplashScreen();
+            ss.ShowDialog();
+
             InitializeComponent();
+            BackgroundImageLayout = ImageLayout.Stretch;
+
             this.dataTable = dataTable;
             this.myMonthCalendar = monthItem;
             this.todoList = todoList;
@@ -86,6 +91,7 @@ namespace miniCalendar
 
         private void btnNotifications_Click(object sender, EventArgs e)
         {
+            ibtnMenu.Enabled = true;
             frmNotifications form = new frmNotifications(notifications);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
@@ -94,6 +100,8 @@ namespace miniCalendar
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
+            ibtnMenu.Enabled = false;
+            menuPanel.Width = 214;
             frmSchedule form = new frmSchedule(scDataTable);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
@@ -102,6 +110,7 @@ namespace miniCalendar
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
+            ibtnMenu.Enabled = true;
             frmAppointment form = new frmAppointment(dataTable.dataTable, myMonthCalendar);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();
@@ -110,6 +119,7 @@ namespace miniCalendar
 
         private void btnTodoList_Click(object sender, EventArgs e)
         {
+            ibtnMenu.Enabled = true;
             frmTodoList form = new frmTodoList(todoList._todoList);
             form.Dock = DockStyle.Fill;
             WorkingArea.Controls.Clear();

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<Tasks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Appointment Title="test noti" startHour="2018-06-18T14:30:00" endHour="2018-06-18T23:30:00" Location="" notiValue="15" notiUnit="minutes" Color="Orange" Description="ssẽ báo lúc 2h15ph" />
+</Tasks>

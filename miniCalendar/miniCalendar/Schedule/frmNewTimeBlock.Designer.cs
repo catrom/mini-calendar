@@ -88,12 +88,15 @@
             this.pnlTitle.Controls.Add(this.tbTitle);
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(891, 150);
+            this.pnlTitle.Size = new System.Drawing.Size(668, 122);
             this.pnlTitle.TabIndex = 0;
             // 
             // tbTitle
             // 
+            this.tbTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.tbTitle.ForeColor = System.Drawing.Color.White;
@@ -104,10 +107,10 @@
             this.tbTitle.LineIdleColor = System.Drawing.Color.White;
             this.tbTitle.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.tbTitle.LineThickness = 2;
-            this.tbTitle.Location = new System.Drawing.Point(24, 69);
-            this.tbTitle.Margin = new System.Windows.Forms.Padding(5);
+            this.tbTitle.Location = new System.Drawing.Point(18, 56);
+            this.tbTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(840, 41);
+            this.tbTitle.Size = new System.Drawing.Size(630, 33);
             this.tbTitle.TabIndex = 1;
             this.tbTitle.Text = "Enter Title";
             this.tbTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -134,19 +137,19 @@
             this.pnlDayTime.Controls.Add(this.pbEnableWeekday);
             this.pnlDayTime.Controls.Add(this.cbWeekday);
             this.pnlDayTime.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlDayTime.Location = new System.Drawing.Point(0, 150);
+            this.pnlDayTime.Location = new System.Drawing.Point(0, 122);
+            this.pnlDayTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlDayTime.Name = "pnlDayTime";
-            this.pnlDayTime.Size = new System.Drawing.Size(891, 130);
+            this.pnlDayTime.Size = new System.Drawing.Size(668, 106);
             this.pnlDayTime.TabIndex = 0;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblTime.Location = new System.Drawing.Point(475, 11);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTime.Location = new System.Drawing.Point(356, 9);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(47, 23);
+            this.lblTime.Size = new System.Drawing.Size(36, 17);
             this.lblTime.TabIndex = 17;
             this.lblTime.Text = "Time";
             // 
@@ -167,9 +170,10 @@
             "45",
             "50",
             "55"});
-            this.cbEndMin.Location = new System.Drawing.Point(707, 87);
+            this.cbEndMin.Location = new System.Drawing.Point(530, 71);
+            this.cbEndMin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbEndMin.Name = "cbEndMin";
-            this.cbEndMin.Size = new System.Drawing.Size(71, 24);
+            this.cbEndMin.Size = new System.Drawing.Size(54, 21);
             this.cbEndMin.TabIndex = 15;
             // 
             // cbEndHour
@@ -202,9 +206,10 @@
             "22",
             "23",
             "24"});
-            this.cbEndHour.Location = new System.Drawing.Point(537, 87);
+            this.cbEndHour.Location = new System.Drawing.Point(403, 71);
+            this.cbEndHour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbEndHour.Name = "cbEndHour";
-            this.cbEndHour.Size = new System.Drawing.Size(76, 24);
+            this.cbEndHour.Size = new System.Drawing.Size(58, 21);
             this.cbEndHour.TabIndex = 13;
             // 
             // cbStartMin
@@ -224,9 +229,10 @@
             "45",
             "50",
             "55"});
-            this.cbStartMin.Location = new System.Drawing.Point(707, 57);
+            this.cbStartMin.Location = new System.Drawing.Point(530, 46);
+            this.cbStartMin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbStartMin.Name = "cbStartMin";
-            this.cbStartMin.Size = new System.Drawing.Size(71, 24);
+            this.cbStartMin.Size = new System.Drawing.Size(54, 21);
             this.cbStartMin.TabIndex = 16;
             // 
             // cbStartHour
@@ -258,19 +264,19 @@
             "21",
             "22",
             "23"});
-            this.cbStartHour.Location = new System.Drawing.Point(537, 57);
+            this.cbStartHour.Location = new System.Drawing.Point(403, 46);
+            this.cbStartHour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbStartHour.Name = "cbStartHour";
-            this.cbStartHour.Size = new System.Drawing.Size(76, 24);
+            this.cbStartHour.Size = new System.Drawing.Size(58, 21);
             this.cbStartHour.TabIndex = 14;
             // 
             // lblEndTime
             // 
             this.lblEndTime.AutoSize = true;
             this.lblEndTime.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblEndTime.Location = new System.Drawing.Point(475, 88);
-            this.lblEndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEndTime.Location = new System.Drawing.Point(356, 72);
             this.lblEndTime.Name = "lblEndTime";
-            this.lblEndTime.Size = new System.Drawing.Size(39, 23);
+            this.lblEndTime.Size = new System.Drawing.Size(30, 17);
             this.lblEndTime.TabIndex = 7;
             this.lblEndTime.Text = "End";
             // 
@@ -278,10 +284,9 @@
             // 
             this.lblEndMin.AutoSize = true;
             this.lblEndMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblEndMin.Location = new System.Drawing.Point(785, 88);
-            this.lblEndMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEndMin.Location = new System.Drawing.Point(589, 72);
             this.lblEndMin.Name = "lblEndMin";
-            this.lblEndMin.Size = new System.Drawing.Size(64, 23);
+            this.lblEndMin.Size = new System.Drawing.Size(48, 17);
             this.lblEndMin.TabIndex = 8;
             this.lblEndMin.Text = "Minute";
             // 
@@ -289,10 +294,9 @@
             // 
             this.lblStartMin.AutoSize = true;
             this.lblStartMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblStartMin.Location = new System.Drawing.Point(785, 58);
-            this.lblStartMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartMin.Location = new System.Drawing.Point(589, 47);
             this.lblStartMin.Name = "lblStartMin";
-            this.lblStartMin.Size = new System.Drawing.Size(64, 23);
+            this.lblStartMin.Size = new System.Drawing.Size(48, 17);
             this.lblStartMin.TabIndex = 9;
             this.lblStartMin.Text = "Minute";
             // 
@@ -300,10 +304,9 @@
             // 
             this.lblHourEnd.AutoSize = true;
             this.lblHourEnd.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblHourEnd.Location = new System.Drawing.Point(620, 88);
-            this.lblHourEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHourEnd.Location = new System.Drawing.Point(465, 72);
             this.lblHourEnd.Name = "lblHourEnd";
-            this.lblHourEnd.Size = new System.Drawing.Size(48, 23);
+            this.lblHourEnd.Size = new System.Drawing.Size(37, 17);
             this.lblHourEnd.TabIndex = 10;
             this.lblHourEnd.Text = "Hour";
             // 
@@ -311,10 +314,9 @@
             // 
             this.lblStartHour.AutoSize = true;
             this.lblStartHour.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblStartHour.Location = new System.Drawing.Point(620, 58);
-            this.lblStartHour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartHour.Location = new System.Drawing.Point(465, 47);
             this.lblStartHour.Name = "lblStartHour";
-            this.lblStartHour.Size = new System.Drawing.Size(48, 23);
+            this.lblStartHour.Size = new System.Drawing.Size(37, 17);
             this.lblStartHour.TabIndex = 11;
             this.lblStartHour.Text = "Hour";
             // 
@@ -322,19 +324,19 @@
             // 
             this.lblStartTime.AutoSize = true;
             this.lblStartTime.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblStartTime.Location = new System.Drawing.Point(475, 58);
-            this.lblStartTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartTime.Location = new System.Drawing.Point(356, 47);
             this.lblStartTime.Name = "lblStartTime";
-            this.lblStartTime.Size = new System.Drawing.Size(45, 23);
+            this.lblStartTime.Size = new System.Drawing.Size(35, 17);
             this.lblStartTime.TabIndex = 12;
             this.lblStartTime.Text = "Start";
             // 
             // pbTime
             // 
             this.pbTime.Image = global::miniCalendar.Properties.Resources.icons8_Clock_32;
-            this.pbTime.Location = new System.Drawing.Point(441, 9);
+            this.pbTime.Location = new System.Drawing.Point(331, 7);
+            this.pbTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbTime.Name = "pbTime";
-            this.pbTime.Size = new System.Drawing.Size(27, 25);
+            this.pbTime.Size = new System.Drawing.Size(20, 20);
             this.pbTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbTime.TabIndex = 6;
             this.pbTime.TabStop = false;
@@ -343,20 +345,18 @@
             // 
             this.lblEnableWeekday.AutoSize = true;
             this.lblEnableWeekday.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblEnableWeekday.Location = new System.Drawing.Point(59, 11);
-            this.lblEnableWeekday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEnableWeekday.Location = new System.Drawing.Point(44, 9);
             this.lblEnableWeekday.Name = "lblEnableWeekday";
-            this.lblEnableWeekday.Size = new System.Drawing.Size(78, 23);
+            this.lblEnableWeekday.Size = new System.Drawing.Size(60, 17);
             this.lblEnableWeekday.TabIndex = 5;
             this.lblEnableWeekday.Text = "Weekday";
             // 
             // pbEnableWeekday
             // 
             this.pbEnableWeekday.Image = global::miniCalendar.Properties.Resources.icons8_Planner_32;
-            this.pbEnableWeekday.Location = new System.Drawing.Point(24, 6);
-            this.pbEnableWeekday.Margin = new System.Windows.Forms.Padding(4);
+            this.pbEnableWeekday.Location = new System.Drawing.Point(18, 5);
             this.pbEnableWeekday.Name = "pbEnableWeekday";
-            this.pbEnableWeekday.Size = new System.Drawing.Size(27, 28);
+            this.pbEnableWeekday.Size = new System.Drawing.Size(20, 23);
             this.pbEnableWeekday.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEnableWeekday.TabIndex = 4;
             this.pbEnableWeekday.TabStop = false;
@@ -373,9 +373,10 @@
             "Thursday",
             "Friday",
             "Saturday"});
-            this.cbWeekday.Location = new System.Drawing.Point(63, 59);
+            this.cbWeekday.Location = new System.Drawing.Point(47, 48);
+            this.cbWeekday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbWeekday.Name = "cbWeekday";
-            this.cbWeekday.Size = new System.Drawing.Size(168, 24);
+            this.cbWeekday.Size = new System.Drawing.Size(127, 21);
             this.cbWeekday.TabIndex = 2;
             // 
             // pnlControl
@@ -384,9 +385,10 @@
             this.pnlControl.Controls.Add(this.btnCancel);
             this.pnlControl.Controls.Add(this.btnSave);
             this.pnlControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlControl.Location = new System.Drawing.Point(0, 575);
+            this.pnlControl.Location = new System.Drawing.Point(0, 467);
+            this.pnlControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlControl.Name = "pnlControl";
-            this.pnlControl.Size = new System.Drawing.Size(891, 81);
+            this.pnlControl.Size = new System.Drawing.Size(668, 66);
             this.pnlControl.TabIndex = 0;
             // 
             // btnCancel
@@ -396,6 +398,7 @@
             this.btnCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCancel.ActiveForecolor = System.Drawing.Color.White;
             this.btnCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.ButtonText = "CANCEL";
@@ -407,10 +410,10 @@
             this.btnCancel.IdleFillColor = System.Drawing.Color.Transparent;
             this.btnCancel.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCancel.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCancel.Location = new System.Drawing.Point(736, 9);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnCancel.Location = new System.Drawing.Point(552, 7);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(113, 58);
+            this.btnCancel.Size = new System.Drawing.Size(85, 47);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -433,10 +436,10 @@
             this.btnSave.IdleFillColor = System.Drawing.SystemColors.Control;
             this.btnSave.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
             this.btnSave.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.btnSave.Location = new System.Drawing.Point(24, 9);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnSave.Location = new System.Drawing.Point(18, 7);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(113, 58);
+            this.btnSave.Size = new System.Drawing.Size(85, 47);
             this.btnSave.TabIndex = 8;
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -449,38 +452,36 @@
             this.pnlNotification.Controls.Add(this.pbNotification);
             this.pnlNotification.Controls.Add(this.lblNotification);
             this.pnlNotification.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNotification.Location = new System.Drawing.Point(0, 280);
+            this.pnlNotification.Location = new System.Drawing.Point(0, 228);
+            this.pnlNotification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNotification.Name = "pnlNotification";
-            this.pnlNotification.Size = new System.Drawing.Size(441, 108);
+            this.pnlNotification.Size = new System.Drawing.Size(330, 87);
             this.pnlNotification.TabIndex = 0;
             // 
             // lblNotiMin
             // 
             this.lblNotiMin.AutoSize = true;
             this.lblNotiMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblNotiMin.Location = new System.Drawing.Point(139, 49);
-            this.lblNotiMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNotiMin.Location = new System.Drawing.Point(104, 40);
             this.lblNotiMin.Name = "lblNotiMin";
-            this.lblNotiMin.Size = new System.Drawing.Size(64, 23);
+            this.lblNotiMin.Size = new System.Drawing.Size(48, 17);
             this.lblNotiMin.TabIndex = 19;
             this.lblNotiMin.Text = "Minute";
             // 
             // numNotiValue
             // 
             this.numNotiValue.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.numNotiValue.Location = new System.Drawing.Point(63, 46);
-            this.numNotiValue.Margin = new System.Windows.Forms.Padding(4);
+            this.numNotiValue.Location = new System.Drawing.Point(47, 37);
             this.numNotiValue.Name = "numNotiValue";
-            this.numNotiValue.Size = new System.Drawing.Size(55, 29);
+            this.numNotiValue.Size = new System.Drawing.Size(41, 25);
             this.numNotiValue.TabIndex = 8;
             // 
             // pbNotification
             // 
             this.pbNotification.Image = global::miniCalendar.Properties.Resources.icons8_Alarm_Clock_32;
-            this.pbNotification.Location = new System.Drawing.Point(24, 10);
-            this.pbNotification.Margin = new System.Windows.Forms.Padding(4);
+            this.pbNotification.Location = new System.Drawing.Point(18, 8);
             this.pbNotification.Name = "pbNotification";
-            this.pbNotification.Size = new System.Drawing.Size(27, 25);
+            this.pbNotification.Size = new System.Drawing.Size(20, 20);
             this.pbNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbNotification.TabIndex = 7;
             this.pbNotification.TabStop = false;
@@ -489,10 +490,9 @@
             // 
             this.lblNotification.AutoSize = true;
             this.lblNotification.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotification.Location = new System.Drawing.Point(59, 14);
-            this.lblNotification.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNotification.Location = new System.Drawing.Point(44, 11);
             this.lblNotification.Name = "lblNotification";
-            this.lblNotification.Size = new System.Drawing.Size(99, 23);
+            this.lblNotification.Size = new System.Drawing.Size(75, 17);
             this.lblNotification.TabIndex = 6;
             this.lblNotification.Text = "Notification";
             // 
@@ -507,9 +507,10 @@
             this.pnlColor.Controls.Add(this.pbColor);
             this.pnlColor.Controls.Add(this.lblColor);
             this.pnlColor.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlColor.Location = new System.Drawing.Point(441, 280);
+            this.pnlColor.Location = new System.Drawing.Point(330, 228);
+            this.pnlColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlColor.Name = "pnlColor";
-            this.pnlColor.Size = new System.Drawing.Size(450, 108);
+            this.pnlColor.Size = new System.Drawing.Size(338, 87);
             this.pnlColor.TabIndex = 0;
             // 
             // checkBlue
@@ -519,8 +520,8 @@
             this.checkBlue.Checked = false;
             this.checkBlue.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.checkBlue.ForeColor = System.Drawing.Color.White;
-            this.checkBlue.Location = new System.Drawing.Point(187, 52);
-            this.checkBlue.Margin = new System.Windows.Forms.Padding(5);
+            this.checkBlue.Location = new System.Drawing.Point(140, 42);
+            this.checkBlue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBlue.Name = "checkBlue";
             this.checkBlue.Size = new System.Drawing.Size(20, 20);
             this.checkBlue.TabIndex = 12;
@@ -533,8 +534,8 @@
             this.checkGreen.Checked = false;
             this.checkGreen.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.checkGreen.ForeColor = System.Drawing.Color.White;
-            this.checkGreen.Location = new System.Drawing.Point(154, 52);
-            this.checkGreen.Margin = new System.Windows.Forms.Padding(5);
+            this.checkGreen.Location = new System.Drawing.Point(116, 42);
+            this.checkGreen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkGreen.Name = "checkGreen";
             this.checkGreen.Size = new System.Drawing.Size(20, 20);
             this.checkGreen.TabIndex = 11;
@@ -547,8 +548,8 @@
             this.checkYellow.Checked = false;
             this.checkYellow.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.checkYellow.ForeColor = System.Drawing.Color.White;
-            this.checkYellow.Location = new System.Drawing.Point(120, 52);
-            this.checkYellow.Margin = new System.Windows.Forms.Padding(5);
+            this.checkYellow.Location = new System.Drawing.Point(90, 42);
+            this.checkYellow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkYellow.Name = "checkYellow";
             this.checkYellow.Size = new System.Drawing.Size(20, 20);
             this.checkYellow.TabIndex = 9;
@@ -561,8 +562,8 @@
             this.checkOrange.Checked = false;
             this.checkOrange.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.checkOrange.ForeColor = System.Drawing.Color.White;
-            this.checkOrange.Location = new System.Drawing.Point(87, 52);
-            this.checkOrange.Margin = new System.Windows.Forms.Padding(5);
+            this.checkOrange.Location = new System.Drawing.Point(65, 42);
+            this.checkOrange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkOrange.Name = "checkOrange";
             this.checkOrange.Size = new System.Drawing.Size(20, 20);
             this.checkOrange.TabIndex = 8;
@@ -575,8 +576,8 @@
             this.checkRed.Checked = false;
             this.checkRed.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.checkRed.ForeColor = System.Drawing.Color.White;
-            this.checkRed.Location = new System.Drawing.Point(54, 52);
-            this.checkRed.Margin = new System.Windows.Forms.Padding(5);
+            this.checkRed.Location = new System.Drawing.Point(40, 42);
+            this.checkRed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkRed.Name = "checkRed";
             this.checkRed.Size = new System.Drawing.Size(20, 20);
             this.checkRed.TabIndex = 7;
@@ -585,10 +586,9 @@
             // pbColor
             // 
             this.pbColor.Image = global::miniCalendar.Properties.Resources.icons8_Color_Wheel_32;
-            this.pbColor.Location = new System.Drawing.Point(19, 10);
-            this.pbColor.Margin = new System.Windows.Forms.Padding(4);
+            this.pbColor.Location = new System.Drawing.Point(14, 8);
             this.pbColor.Name = "pbColor";
-            this.pbColor.Size = new System.Drawing.Size(27, 25);
+            this.pbColor.Size = new System.Drawing.Size(20, 20);
             this.pbColor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbColor.TabIndex = 10;
             this.pbColor.TabStop = false;
@@ -597,10 +597,9 @@
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColor.Location = new System.Drawing.Point(54, 14);
-            this.lblColor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblColor.Location = new System.Drawing.Point(40, 11);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(51, 23);
+            this.lblColor.Size = new System.Drawing.Size(40, 17);
             this.lblColor.TabIndex = 6;
             this.lblColor.Text = "Color";
             // 
@@ -611,19 +610,22 @@
             this.pnlDescription.Controls.Add(this.pbDescription);
             this.pnlDescription.Controls.Add(this.lblDescription);
             this.pnlDescription.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDescription.Location = new System.Drawing.Point(0, 388);
+            this.pnlDescription.Location = new System.Drawing.Point(0, 315);
+            this.pnlDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlDescription.Name = "pnlDescription";
-            this.pnlDescription.Size = new System.Drawing.Size(891, 187);
+            this.pnlDescription.Size = new System.Drawing.Size(668, 152);
             this.pnlDescription.TabIndex = 0;
             // 
             // tbDescription
             // 
+            this.tbDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tbDescription.ForeColor = System.Drawing.Color.DarkGray;
-            this.tbDescription.Location = new System.Drawing.Point(63, 40);
-            this.tbDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.tbDescription.Location = new System.Drawing.Point(47, 32);
             this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(786, 111);
+            this.tbDescription.Size = new System.Drawing.Size(590, 91);
             this.tbDescription.TabIndex = 7;
             this.tbDescription.Text = "Add descriptions";
             this.tbDescription.Enter += new System.EventHandler(this.tbDescription_Enter);
@@ -633,10 +635,9 @@
             // pbDescription
             // 
             this.pbDescription.Image = global::miniCalendar.Properties.Resources.icons8_Note_32;
-            this.pbDescription.Location = new System.Drawing.Point(24, 8);
-            this.pbDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.pbDescription.Location = new System.Drawing.Point(18, 6);
             this.pbDescription.Name = "pbDescription";
-            this.pbDescription.Size = new System.Drawing.Size(27, 25);
+            this.pbDescription.Size = new System.Drawing.Size(20, 20);
             this.pbDescription.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbDescription.TabIndex = 6;
             this.pbDescription.TabStop = false;
@@ -645,16 +646,15 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(59, 12);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Location = new System.Drawing.Point(44, 10);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(96, 23);
+            this.lblDescription.Size = new System.Drawing.Size(74, 17);
             this.lblDescription.TabIndex = 5;
             this.lblDescription.Text = "Description";
             // 
             // frmNewTimeBlock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlNotification);
             this.Controls.Add(this.pnlColor);
@@ -662,8 +662,9 @@
             this.Controls.Add(this.pnlControl);
             this.Controls.Add(this.pnlDayTime);
             this.Controls.Add(this.pnlTitle);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmNewTimeBlock";
-            this.Size = new System.Drawing.Size(891, 656);
+            this.Size = new System.Drawing.Size(668, 533);
             this.pnlTitle.ResumeLayout(false);
             this.pnlDayTime.ResumeLayout(false);
             this.pnlDayTime.PerformLayout();

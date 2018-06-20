@@ -16,12 +16,15 @@ namespace miniCalendar
         [STAThread]
         static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
             //Tạo thư mục mặc định chứa dữ liệu
             Directory.CreateDirectory("Data/Appointment");
             Directory.CreateDirectory("Data/Schedule");
             Directory.CreateDirectory("Data/ToDoList/Stt");
             Directory.CreateDirectory("Data/ToDoList/Sub");
-            
+
             //Lấy dữ liệu
             DataTable dataTable = new DataTable();
             dataTable.Deserialize();
@@ -35,8 +38,6 @@ namespace miniCalendar
             Schedule.ScheduleDataTable scDataTable = new Schedule.ScheduleDataTable();
             scDataTable.Deserialize();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain(dataTable, myMonthCalendar, todoList, scDataTable));
         }
     }

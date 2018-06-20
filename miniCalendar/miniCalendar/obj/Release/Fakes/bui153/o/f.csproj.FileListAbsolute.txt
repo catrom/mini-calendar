@@ -1,0 +1,9 @@
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Release\Fakes\bui153\b\Bunifu_UI_v1.5.3.Fakes.xml
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Release\Fakes\bui153\b\Bunifu_UI_v1.5.3.Fakes.dll
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Release\Fakes\bui153\b\Bunifu_UI_v1.5.3.Fakes.pdb
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Release\Fakes\bui153\b\Accessibility.dll
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Release\Fakes\bui153\b\Bunifu_UI_v1.5.3.dll
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Release\Fakes\bui153\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Release\Fakes\bui153\o\f.csprojResolveAssemblyReference.cache
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Release\Fakes\bui153\o\Bunifu_UI_v1.5.3.Fakes.dll
+C:\Users\CatRom\Source\Repos\mini-calendar\miniCalendar\miniCalendar\obj\Release\Fakes\bui153\o\Bunifu_UI_v1.5.3.Fakes.pdb

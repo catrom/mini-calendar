@@ -25,6 +25,7 @@ namespace miniCalendar.Schedule
             InitializeComponent();
             this.timeTable = timeTable;
             this.timeBlock = timeBlock;
+            Dock = DockStyle.Fill;
 
             DisplayInfo();
         }

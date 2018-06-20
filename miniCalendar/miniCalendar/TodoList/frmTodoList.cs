@@ -27,6 +27,9 @@ namespace miniCalendar
         public frmTodoList(Dictionary<int, Task> todoList)
         {
             InitializeComponent();
+            BackgroundImage = global::miniCalendar.Properties.Resources.astronomy_beautiful_constellations_813269;
+            BackgroundImageLayout = ImageLayout.Stretch;
+
             tbAddTask.Text = "Add a to-do...";
             _todoList = todoList;
 

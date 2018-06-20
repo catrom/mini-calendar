@@ -105,7 +105,8 @@ namespace miniCalendar
         //Vẽ bảng nền gồm cột số, số dòng thêm vào bảng nền
         public void drawBaseTable(TimeTable timeTable)
         {
-            timeDrawing = new Point(25, 40);
+            Label temp = new Label();
+            timeDrawing = new PointF(tlpWeekDayDisplayArea.ColumnStyles[0].Width / 3 * 2, tlpWeekDayDisplayArea.RowStyles[0].Height - (float)temp.Height / 4);
             DateTime displayTime = new DateTime(1, 1, 1, timeTable.StartTime.Hour, timeTable.StartTime.Minute, 0);
 
             tlpWeekDayDisplayArea.RowCount += addRow;
@@ -120,13 +121,13 @@ namespace miniCalendar
                 tlpWeekDayDisplayArea.SetRowSpan(pnlTime, tlpWeekDayDisplayArea.RowCount);
                 for (int i = 1; i < tlpWeekDayDisplayArea.RowCount; i++)
                 {
-                    Label temp = new Label();
+                    temp = new Label();
                     temp.Location = new Point((int)timeDrawing.X, (int)timeDrawing.Y);
                     temp.Text = displayTime.ToShortTimeString();
                     temp.BackColor = Color.White;
                     temp.AutoSize = true;
                     pnlTime.Controls.Add(temp);
-                    timeDrawing.Y += pixelPer5Min + 0.5f;
+                    timeDrawing.Y += pixelPer5Min;
                     displayTime = displayTime.AddMinutes(5);
                 }
             }
@@ -152,7 +153,7 @@ namespace miniCalendar
                 tlpWeekDayDisplayArea.SetRowSpan(pnlTime, tlpWeekDayDisplayArea.RowCount);
                 for (int i = 1; i < tlpWeekDayDisplayArea.RowCount; i++)
                 {
-                    Label temp = new Label();
+                    temp = new Label();
                     temp.Location = new Point((int)timeDrawing.X, (int)timeDrawing.Y);
                     temp.Text = displayTime.ToShortTimeString();
                     temp.BackColor = Color.White;
@@ -160,12 +161,12 @@ namespace miniCalendar
                     pnlTime.Controls.Add(temp);
                     if (head != 0 && i == 1)
                     {
-                        timeDrawing.Y += (pixelPer5Min * head / 5) + 0.5f;
+                        timeDrawing.Y += (pixelPer5Min * head / 5);
                         displayTime = displayTime.AddMinutes(head);
                     }
                     else
                     {
-                        timeDrawing.Y += (pixelPer5Min * 12) + 0.5f;
+                        timeDrawing.Y += (pixelPer5Min * 12);
                         displayTime = displayTime.AddHours(1);
                     }
                 }
@@ -338,16 +339,16 @@ namespace miniCalendar
 
             foreach (var item in timeTable.TimeBlocks)
             {
-                timeBlockX = (111 * (item.WeekDay + 1)) + 1;
+                timeBlockWidth = tlpWeekDayDisplayArea.Width / 8;
 
-                timeBlockY = 102 + (((float)(item.StartTime.TimeOfDay.TotalMinutes - timeTable.StartTime.TimeOfDay.TotalMinutes) / 5) * pixelPer5Min);
+                timeBlockX = (timeBlockWidth * (item.WeekDay + 1)) + 1;
 
-                timeBlockWidth = 110;
+                timeBlockY = pnlTimeTableSelection.Height + pnlTimeTableSelection.Margin.Vertical + tlpWeekDayDisplayArea.Margin.Vertical + tlpWeekDayDisplayArea.RowStyles[0].Height + (((float)(item.StartTime.TimeOfDay.TotalMinutes - timeTable.StartTime.TimeOfDay.TotalMinutes) / 5) * pixelPer5Min);
 
                 timeBlockHeight = ((float)(item.EndTime.TimeOfDay.TotalMinutes - item.StartTime.TimeOfDay.TotalMinutes) / 5) * pixelPer5Min;
 
                 timeBlock = new Button();
-                timeBlock.Location = new Point((int)timeBlockX,(int)timeBlockY);
+                timeBlock.Location = new Point((int)timeBlockX, (int)timeBlockY);
                 timeBlock.Size = new Size((int)timeBlockWidth, (int)timeBlockHeight);
                 timeBlock.BackColor = Helper.ColorPicker(item.Color);
                 timeBlock.Text = item.SubjectTitle;

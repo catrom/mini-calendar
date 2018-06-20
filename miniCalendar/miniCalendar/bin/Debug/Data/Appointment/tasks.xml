@@ -1,2 +1,10 @@
 <?xml version="1.0"?>
-<Tasks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<Tasks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Appointment Title="" startHour="2018-06-18T04:00:00" endHour="2018-06-18T23:30:00" Location="" notiValue="18" notiUnit="minutes" Color="Red" Description="" />
+  <Appointment Title="" startHour="2018-06-14T00:00:00" endHour="2018-06-14T23:59:00" Location="" notiValue="30" notiUnit="minutes" Color="Blue" Description="" />
+  <Appointment Title="" startHour="2018-06-29T00:00:00" endHour="2018-06-29T23:59:00" Location="" notiValue="30" notiUnit="minutes" Color="Blue" Description="" />
+  <Appointment Title="" startHour="2018-06-05T00:00:00" endHour="2018-06-05T23:59:00" Location="" notiValue="30" notiUnit="minutes" Color="Blue" Description="" />
+  <Appointment Title="" startHour="2018-06-06T00:00:00" endHour="2018-06-06T23:59:00" Location="" notiValue="30" notiUnit="minutes" Color="Blue" Description="" />
+  <Appointment Title="" startHour="2018-06-07T00:00:00" endHour="2018-06-07T23:59:00" Location="" notiValue="30" notiUnit="minutes" Color="Blue" Description="" />
+  <Appointment Title="" startHour="2018-06-23T00:00:00" endHour="2018-06-23T23:59:00" Location="" notiValue="30" notiUnit="minutes" Color="Blue" Description="" />
+</Tasks>

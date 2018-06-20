@@ -25,7 +25,7 @@ namespace miniCalendar.Schedule
             InitializeComponent();
             this.dataTable = dataTable;
             this.timeTable = timeTable;
-
+            Dock = DockStyle.Fill;
             if (dataTable.timeTables.Count == 1)
             {
                 btnDelete.Enabled = false;

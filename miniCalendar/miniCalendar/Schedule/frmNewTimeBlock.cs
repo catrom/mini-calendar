@@ -37,6 +37,7 @@ namespace miniCalendar.Schedule
             this.timeTable = timeTable;
             this.timeBlock = timeBlock;
             this.isModified = isModified;
+            Dock = DockStyle.Fill;
 
             if (!isModified)
             {

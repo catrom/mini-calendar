@@ -33,6 +33,7 @@ namespace miniCalendar.Schedule
             this.dataTable = dataTable;
             this.timeTable = timeTable;
             this.isModified = isModified;
+            Dock = DockStyle.Fill;
 
             if (!isModified)
             {

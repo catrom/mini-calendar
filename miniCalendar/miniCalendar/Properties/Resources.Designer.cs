@@ -19,7 +19,7 @@ namespace miniCalendar.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -57,6 +57,26 @@ namespace miniCalendar.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap astronomy_beautiful_clouds_355465 {
+            get {
+                object obj = ResourceManager.GetObject("astronomy-beautiful-clouds-355465", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap astronomy_beautiful_constellations_813269 {
+            get {
+                object obj = ResourceManager.GetObject("astronomy-beautiful-constellations-813269", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -446,6 +466,16 @@ namespace miniCalendar.Properties {
         internal static System.Drawing.Bitmap icons8_Waste_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Waste_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconSplash {
+            get {
+                object obj = ResourceManager.GetObject("iconSplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

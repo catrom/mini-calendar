@@ -34,7 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\Downloads\InnerVisual-Bunifu_UI_v1.5.3 Crack\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\InnerVisual-Bunifu_UI_v1.5.3 Crack\Bunifu_UI_v1.5.3.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -109,6 +113,12 @@
     <Compile Include="Schedule\frmSchedule.Designer.cs">
       <DependentUpon>frmSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="TodoList\frmSubTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +191,9 @@
     <EmbeddedResource Include="Schedule\frmSchedule.resx">
       <DependentUpon>frmSchedule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TodoList\frmSubTask.resx">
       <DependentUpon>frmSubTask.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +223,7 @@
     <EmbeddedResource Include="Schedule\frmViewTimeTable.resx">
       <DependentUpon>frmViewTimeTable.cs</DependentUpon>
     </EmbeddedResource>
+    <Fakes Include="Fakes\Bunifu_UI_v1.5.3.fakes" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -366,6 +380,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit_3_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\astronomy-beautiful-constellations-813269.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\astronomy-beautiful-clouds-355465.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconSplash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
