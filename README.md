@@ -1,12 +1,38 @@
-# Mini Calendar
+# miniCalendar
+---
+## Giới thiệu
+miniCalendar là phần mềm thành phẩm của đồ án môn học Lập trình Trực quan.
 
-Phần mềm hỗ trợ quản lý thời gian biểu.
+Phần mềm được xây dựng bằng .NET Winform và Bunifu cho Desktop Windows.
 
-Đồ án môn học Lập trình Trực quan, Trường Đại học CNTT.
+Phần mềm được phát triển hướng tới việc hỗ trợ người dùng quản lý thời gian với những chức năng cơ bản như xem lịch, đặt lịch hẹn,…
 
-## Mô tả phần mềm
+Note: Phần mềm có thể được phát triển hoàn thiện thêm.
 
-### Tính năng
-- Hiển thị lịch theo nhiều khung thời gian
+## Screenshots
+<p align="center">
+  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/Appointmen5.png"/>
+</p>
+<p align="center">
+  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/notification.png"/>
+</p>
+<p align="center">
+  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/todolist1.png"/>
+</p>
 
-## Công nghệ nền tảng
+## Các chức năng chính
+* Xem lịch
+* Đặt lịch hẹn, sự kiện cho một, nhiều ngày
+* Quản lý nhiều thời khóa biểu với khung giờ động
+* Quản lý danh sách việc cần làm và theo dõi tiến độ công việc
+* Thông báo cho các sự kiện sắp diễn ra cho người dùng
+* Tùy biến các hiển thị hỗ trợ như màu - icon cho sự kiện
+
+## Cài đặt
+Dùng file Setup
+
+## Môi trường phát triển
+* Visual Studio
+* .NET Framework 4.5.2
+* C#
+* Bunifu Framework 1.5.3
