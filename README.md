@@ -1,4 +1,4 @@
-# miniCalendar
+﻿# miniCalendar
 ---
 ## Giới thiệu
 miniCalendar là phần mềm thành phẩm của đồ án môn học Lập trình Trực quan.
@@ -11,14 +11,24 @@ Note: Phần mềm có thể được phát triển hoàn thiện thêm.
 
 ## Screenshots
 <p align="center">
-  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/Appointmen5.png"/>
+  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/appointment1.png"/>
 </p>
 <p align="center">
-  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/notification.png"/>
+  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/appointment2.PNG"/>
 </p>
 <p align="center">
-  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/todolist1.png"/>
+  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/schedule2.png"/>
 </p>
+<p align="center">
+  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/schedule3.png"/>
+</p>
+<p align="center">
+  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/todolist1.png "/>
+</p>
+<p align="center">
+  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/notification.png "/>
+</p>
+
 
 ## Các chức năng chính
 * Xem lịch
