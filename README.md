@@ -23,7 +23,7 @@ Note: Phần mềm có thể được phát triển hoàn thiện thêm.
   <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/schedule3.png"/>
 </p>
 <p align="center">
-  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/todolist1.png "/>
+  <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/todolist.png"/>
 </p>
 <p align="center">
   <img src="https://github.com/honggialap/mini-calendar/blob/master/DemoScreenshot/notification.png "/>
